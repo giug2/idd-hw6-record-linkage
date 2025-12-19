@@ -1,0 +1,104 @@
+
+============================== ANALISI SORGENTE: CRAIGSLIST ==============================
+Totale righe: 426880
+
+   Attributo  Nulli_Perc  Unici_N  Unici_Perc
+          id        0.00   426880      100.00
+         url        0.00   426880      100.00
+      region        0.00      404        0.09
+  region_url        0.00      413        0.10
+       price        0.00    15655        3.67
+        year        0.28      114        0.03
+manufacturer        4.13       42        0.01
+       model        1.24    29667        6.95
+   condition       40.79        6        0.00
+   cylinders       41.62        8        0.00
+        fuel        0.71        5        0.00
+    odometer        1.03   104870       24.57
+title_status        1.93        6        0.00
+transmission        0.60        3        0.00
+         VIN       37.73   118264       27.70
+       drive       30.59        3        0.00
+        size       71.77        4        0.00
+        type       21.75       13        0.00
+ paint_color       30.50       12        0.00
+   image_url        0.02   241899       56.67
+ description        0.02   360911       84.55
+      county      100.00        0        0.00
+       state        0.00       51        0.01
+         lat        1.53    53181       12.46
+        long        1.53    53772       12.60
+posting_date        0.02   381536       89.38
+
+
+============================== ANALISI SORGENTE: US_USED_CARS ==============================
+Totale righe: 3000040
+
+              Attributo  Nulli_Perc  Unici_N  Unici_Perc
+                    vin        0.00  3000000      100.00
+           back_legroom        5.31      219        0.01
+                    bed       99.35        3        0.00
+             bed_height       85.70        1        0.00
+             bed_length       85.70       83        0.00
+              body_type        0.45        9        0.00
+                  cabin       97.88        4        0.00
+                   city        0.00     4687        0.16
+      city_fuel_economy       16.38      100        0.00
+   combine_fuel_economy      100.00        0        0.00
+           daysonmarket        0.00     1754        0.06
+             dealer_zip        0.00     8237        0.27
+            description        2.60  2519325       83.98
+       engine_cylinders        3.35       39        0.00
+    engine_displacement        5.75       67        0.00
+            engine_type        3.35       39        0.00
+         exterior_color        1.67    28664        0.96
+                  fleet       47.55        2        0.00
+          frame_damaged       47.55        2        0.00
+       franchise_dealer        0.00        2        0.00
+         franchise_make       19.09       48        0.00
+          front_legroom        5.31      101        0.00
+       fuel_tank_volume        5.31      182        0.01
+              fuel_type        2.76        8        0.00
+          has_accidents       47.55        2        0.00
+                 height        5.31      472        0.02
+   highway_fuel_economy       16.38       99        0.00
+             horsepower        5.75      455        0.02
+         interior_color       12.80    45725        1.52
+                  isCab       47.55        2        0.00
+           is_certified      100.00        0        0.00
+                 is_cpo       93.90        1        0.00
+                 is_new        0.00        2        0.00
+              is_oemcpo       95.49        1        0.00
+               latitude        0.00    23443        0.78
+                 length        5.31      836        0.03
+            listed_date        0.00     1749        0.06
+          listing_color        0.00       15        0.00
+             listing_id        0.00  3000000      100.00
+              longitude        0.00    23241        0.77
+       main_picture_url       12.30  2415855       80.53
+          major_options        6.67   279972        9.33
+              make_name        0.00      100        0.00
+        maximum_seating        5.31       12        0.00
+                mileage        4.81   197577        6.59
+             model_name        0.00     1429        0.05
+            owner_count       50.57       18        0.00
+                  power       16.05     2037        0.07
+                  price        0.00    88861        2.96
+                salvage       47.55        2        0.00
+         savings_amount        0.00    10838        0.36
+          seller_rating        1.36     1817        0.06
+                  sp_id        0.00    27097        0.90
+                sp_name        0.00    26148        0.87
+            theft_title       47.55        2        0.00
+                 torque       17.26     2060        0.07
+           transmission        2.14        4        0.00
+   transmission_display        2.14       44        0.00
+                 trimId        3.86    41329        1.38
+              trim_name        3.88     9062        0.30
+vehicle_damage_category      100.00        0        0.00
+           wheel_system        4.89        5        0.00
+   wheel_system_display        4.89        5        0.00
+              wheelbase        5.31      483        0.02
+                  width        5.31      285        0.01
+                   year        0.00       98        0.00
+
