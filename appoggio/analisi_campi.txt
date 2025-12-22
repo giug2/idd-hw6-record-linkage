@@ -1,0 +1,109 @@
+
+============================== ANALISI SORGENTE: CRAIGSLIST ==============================
+Totale righe: 426880
+
+   Attributo  Nulli_Perc  Unici_N  Unici_Perc
+          id        0.00   426880      100.00
+         url        0.00   426880      100.00
+      region        0.00      404        0.09            regione
+  region_url        0.00      413        0.10            url regione
+       price        0.00    15655        3.67            prezzo entry
+        year        0.28      114        0.03            anno entry
+manufacturer        4.13       42        0.01            marca
+       model        1.24    29667        6.95            modello
+   condition       40.79        6        0.00            condizioni
+   cylinders       41.62        8        0.00            # cilindrata
+        fuel        0.71        5        0.00            tipo alimentazione
+    odometer        1.03   104870       24.57            kilometraggio
+title_status        1.93        6        0.00            title status of vehicle
+transmission        0.60        3        0.00            trasmissione
+         VIN       37.73   118264       27.70            ID TELAIO
+       drive       30.59        3        0.00            tipo di guida
+        size       71.77        4        0.00            grandezza
+        type       21.75       13        0.00            tipo (suv, pickup..)
+ paint_color       30.50       12        0.00            colore
+   image_url        0.02   241899       56.67            immagine
+ description        0.02   360911       84.55            descrizione
+      county      100.00        0        0.00            colonna inutilizzata ######################################
+       state        0.00       51        0.01            state of listing
+         lat        1.53    53181       12.46            latitudine listing
+        long        1.53    53772       12.60            longitudine listing
+posting_date        0.02   381536       89.38            data di posting   Date
+
+
+stringhe 15 
+integer 3
+url 3
+altro 5
+
+
+============================== ANALISI SORGENTE: US_USED_CARS ==============================
+Totale righe: 3000040
+
+              Attributo  Nulli_Perc  Unici_N  Unici_Perc
+                    vin        0.00  3000000      100.00             ID TELAIO string
+           back_legroom        5.31      219        0.01             Legroom in the rear seat string
+                    bed       99.35        3        0.00             Category of bed size(open cargo area) in pickup truck string  null se non è un pickup
+             bed_height       85.70        1        0.00             altezza bed in inches string
+             bed_length       85.70       83        0.00             larghezza bed in inches stringa
+              body_type        0.45        9        0.00             tipo di veicolo (suv, pickup, sedan)  string
+                  cabin       97.88        4        0.00             Category of cabin size(open cargo area) in pickup truck. stringa
+                   city        0.00     4687        0.16             città dove listing stringa
+      city_fuel_economy       16.38      100        0.00             Fuel economy in city traffic in km per litre float
+   combine_fuel_economy      100.00        0        0.00             Combined fuel economy is a weighted average of City and Highway fuel economy in km per litre float
+           daysonmarket        0.00     1754        0.06             giorni sul mercato integer
+             dealer_zip        0.00     8237        0.27             Zipcode of the dealer integer
+            description        2.60  2519325       83.98             descrizione stringa
+       engine_cylinders        3.35       39        0.00             The engine configuration. stringa 
+    engine_displacement        5.75       67        0.00             float engine_displacement is the measure of the cylinder volume swept by all of the pistons of a piston engine, excluding the combustion chambers.
+            engine_type        3.35       39        0.00              The engine configuration string
+         exterior_color        1.67    28664        0.96             colore stringa
+                  fleet       47.55        2        0.00             Whether the vehicle was previously part of a fleet booleano
+          frame_damaged       47.55        2        0.00             Whether the vehicle has a damaged frame. booleano
+       franchise_dealer        0.00        2        0.00             Whether the dealer is a franchise dealer. booleano
+         franchise_make       19.09       48        0.00             The company that owns the franchise stringa
+          front_legroom        5.31      101        0.00             The legroom in inches for the passenger seat stringa
+       fuel_tank_volume        5.31      182        0.01             Fuel tank's filling capacity in gallons stringa
+              fuel_type        2.76        8        0.00             Dominant type of fuel ingested by the vehicle. stringa
+          has_accidents       47.55        2        0.00             incidenti registrati booleano
+                 height        5.31      472        0.02             altezza in inches stringa
+   highway_fuel_economy       16.38       99        0.00             Fuel economy in highway traffic in km per litre float 
+             horsepower        5.75      455        0.02             Horsepower is the power produced by an engine. float
+         interior_color       12.80    45725        1.52             colore interno stringa
+                  isCab       47.55        2        0.00             è un taxi cab? booleano
+           is_certified      100.00        0        0.00             Whether the vehicle is certified. Certified cars are covered through warranty period booleano
+                 is_cpo       93.90        1        0.00             Pre-owned cars certified by the dealer. Certified vehicles come with a manufacturer warranty for free repairs for a certain time period. Read more at https://www.cartrade.com/blog/2015/auto-guides/pros-and-cons-of-buying-a-certified-pre-owned-car-1235.html  booleano
+                 is_new        0.00        2        0.00             se è sotto i 2 anni booleano
+              is_oemcpo       95.49        1        0.00             Pre-owned cars certified by the manufacturer. Read more at https://www.cargurus.com/Cars/articles/know_the_difference_dealership_cpo_vs_manufacturer_cpo booleano
+               latitude        0.00    23443        0.78             latitudine di dealership float
+                 length        5.31      836        0.03             lunghezza veicolo stringa
+            listed_date        0.00     1749        0.06             data pubblicazione stringa
+          listing_color        0.00       15        0.00             colore dominante stringa
+             listing_id        0.00  3000000      100.00             id annuncio integer
+              longitude        0.00    23241        0.77             longitudine dealership float
+       main_picture_url       12.30  2415855       80.53             immagine stringa
+          major_options        6.67   279972        9.33             optional
+              make_name        0.00      100        0.00             nome
+        maximum_seating        5.31       12        0.00             numero posti
+                mileage        4.81   197577        6.59             kilometraggio
+             model_name        0.00     1429        0.05             nome modello
+            owner_count       50.57       18        0.00             # proprietari
+                  power       16.05     2037        0.07             potenza
+                  price        0.00    88861        2.96             prezzo
+                salvage       47.55        2        0.00
+         savings_amount        0.00    10838        0.36
+          seller_rating        1.36     1817        0.06             stelle del venditore
+                  sp_id        0.00    27097        0.90
+                sp_name        0.00    26148        0.87
+            theft_title       47.55        2        0.00
+                 torque       17.26     2060        0.07
+           transmission        2.14        4        0.00
+   transmission_display        2.14       44        0.00
+                 trimId        3.86    41329        1.38
+              trim_name        3.88     9062        0.30
+vehicle_damage_category      100.00        0        0.00
+           wheel_system        4.89        5        0.00
+   wheel_system_display        4.89        5        0.00
+              wheelbase        5.31      483        0.02
+                  width        5.31      285        0.01
+                   year        0.00       98        0.00
