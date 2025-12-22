@@ -13,15 +13,16 @@ longitude	                        long                	Match Esatto (Posizione) 
 listing_color/exterior_color    	paint_color         	Match Semantico (Colore esterno)
 listed_date                         posting_date            Match Semantico (Data di annuncio)
 description	                        description	            Match Esatto (Testo dell'annuncio)
+listing_id	                        id	                    Utili per tenere traccia dei campi sorgente
 
 ========================================================================================================================
-DA MODIFICARE
+DA MODIFICARE - AGGIUNTI
 ========================================================================================================================
-transmission	                    transmission            Match Esatto (Tipo di cambio) i dati devono essere modificati 
-transmission_display                ===                     transmission è solo una lettera, transmission_display nome completo
 fuel_type	                        fuel                	Match Semantico (Tipo di carburante) nomi non esattissimi
 engine_cylinders	                cylinders           	Match Semantico (Numero cilindri) uno ha 4 cilind l'altro un testo formale
 body_type	                        type	                Match Semantico (Tipo di carrozzeria) uno casereccio, l'altro formale
+transmission	                    transmission            Match Esatto (Tipo di cambio) i dati devono essere modificati 
+transmission_display                ===                     transmission è solo una lettera, transmission_display nome completo
 wheel_system	                    drive	                Match Semantico (Trazione: 4wd, fwd, rwd).
 wheel_system_display	            === 	                Nome completo
 is_new                              condition               Good, excellent possono essere mappate con questi campi
@@ -33,7 +34,6 @@ city	                            region              	Match Approssimativo (Loca
 ========================================================================================================================
 MATCH INUTILI
 ========================================================================================================================
-listing_id	                        id	                    ID Sorgente (Identificativi interni)
 main_picture_url    	            image_url               Link Immagine
 
 ========================================================================================================================
@@ -42,10 +42,9 @@ NESSUN MATCH
                                     url
                                     region_url
                                     title_status
-salvage
-theft_title
                                     size
-                                    
+salvage
+theft_title                     
 height                                                      grandezze
 length                                                      grandezze
 width
@@ -88,5 +87,5 @@ wheelbase
 ========================================================================================================================
 INUTILIZZATI
 ========================================================================================================================
-                                    county                  
+                                    county                  Inutilizzato        
 engine_type                                                 Ripetizione di engine_cylinders
