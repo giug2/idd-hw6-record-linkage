@@ -9,9 +9,11 @@ def align_datasets(path_craig, path_us):
     # Inizializzazione motore di ricerca ZIP
     search = SearchEngine()
 
-    print("Caricamento dataset in corso...")
+    print("Caricamento dei datasets in corso...")
     # Caricamento dei dataset (low_memory=False per gestire i file grandi)
+    print("Caricamento craig in corso...")
     df_craig = pd.read_csv(path_craig, low_memory=False)
+    print("Caricamento us in corso...")
     df_us = pd.read_csv(path_us, low_memory=False)
 
     # ===============================================
@@ -25,10 +27,13 @@ def align_datasets(path_craig, path_us):
         # Pulizia CAP: prendiamo le prime 5 cifre
         z_clean = str(z).split('.')[0].zfill(5)[:5]
         res = search.by_zipcode(z_clean)
+        
         zip_to_state[z] = res.state.lower() if res and res.state else "unknown"
 
     # Mappatura dello stato nel dataset originale
     df_us['state'] = df_us['dealer_zip'].map(zip_to_state)
+
+    print("Fine recupero stati dai CAP (Zip Codes).")
 
     # Mapping per Craigslist 
     mapping_craig = {
@@ -84,7 +89,7 @@ def align_datasets(path_craig, path_us):
     # Si selezionano solo le colonne desiderate e le rinominiamo
     df_craig_aligned = df_craig[list(mapping_craig.keys())].rename(columns=mapping_craig)
     df_us_aligned = df_us[list(mapping_us.keys())].rename(columns=mapping_us)
-    print(f"Eliminazione colonne superflue. 1/")
+    print(f"Eliminazione colonne superflue. 1/10")
 
     # ===============================================
     # ---- GESTIONE CARBURANTE ----
@@ -99,7 +104,7 @@ def align_datasets(path_craig, path_us):
 
     df_craig_aligned['cylinders'] = df_craig_aligned['cylinders'].apply(clean_cylinders)
     df_us_aligned['cylinders'] = df_us_aligned['cylinders'].apply(clean_cylinders)
-    print(f"Allineamento completato con cilindrate normalizzato. 2/")
+    print(f"Allineamento completato con cilindrate normalizzato. 2/10")
 
     # ===============================================
     # ---- GESTIONE FUEL ----
@@ -119,7 +124,7 @@ def align_datasets(path_craig, path_us):
     
     df_craig_aligned['fuel_type'] = df_craig_aligned['fuel_type'].apply(clean_fuel)
     df_us_aligned['fuel_type'] = df_us_aligned['fuel_type'].apply(clean_fuel)
-    print(f"Allineamento completato con carburante normalizzato. 3/")
+    print(f"Allineamento completato con carburante normalizzato. 3/10")
 
     # ===============================================
     # ---- GESTIONE TIPO DI AUTO ----
@@ -147,7 +152,7 @@ def align_datasets(path_craig, path_us):
 
     df_craig_aligned['body_type'] = df_craig_aligned['body_type'].apply(clean_body)
     df_us_aligned['body_type'] = df_us_aligned['body_type'].apply(clean_body)
-    print(f"Allineamento completato con tipo di auto normalizzato. 4/")
+    print(f"Allineamento completato con tipo di auto normalizzato. 4/10")
 
     # ===============================================
     # ---- GESTIONE TRASMISSIONE ----
@@ -173,7 +178,7 @@ def align_datasets(path_craig, path_us):
     
     # Rimuoviamo la colonna di supporto trans_code
     df_us_aligned = df_us_aligned.drop(columns=['trans_code'])
-    print(f"Allineamento completato con trasmissione normalizzato. 5/")
+    print(f"Allineamento completato con trasmissione normalizzato. 5/10")
 
     # ===============================================
     # ---- GESTIONE TRAZIONE ----
@@ -206,7 +211,7 @@ def align_datasets(path_craig, path_us):
     
     # Rimuoviamo le colonne di supporto
     df_us_aligned = df_us_aligned.drop(columns=['drive_code'])
-    print(f"Allineamento completato con trazione normalizzato. 6/")
+    print(f"Allineamento completato con trazione normalizzato. 6/10")
 
     # ===============================================
     # ---- GESTIONE CONDIZIONI ----
@@ -239,28 +244,33 @@ def align_datasets(path_craig, path_us):
 
     # Rimuoviamo colonne di supporto non più necessarie nello schema mediato
     df_us_aligned = df_us_aligned.drop(columns=['is_new', 'has_accidents'])
-    print(f"Allineamento completato con condizioni normalizzato. 7/")
+    print(f"Allineamento completato con condizioni normalizzato. 7/10")
 
     # Aggiungiamo una colonna per identificare la sorgente
     df_craig_aligned['source'] = 'craigslist'
     df_us_aligned['source'] = 'us_used_cars'
+    print(f"Aggiunta colonna di sorgente. 8/10")
 
     # Rendiamo minuscole le stringhe per facilitare il record linkage futuro
     string_cols = ['brand', 'model', 'color', 'description', 'city_region', 'state']
     for col in string_cols:
         df_craig_aligned[col] = df_craig_aligned[col].astype(str).str.lower().str.strip()
         df_us_aligned[col] = df_us_aligned[col].astype(str).str.lower().str.strip()
+    print(f"Fine allineamento campi di testo. 9/10")
     
     # Pulizia specifica per il VIN
     df_craig_aligned['vin'] = df_craig_aligned['vin'].astype(str).str.upper().str.replace(r'[^A-Z0-9]', '', regex=True).str.strip()
     df_us_aligned['vin'] = df_us_aligned['vin'].astype(str).str.upper().str.replace(r'[^A-Z0-9]', '', regex=True).str.strip()
+    print(f"Fine allineamento VIN. 10/10")
 
     print(f"Allineamento completato: {len(df_craig_aligned)} righe Craigslist, {len(df_us_aligned)} righe US Used Cars.")
     return df_craig_aligned, df_us_aligned
 
 
 # Esecuzione 
-df_craigslist_clean, df_us_cars_clean = align_datasets('vehicles.csv', 'used_cars_data.csv')
+df_craigslist_clean, df_us_cars_clean = align_datasets('dataset/vehicles.csv', 'dataset/used_cars_data.csv')
 # Per ora salviamoli come csv allineati
-df_craigslist_clean.to_csv('craigslist_aligned.csv', index=False)
-df_us_cars_clean.to_csv('us_cars_aligned.csv', index=False)
+df_craigslist_clean.to_csv('dataset/craigslist_aligned.csv', index=False)
+print(f"Salvato dataset craig allineato.")
+df_us_cars_clean.to_csv('dataset/us_cars_aligned.csv', index=False)
+print(f"Salvato dataset us allineato.")
