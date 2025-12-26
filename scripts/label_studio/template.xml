@@ -1,0 +1,23 @@
+<View>
+  <Header value="Confronto Veicoli (VIN: $vin)"/>
+  <View style="display: flex;">
+    <View style="flex: 50%; padding: 10px; border: 1px solid #ccc;">
+      <Header value="CRAIGSLIST"/>
+      <Text name="b_c" value="Marca: $brand_craig"/>
+      <Text name="m_c" value="Modello: $model_craig"/>
+      <Text name="p_c" value="Prezzo: $price_craig"/>
+      <Text name="d_c" value="Descrizione: $description_craig"/>
+    </View>
+    <View style="flex: 50%; padding: 10px; border: 1px solid #ccc; margin-left: 10px;">
+      <Header value="US USED CARS"/>
+      <Text name="b_u" value="Marca: $brand_us"/>
+      <Text name="m_u" value="Modello: $model_us"/>
+      <Text name="p_u" value="Prezzo: $price_us"/>
+      <Text name="d_u" value="Descrizione: $description_us"/>
+    </View>
+  </View>
+  <Choices name="match" toName="d_c" choice="single" showInLine="true">
+    <Choice value="Match" visual="green"/>
+    <Choice value="Non-Match" visual="red"/>
+  </Choices>
+</View>

@@ -1,4 +1,8 @@
 import pandas as pd
+# Dopo il running di questo script bisogna usare Label Studio
+# pip install label-studio
+# Si fa partire con:
+# label-studio
 
 def clean_vin_and_find_matches(path_craig, path_us):
     print("Caricamento dei datasets in corso...")
