@@ -3,6 +3,7 @@ import numpy as np
 import re
 from uszipcode import SearchEngine
 # pip install uszipcode
+# pip install --force-reinstall -v "sqlalchemy-mate==2.0.0.0"
 
 
 def align_datasets(path_craig, path_us):
