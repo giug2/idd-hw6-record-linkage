@@ -12,7 +12,7 @@ def align_datasets(path_craig, path_us):
 
     print("Caricamento dei datasets in corso...")
     # Caricamento dei dataset (low_memory=False per gestire i file grandi)
-    print("Caricamento craig in corso...")
+    print("Caricamento craigs in corso...")
     df_craig = pd.read_csv(path_craig, low_memory=False)
     print("Caricamento us in corso...")
     df_us = pd.read_csv(path_us, low_memory=False)
@@ -38,51 +38,51 @@ def align_datasets(path_craig, path_us):
 
     # Mapping per Craigslist 
     mapping_craig = {
-        'VIN': 'vin',
-        'manufacturer': 'brand',
-        'model': 'model',
-        'year': 'year',
-        'price': 'price',
-        'odometer': 'mileage',
-        'lat': 'latitude',
-        'long': 'longitude',
-        'paint_color': 'color',
-        'posting_date': 'ad_date',
-        'description': 'description',
-        'id': 'source_id',
-        'cylinders': 'cylinders',
-        'type': 'body_type',
-        'transmission': 'transmission',
-        'fuel': 'fuel_type',
-        'condition': 'condition',
-        'drive': 'drive',
+        'VIN': 'vin',                                   # Codice telaio ID universale
+        'manufacturer': 'brand',                        # Casa produttrice
+        'model': 'model',                               # Modello
+        'year': 'year',                                 # Anno
+        'price': 'price',                               # Prezzo
+        'odometer': 'mileage',                          # Kilometraggio
+        'lat': 'latitude',                              # Latitudine città annuncio
+        'long': 'longitude',                            # Longitudine città annuncio
+        'paint_color': 'color',                         # Colore auto
+        'posting_date': 'ad_date',                      # Data dell'annuncio
+        'description': 'description',                   # Descrizione
+        'id': 'source_id',                              # ID del dataset di origine
+        'cylinders': 'cylinders',                       # Cilindrata
+        'type': 'body_type',                            # "Forma" dell'auto
+        'transmission': 'transmission',                 # Tipo di cambio
+        'fuel': 'fuel_type',                            # Tipo alimentazione
+        'condition': 'condition',                       # Condizione dell'auto
+        'drive': 'drive',                               # Tipo di trazione
         'region': 'city_region',                        # Località casereccia
         'state': 'state',                               # Sigla stato (es. 'ca')
     }
 
     # Mapping per US Used Cars 
     mapping_us = {
-        'vin': 'vin',
-        'make_name': 'brand',
-        'model_name': 'model',
-        'year': 'year',
-        'price': 'price',
-        'mileage': 'mileage',
-        'latitude': 'latitude',
-        'longitude': 'longitude',
-        'listing_color': 'color',                       # o exterior_color
-        'listed_date': 'ad_date',
-        'description': 'description',
-        'listing_id': 'source_id',
-        'engine_cylinders': 'cylinders',
-        'body_type': 'body_type',
-        'transmission': 'trans_code',                   # Codice (es. 'A')
-        'transmission_display': 'transmission',         # Nome completo (es. 'Automatic')
-        'fuel_type': 'fuel_type',
+        'vin': 'vin',                                   # Codice telaio ID universale
+        'make_name': 'brand',                           # Casa produttrice 
+        'model_name': 'model',                          # Modello
+        'year': 'year',                                 # Anno
+        'price': 'price',                               # Prezzo
+        'mileage': 'mileage',                           # Kilometraggio
+        'latitude': 'latitude',                         # Latitudine città annuncio
+        'longitude': 'longitude',                       # Longitudine città annuncio
+        'listing_color': 'color',                       # o exterior_color Colore dell'auto
+        'listed_date': 'ad_date',                       # Data di annuncio
+        'description': 'description',                   # Descrizione
+        'listing_id': 'source_id',                      # ID dell'annuncio 
+        'engine_cylinders': 'cylinders',                # Cilindrata
+        'body_type': 'body_type',                       # Tipo di auto
+        'transmission': 'trans_code',                   # Codice marcia
+        'transmission_display': 'transmission',         # Nome completo della marcia
+        'fuel_type': 'fuel_type',                       # Tipo alimentazione
         'is_new': 'is_new',                             # Campi per logica condition
         'has_accidents': 'has_accidents',               # Campi per logica condition
         'wheel_system': 'drive_code',                   # Codice trazione US (es. 'AWD')
-        'wheel_system_display': 'drive',                # Nome completo US (es. 'All-Wheel Drive')
+        'wheel_system_display': 'drive',                # Nome completo della trazione
         'city': 'city_region',                          # Località formale
         'state': 'state'                                # CAP per estrarre lo stato se serve
     }
@@ -217,18 +217,18 @@ def align_datasets(path_craig, path_us):
     # ===============================================
     # ---- GESTIONE CONDIZIONI ----
     def derive_us_condition(row):
-        # 1. Se è nuova
+        # Se è nuova
         if row['is_new'] == True: return 'new'
         
         mileage = pd.to_numeric(row['mileage'], errors='coerce')
         accidents = row['has_accidents']
         
-        # 2. Se ha avuto incidenti, non può essere eccellente
+        # Se ha avuto incidenti, non può essere eccellente
         if accidents == True:
             if mileage < 50000: return 'good'
             return 'fair'
         
-        # 3. Classificazione basata su Kilometraggio (se senza incidenti)
+        # Classificazione basata su Kilometraggio (se senza incidenti)
         if mileage < 15000: return 'excellent'
         if mileage < 60000: return 'good'
         if mileage < 120000: return 'fair'
@@ -236,7 +236,7 @@ def align_datasets(path_craig, path_us):
 
     df_us_aligned['condition'] = df_us_aligned.apply(derive_us_condition, axis=1)
 
-    # 3. Normalizzazione Condition per CRAIGSLIST (Mappatura su scala standard)
+    # Normalizzazione Condition per CRAIGSLIST (Mappatura su scala standard)
     craig_cond_map = {
         'new': 'new', 'like new': 'excellent', 'excellent': 'excellent',
         'good': 'good', 'fair': 'fair', 'salvage': 'poor'

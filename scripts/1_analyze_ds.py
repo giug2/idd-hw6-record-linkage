@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def analyze_and_save(file_path, name, output_file):
     print(f"Inizio analisi di: {name}...")
     
@@ -8,7 +9,6 @@ def analyze_and_save(file_path, name, output_file):
     total_rows = len(df)
     
     # Calcolo statistiche
-    # Nota: Usiamo nomi coerenti qui e nelle righe successive
     analysis = pd.DataFrame({
         'Attributo': df.columns,
         'Nulli_Perc': (df.isnull().sum() / total_rows) * 100,
@@ -16,7 +16,7 @@ def analyze_and_save(file_path, name, output_file):
         'Unici_Perc': (df.nunique() / total_rows) * 100
     })
     
-    # Arrotondamento (assicurati che i nomi qui coincidano con quelli sopra)
+    # Arrotondamento
     analysis['Nulli_Perc'] = analysis['Nulli_Perc'].round(2)
     analysis['Unici_Perc'] = analysis['Unici_Perc'].round(2)
     
@@ -30,5 +30,5 @@ def analyze_and_save(file_path, name, output_file):
     print(f"Analisi di {name} completata.")
 
 # Esecuzione
-analyze_and_save('vehicles.csv', 'CRAIGSLIST', 'analisi_sorgenti.txt')
-analyze_and_save('used_cars_data.csv', 'US_USED_CARS', 'analisi_sorgenti.txt')
+analyze_and_save('dataset/vehicles.csv', 'CRAIGSLIST', 'analisi_sorgenti.txt')
+analyze_and_save('dataset/used_cars_data.csv', 'US_USED_CARS', 'analisi_sorgenti.txt')
