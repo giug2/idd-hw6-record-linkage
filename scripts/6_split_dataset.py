@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import os
 
+
 def split_ground_truth(input_path, output_dir, train_ratio=0.7, val_ratio=0.15, test_ratio=0.15, random_state=42):
     """
     Divide la ground truth in tre dataset: training, validation e test.
@@ -65,7 +66,7 @@ def split_ground_truth(input_path, output_dir, train_ratio=0.7, val_ratio=0.15, 
 if __name__ == "__main__":
     # Percorsi
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    input_path = os.path.join(base_dir, "dataset", "ground_truth_complete.csv")
+    input_path = os.path.join(base_dir, "dataset", "ground_truth_ml.csv")
     output_dir = os.path.join(base_dir, "dataset", "splits")
     
     # Esegui la divisione
