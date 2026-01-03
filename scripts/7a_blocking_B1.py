@@ -40,7 +40,6 @@ def normalize_brand(brand):
         'aston martin': 'aston martin',
         'aston-martin': 'aston martin',
     }
-    
     return brand_mapping.get(brand, brand)
 
 
@@ -147,7 +146,6 @@ def generate_candidate_pairs(blocks_source1, blocks_source2):
         for idx1 in indices_s1:
             for idx2 in indices_s2:
                 candidate_pairs.add((idx1, idx2))
-    
     return candidate_pairs
 
 
