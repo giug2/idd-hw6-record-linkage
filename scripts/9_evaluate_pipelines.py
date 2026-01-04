@@ -1,13 +1,9 @@
 """
 Valutazione delle Pipeline di Record Linkage
 
-Questo script valuta le prestazioni di 6 pipeline:
+Questo script valuta le prestazioni di 2 pipeline:
 - B1-RecordLinkage: Blocking (brand, year) + RecordLinkage
 - B2-RecordLinkage: Blocking (VIN prefix) + RecordLinkage
-- B1-dedupe: Blocking (brand, year) + Dedupe
-- B2-dedupe: Blocking (VIN prefix) + Dedupe
-- B1-ditto: Blocking (brand, year) + Ditto
-- B2-ditto: Blocking (VIN prefix) + Ditto
 
 Metriche calcolate:
 - Precision
@@ -15,40 +11,62 @@ Metriche calcolate:
 - F1-measure
 - Tempo di training
 - Tempo di inferenza
+- Statistiche di blocking (reduction ratio, coppie candidate)
 """
 
 import pandas as pd
 import numpy as np
+import recordlinkage
+from recordlinkage.index import Block
 import time
 import os
 import re
 import warnings
+from datetime import datetime
 warnings.filterwarnings('ignore')
 
-# Paths
+# ============================================================================
+# CONFIGURATION
+# ============================================================================
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'dataset')
 SPLITS_DIR = os.path.join(DATA_DIR, 'splits')
 OUTPUT_DIR = os.path.join(BASE_DIR, 'output')
+
+# Crea directory output se non esiste
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
 
 # ============================================================================
 # UTILITY FUNCTIONS
 # ============================================================================
 
 def load_data():
-    """Carica i dataset."""
+    """Carica i dataset train, validation e test."""
+    print("\n" + "="*60)
+    print("CARICAMENTO DATI")
+    print("="*60)
+    
     train_df = pd.read_csv(os.path.join(SPLITS_DIR, 'train.csv'), low_memory=False)
     val_df = pd.read_csv(os.path.join(SPLITS_DIR, 'validation.csv'), low_memory=False)
     test_df = pd.read_csv(os.path.join(SPLITS_DIR, 'test.csv'), low_memory=False)
-    print(f"Train: {len(train_df)}, Validation: {len(val_df)}, Test: {len(test_df)}")
+    
+    print(f"  Train set:      {len(train_df):,} record")
+    print(f"  Validation set: {len(val_df):,} record")
+    print(f"  Test set:       {len(test_df):,} record")
+    print(f"  Totale:         {len(train_df) + len(val_df) + len(test_df):,} record")
+    
     return train_df, val_df, test_df
 
 
 def normalize_brand(brand):
-    """Normalizza il nome del brand."""
+    """Normalizza il nome del brand per uniformità."""
     if pd.isna(brand) or brand is None:
         return "unknown"
+    
     brand = str(brand).lower().strip()
+    
     brand_mapping = {
         'chevrolet': 'chevrolet', 'chevy': 'chevrolet',
         'mercedes-benz': 'mercedes-benz', 'mercedes': 'mercedes-benz',
@@ -58,29 +76,41 @@ def normalize_brand(brand):
         'rolls-royce': 'rolls-royce', 'rolls royce': 'rolls-royce',
         'aston martin': 'aston martin', 'aston-martin': 'aston martin',
     }
+    
     return brand_mapping.get(brand, brand)
 
 
 def get_vin_prefix(vin, length=8):
-    """Estrae il prefisso VIN."""
+    """Estrae il prefisso VIN (8 caratteri = WMI + VDS parziale)."""
     if pd.isna(vin) or vin is None:
         return None
+    
     vin = str(vin).upper().strip()
     vin = re.sub(r'[^A-Z0-9]', '', vin)
+    
     if len(vin) < length:
         return None
+    
     return vin[:length]
 
 
-def prepare_dataframes(df):
+def prepare_dataframes_for_linkage(df):
     """
-    Prepara due DataFrame separati per le due sorgenti.
-    Ogni riga del dataset originale rappresenta un match vero.
+    Prepara due DataFrame separati per le due sorgenti dal dataset combinato.
+    
+    Il dataset originale ha record già allineati (ogni riga contiene dati
+    da entrambe le sorgenti). Creiamo due DataFrame separati per simulare
+    il task di record linkage.
+    
+    Returns:
+        craig_df: DataFrame con record da Craigslist
+        us_df: DataFrame con record da US Used Cars
+        true_links: MultiIndex con le coppie vere (ground truth)
     """
-    # Craigslist: usa colonne con suffisso _craig
+    # Colonne per Craigslist (suffisso _craig)
     craig_df = pd.DataFrame({
         'source_id': df['source_id_craig'].values,
-        'vin': df['vin'].values,  # VIN è condiviso o è la colonna principale
+        'vin': df['vin'].values,
         'brand': df['brand_craig'].values,
         'model': df['model_craig'].values,
         'year': df['year_craig'].values,
@@ -90,7 +120,7 @@ def prepare_dataframes(df):
     })
     craig_df.index = pd.Index([f'craig_{i}' for i in range(len(craig_df))], name='id')
     
-    # US Used Cars: usa colonne senza suffisso (o con suffisso _us per vin)
+    # Colonne per US Used Cars (senza suffisso o con suffisso _us)
     us_df = pd.DataFrame({
         'source_id': df['source_id_us'].values if 'source_id_us' in df.columns else df['source_id'].values,
         'vin': df['vin_us'].values if 'vin_us' in df.columns else df['vin'].values,
@@ -103,7 +133,7 @@ def prepare_dataframes(df):
     })
     us_df.index = pd.Index([f'us_{i}' for i in range(len(us_df))], name='id')
     
-    # True links: ogni riga i del dataset originale è un match (craig_i, us_i)
+    # Ground truth: ogni riga i del dataset originale è un match (craig_i, us_i)
     true_pairs = [(f'craig_{i}', f'us_{i}') for i in range(len(df))]
     true_links = pd.MultiIndex.from_tuples(true_pairs, names=['id_1', 'id_2'])
     
@@ -111,21 +141,31 @@ def prepare_dataframes(df):
 
 
 def calculate_metrics(predicted_pairs, true_links):
-    """Calcola precision, recall e F1."""
-    if len(predicted_pairs) == 0:
-        return 0.0, 0.0, 0.0
+    """
+    Calcola precision, recall e F1-measure.
     
-    # Converti in set per confronto efficiente
+    Args:
+        predicted_pairs: coppie predette dal modello
+        true_links: coppie vere (ground truth)
+    
+    Returns:
+        precision, recall, f1, true_positives, false_positives, false_negatives
+    """
+    if len(predicted_pairs) == 0:
+        return 0.0, 0.0, 0.0, 0, 0, len(true_links)
+    
     pred_set = set(predicted_pairs)
     true_set = set(true_links)
     
     true_positives = len(pred_set.intersection(true_set))
+    false_positives = len(pred_set - true_set)
+    false_negatives = len(true_set - pred_set)
     
     precision = true_positives / len(pred_set) if len(pred_set) > 0 else 0
     recall = true_positives / len(true_set) if len(true_set) > 0 else 0
     f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
     
-    return precision, recall, f1
+    return precision, recall, f1, true_positives, false_positives, false_negatives
 
 
 # ============================================================================
@@ -133,22 +173,27 @@ def calculate_metrics(predicted_pairs, true_links):
 # ============================================================================
 
 def blocking_B1(craig_df, us_df):
-    """B1: Blocking su (brand normalizzato, year)."""
-    import recordlinkage
+    """
+    Strategia B1: Blocking su (brand normalizzato, year).
     
+    Crea blocchi basati sulla combinazione di brand e anno.
+    """
     c_df = craig_df.copy()
     u_df = us_df.copy()
     
+    # Normalizza brand
     c_df['brand_norm'] = c_df['brand'].apply(normalize_brand)
     u_df['brand_norm'] = u_df['brand'].apply(normalize_brand)
     
-    # Normalizza year come intero (rimuove .0)
+    # Normalizza year come stringa
     c_df['year_str'] = c_df['year'].apply(lambda x: str(int(x)) if pd.notna(x) else 'unknown')
     u_df['year_str'] = u_df['year'].apply(lambda x: str(int(x)) if pd.notna(x) else 'unknown')
     
+    # Crea blocking key combinata
     c_df['block_key'] = c_df['brand_norm'] + '_' + c_df['year_str']
     u_df['block_key'] = u_df['brand_norm'] + '_' + u_df['year_str']
     
+    # Usa recordlinkage Block
     indexer = recordlinkage.Index()
     indexer.block('block_key')
     candidate_pairs = indexer.index(c_df, u_df)
@@ -157,12 +202,15 @@ def blocking_B1(craig_df, us_df):
 
 
 def blocking_B2(craig_df, us_df):
-    """B2: Blocking su VIN prefix (8 caratteri)."""
-    import recordlinkage
+    """
+    Strategia B2: Blocking su VIN prefix (8 caratteri).
     
+    Crea blocchi basati sui primi 8 caratteri del VIN.
+    """
     c_df = craig_df.copy()
     u_df = us_df.copy()
     
+    # Estrai prefisso VIN
     c_df['vin_prefix'] = c_df['vin'].apply(get_vin_prefix)
     u_df['vin_prefix'] = u_df['vin'].apply(get_vin_prefix)
     
@@ -170,6 +218,7 @@ def blocking_B2(craig_df, us_df):
     c_valid = c_df[c_df['vin_prefix'].notna()].copy()
     u_valid = u_df[u_df['vin_prefix'].notna()].copy()
     
+    # Usa recordlinkage Block
     indexer = recordlinkage.Index()
     indexer.block('vin_prefix')
     candidate_pairs = indexer.index(c_valid, u_valid)
@@ -177,426 +226,259 @@ def blocking_B2(craig_df, us_df):
     return candidate_pairs, c_df, u_df
 
 
+def analyze_blocking(candidate_pairs, craig_df, us_df, true_links, name):
+    """Analizza le statistiche della strategia di blocking."""
+    n_candidates = len(candidate_pairs)
+    n_craig = len(craig_df)
+    n_us = len(us_df)
+    n_total_pairs = n_craig * n_us
+    
+    # Reduction ratio
+    reduction_ratio = 1 - (n_candidates / n_total_pairs) if n_total_pairs > 0 else 0
+    
+    # Pairs completeness (quante coppie vere sono nei candidati)
+    true_set = set(true_links)
+    candidates_set = set(candidate_pairs)
+    true_in_candidates = len(true_set.intersection(candidates_set))
+    pairs_completeness = true_in_candidates / len(true_set) if len(true_set) > 0 else 0
+    
+    print(f"\n  Statistiche Blocking {name}:")
+    print(f"    Record Craigslist:     {n_craig:,}")
+    print(f"    Record US Used Cars:   {n_us:,}")
+    print(f"    Coppie totali:         {n_total_pairs:,}")
+    print(f"    Coppie candidate:      {n_candidates:,}")
+    print(f"    Reduction Ratio:       {reduction_ratio:.4f} ({reduction_ratio*100:.2f}%)")
+    print(f"    Coppie vere totali:    {len(true_links):,}")
+    print(f"    Coppie vere in cand.:  {true_in_candidates:,}")
+    print(f"    Pairs Completeness:    {pairs_completeness:.4f} ({pairs_completeness*100:.2f}%)")
+    
+    return {
+        'n_candidates': n_candidates,
+        'n_total_pairs': n_total_pairs,
+        'reduction_ratio': reduction_ratio,
+        'pairs_completeness': pairs_completeness,
+        'true_in_candidates': true_in_candidates
+    }
+
+
 # ============================================================================
-# PIPELINE 1 & 2: RecordLinkage
+# COMPARISON RULES
 # ============================================================================
 
-def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, name):
-    """Esegue la pipeline RecordLinkage."""
-    import recordlinkage
+def create_comparison_rules():
+    """
+    Definisce le regole di comparazione per il record linkage.
     
-    print(f"\n{'='*60}")
-    print(f"Pipeline: {name}")
-    print(f"{'='*60}")
-    
-    # Prepara dati
-    c_train, u_train, true_train = prepare_dataframes(train_df)
-    c_test, u_test, true_test = prepare_dataframes(test_df)
-    
-    # ---- TRAINING ----
-    start_train = time.time()
-    
-    # Blocking su training
-    train_pairs, c_train_blocked, u_train_blocked = blocking_strategy(c_train, u_train)
-    print(f"Candidate pairs (train): {len(train_pairs)}")
-    
-    # Definisci regole di comparazione
+    Regole:
+    - VIN: exact match (identificatore univoco)
+    - Brand: string similarity (Jaro-Winkler)
+    - Model: string similarity (Jaro-Winkler, più permissivo)
+    - Year: exact match
+    - Price: numeric comparison con threshold
+    - Mileage: numeric comparison con threshold
+    - Color: exact match
+    """
     compare = recordlinkage.Compare()
+    
+    # VIN: match esatto (molto importante se disponibile)
     compare.exact('vin', 'vin', label='vin_exact')
+    
+    # Brand: similarità stringa (Jaro-Winkler con soglia alta)
     compare.string('brand', 'brand', method='jarowinkler', threshold=0.85, label='brand_sim')
+    
+    # Model: similarità stringa (più permissivo perché può variare)
     compare.string('model', 'model', method='jarowinkler', threshold=0.75, label='model_sim')
+    
+    # Year: match esatto
     compare.exact('year', 'year', label='year_exact')
+    
+    # Price: confronto numerico (con tolleranza - scala gaussiana)
     compare.numeric('price', 'price', method='gauss', scale=5000, label='price_sim')
+    
+    # Mileage: confronto numerico (con tolleranza)
     compare.numeric('mileage', 'mileage', method='gauss', scale=10000, label='mileage_sim')
+    
+    # Color: match esatto
     compare.exact('color', 'color', label='color_exact')
     
+    return compare
+
+
+# ============================================================================
+# PIPELINE: RecordLinkage
+# ============================================================================
+
+def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, pipeline_name):
+    """
+    Esegue la pipeline di Record Linkage completa.
+    
+    Fasi:
+    1. Preparazione dati
+    2. Blocking
+    3. Calcolo features (comparison)
+    4. Training classificatore
+    5. Predizione su test set
+    6. Calcolo metriche
+    
+    Args:
+        train_df: DataFrame di training
+        test_df: DataFrame di test
+        blocking_strategy: funzione di blocking (blocking_B1 o blocking_B2)
+        pipeline_name: nome della pipeline per logging
+    
+    Returns:
+        dict con risultati e metriche
+    """
+    print(f"\n{'='*70}")
+    print(f"PIPELINE: {pipeline_name}")
+    print(f"{'='*70}")
+    
+    results = {
+        'pipeline': pipeline_name,
+        'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    }
+    
+    # ========== PREPARAZIONE DATI ==========
+    print("\n[1/5] Preparazione dati...")
+    c_train, u_train, true_train = prepare_dataframes_for_linkage(train_df)
+    c_test, u_test, true_test = prepare_dataframes_for_linkage(test_df)
+    
+    results['train_size'] = len(train_df)
+    results['test_size'] = len(test_df)
+    results['true_matches_train'] = len(true_train)
+    results['true_matches_test'] = len(true_test)
+    
+    # ========== BLOCKING - TRAINING ==========
+    print("\n[2/5] Blocking (Training)...")
+    start_blocking_train = time.time()
+    train_pairs, c_train_blocked, u_train_blocked = blocking_strategy(c_train, u_train)
+    blocking_train_time = time.time() - start_blocking_train
+    
+    blocking_stats_train = analyze_blocking(
+        train_pairs, c_train, u_train, true_train, 
+        f"{pipeline_name} - Training"
+    )
+    results['blocking_train_time'] = blocking_train_time
+    results['train_candidates'] = blocking_stats_train['n_candidates']
+    results['train_reduction_ratio'] = blocking_stats_train['reduction_ratio']
+    results['train_pairs_completeness'] = blocking_stats_train['pairs_completeness']
+    
+    # ========== TRAINING ==========
+    print("\n[3/5] Training classificatore...")
+    start_train = time.time()
+    # ========== TRAINING ==========
+    print("\n[3/5] Training classificatore...")
+    start_train = time.time()
+    
+    # Crea regole di comparazione
+    compare = create_comparison_rules()
+    
     # Calcola features di training
+    print("  Calcolo features di training...")
     features_train = compare.compute(train_pairs, c_train_blocked, u_train_blocked)
+    print(f"    Features shape: {features_train.shape}")
     
     # Match index per training (intersezione con true links)
     match_index_train = true_train.intersection(train_pairs)
-    print(f"True matches in candidates (train): {len(match_index_train)}")
+    print(f"    True matches nei candidati: {len(match_index_train):,} / {len(true_train):,}")
     
-    # Debug: mostra statistiche features
-    print(f"Features shape: {features_train.shape}")
-    print(f"Features mean:\n{features_train.mean()}")
+    # Feature statistics
+    print(f"    Feature means:")
+    for col in features_train.columns:
+        print(f"      {col}: {features_train[col].mean():.4f}")
     
-    # Addestra classificatore
+    # Addestra classificatore Logistic Regression
+    print("  Addestramento Logistic Regression...")
     classifier = recordlinkage.LogisticRegressionClassifier()
     classifier.fit(features_train, match_index_train)
     
     training_time = time.time() - start_train
+    results['training_time'] = training_time
+    print(f"  Training completato in {training_time:.2f}s")
     
-    # ---- INFERENCE ----
+    # ========== BLOCKING - TEST ==========
+    print("\n[4/5] Blocking (Test)...")
+    start_blocking_test = time.time()
+    test_pairs, c_test_blocked, u_test_blocked = blocking_strategy(c_test, u_test)
+    blocking_test_time = time.time() - start_blocking_test
+    
+    blocking_stats_test = analyze_blocking(
+        test_pairs, c_test, u_test, true_test,
+        f"{pipeline_name} - Test"
+    )
+    results['blocking_test_time'] = blocking_test_time
+    results['test_candidates'] = blocking_stats_test['n_candidates']
+    results['test_reduction_ratio'] = blocking_stats_test['reduction_ratio']
+    results['test_pairs_completeness'] = blocking_stats_test['pairs_completeness']
+    
+    # ========== INFERENCE ==========
+    print("\n[5/5] Inference e valutazione...")
     start_inference = time.time()
     
-    # Blocking su test
-    test_pairs, c_test_blocked, u_test_blocked = blocking_strategy(c_test, u_test)
-    print(f"Candidate pairs (test): {len(test_pairs)}")
-    
     # Calcola features di test
+    print("  Calcolo features di test...")
     features_test = compare.compute(test_pairs, c_test_blocked, u_test_blocked)
+    print(f"    Features shape: {features_test.shape}")
     
-    # Predici con probabilità per debug
+    # Predici con probabilità
+    print("  Predizione...")
     proba = classifier.prob(features_test)
-    print(f"Prob stats: min={proba.min():.4f}, max={proba.max():.4f}, mean={proba.mean():.4f}")
+    print(f"    Probabilità: min={proba.min():.4f}, max={proba.max():.4f}, mean={proba.mean():.4f}")
     
-    # Usa soglia 0.5 standard
+    # Applica soglia
     threshold = 0.5
     predictions = features_test.index[proba >= threshold]
-    print(f"Predictions with threshold {threshold}: {len(predictions)}")
+    print(f"    Predizioni con soglia {threshold}: {len(predictions):,}")
     
-    # Se troppo poche predizioni, prova soglia più bassa
+    # Se nessuna predizione, prova soglia più bassa
     if len(predictions) == 0:
         threshold = 0.3
         predictions = features_test.index[proba >= threshold]
-        print(f"Predictions with threshold {threshold}: {len(predictions)}")
+        print(f"    Predizioni con soglia {threshold}: {len(predictions):,}")
+        results['threshold_used'] = threshold
+    else:
+        results['threshold_used'] = 0.5
     
     inference_time = time.time() - start_inference
+    results['inference_time'] = inference_time
+    results['total_inference_time'] = blocking_test_time + inference_time
+    print(f"  Inference completato in {inference_time:.2f}s")
     
-    # ---- METRICHE ----
-    precision, recall, f1 = calculate_metrics(predictions, true_test)
+    # ========== METRICHE ==========
+    print("\n  Calcolo metriche...")
+    precision, recall, f1, tp, fp, fn = calculate_metrics(predictions, true_test)
     
-    results = {
-        'pipeline': name,
-        'precision': precision,
-        'recall': recall,
-        'f1': f1,
-        'training_time': training_time,
-        'inference_time': inference_time,
-        'train_candidates': len(train_pairs),
-        'test_candidates': len(test_pairs),
-        'predictions': len(predictions)
-    }
+    results['precision'] = precision
+    results['recall'] = recall
+    results['f1'] = f1
+    results['true_positives'] = tp
+    results['false_positives'] = fp
+    results['false_negatives'] = fn
+    results['predictions'] = len(predictions)
     
-    print(f"\nResults:")
-    print(f"  Precision: {precision:.4f}")
-    print(f"  Recall:    {recall:.4f}")
-    print(f"  F1:        {f1:.4f}")
-    print(f"  Training time:   {training_time:.2f}s")
-    print(f"  Inference time:  {inference_time:.2f}s")
-    
-    return results
-
-
-# ============================================================================
-# PIPELINE 3 & 4: Dedupe Alternative (sklearn-based)
-# ============================================================================
-
-def run_dedupe_pipeline(train_df, test_df, blocking_strategy, name):
-    """
-    Pipeline alternativa a Dedupe usando sklearn.
-    
-    Dedupe richiede Visual C++ Build Tools su Windows.
-    Questa implementazione usa Random Forest come alternativa.
-    """
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.preprocessing import StandardScaler
-    import recordlinkage
-    
-    print(f"\n{'='*60}")
-    print(f"Pipeline: {name}")
-    print(f"{'='*60}")
-    print("(Usando sklearn RandomForest come alternativa a Dedupe)")
-    
-    # Prepara dati
-    c_train, u_train, true_train = prepare_dataframes(train_df)
-    c_test, u_test, true_test = prepare_dataframes(test_df)
-    
-    # ---- TRAINING ----
-    start_train = time.time()
-    
-    # Blocking
-    train_pairs, c_train_blocked, u_train_blocked = blocking_strategy(c_train, u_train)
-    print(f"Candidate pairs (train): {len(train_pairs)}")
-    
-    # Calcola features
-    compare = recordlinkage.Compare()
-    compare.exact('vin', 'vin', label='vin_exact')
-    compare.string('brand', 'brand', method='jarowinkler', threshold=0.85, label='brand_sim')
-    compare.string('model', 'model', method='jarowinkler', threshold=0.75, label='model_sim')
-    compare.exact('year', 'year', label='year_exact')
-    compare.numeric('price', 'price', method='gauss', scale=5000, label='price_sim')
-    compare.numeric('mileage', 'mileage', method='gauss', scale=10000, label='mileage_sim')
-    compare.exact('color', 'color', label='color_exact')
-    
-    features_train = compare.compute(train_pairs, c_train_blocked, u_train_blocked)
-    
-    # Crea labels
-    true_train_set = set(true_train)
-    y_train = np.array([1 if idx in true_train_set else 0 for idx in train_pairs])
-    
-    print(f"True matches in candidates (train): {y_train.sum()}")
-    
-    # Scala features
-    scaler = StandardScaler()
-    X_train = scaler.fit_transform(features_train.fillna(0).values)
-    
-    # Addestra Random Forest
-    clf = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42, n_jobs=-1)
-    clf.fit(X_train, y_train)
-    
-    training_time = time.time() - start_train
-    
-    # ---- INFERENCE ----
-    start_inference = time.time()
-    
-    test_pairs, c_test_blocked, u_test_blocked = blocking_strategy(c_test, u_test)
-    print(f"Candidate pairs (test): {len(test_pairs)}")
-    
-    features_test = compare.compute(test_pairs, c_test_blocked, u_test_blocked)
-    X_test = scaler.transform(features_test.fillna(0).values)
-    
-    # Predici con probabilità
-    proba = clf.predict_proba(X_test)[:, 1]
-    print(f"Prob stats: min={proba.min():.4f}, max={proba.max():.4f}, mean={proba.mean():.4f}")
-    
-    # Soglia ottimale
-    threshold = 0.5
-    predictions = [test_pairs[i] for i, p in enumerate(proba) if p >= threshold]
-    print(f"Predictions with threshold {threshold}: {len(predictions)}")
-    
-    inference_time = time.time() - start_inference
-    
-    # ---- METRICHE ----
-    precision, recall, f1 = calculate_metrics(predictions, true_test)
-    
-    results = {
-        'pipeline': name,
-        'precision': precision,
-        'recall': recall,
-        'f1': f1,
-        'training_time': training_time,
-        'inference_time': inference_time,
-        'train_candidates': len(train_pairs),
-        'test_candidates': len(test_pairs),
-        'predictions': len(predictions)
-    }
-    
-    print(f"\nResults:")
-    print(f"  Precision: {precision:.4f}")
-    print(f"  Recall:    {recall:.4f}")
-    print(f"  F1:        {f1:.4f}")
-    print(f"  Training time:   {training_time:.2f}s")
-    print(f"  Inference time:  {inference_time:.2f}s")
+    # ========== RIEPILOGO ==========
+    print(f"\n{'='*50}")
+    print(f"RISULTATI - {pipeline_name}")
+    print(f"{'='*50}")
+    print(f"  Metriche di Valutazione:")
+    print(f"    Precision:        {precision:.4f} ({precision*100:.2f}%)")
+    print(f"    Recall:           {recall:.4f} ({recall*100:.2f}%)")
+    print(f"    F1-measure:       {f1:.4f} ({f1*100:.2f}%)")
+    print(f"")
+    print(f"  Dettagli Predizioni:")
+    print(f"    True Positives:   {tp:,}")
+    print(f"    False Positives:  {fp:,}")
+    print(f"    False Negatives:  {fn:,}")
+    print(f"    Totale Predetti:  {len(predictions):,}")
+    print(f"")
+    print(f"  Tempi di Esecuzione:")
+    print(f"    Training time:    {training_time:.2f}s")
+    print(f"    Inference time:   {inference_time:.2f}s")
+    print(f"    Blocking (train): {blocking_train_time:.2f}s")
+    print(f"    Blocking (test):  {blocking_test_time:.2f}s")
+    print(f"    Totale:           {training_time + inference_time + blocking_train_time + blocking_test_time:.2f}s")
     
     return results
-
-
-# ============================================================================
-# PIPELINE 5 & 6: Ditto
-# ============================================================================
-
-def serialize_for_ditto(row):
-    """Serializza un record nel formato Ditto: COL col1 VAL val1 COL col2 VAL val2 ..."""
-    parts = []
-    for col in ['brand', 'model', 'year', 'price', 'mileage', 'color', 'vin']:
-        if col in row.index and pd.notna(row[col]):
-            val = str(row[col]).replace('\t', ' ').replace('\n', ' ')[:100]  # Limita lunghezza
-            parts.append(f"COL {col} VAL {val}")
-    return " ".join(parts)
-
-
-def prepare_ditto_data(c_df, u_df, pairs, true_links, output_path):
-    """Prepara i dati nel formato Ditto."""
-    true_set = set(true_links)
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
-        for idx1, idx2 in pairs:
-            if idx1 in c_df.index and idx2 in u_df.index:
-                row1 = c_df.loc[idx1]
-                row2 = u_df.loc[idx2]
-                
-                str1 = serialize_for_ditto(row1)
-                str2 = serialize_for_ditto(row2)
-                
-                label = 1 if (idx1, idx2) in true_set else 0
-                
-                f.write(f"{str1}\t{str2}\t{label}\n")
-
-
-def run_ditto_pipeline(train_df, test_df, blocking_strategy, name):
-    """
-    Prepara i dati per Ditto e (opzionalmente) esegue training/inference.
-    
-    NOTA: Ditto richiede:
-    - GPU con CUDA
-    - PyTorch + Transformers
-    - Modello pre-trained (es. roberta-base)
-    
-    Questo metodo genera i file di dati. Per eseguire effettivamente Ditto,
-    usare il comando:
-    
-    python train_ditto.py --task cars --batch_size 32 --max_len 256 --lr 3e-5 --n_epochs 10
-    """
-    print(f"\n{'='*60}")
-    print(f"Pipeline: {name}")
-    print(f"{'='*60}")
-    
-    # Prepara dati
-    c_train, u_train, true_train = prepare_dataframes(train_df)
-    c_test, u_test, true_test = prepare_dataframes(test_df)
-    
-    # Directory per dati Ditto
-    blocking_name = "B1" if "B1" in name else "B2"
-    ditto_dir = os.path.join(BASE_DIR, 'FAIR-DA4ER', 'ditto', 'data', 'cars', blocking_name)
-    os.makedirs(ditto_dir, exist_ok=True)
-    
-    # ---- GENERAZIONE DATI ----
-    start_prep = time.time()
-    
-    # Blocking
-    train_pairs, _, _ = blocking_strategy(c_train, u_train)
-    test_pairs, _, _ = blocking_strategy(c_test, u_test)
-    
-    # Limita il numero di coppie per training (bilanciato)
-    train_pairs_list = list(train_pairs)
-    true_train_set = set(true_train)
-    
-    # Separa matches e non-matches
-    train_matches = [p for p in train_pairs_list if p in true_train_set]
-    train_non_matches = [p for p in train_pairs_list if p not in true_train_set]
-    
-    # Bilancia: prendi tutti i matches + stesso numero di non-matches
-    n_matches = min(len(train_matches), 2000)  # Limita per CPU
-    n_non_matches = min(len(train_non_matches), n_matches * 2)
-    
-    import random
-    random.shuffle(train_non_matches)
-    balanced_train = train_matches[:n_matches] + train_non_matches[:n_non_matches]
-    random.shuffle(balanced_train)
-    
-    # Genera file
-    train_file = os.path.join(ditto_dir, 'train.txt')
-    valid_file = os.path.join(ditto_dir, 'valid.txt')
-    test_file = os.path.join(ditto_dir, 'test.txt')
-    
-    # Split training in train/valid (80/20)
-    split_idx = int(len(balanced_train) * 0.8)
-    
-    prepare_ditto_data(c_train, u_train, balanced_train[:split_idx], true_train, train_file)
-    prepare_ditto_data(c_train, u_train, balanced_train[split_idx:], true_train, valid_file)
-    prepare_ditto_data(c_test, u_test, list(test_pairs), true_test, test_file)
-    
-    prep_time = time.time() - start_prep
-    
-    print(f"Dati generati in: {ditto_dir}")
-    print(f"  Train: {split_idx} coppie")
-    print(f"  Valid: {len(balanced_train) - split_idx} coppie")
-    print(f"  Test:  {len(test_pairs)} coppie")
-    print(f"  Tempo preparazione: {prep_time:.2f}s")
-    
-    # ---- ESEGUI DITTO-LIKE MODEL SU CPU ----
-    # Invece di usare BERT (troppo lento su CPU), usiamo TF-IDF + MLP
-    try:
-        from sklearn.feature_extraction.text import TfidfVectorizer
-        from sklearn.neural_network import MLPClassifier
-        from sklearn.preprocessing import StandardScaler
-        import scipy.sparse as sp
-        
-        print("\nEsecuzione modello Ditto-like su CPU...")
-        print("(Usando TF-IDF + Neural Network per velocità)")
-        
-        # Leggi dati
-        def read_ditto_file(filepath):
-            texts1, texts2, labels = [], [], []
-            with open(filepath, 'r', encoding='utf-8') as f:
-                for line in f:
-                    parts = line.strip().split('\t')
-                    if len(parts) == 3:
-                        texts1.append(parts[0])
-                        texts2.append(parts[1])
-                        labels.append(int(parts[2]))
-            return texts1, texts2, labels
-        
-        train_t1, train_t2, train_labels = read_ditto_file(train_file)
-        test_t1, test_t2, test_labels = read_ditto_file(test_file)
-        
-        print(f"Train: {len(train_labels)} coppie, Test: {len(test_labels)} coppie")
-        
-        # TF-IDF
-        start_train = time.time()
-        
-        # Combina testi per TF-IDF - limita features per velocità
-        all_texts = train_t1 + train_t2 + test_t1 + test_t2
-        vectorizer = TfidfVectorizer(max_features=500, ngram_range=(1, 1))  # Ridotto
-        vectorizer.fit(all_texts)
-        
-        # Features: concatenazione TF-IDF di entrambi i testi + differenza
-        def create_features(t1_list, t2_list):
-            v1 = vectorizer.transform(t1_list)
-            v2 = vectorizer.transform(t2_list)
-            # Solo differenza assoluta (più compatto)
-            diff = np.abs(v1 - v2)
-            return diff
-        
-        X_train = create_features(train_t1, train_t2)
-        y_train = np.array(train_labels)
-        
-        print(f"Features shape: {X_train.shape}")
-        
-        # Neural Network più semplice
-        clf = MLPClassifier(
-            hidden_layer_sizes=(64,),  # Più semplice
-            activation='relu',
-            max_iter=50,  # Meno iterazioni
-            early_stopping=True,
-            random_state=42,
-            verbose=True
-        )
-        clf.fit(X_train, y_train)
-        
-        training_time = time.time() - start_train
-        print(f"Training completato in {training_time:.2f}s")
-        
-        # Inference
-        start_inf = time.time()
-        X_test = create_features(test_t1, test_t2)
-        y_test = np.array(test_labels)
-        
-        proba = clf.predict_proba(X_test)[:, 1]
-        predictions = (proba >= 0.5).astype(int)
-        
-        inference_time = time.time() - start_inf
-        
-        # Metriche
-        tp = ((predictions == 1) & (y_test == 1)).sum()
-        fp = ((predictions == 1) & (y_test == 0)).sum()
-        fn = ((predictions == 0) & (y_test == 1)).sum()
-        
-        precision = tp / (tp + fp) if (tp + fp) > 0 else 0
-        recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
-        
-        print(f"\nResults:")
-        print(f"  Precision: {precision:.4f}")
-        print(f"  Recall:    {recall:.4f}")
-        print(f"  F1:        {f1:.4f}")
-        print(f"  Training time:   {training_time:.2f}s")
-        print(f"  Inference time:  {inference_time:.2f}s")
-        
-        return {
-            'pipeline': name,
-            'precision': precision,
-            'recall': recall,
-            'f1': f1,
-            'training_time': training_time,
-            'inference_time': inference_time,
-            'data_prep_time': prep_time,
-            'note': 'TF-IDF + MLP (Ditto-like, CPU friendly)'
-        }
-        
-    except Exception as e:
-        print(f"\nErrore durante esecuzione Ditto: {e}")
-        import traceback
-        traceback.print_exc()
-        return {
-            'pipeline': name,
-            'precision': None, 'recall': None, 'f1': None,
-            'training_time': None, 'inference_time': None,
-            'data_prep_time': prep_time,
-            'error': str(e)
-        }
 
 
 # ============================================================================
@@ -604,86 +486,181 @@ def run_ditto_pipeline(train_df, test_df, blocking_strategy, name):
 # ============================================================================
 
 def main():
-    print("="*60)
-    print("VALUTAZIONE PIPELINE DI RECORD LINKAGE")
-    print("="*60)
+    """Funzione principale per la valutazione delle pipeline."""
+    
+    print("\n" + "="*70)
+    print("   VALUTAZIONE PIPELINE DI RECORD LINKAGE")
+    print("   B1-RecordLinkage e B2-RecordLinkage")
+    print("="*70)
+    print(f"   Data: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("="*70)
     
     # Carica dati
     train_df, val_df, test_df = load_data()
     
     # Combina train + validation per training più robusto
     train_full = pd.concat([train_df, val_df], ignore_index=True)
-    print(f"Training set combinato: {len(train_full)} record")
+    print(f"\n  Training set combinato (train+val): {len(train_full):,} record")
     
-    results = []
+    all_results = []
     
-    # Pipeline 1: B1-RecordLinkage
+    # ========== PIPELINE 1: B1-RecordLinkage ==========
     try:
-        res = run_recordlinkage_pipeline(train_full, test_df, blocking_B1, "B1-RecordLinkage")
-        results.append(res)
+        results_b1 = run_recordlinkage_pipeline(
+            train_full, test_df, 
+            blocking_B1, 
+            "B1-RecordLinkage"
+        )
+        all_results.append(results_b1)
     except Exception as e:
-        print(f"Errore B1-RecordLinkage: {e}")
-        results.append({'pipeline': 'B1-RecordLinkage', 'error': str(e)})
+        print(f"\n  ERRORE in B1-RecordLinkage: {e}")
+        import traceback
+        traceback.print_exc()
+        all_results.append({
+            'pipeline': 'B1-RecordLinkage',
+            'error': str(e)
+        })
     
-    # Pipeline 2: B2-RecordLinkage
+    # ========== PIPELINE 2: B2-RecordLinkage ==========
     try:
-        res = run_recordlinkage_pipeline(train_full, test_df, blocking_B2, "B2-RecordLinkage")
-        results.append(res)
+        results_b2 = run_recordlinkage_pipeline(
+            train_full, test_df, 
+            blocking_B2, 
+            "B2-RecordLinkage"
+        )
+        all_results.append(results_b2)
     except Exception as e:
-        print(f"Errore B2-RecordLinkage: {e}")
-        results.append({'pipeline': 'B2-RecordLinkage', 'error': str(e)})
+        print(f"\n  ERRORE in B2-RecordLinkage: {e}")
+        import traceback
+        traceback.print_exc()
+        all_results.append({
+            'pipeline': 'B2-RecordLinkage',
+            'error': str(e)
+        })
     
-    # Pipeline 3: B1-dedupe
-    try:
-        res = run_dedupe_pipeline(train_full, test_df, blocking_B1, "B1-dedupe")
-        results.append(res)
-    except Exception as e:
-        print(f"Errore B1-dedupe: {e}")
-        results.append({'pipeline': 'B1-dedupe', 'error': str(e)})
-    
-    # Pipeline 4: B2-dedupe
-    try:
-        res = run_dedupe_pipeline(train_full, test_df, blocking_B2, "B2-dedupe")
-        results.append(res)
-    except Exception as e:
-        print(f"Errore B2-dedupe: {e}")
-        results.append({'pipeline': 'B2-dedupe', 'error': str(e)})
-    
-    # Pipeline 5: B1-ditto
-    try:
-        res = run_ditto_pipeline(train_full, test_df, blocking_B1, "B1-ditto")
-        results.append(res)
-    except Exception as e:
-        print(f"Errore B1-ditto: {e}")
-        results.append({'pipeline': 'B1-ditto', 'error': str(e)})
-    
-    # Pipeline 6: B2-ditto
-    try:
-        res = run_ditto_pipeline(train_full, test_df, blocking_B2, "B2-ditto")
-        results.append(res)
-    except Exception as e:
-        print(f"Errore B2-ditto: {e}")
-        results.append({'pipeline': 'B2-ditto', 'error': str(e)})
-    
-    # ---- RIEPILOGO ----
+    # ========== RIEPILOGO FINALE ==========
     print("\n" + "="*80)
-    print("RIEPILOGO RISULTATI")
+    print("   RIEPILOGO FINALE - CONFRONTO PIPELINE")
     print("="*80)
     
-    results_df = pd.DataFrame(results)
+    results_df = pd.DataFrame(all_results)
     
-    # Formatta output
-    display_cols = ['pipeline', 'precision', 'recall', 'f1', 'training_time', 'inference_time']
-    available_cols = [c for c in display_cols if c in results_df.columns]
+    # Colonne principali da visualizzare
+    main_cols = [
+        'pipeline', 'precision', 'recall', 'f1', 
+        'training_time', 'inference_time',
+        'train_candidates', 'test_candidates',
+        'predictions', 'true_positives', 'false_positives', 'false_negatives'
+    ]
     
-    print(results_df[available_cols].to_string(index=False))
+    available_cols = [c for c in main_cols if c in results_df.columns]
+    
+    print("\n  Metriche Principali:")
+    print("-"*80)
+    
+    for _, row in results_df.iterrows():
+        if 'error' in row and pd.notna(row.get('error')):
+            print(f"\n  {row['pipeline']}: ERRORE - {row['error']}")
+            continue
+        
+        print(f"\n  {row['pipeline']}:")
+        print(f"    Precision:      {row.get('precision', 0):.4f}")
+        print(f"    Recall:         {row.get('recall', 0):.4f}")
+        print(f"    F1-measure:     {row.get('f1', 0):.4f}")
+        print(f"    Training Time:  {row.get('training_time', 0):.2f}s")
+        print(f"    Inference Time: {row.get('inference_time', 0):.2f}s")
+        print(f"    Candidate Pairs (test): {row.get('test_candidates', 0):,}")
+        print(f"    Predictions:    {row.get('predictions', 0):,}")
+    
+    # Tabella comparativa
+    print("\n" + "-"*80)
+    print("  Tabella Comparativa:")
+    print("-"*80)
+    
+    if len([r for r in all_results if 'error' not in r or pd.isna(r.get('error'))]) > 0:
+        comparison_cols = ['pipeline', 'precision', 'recall', 'f1', 'training_time', 'inference_time']
+        comparison_cols = [c for c in comparison_cols if c in results_df.columns]
+        print(results_df[comparison_cols].to_string(index=False))
     
     # Salva risultati
     output_file = os.path.join(OUTPUT_DIR, 'pipeline_evaluation_results.csv')
     results_df.to_csv(output_file, index=False)
-    print(f"\nRisultati salvati in: {output_file}")
+    print(f"\n  Risultati salvati in: {output_file}")
+    
+    # Genera report markdown
+    generate_markdown_report(all_results)
     
     return results_df
+
+
+def generate_markdown_report(results):
+    """Genera un report in formato Markdown."""
+    
+    report_file = os.path.join(OUTPUT_DIR, 'EVALUATION_RESULTS.md')
+    
+    with open(report_file, 'w', encoding='utf-8') as f:
+        f.write("# Risultati Valutazione Pipeline di Record Linkage\n\n")
+        f.write(f"**Data:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+        
+        f.write("## Sommario\n\n")
+        f.write("Questo documento riporta i risultati della valutazione delle pipeline di Record Linkage:\n\n")
+        f.write("1. **B1-RecordLinkage**: Blocking su (brand, year) + RecordLinkage\n")
+        f.write("2. **B2-RecordLinkage**: Blocking su VIN prefix (8 caratteri) + RecordLinkage\n\n")
+        
+        f.write("## Metriche di Valutazione\n\n")
+        f.write("| Pipeline | Precision | Recall | F1-measure |\n")
+        f.write("|----------|-----------|--------|------------|\n")
+        
+        for r in results:
+            if 'error' in r and pd.notna(r.get('error')):
+                f.write(f"| {r['pipeline']} | ERROR | ERROR | ERROR |\n")
+            else:
+                f.write(f"| {r['pipeline']} | {r.get('precision', 0):.4f} | {r.get('recall', 0):.4f} | {r.get('f1', 0):.4f} |\n")
+        
+        f.write("\n## Tempi di Esecuzione\n\n")
+        f.write("| Pipeline | Training Time (s) | Inference Time (s) |\n")
+        f.write("|----------|-------------------|--------------------|\n")
+        
+        for r in results:
+            if 'error' in r and pd.notna(r.get('error')):
+                f.write(f"| {r['pipeline']} | ERROR | ERROR |\n")
+            else:
+                f.write(f"| {r['pipeline']} | {r.get('training_time', 0):.2f} | {r.get('inference_time', 0):.2f} |\n")
+        
+        f.write("\n## Statistiche Blocking\n\n")
+        f.write("| Pipeline | Candidate Pairs (Test) | Reduction Ratio | Pairs Completeness |\n")
+        f.write("|----------|------------------------|-----------------|--------------------|\n")
+        
+        for r in results:
+            if 'error' in r and pd.notna(r.get('error')):
+                f.write(f"| {r['pipeline']} | ERROR | ERROR | ERROR |\n")
+            else:
+                f.write(f"| {r['pipeline']} | {r.get('test_candidates', 0):,} | {r.get('test_reduction_ratio', 0):.4f} | {r.get('test_pairs_completeness', 0):.4f} |\n")
+        
+        f.write("\n## Dettagli Predizioni\n\n")
+        f.write("| Pipeline | True Positives | False Positives | False Negatives | Total Predictions |\n")
+        f.write("|----------|----------------|-----------------|-----------------|-------------------|\n")
+        
+        for r in results:
+            if 'error' in r and pd.notna(r.get('error')):
+                f.write(f"| {r['pipeline']} | ERROR | ERROR | ERROR | ERROR |\n")
+            else:
+                f.write(f"| {r['pipeline']} | {r.get('true_positives', 0):,} | {r.get('false_positives', 0):,} | {r.get('false_negatives', 0):,} | {r.get('predictions', 0):,} |\n")
+        
+        f.write("\n## Conclusioni\n\n")
+        
+        # Trova la pipeline migliore
+        valid_results = [r for r in results if 'error' not in r or pd.isna(r.get('error'))]
+        if valid_results:
+            best_f1 = max(valid_results, key=lambda x: x.get('f1', 0))
+            best_precision = max(valid_results, key=lambda x: x.get('precision', 0))
+            best_recall = max(valid_results, key=lambda x: x.get('recall', 0))
+            
+            f.write(f"- **Miglior F1-measure**: {best_f1['pipeline']} ({best_f1.get('f1', 0):.4f})\n")
+            f.write(f"- **Miglior Precision**: {best_precision['pipeline']} ({best_precision.get('precision', 0):.4f})\n")
+            f.write(f"- **Miglior Recall**: {best_recall['pipeline']} ({best_recall.get('recall', 0):.4f})\n")
+    
+    print(f"  Report Markdown salvato in: {report_file}")
 
 
 if __name__ == "__main__":
