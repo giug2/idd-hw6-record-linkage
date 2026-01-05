@@ -15,6 +15,14 @@ L'obiettivo è identificare le stesse auto presenti in entrambi i dataset senza 
 - Blind Training: Rimozione degli attributi VIN per testare la capacità dei modelli di riconoscere i match tramite caratteristiche tecniche e testuali.
 - Approccio Comparativo: Confronto tra Machine Learning probabilistico (Dedupe) e Deep Learning basato su Transformer (Ditto).
 
+## 🛠️ Tecnologie
+Il progetto è sviluppato con:
+- Python
+- Label Studio
+- Py Record Linkage
+- Dedupe
+- Ditto 
+
 ## 🧺 Strategia di Blocking 
 Per gestire la scalabilità su 3 milioni di record, sono stati adottati le seguenti strategie di Blocking:
 - Blocco 1: 
@@ -34,7 +42,3 @@ Vengono testate diverse pipeline:
 [Pentimalli Gabriel](https://github.com/GabrielPentimalli)  
 [Peroni Alessandro](https://github.com/smixale)  
 [Tony Troy](https://github.com/troylion56)
-
-PyTorch & Transformers (per Ditto)
-
-Progetto realizzato per l'esame di Data Integration / Record Linkage.
