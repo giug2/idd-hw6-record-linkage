@@ -1,9 +1,12 @@
 """
 Valutazione delle Pipeline di Record Linkage
 
-Questo script valuta le prestazioni di 2 pipeline:
-- B1-RecordLinkage: Blocking (brand, year) + RecordLinkage
-- B2-RecordLinkage: Blocking (VIN prefix) + RecordLinkage
+Questo script valuta le prestazioni di 3 pipeline con diversi set di campi:
+- P1_textual_core: brand, model, body_type, description, price, mileage
+- P2_plus_location: P1 + transmission, fuel_type, drive, city_region, state, year
+- P3_minimal_fast: brand, model, year
+
+Tutte usano blocking B1 (brand + year).
 
 Metriche calcolate:
 - Precision
@@ -29,7 +32,8 @@ warnings.filterwarnings('ignore')
 # CONFIGURATION
 # ============================================================================
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Lo script è in scripts/record_linkage/, quindi risaliamo di 2 livelli
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA_DIR = os.path.join(BASE_DIR, 'dataset')
 SPLITS_DIR = os.path.join(DATA_DIR, 'splits')
 OUTPUT_DIR = os.path.join(BASE_DIR, 'output')
@@ -107,29 +111,47 @@ def prepare_dataframes_for_linkage(df):
         us_df: DataFrame con record da US Used Cars
         true_links: MultiIndex con le coppie vere (ground truth)
     """
+    # Helper per estrarre colonne in modo sicuro
+    def safe_get(col_name, default=None):
+        return df[col_name].values if col_name in df.columns else default
+    
     # Colonne per Craigslist (suffisso _craig)
     craig_df = pd.DataFrame({
-        'source_id': df['source_id_craig'].values,
-        'vin': df['vin'].values,
-        'brand': df['brand_craig'].values,
-        'model': df['model_craig'].values,
-        'year': df['year_craig'].values,
-        'price': df['price_craig'].values,
-        'mileage': df['mileage_craig'].values,
-        'color': df['color_craig'].values if 'color_craig' in df.columns else None,
+        'source_id': safe_get('source_id_craig'),
+        'vin': safe_get('vin'),
+        'brand': safe_get('brand_craig'),
+        'model': safe_get('model_craig'),
+        'year': safe_get('year_craig'),
+        'price': safe_get('price_craig'),
+        'mileage': safe_get('mileage_craig'),
+        'color': safe_get('color_craig'),
+        'body_type': safe_get('body_type_craig'),
+        'description': safe_get('description_craig'),
+        'transmission': safe_get('transmission_craig'),
+        'fuel_type': safe_get('fuel_type_craig'),
+        'drive': safe_get('drive_craig'),
+        'city_region': safe_get('city_region_craig'),
+        'state': safe_get('state_craig'),
     })
     craig_df.index = pd.Index([f'craig_{i}' for i in range(len(craig_df))], name='id')
     
-    # Colonne per US Used Cars (senza suffisso o con suffisso _us)
+    # Colonne per US Used Cars (senza suffisso o colonne specifiche)
     us_df = pd.DataFrame({
-        'source_id': df['source_id_us'].values if 'source_id_us' in df.columns else df['source_id'].values,
-        'vin': df['vin_us'].values if 'vin_us' in df.columns else df['vin'].values,
-        'brand': df['brand'].values,
-        'model': df['model'].values,
-        'year': df['year'].values,
-        'price': df['price'].values,
-        'mileage': df['mileage'].values,
-        'color': df['color'].values if 'color' in df.columns else None,
+        'source_id': safe_get('source_id_us', safe_get('source_id')),
+        'vin': safe_get('vin_us', safe_get('vin')),
+        'brand': safe_get('brand'),
+        'model': safe_get('model'),
+        'year': safe_get('year'),
+        'price': safe_get('price'),
+        'mileage': safe_get('mileage'),
+        'color': safe_get('color'),
+        'body_type': safe_get('body_type'),
+        'description': safe_get('description'),
+        'transmission': safe_get('transmission'),
+        'fuel_type': safe_get('fuel_type'),
+        'drive': safe_get('drive'),
+        'city_region': safe_get('city_region'),
+        'state': safe_get('state'),
     })
     us_df.index = pd.Index([f'us_{i}' for i in range(len(us_df))], name='id')
     
@@ -262,53 +284,127 @@ def analyze_blocking(candidate_pairs, craig_df, us_df, true_links, name):
 
 
 # ============================================================================
-# COMPARISON RULES
+# COMPARISON RULES - 3 CONFIGURAZIONI
 # ============================================================================
 
-def create_comparison_rules():
+def create_comparison_P1_textual_core():
     """
-    Definisce le regole di comparazione per il record linkage.
+    P1_textual_core: brand, model, body_type, description, price, mileage
     
-    Regole:
-    - VIN: exact match (identificatore univoco)
-    - Brand: string similarity (Jaro-Winkler)
-    - Model: string similarity (Jaro-Winkler, più permissivo)
-    - Year: exact match
-    - Price: numeric comparison con threshold
-    - Mileage: numeric comparison con threshold
-    - Color: exact match
+    Configurazione focalizzata sui campi testuali core e attributi numerici principali.
     """
     compare = recordlinkage.Compare()
     
-    # VIN: match esatto (molto importante se disponibile)
-    compare.exact('vin', 'vin', label='vin_exact')
-    
-    # Brand: similarità stringa (Jaro-Winkler con soglia alta)
+    # Brand: similarità stringa (Jaro-Winkler)
     compare.string('brand', 'brand', method='jarowinkler', threshold=0.85, label='brand_sim')
     
-    # Model: similarità stringa (più permissivo perché può variare)
+    # Model: similarità stringa
     compare.string('model', 'model', method='jarowinkler', threshold=0.75, label='model_sim')
+    
+    # Body type: similarità stringa
+    compare.string('body_type', 'body_type', method='jarowinkler', threshold=0.8, label='body_type_sim')
+    
+    # Description: usando Jaro (più veloce di Levenshtein per testi lunghi)
+    compare.string('description', 'description', method='jaro', threshold=0.6, label='description_sim')
+    
+    # Price: confronto numerico (scala gaussiana)
+    compare.numeric('price', 'price', method='gauss', scale=5000, label='price_sim')
+    
+    # Mileage: confronto numerico
+    compare.numeric('mileage', 'mileage', method='gauss', scale=10000, label='mileage_sim')
+    
+    return compare
+
+
+def create_comparison_P2_plus_location():
+    """
+    P2_plus_location: P1 + transmission, fuel_type, drive, city_region, state, year
+    
+    Configurazione estesa con attributi di location e caratteristiche tecniche.
+    """
+    compare = recordlinkage.Compare()
+    
+    # === Campi da P1 ===
+    # Brand: similarità stringa (Jaro-Winkler)
+    compare.string('brand', 'brand', method='jarowinkler', threshold=0.85, label='brand_sim')
+    
+    # Model: similarità stringa
+    compare.string('model', 'model', method='jarowinkler', threshold=0.75, label='model_sim')
+    
+    # Body type: similarità stringa
+    compare.string('body_type', 'body_type', method='jarowinkler', threshold=0.8, label='body_type_sim')
+    
+    # Description: usando Jaro (più veloce)
+    compare.string('description', 'description', method='jaro', threshold=0.6, label='description_sim')
+    
+    # Price: confronto numerico
+    compare.numeric('price', 'price', method='gauss', scale=5000, label='price_sim')
+    
+    # Mileage: confronto numerico
+    compare.numeric('mileage', 'mileage', method='gauss', scale=10000, label='mileage_sim')
+    
+    # === Campi aggiuntivi ===
+    # Transmission: match esatto
+    compare.exact('transmission', 'transmission', label='transmission_exact')
+    
+    # Fuel type: match esatto
+    compare.exact('fuel_type', 'fuel_type', label='fuel_type_exact')
+    
+    # Drive: match esatto
+    compare.exact('drive', 'drive', label='drive_exact')
+    
+    # City/Region: similarità stringa
+    compare.string('city_region', 'city_region', method='jarowinkler', threshold=0.8, label='city_region_sim')
+    
+    # State: match esatto
+    compare.exact('state', 'state', label='state_exact')
     
     # Year: match esatto
     compare.exact('year', 'year', label='year_exact')
     
-    # Price: confronto numerico (con tolleranza - scala gaussiana)
+    return compare
+
+
+def create_comparison_P3_minimal_fast():
+    """
+    P3_minimal_fast: brand, model, year, price, mileage
+    
+    Configurazione minimale e veloce con campi essenziali.
+    Aggiunto price e mileage per dare più discriminazione al classificatore.
+    """
+    compare = recordlinkage.Compare()
+    
+    # Brand: similarità stringa (Jaro-Winkler)
+    compare.string('brand', 'brand', method='jarowinkler', threshold=0.85, label='brand_sim')
+    
+    # Model: similarità stringa
+    compare.string('model', 'model', method='jarowinkler', threshold=0.75, label='model_sim')
+    
+    # Year: confronto numerico (non exact, per avere un valore continuo)
+    compare.numeric('year', 'year', method='gauss', scale=1, label='year_sim')
+    
+    # Price: confronto numerico (aggiunto per discriminazione)
     compare.numeric('price', 'price', method='gauss', scale=5000, label='price_sim')
     
-    # Mileage: confronto numerico (con tolleranza)
+    # Mileage: confronto numerico (aggiunto per discriminazione)
     compare.numeric('mileage', 'mileage', method='gauss', scale=10000, label='mileage_sim')
     
-    # Color: match esatto
-    compare.exact('color', 'color', label='color_exact')
-    
     return compare
+
+
+# Dizionario delle configurazioni disponibili
+COMPARISON_CONFIGS = {
+    'P1_textual_core': create_comparison_P1_textual_core,
+    'P2_plus_location': create_comparison_P2_plus_location,
+    'P3_minimal_fast': create_comparison_P3_minimal_fast,
+}
 
 
 # ============================================================================
 # PIPELINE: RecordLinkage
 # ============================================================================
 
-def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, pipeline_name):
+def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, comparison_config, pipeline_name):
     """
     Esegue la pipeline di Record Linkage completa.
     
@@ -324,6 +420,7 @@ def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, pipeline_na
         train_df: DataFrame di training
         test_df: DataFrame di test
         blocking_strategy: funzione di blocking (blocking_B1 o blocking_B2)
+        comparison_config: nome della configurazione di confronto (P1, P2, P3)
         pipeline_name: nome della pipeline per logging
     
     Returns:
@@ -366,12 +463,13 @@ def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, pipeline_na
     # ========== TRAINING ==========
     print("\n[3/5] Training classificatore...")
     start_train = time.time()
-    # ========== TRAINING ==========
-    print("\n[3/5] Training classificatore...")
-    start_train = time.time()
     
-    # Crea regole di comparazione
-    compare = create_comparison_rules()
+    # Crea regole di comparazione in base alla configurazione
+    compare_func = COMPARISON_CONFIGS.get(comparison_config)
+    if compare_func is None:
+        raise ValueError(f"Configurazione di confronto '{comparison_config}' non trovata")
+    compare = compare_func()
+    print(f"  Configurazione: {comparison_config}")
     
     # Calcola features di training
     print("  Calcolo features di training...")
@@ -490,7 +588,7 @@ def main():
     
     print("\n" + "="*70)
     print("   VALUTAZIONE PIPELINE DI RECORD LINKAGE")
-    print("   B1-RecordLinkage e B2-RecordLinkage")
+    print("   P1_textual_core, P2_plus_location, P3_minimal_fast")
     print("="*70)
     print(f"   Data: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("="*70)
@@ -504,39 +602,30 @@ def main():
     
     all_results = []
     
-    # ========== PIPELINE 1: B1-RecordLinkage ==========
-    try:
-        results_b1 = run_recordlinkage_pipeline(
-            train_full, test_df, 
-            blocking_B1, 
-            "B1-RecordLinkage"
-        )
-        all_results.append(results_b1)
-    except Exception as e:
-        print(f"\n  ERRORE in B1-RecordLinkage: {e}")
-        import traceback
-        traceback.print_exc()
-        all_results.append({
-            'pipeline': 'B1-RecordLinkage',
-            'error': str(e)
-        })
+    # Definizione delle 3 pipeline
+    pipelines = [
+        ('P1_textual_core', 'P1_textual_core', blocking_B1),
+        ('P2_plus_location', 'P2_plus_location', blocking_B1),
+        ('P3_minimal_fast', 'P3_minimal_fast', blocking_B1),
+    ]
     
-    # ========== PIPELINE 2: B2-RecordLinkage ==========
-    try:
-        results_b2 = run_recordlinkage_pipeline(
-            train_full, test_df, 
-            blocking_B2, 
-            "B2-RecordLinkage"
-        )
-        all_results.append(results_b2)
-    except Exception as e:
-        print(f"\n  ERRORE in B2-RecordLinkage: {e}")
-        import traceback
-        traceback.print_exc()
-        all_results.append({
-            'pipeline': 'B2-RecordLinkage',
-            'error': str(e)
-        })
+    for pipeline_name, comparison_config, blocking_strategy in pipelines:
+        try:
+            results = run_recordlinkage_pipeline(
+                train_full, test_df, 
+                blocking_strategy,
+                comparison_config,
+                pipeline_name
+            )
+            all_results.append(results)
+        except Exception as e:
+            print(f"\n  ERRORE in {pipeline_name}: {e}")
+            import traceback
+            traceback.print_exc()
+            all_results.append({
+                'pipeline': pipeline_name,
+                'error': str(e)
+            })
     
     # ========== RIEPILOGO FINALE ==========
     print("\n" + "="*80)
@@ -604,8 +693,10 @@ def generate_markdown_report(results):
         
         f.write("## Sommario\n\n")
         f.write("Questo documento riporta i risultati della valutazione delle pipeline di Record Linkage:\n\n")
-        f.write("1. **B1-RecordLinkage**: Blocking su (brand, year) + RecordLinkage\n")
-        f.write("2. **B2-RecordLinkage**: Blocking su VIN prefix (8 caratteri) + RecordLinkage\n\n")
+        f.write("1. **P1_textual_core**: brand, model, body_type, description, price, mileage\n")
+        f.write("2. **P2_plus_location**: P1 + transmission, fuel_type, drive, city_region, state, year\n")
+        f.write("3. **P3_minimal_fast**: brand, model, year\n\n")
+        f.write("Tutte usano blocking B1 (brand + year).\n\n")
         
         f.write("## Metriche di Valutazione\n\n")
         f.write("| Pipeline | Precision | Recall | F1-measure |\n")
