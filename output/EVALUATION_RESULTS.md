@@ -1,6 +1,6 @@
 # Risultati Valutazione Pipeline di Record Linkage
 
-**Data:** 2026-01-04 19:45:41
+**Data:** 2026-01-05 21:57:00
 
 ## Sommario
 
@@ -24,9 +24,9 @@ Tutte usano blocking B1 (brand + year).
 
 | Pipeline | Training Time (s) | Inference Time (s) |
 |----------|-------------------|--------------------|
-| P1_textual_core | 347.39 | 11.57 |
-| P2_plus_location | 340.56 | 12.45 |
-| P3_minimal_fast | 0.24 | 0.03 |
+| P1_textual_core | 148.76 | 5.14 |
+| P2_plus_location | 147.75 | 5.12 |
+| P3_minimal_fast | 0.07 | 0.01 |
 
 ## Statistiche Blocking
 

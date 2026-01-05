@@ -1,16 +1,15 @@
 """
-Strategia di Blocking B2: Blocking su VIN prefix (8 caratteri)
+Strategia di Blocking B2: Blocking su Brand + Model Prefix (3 caratteri)
 
-Il VIN (Vehicle Identification Number) ha 17 caratteri:
-- Posizioni 1-3: WMI (World Manufacturer Identifier) - identifica il produttore
-- Posizioni 4-8: VDS (Vehicle Descriptor Section) - descrive il veicolo
-- Posizioni 9-17: VIS (Vehicle Identifier Section) - identificativo univoco
+Questa strategia combina:
+- Brand: marca del veicolo (normalizzata)
+- Model Prefix: primi 3 caratteri del modello (normalizzati)
 
-Usiamo i primi 8 caratteri (WMI + parte del VDS) per creare blocchi di veicoli simili.
-Questa strategia è più precisa perché:
-- Il VIN è un identificatore univoco
-- I primi 8 caratteri identificano produttore + tipo veicolo
-- Riduce significativamente i falsi positivi
+Vantaggi:
+- Più specifico di brand+year ma tollerante a variazioni nel nome modello
+- Indipendente dall'anno (complementare a B1)
+- Cattura veicoli dello stesso tipo anche se l'anno varia
+- Es: "ford_mus" cattura Mustang 2018, 2019, 2020...
 """
 
 import pandas as pd
@@ -20,40 +19,77 @@ import os
 import re
 
 
-def get_vin_prefix(vin, length=8):
+def normalize_string(s):
     """
-    Estrae il prefisso del VIN per il blocking.
+    Normalizza una stringa per il blocking.
     
     Args:
-        vin: Vehicle Identification Number
-        length: lunghezza del prefisso (default 8 = WMI + VDS parziale)
+        s: stringa da normalizzare
     
     Returns:
-        Prefisso VIN normalizzato o None se invalido
+        Stringa normalizzata (lowercase, solo alfanumerici) o None se invalida
     """
-    if pd.isna(vin) or vin is None:
+    if pd.isna(s) or s is None:
         return None
     
-    vin = str(vin).upper().strip()
-    
+    s = str(s).lower().strip()
     # Rimuovi caratteri non alfanumerici
-    vin = re.sub(r'[^A-Z0-9]', '', vin)
+    s = re.sub(r'[^a-z0-9]', '', s)
     
-    # Il VIN deve avere almeno 8 caratteri per essere utile
-    if len(vin) < length:
+    if len(s) == 0:
         return None
     
-    return vin[:length]
+    return s
 
 
-def blocking_B2(df, vin_col='vin', prefix_length=8):
+def get_model_prefix(model, length=2):
     """
-    Strategia B2: Blocking su VIN prefix.
+    Estrae il prefisso del modello per il blocking.
+    
+    Args:
+        model: nome del modello
+        length: lunghezza del prefisso (default 2)
+    
+    Returns:
+        Prefisso normalizzato o None se invalido
+    """
+    normalized = normalize_string(model)
+    
+    if normalized is None or len(normalized) < length:
+        # Se il modello è troppo corto, usa tutto il modello
+        return normalized
+    
+    return normalized[:length]
+
+
+def create_blocking_key_B2(brand, model):
+    """
+    Crea la chiave di blocking B2: brand + model_prefix
+    
+    Args:
+        brand: marca del veicolo
+        model: modello del veicolo
+    
+    Returns:
+        Chiave di blocking o None se non valida
+    """
+    brand_norm = normalize_string(brand)
+    model_prefix = get_model_prefix(model)
+    
+    if brand_norm is None or model_prefix is None:
+        return None
+    
+    return f"{brand_norm}_{model_prefix}"
+
+
+def blocking_B2(df, brand_col='brand', model_col='model'):
+    """
+    Strategia B2: Blocking su Brand + Model Prefix.
     
     Args:
         df: DataFrame con i record
-        vin_col: nome della colonna del VIN
-        prefix_length: lunghezza del prefisso VIN (default 8)
+        brand_col: nome della colonna del brand
+        model_col: nome della colonna del modello
     
     Returns:
         dict: dizionario {blocking_key: [lista di indici]}
@@ -61,10 +97,13 @@ def blocking_B2(df, vin_col='vin', prefix_length=8):
     blocks = defaultdict(list)
     
     for idx, row in df.iterrows():
-        vin_prefix = get_vin_prefix(row.get(vin_col), prefix_length)
+        brand = row.get(brand_col)
+        model = row.get(model_col)
         
-        if vin_prefix:
-            blocks[vin_prefix].append(idx)
+        blocking_key = create_blocking_key_B2(brand, model)
+        
+        if blocking_key:
+            blocks[blocking_key].append(idx)
     
     return dict(blocks)
 
@@ -95,6 +134,12 @@ def analyze_blocking(blocks, name=""):
     print(f"  Blocchi con 6-10 record:  {sum(1 for s in block_sizes if 6 <= s <= 10)}")
     print(f"  Blocchi con 11-50 record: {sum(1 for s in block_sizes if 11 <= s <= 50)}")
     print(f"  Blocchi con 50+ record:   {sum(1 for s in block_sizes if s > 50)}")
+    
+    # Top 10 blocchi più grandi
+    print(f"\nTop 10 blocchi più grandi:")
+    sorted_blocks = sorted(blocks.items(), key=lambda x: len(x[1]), reverse=True)[:10]
+    for key, indices in sorted_blocks:
+        print(f"  {key}: {len(indices)} record")
     
     # Calcolo del Reduction Ratio (RR)
     candidate_pairs = sum(s * (s - 1) // 2 for s in block_sizes)
@@ -139,25 +184,29 @@ def main():
     """Funzione principale per la strategia B2."""
     
     # Percorsi
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     train_path = os.path.join(base_dir, "dataset", "splits", "train.csv")
     
     print("="*60)
-    print("STRATEGIA B2: Blocking su VIN prefix (8 caratteri)")
+    print("STRATEGIA B2: Blocking su Brand + Model Prefix (2 char)")
     print("="*60)
     
     print("\nCaricamento dataset di training...")
     df = pd.read_csv(train_path, low_memory=False)
     print(f"Record caricati: {len(df)}")
     
+    # Mostra statistiche model
+    print(f"\nEsempi di model_craig:")
+    print(df['model_craig'].value_counts().head(10))
+    
     # Applica blocking B2 per entrambe le sorgenti
     print("\nApplicazione blocking B2...")
-    blocks_craig = blocking_B2(df, vin_col='vin', prefix_length=8)
-    blocks_us = blocking_B2(df, vin_col='vin_us', prefix_length=8)
+    blocks_craig = blocking_B2(df, brand_col='brand_craig', model_col='model_craig')
+    blocks_us = blocking_B2(df, brand_col='brand', model_col='model')
     
     # Analisi
-    analyze_blocking(blocks_craig, "Craigslist (VIN prefix)")
-    analyze_blocking(blocks_us, "US Used Cars (VIN prefix)")
+    analyze_blocking(blocks_craig, "Craigslist (brand + model[:3])")
+    analyze_blocking(blocks_us, "US Used Cars (brand + model[:3])")
     
     # Genera coppie candidate
     candidate_pairs = generate_candidate_pairs(blocks_craig, blocks_us)
@@ -169,6 +218,20 @@ def main():
     print(f"Blocchi US Used Cars: {len(blocks_us)}")
     print(f"Chiavi in comune: {len(set(blocks_craig.keys()) & set(blocks_us.keys()))}")
     print(f"Coppie candidate generate: {len(candidate_pairs)}")
+    
+    # Calcola pairs completeness (se abbiamo ground truth)
+    # Ogni riga del dataset è un match vero (craig_i, us_i corrisponde a riga i)
+    true_pairs = set(range(len(df)))
+    found_pairs = set()
+    
+    for idx1, idx2 in candidate_pairs:
+        if idx1 == idx2:  # Stessa riga = match vero
+            found_pairs.add(idx1)
+    
+    pairs_completeness = len(found_pairs) / len(true_pairs) if true_pairs else 0
+    print(f"\nPairs Completeness: {pairs_completeness:.4f} ({pairs_completeness*100:.2f}%)")
+    print(f"  Match veri trovati: {len(found_pairs)}")
+    print(f"  Match veri totali: {len(true_pairs)}")
     
     return blocks_craig, blocks_us, candidate_pairs
 

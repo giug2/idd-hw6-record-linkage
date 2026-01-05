@@ -119,13 +119,23 @@ def create_blocking_B1(craig_df, us_df):
     craig_df['brand_norm'] = craig_df['brand'].apply(normalize_brand)
     us_df['brand_norm'] = us_df['brand'].apply(normalize_brand)
     
-    # Converti year in string per blocking
-    craig_df['year_str'] = craig_df['year'].astype(str)
-    us_df['year_str'] = us_df['year'].astype(str)
+    # Converti year in string per blocking (gestisce NaN)
+    craig_df['year_str'] = craig_df['year'].apply(
+        lambda x: str(int(x)) if pd.notna(x) else 'unknown'
+    )
+    us_df['year_str'] = us_df['year'].apply(
+        lambda x: str(int(x)) if pd.notna(x) else 'unknown'
+    )
     
     # Crea blocking key combinata
     craig_df['block_key'] = craig_df['brand_norm'] + '_' + craig_df['year_str']
     us_df['block_key'] = us_df['brand_norm'] + '_' + us_df['year_str']
+    
+    # Debug: stampa alcune chiavi
+    print(f"  Esempio chiavi Craig: {craig_df['block_key'].head(3).tolist()}")
+    print(f"  Esempio chiavi US: {us_df['block_key'].head(3).tolist()}")
+    print(f"  Chiavi uniche Craig: {craig_df['block_key'].nunique()}")
+    print(f"  Chiavi uniche US: {us_df['block_key'].nunique()}")
     
     # Usa recordlinkage Block
     indexer = recordlinkage.Index()
@@ -138,30 +148,52 @@ def create_blocking_B1(craig_df, us_df):
 
 def create_blocking_B2(craig_df, us_df):
     """
-    Strategia B2: Blocking su VIN prefix (8 caratteri).
+    Strategia B2: Blocking su Brand + Model Prefix (2 caratteri).
+    
+    Più specifico di B1 ma tollerante a variazioni nel nome modello.
     """
     craig_df = craig_df.copy()
     us_df = us_df.copy()
     
-    def get_vin_prefix(vin, length=8):
-        if pd.isna(vin) or vin is None:
-            return None
-        vin = str(vin).upper().strip()
-        import re
-        vin = re.sub(r'[^A-Z0-9]', '', vin)
-        if len(vin) < length:
-            return None
-        return vin[:length]
+    import re
     
-    craig_df['vin_prefix'] = craig_df['vin'].apply(get_vin_prefix)
-    us_df['vin_prefix'] = us_df['vin'].apply(get_vin_prefix)
+    def normalize_string(s):
+        """Normalizza stringa: lowercase, solo alfanumerici."""
+        if pd.isna(s) or s is None:
+            return None
+        s = str(s).lower().strip()
+        s = re.sub(r'[^a-z0-9]', '', s)
+        return s if len(s) > 0 else None
     
-    # Rimuovi record senza VIN valido per il blocking
-    craig_valid = craig_df[craig_df['vin_prefix'].notna()].copy()
-    us_valid = us_df[us_df['vin_prefix'].notna()].copy()
+    def get_model_prefix(model, length=2):
+        """Estrae i primi 2 caratteri del modello normalizzato."""
+        normalized = normalize_string(model)
+        if normalized is None:
+            return None
+        return normalized[:length] if len(normalized) >= length else normalized
+    
+    def create_block_key(brand, model):
+        """Crea chiave: brand_norm + model[:2]"""
+        brand_norm = normalize_brand(brand)  # Usa la funzione esistente
+        model_prefix = get_model_prefix(model)
+        if brand_norm is None or model_prefix is None:
+            return None
+        return f"{brand_norm}_{model_prefix}"
+    
+    # Crea blocking key
+    craig_df['block_key_b2'] = craig_df.apply(
+        lambda r: create_block_key(r['brand'], r['model']), axis=1
+    )
+    us_df['block_key_b2'] = us_df.apply(
+        lambda r: create_block_key(r['brand'], r['model']), axis=1
+    )
+    
+    # Filtra record senza chiave valida
+    craig_valid = craig_df[craig_df['block_key_b2'].notna()].copy()
+    us_valid = us_df[us_df['block_key_b2'].notna()].copy()
     
     indexer = recordlinkage.Index()
-    indexer.block('vin_prefix')
+    indexer.block('block_key_b2')
     
     candidate_pairs = indexer.index(craig_valid, us_valid)
     
@@ -405,8 +437,8 @@ def run_pipeline(df, blocking_strategy='B1', classifier_method='ecm', verbose=Tr
 def main():
     """Funzione principale."""
     
-    # Percorsi
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # Percorsi - risale di 2 livelli (scripts/record_linkage/ → root)
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     train_path = os.path.join(base_dir, "dataset", "splits", "train.csv")
     val_path = os.path.join(base_dir, "dataset", "splits", "validation.csv")
     test_path = os.path.join(base_dir, "dataset", "splits", "test.csv")

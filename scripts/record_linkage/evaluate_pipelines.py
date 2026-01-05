@@ -225,24 +225,48 @@ def blocking_B1(craig_df, us_df):
 
 def blocking_B2(craig_df, us_df):
     """
-    Strategia B2: Blocking su VIN prefix (8 caratteri).
+    Strategia B2: Blocking su Brand + Model Prefix (2 caratteri).
     
-    Crea blocchi basati sui primi 8 caratteri del VIN.
+    Crea blocchi basati su brand normalizzato + primi 2 caratteri del modello.
+    Più specifico di B1 ma tollerante a variazioni nel nome modello.
     """
     c_df = craig_df.copy()
     u_df = us_df.copy()
     
-    # Estrai prefisso VIN
-    c_df['vin_prefix'] = c_df['vin'].apply(get_vin_prefix)
-    u_df['vin_prefix'] = u_df['vin'].apply(get_vin_prefix)
+    def normalize_string(s):
+        """Normalizza stringa: lowercase, solo alfanumerici."""
+        if pd.isna(s) or s is None:
+            return None
+        s = str(s).lower().strip()
+        s = re.sub(r'[^a-z0-9]', '', s)
+        return s if len(s) > 0 else None
     
-    # Filtra record con VIN valido
-    c_valid = c_df[c_df['vin_prefix'].notna()].copy()
-    u_valid = u_df[u_df['vin_prefix'].notna()].copy()
+    def get_model_prefix(model, length=2):
+        """Estrae i primi 2 caratteri del modello normalizzato."""
+        normalized = normalize_string(model)
+        if normalized is None:
+            return None
+        return normalized[:length] if len(normalized) >= length else normalized
+    
+    def create_block_key(brand, model):
+        """Crea chiave: brand_norm + model[:2]"""
+        brand_norm = normalize_brand(brand)
+        model_prefix = get_model_prefix(model)
+        if brand_norm is None or model_prefix is None:
+            return None
+        return f"{brand_norm}_{model_prefix}"
+    
+    # Crea blocking key
+    c_df['block_key_b2'] = c_df.apply(lambda r: create_block_key(r['brand'], r['model']), axis=1)
+    u_df['block_key_b2'] = u_df.apply(lambda r: create_block_key(r['brand'], r['model']), axis=1)
+    
+    # Filtra record con chiave valida
+    c_valid = c_df[c_df['block_key_b2'].notna()].copy()
+    u_valid = u_df[u_df['block_key_b2'].notna()].copy()
     
     # Usa recordlinkage Block
     indexer = recordlinkage.Index()
-    indexer.block('vin_prefix')
+    indexer.block('block_key_b2')
     candidate_pairs = indexer.index(c_valid, u_valid)
     
     return candidate_pairs, c_df, u_df
