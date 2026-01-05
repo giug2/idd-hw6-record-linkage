@@ -1,61 +1,44 @@
-# Valutazione Pipeline di Record Linkage
+# Risultati Valutazione Pipeline di Record Linkage
 
-## Panoramica
-Questo documento riporta i risultati della valutazione di diverse pipeline di record linkage sul dataset di auto usate (Craigslist vs US Used Cars).
+**Data:** 2026-01-04 16:27:25
 
-## Pipeline Valutate
+## Sommario
 
-| Pipeline | Blocking | Matcher | Status |
-|----------|----------|---------|--------|
-| B1-RecordLinkage | Brand + Year | Logistic Regression | ✅ Completato |
-| B2-RecordLinkage | VIN Prefix (8 char) | Logistic Regression | ✅ Completato |
-| B1-dedupe | Brand + Year | Dedupe | ⏳ Richiede installazione |
-| B2-dedupe | VIN Prefix (8 char) | Dedupe | ⏳ Richiede installazione |
-| B1-ditto | Brand + Year | BERT/Transformer | 📁 Dati preparati |
-| B2-ditto | VIN Prefix (8 char) | BERT/Transformer | 📁 Dati preparati |
+Questo documento riporta i risultati della valutazione delle pipeline di Record Linkage:
 
-## Risultati
+1. **B1-RecordLinkage**: Blocking su (brand, year) + RecordLinkage
+2. **B2-RecordLinkage**: Blocking su VIN prefix (8 caratteri) + RecordLinkage
 
-### RecordLinkage
+## Metriche di Valutazione
 
-| Pipeline | Precision | Recall | F1 | Training Time | Inference Time |
-|----------|-----------|--------|-----|---------------|----------------|
-| B1-RecordLinkage | 0.7953 | 0.6601 | 0.7214 | 0.12s | 0.02s |
-| B2-RecordLinkage | 0.8312 | 0.6438 | 0.7256 | 0.07s | 0.01s |
+| Pipeline | Precision | Recall | F1-measure |
+|----------|-----------|--------|------------|
+| B1-RecordLinkage | 0.7953 | 0.6601 | 0.7214 |
+| B2-RecordLinkage | 0.8312 | 0.6438 | 0.7256 |
 
-### Analisi
+## Tempi di Esecuzione
 
-- **B1 (Brand+Year)**: Genera più candidati (30104 train, 1124 test) ma con recall minore
-- **B2 (VIN Prefix)**: Genera meno candidati (9916 train, 474 test) ma con precisione maggiore
+| Pipeline | Training Time (s) | Inference Time (s) |
+|----------|-------------------|--------------------|
+| B1-RecordLinkage | 0.10 | 0.01 |
+| B2-RecordLinkage | 0.05 | 0.01 |
 
-### Note Tecniche
+## Statistiche Blocking
 
-- Soglia di classificazione: 0.3 (la soglia standard 0.5 era troppo restrittiva)
-- Features utilizzate: VIN exact match, brand/model similarity (Jaro-Winkler), year exact, price/mileage (Gaussian), color exact
+| Pipeline | Candidate Pairs (Test) | Reduction Ratio | Pairs Completeness |
+|----------|------------------------|-----------------|--------------------|
+| B1-RecordLinkage | 1,124 | 0.9880 | 1.0000 |
+| B2-RecordLinkage | 474 | 0.9949 | 1.0000 |
 
-## Esecuzione
+## Dettagli Predizioni
 
-### RecordLinkage
-```bash
-python scripts/9_evaluate_pipelines.py
-```
+| Pipeline | True Positives | False Positives | False Negatives | Total Predictions |
+|----------|----------------|-----------------|-----------------|-------------------|
+| B1-RecordLinkage | 202 | 52 | 104 | 254 |
+| B2-RecordLinkage | 197 | 40 | 109 | 237 |
 
-### Dedupe (richiede installazione)
-```bash
-pip install dedupe
-python scripts/9_evaluate_pipelines.py
-```
+## Conclusioni
 
-### Ditto (richiede GPU)
-```bash
-# I dati sono già preparati in FAIR-DA4ER/ditto/data/cars/B1 e B2
-cd FAIR-DA4ER/ditto
-python train_ditto.py --task cars/B1 --batch_size 32 --max_len 256 --lr 3e-5 --n_epochs 10
-python train_ditto.py --task cars/B2 --batch_size 32 --max_len 256 --lr 3e-5 --n_epochs 10
-```
-
-## Dataset
-
-- **Training**: 1730 record (train + validation combinati)
-- **Test**: 306 record
-- **Formato**: Ogni riga rappresenta un match vero tra Craigslist e US Used Cars
+- **Miglior F1-measure**: B2-RecordLinkage (0.7256)
+- **Miglior Precision**: B2-RecordLinkage (0.8312)
+- **Miglior Recall**: B1-RecordLinkage (0.6601)
