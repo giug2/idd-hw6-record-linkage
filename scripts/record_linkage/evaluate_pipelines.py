@@ -1,12 +1,16 @@
 """
 Valutazione delle Pipeline di Record Linkage
 
-Questo script valuta le prestazioni di 3 pipeline con diversi set di campi:
+Questo script valuta le prestazioni di 6 pipeline (3 configurazioni x 2 blocking):
+
+Configurazioni di Confronto:
 - P1_textual_core: brand, model, body_type, description, price, mileage
 - P2_plus_location: P1 + transmission, fuel_type, drive, city_region, state, year
 - P3_minimal_fast: brand, model, year
 
-Tutte usano blocking B1 (brand + year).
+Strategie di Blocking:
+- B1: brand normalizzato + year
+- B2: brand normalizzato + model prefix (2 caratteri)
 
 Metriche calcolate:
 - Precision
@@ -23,10 +27,16 @@ import recordlinkage
 from recordlinkage.index import Block
 import time
 import os
+import sys
 import re
 import warnings
 from datetime import datetime
 warnings.filterwarnings('ignore')
+
+# Aggiungi il path per importare i moduli di blocking
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'blocking'))
+from blocking_B1 import blocking_B1 as blocking_B1_external, normalize_brand
+from blocking_B2 import blocking_B2 as blocking_B2_external
 
 # ============================================================================
 # CONFIGURATION
@@ -62,26 +72,6 @@ def load_data():
     print(f"  Totale:         {len(train_df) + len(val_df) + len(test_df):,} record")
     
     return train_df, val_df, test_df
-
-
-def normalize_brand(brand):
-    """Normalizza il nome del brand per uniformità."""
-    if pd.isna(brand) or brand is None:
-        return "unknown"
-    
-    brand = str(brand).lower().strip()
-    
-    brand_mapping = {
-        'chevrolet': 'chevrolet', 'chevy': 'chevrolet',
-        'mercedes-benz': 'mercedes-benz', 'mercedes': 'mercedes-benz',
-        'volkswagen': 'volkswagen', 'vw': 'volkswagen',
-        'land rover': 'land rover', 'landrover': 'land rover',
-        'alfa romeo': 'alfa romeo', 'alfa-romeo': 'alfa romeo',
-        'rolls-royce': 'rolls-royce', 'rolls royce': 'rolls-royce',
-        'aston martin': 'aston martin', 'aston-martin': 'aston martin',
-    }
-    
-    return brand_mapping.get(brand, brand)
 
 
 def get_vin_prefix(vin, length=8):
@@ -191,31 +181,32 @@ def calculate_metrics(predicted_pairs, true_links):
 
 
 # ============================================================================
-# BLOCKING STRATEGIES
+# BLOCKING STRATEGIES (usando i moduli esterni)
 # ============================================================================
 
 def blocking_B1(craig_df, us_df):
     """
     Strategia B1: Blocking su (brand normalizzato, year).
-    
-    Crea blocchi basati sulla combinazione di brand e anno.
+    Usa la funzione esterna da scripts/blocking/blocking_B1.py
     """
     c_df = craig_df.copy()
     u_df = us_df.copy()
     
-    # Normalizza brand
-    c_df['brand_norm'] = c_df['brand'].apply(normalize_brand)
-    u_df['brand_norm'] = u_df['brand'].apply(normalize_brand)
+    # Usa la funzione esterna per creare i blocchi
+    blocks_craig = blocking_B1_external(c_df, brand_col='brand', year_col='year')
+    blocks_us = blocking_B1_external(u_df, brand_col='brand', year_col='year')
     
-    # Normalizza year come stringa
-    c_df['year_str'] = c_df['year'].apply(lambda x: str(int(x)) if pd.notna(x) else 'unknown')
-    u_df['year_str'] = u_df['year'].apply(lambda x: str(int(x)) if pd.notna(x) else 'unknown')
+    # Aggiungi block_key ai dataframe per recordlinkage
+    c_df['block_key'] = c_df.apply(
+        lambda r: f"{normalize_brand(r['brand'])}_{int(r['year']) if pd.notna(r['year']) else 'unknown'}", 
+        axis=1
+    )
+    u_df['block_key'] = u_df.apply(
+        lambda r: f"{normalize_brand(r['brand'])}_{int(r['year']) if pd.notna(r['year']) else 'unknown'}", 
+        axis=1
+    )
     
-    # Crea blocking key combinata
-    c_df['block_key'] = c_df['brand_norm'] + '_' + c_df['year_str']
-    u_df['block_key'] = u_df['brand_norm'] + '_' + u_df['year_str']
-    
-    # Usa recordlinkage Block
+    # Usa recordlinkage Block per generare candidate pairs
     indexer = recordlinkage.Index()
     indexer.block('block_key')
     candidate_pairs = indexer.index(c_df, u_df)
@@ -226,37 +217,32 @@ def blocking_B1(craig_df, us_df):
 def blocking_B2(craig_df, us_df):
     """
     Strategia B2: Blocking su Brand + Model Prefix (2 caratteri).
-    
-    Crea blocchi basati su brand normalizzato + primi 2 caratteri del modello.
-    Più specifico di B1 ma tollerante a variazioni nel nome modello.
+    Usa la funzione esterna da scripts/blocking/blocking_B2.py
     """
     c_df = craig_df.copy()
     u_df = us_df.copy()
     
-    def normalize_string(s):
-        """Normalizza stringa: lowercase, solo alfanumerici."""
-        if pd.isna(s) or s is None:
-            return None
-        s = str(s).lower().strip()
-        s = re.sub(r'[^a-z0-9]', '', s)
-        return s if len(s) > 0 else None
-    
-    def get_model_prefix(model, length=2):
-        """Estrae i primi 2 caratteri del modello normalizzato."""
-        normalized = normalize_string(model)
-        if normalized is None:
-            return None
-        return normalized[:length] if len(normalized) >= length else normalized
+    # Usa la funzione esterna per creare i blocchi
+    blocks_craig = blocking_B2_external(c_df, brand_col='brand', model_col='model')
+    blocks_us = blocking_B2_external(u_df, brand_col='brand', model_col='model')
     
     def create_block_key(brand, model):
         """Crea chiave: brand_norm + model[:2]"""
-        brand_norm = normalize_brand(brand)
-        model_prefix = get_model_prefix(model)
-        if brand_norm is None or model_prefix is None:
+        if pd.isna(brand) or brand is None:
             return None
-        return f"{brand_norm}_{model_prefix}"
+        brand_norm = str(brand).lower().strip()
+        brand_norm = re.sub(r'[^a-z0-9]', '', brand_norm)
+        
+        if pd.isna(model) or model is None:
+            return None
+        model_norm = str(model).lower().strip()
+        model_norm = re.sub(r'[^a-z0-9]', '', model_norm)
+        
+        if not brand_norm or not model_norm or len(model_norm) < 2:
+            return None
+        return f"{brand_norm}_{model_norm[:2]}"
     
-    # Crea blocking key
+    # Aggiungi block_key ai dataframe
     c_df['block_key_b2'] = c_df.apply(lambda r: create_block_key(r['brand'], r['model']), axis=1)
     u_df['block_key_b2'] = u_df.apply(lambda r: create_block_key(r['brand'], r['model']), axis=1)
     
@@ -391,10 +377,9 @@ def create_comparison_P2_plus_location():
 
 def create_comparison_P3_minimal_fast():
     """
-    P3_minimal_fast: brand, model, year, price, mileage
+    P3_minimal_fast: brand, model, year
     
-    Configurazione minimale e veloce con campi essenziali.
-    Aggiunto price e mileage per dare più discriminazione al classificatore.
+    Configurazione minimale e veloce con solo campi essenziali.
     """
     compare = recordlinkage.Compare()
     
@@ -404,14 +389,8 @@ def create_comparison_P3_minimal_fast():
     # Model: similarità stringa
     compare.string('model', 'model', method='jarowinkler', threshold=0.75, label='model_sim')
     
-    # Year: confronto numerico (non exact, per avere un valore continuo)
+    # Year: confronto numerico
     compare.numeric('year', 'year', method='gauss', scale=1, label='year_sim')
-    
-    # Price: confronto numerico (aggiunto per discriminazione)
-    compare.numeric('price', 'price', method='gauss', scale=5000, label='price_sim')
-    
-    # Mileage: confronto numerico (aggiunto per discriminazione)
-    compare.numeric('mileage', 'mileage', method='gauss', scale=10000, label='mileage_sim')
     
     return compare
 
@@ -612,7 +591,7 @@ def main():
     
     print("\n" + "="*70)
     print("   VALUTAZIONE PIPELINE DI RECORD LINKAGE")
-    print("   P1_textual_core, P2_plus_location, P3_minimal_fast")
+    print("   3 Configurazioni (P1, P2, P3) x 2 Blocking (B1, B2) = 6 Pipeline")
     print("="*70)
     print(f"   Data: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("="*70)
@@ -626,11 +605,16 @@ def main():
     
     all_results = []
     
-    # Definizione delle 3 pipeline
+    # Definizione delle 6 pipeline (3 configurazioni x 2 strategie di blocking)
     pipelines = [
-        ('P1_textual_core', 'P1_textual_core', blocking_B1),
-        ('P2_plus_location', 'P2_plus_location', blocking_B1),
-        ('P3_minimal_fast', 'P3_minimal_fast', blocking_B1),
+        # Con Blocking B1 (brand + year)
+        ('P1_textual_core_B1', 'P1_textual_core', blocking_B1),
+        ('P2_plus_location_B1', 'P2_plus_location', blocking_B1),
+        ('P3_minimal_fast_B1', 'P3_minimal_fast', blocking_B1),
+        # Con Blocking B2 (brand + model prefix)
+        ('P1_textual_core_B2', 'P1_textual_core', blocking_B2),
+        ('P2_plus_location_B2', 'P2_plus_location', blocking_B2),
+        ('P3_minimal_fast_B2', 'P3_minimal_fast', blocking_B2),
     ]
     
     for pipeline_name, comparison_config, blocking_strategy in pipelines:
@@ -717,10 +701,14 @@ def generate_markdown_report(results):
         
         f.write("## Sommario\n\n")
         f.write("Questo documento riporta i risultati della valutazione delle pipeline di Record Linkage:\n\n")
+        f.write("### Configurazioni di Confronto:\n")
         f.write("1. **P1_textual_core**: brand, model, body_type, description, price, mileage\n")
         f.write("2. **P2_plus_location**: P1 + transmission, fuel_type, drive, city_region, state, year\n")
         f.write("3. **P3_minimal_fast**: brand, model, year\n\n")
-        f.write("Tutte usano blocking B1 (brand + year).\n\n")
+        f.write("### Strategie di Blocking:\n")
+        f.write("- **B1**: brand normalizzato + year\n")
+        f.write("- **B2**: brand normalizzato + model prefix (2 caratteri)\n\n")
+        f.write("Ogni configurazione è testata con entrambe le strategie di blocking (6 pipeline totali).\n\n")
         
         f.write("## Metriche di Valutazione\n\n")
         f.write("| Pipeline | Precision | Recall | F1-measure |\n")

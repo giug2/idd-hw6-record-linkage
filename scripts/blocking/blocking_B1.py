@@ -152,8 +152,8 @@ def generate_candidate_pairs(blocks_source1, blocks_source2):
 def main():
     """Funzione principale per la strategia B1."""
     
-    # Percorsi
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # Percorsi - lo script è in scripts/blocking/, risaliamo di 2 livelli
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     train_path = os.path.join(base_dir, "dataset", "splits", "train.csv")
     
     print("="*60)
