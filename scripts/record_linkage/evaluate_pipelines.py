@@ -6,7 +6,7 @@ Questo script valuta le prestazioni di 6 pipeline (3 configurazioni x 2 blocking
 Configurazioni di Confronto:
 - P1_textual_core: brand, model, body_type, description, price, mileage
 - P2_plus_location: P1 + transmission, fuel_type, drive, city_region, state, year
-- P3_minimal_fast: brand, model, year
+- P3_minimal_fast: brand, model, year, price, mileage
 
 Strategie di Blocking:
 - B1: brand normalizzato + year
@@ -377,9 +377,10 @@ def create_comparison_P2_plus_location():
 
 def create_comparison_P3_minimal_fast():
     """
-    P3_minimal_fast: brand, model, year
+    P3_minimal_fast: brand, model, year, price, mileage
     
-    Configurazione minimale e veloce con solo campi essenziali.
+    Configurazione minimale e veloce con campi essenziali.
+    Include price e mileage per dare varianza sufficiente al classificatore.
     """
     compare = recordlinkage.Compare()
     
@@ -389,8 +390,14 @@ def create_comparison_P3_minimal_fast():
     # Model: similarità stringa
     compare.string('model', 'model', method='jarowinkler', threshold=0.75, label='model_sim')
     
-    # Year: confronto numerico
-    compare.numeric('year', 'year', method='gauss', scale=1, label='year_sim')
+    # Year: match esatto (più discriminativo)
+    compare.exact('year', 'year', label='year_exact')
+    
+    # Price: confronto numerico (necessario per discriminare)
+    compare.numeric('price', 'price', method='gauss', scale=5000, label='price_sim')
+    
+    # Mileage: confronto numerico (necessario per discriminare)
+    compare.numeric('mileage', 'mileage', method='gauss', scale=10000, label='mileage_sim')
     
     return compare
 
@@ -586,8 +593,27 @@ def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, comparison_
 # MAIN
 # ============================================================================
 
+class Logger(object):
+    """Classe per duplicare l'output su terminale e file."""
+    def __init__(self, filename):
+        self.terminal = sys.stdout
+        self.log = open(filename, "w", encoding='utf-8')
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+        self.log.flush()  # Assicura scrittura immediata
+
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+
 def main():
     """Funzione principale per la valutazione delle pipeline."""
+    
+    # Setup logging su file
+    log_file = os.path.join(OUTPUT_DIR, 'full_execution_log.txt')
+    sys.stdout = Logger(log_file)
     
     print("\n" + "="*70)
     print("   VALUTAZIONE PIPELINE DI RECORD LINKAGE")
@@ -687,6 +713,8 @@ def main():
     # Genera report markdown
     generate_markdown_report(all_results)
     
+    print(f"  Log completo salvato in: {log_file}")
+    
     return results_df
 
 
@@ -704,7 +732,7 @@ def generate_markdown_report(results):
         f.write("### Configurazioni di Confronto:\n")
         f.write("1. **P1_textual_core**: brand, model, body_type, description, price, mileage\n")
         f.write("2. **P2_plus_location**: P1 + transmission, fuel_type, drive, city_region, state, year\n")
-        f.write("3. **P3_minimal_fast**: brand, model, year\n\n")
+        f.write("3. **P3_minimal_fast**: brand, model, year, price, mileage\n\n")
         f.write("### Strategie di Blocking:\n")
         f.write("- **B1**: brand normalizzato + year\n")
         f.write("- **B2**: brand normalizzato + model prefix (2 caratteri)\n\n")

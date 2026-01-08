@@ -1,0 +1,101 @@
+Log salvato in: c:\Users\bluph\Documents\GitHub\idd-hw6-record-linkage\output\blocking_B2_test_log.txt
+============================================================
+STRATEGIA B2: Blocking su Brand + Model Prefix (2 char)
+============================================================
+
+Caricamento dataset di training...
+Record caricati: 1425
+
+Esempi di model_craig:
+model_craig
+silverado 1500                 29
+1500 classic regular cab       25
+trax lt                        23
+f-150                          22
+focus                          16
+trax ls                        14
+c-class                        13
+fusion                         13
+cruze                          12
+mustang gt premium coupe 2d    12
+Name: count, dtype: int64
+
+Applicazione blocking B2...
+
+============================================================
+ANALISI BLOCKING B2: Craigslist (brand + model[:3])
+============================================================
+Numero totale di blocchi: 220
+Record totali nei blocchi: 1420
+Dimensione media blocco: 6.45
+Dimensione mediana blocco: 4.00
+Dimensione min blocco: 1
+Dimensione max blocco: 69
+
+Distribuzione dimensioni blocchi:
+  Blocchi con 1 record:     62
+  Blocchi con 2-5 record:   77
+  Blocchi con 6-10 record:  43
+  Blocchi con 11-50 record: 36
+  Blocchi con 50+ record:   2
+
+Top 10 blocchi più grandi:
+  chevrolet_si: 69 record
+  chevrolet_tr: 53 record
+  toyota_pr: 46 record
+  ford_f1: 39 record
+  ram_15: 36 record
+  hyundai_el: 28 record
+  honda_ac: 26 record
+  chevrolet_ma: 23 record
+  toyota_co: 22 record
+  ford_fu: 22 record
+
+Reduction Ratio: 0.9881
+Coppie candidate: 12,024
+Coppie totali possibili: 1,007,490
+
+============================================================
+ANALISI BLOCKING B2: US Used Cars (brand + model[:3])
+============================================================
+Numero totale di blocchi: 205
+Record totali nei blocchi: 1425
+Dimensione media blocco: 6.95
+Dimensione mediana blocco: 4.00
+Dimensione min blocco: 1
+Dimensione max blocco: 69
+
+Distribuzione dimensioni blocchi:
+  Blocchi con 1 record:     53
+  Blocchi con 2-5 record:   70
+  Blocchi con 6-10 record:  41
+  Blocchi con 11-50 record: 39
+  Blocchi con 50+ record:   2
+
+Top 10 blocchi più grandi:
+  chevrolet_si: 69 record
+  chevrolet_tr: 53 record
+  toyota_pr: 46 record
+  ford_f1: 40 record
+  ram_15: 39 record
+  hyundai_el: 28 record
+  honda_ac: 26 record
+  chevrolet_ma: 23 record
+  toyota_co: 22 record
+  ford_fu: 22 record
+
+Reduction Ratio: 0.9877
+Coppie candidate: 12,476
+Coppie totali possibili: 1,014,600
+
+============================================================
+RISULTATI B2
+============================================================
+Blocchi Craigslist: 220
+Blocchi US Used Cars: 205
+Chiavi in comune: 201
+Coppie candidate generate: 25749
+
+Pairs Completeness: 0.9649 (96.49%)
+  Match veri trovati: 1375
+  Match veri totali: 1425

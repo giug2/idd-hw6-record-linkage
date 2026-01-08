@@ -1,0 +1,59 @@
+Log salvato in: c:\Users\bluph\Documents\GitHub\idd-hw6-record-linkage\output\blocking_B1_test_log.txt
+============================================================
+STRATEGIA B1: Blocking su (brand, year)
+============================================================
+
+Caricamento dataset di training...
+Record caricati: 1425
+
+Applicazione blocking B1...
+
+============================================================
+ANALISI BLOCKING B1: Craigslist (brand+year)
+============================================================
+Numero totale di blocchi: 303
+Record totali nei blocchi: 1425
+Dimensione media blocco: 4.70
+Dimensione mediana blocco: 2.00
+Dimensione min blocco: 1
+Dimensione max blocco: 71
+
+Distribuzione dimensioni blocchi:
+  Blocchi con 1 record:     114
+  Blocchi con 2-5 record:   110
+  Blocchi con 6-10 record:  46
+  Blocchi con 11-50 record: 32
+  Blocchi con 50+ record:   1
+
+Reduction Ratio: 0.9902
+Coppie candidate: 9,903
+Coppie totali possibili: 1,014,600
+
+============================================================
+ANALISI BLOCKING B1: US Used Cars (brand+year)
+============================================================
+Numero totale di blocchi: 303
+Record totali nei blocchi: 1425
+Dimensione media blocco: 4.70
+Dimensione mediana blocco: 2.00
+Dimensione min blocco: 1
+Dimensione max blocco: 71
+
+Distribuzione dimensioni blocchi:
+  Blocchi con 1 record:     114
+  Blocchi con 2-5 record:   110
+  Blocchi con 6-10 record:  46
+  Blocchi con 11-50 record: 32
+  Blocchi con 50+ record:   1
+
+Reduction Ratio: 0.9902
+Coppie candidate: 9,903
+Coppie totali possibili: 1,014,600
+
+============================================================
+RISULTATI B1
+============================================================
+Blocchi Craigslist: 303
+Blocchi US Used Cars: 303
+Chiavi in comune: 303
+Coppie candidate generate: 21231
