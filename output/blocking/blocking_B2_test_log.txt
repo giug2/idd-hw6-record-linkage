@@ -1,4 +1,3 @@
-Log salvato in: c:\Users\bluph\Documents\GitHub\idd-hw6-record-linkage\output\blocking_B2_test_log.txt
 ============================================================
 STRATEGIA B2: Blocking su Brand + Model Prefix (2 char)
 ============================================================
@@ -26,7 +25,7 @@ Applicazione blocking B2...
 ANALISI BLOCKING B2: Craigslist (brand + model[:3])
 ============================================================
 Numero totale di blocchi: 220
-Record totali nei blocchi: 1420
+Record totali nei blocchi: 1425
 Dimensione media blocco: 6.45
 Dimensione mediana blocco: 4.00
 Dimensione min blocco: 1

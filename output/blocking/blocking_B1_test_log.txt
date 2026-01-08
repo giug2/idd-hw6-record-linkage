@@ -1,4 +1,3 @@
-Log salvato in: c:\Users\bluph\Documents\GitHub\idd-hw6-record-linkage\output\blocking_B1_test_log.txt
 ============================================================
 STRATEGIA B1: Blocking su (brand, year)
 ============================================================
