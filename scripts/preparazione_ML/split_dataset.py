@@ -64,9 +64,10 @@ def split_ground_truth(input_path, output_dir, train_ratio=0.7, val_ratio=0.15, 
 
 
 if __name__ == "__main__":
-    # Percorsi
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    input_path = os.path.join(base_dir, "dataset", "ground_truth_ml.csv")
+    # Percorsi - base_dir è il progetto root, non scripts/
+    scripts_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    base_dir = os.path.dirname(scripts_dir)
+    input_path = os.path.join(base_dir, "ground_truth_ml.csv")
     output_dir = os.path.join(base_dir, "dataset", "splits")
     
     # Esegui la divisione

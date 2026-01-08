@@ -1,0 +1,105 @@
+===============================================================================================
+DITTO TRAINING RESULTS - FINAL VERSION
+30 Epochs | Full Fine-tuning | Real Validation Loop | Real Model Predictions
+Device: GPU (AMD DirectML)
+Entity Resolution for Automotive Data (Craigslist vs US Cars)
+===============================================================================================
+
+Configuration: P1_textual_core_B1
+-----------------------------------------------------------------------------------------------
+  f1_score: 0.883212
+  inference_time: 0.000s
+  precision: 1.000000
+  recall: 0.790850
+  test_samples: 306
+  training_time: 88.173s
+
+Configuration: P1_textual_core_B2
+-----------------------------------------------------------------------------------------------
+  f1_score: 0.885981
+  inference_time: 0.000s
+  precision: 1.000000
+  recall: 0.795302
+  test_samples: 298
+  training_time: 77.767s
+
+Configuration: P2_plus_location_B1
+-----------------------------------------------------------------------------------------------
+  f1_score: 0.868762
+  inference_time: 0.000s
+  precision: 1.000000
+  recall: 0.767974
+  test_samples: 306
+  training_time: 107.219s
+
+Configuration: P2_plus_location_B2
+-----------------------------------------------------------------------------------------------
+  f1_score: 0.875472
+  inference_time: 0.000s
+  precision: 1.000000
+  recall: 0.778523
+  test_samples: 298
+  training_time: 102.408s
+
+Configuration: P3_minimal_fast_B1
+-----------------------------------------------------------------------------------------------
+  f1_score: 0.914894
+  inference_time: 0.000s
+  precision: 1.000000
+  recall: 0.843137
+  test_samples: 306
+  training_time: 58.284s
+
+Configuration: P3_minimal_fast_B2
+-----------------------------------------------------------------------------------------------
+  f1_score: 0.924188
+  inference_time: 0.000s
+  precision: 1.000000
+  recall: 0.859060
+  test_samples: 298
+  training_time: 118.811s
+
+
+===============================================================================================
+PERFORMANCE RANKING (Sorted by F1 Score)
+===============================================================================================
+
+Rank   Configuration                          F1           Precision    Recall      
+-----------------------------------------------------------------------------------------------
+1      P3_minimal_fast_B2                     0.924188     1.000000     0.859060    
+2      P3_minimal_fast_B1                     0.914894     1.000000     0.843137    
+3      P1_textual_core_B2                     0.885981     1.000000     0.795302    
+4      P1_textual_core_B1                     0.883212     1.000000     0.790850    
+5      P2_plus_location_B2                    0.875472     1.000000     0.778523    
+6      P2_plus_location_B1                    0.868762     1.000000     0.767974    
+
+===============================================================================================
+TIMING ANALYSIS
+===============================================================================================
+
+Configuration                          Training (s)         Inference (s)       
+-----------------------------------------------------------------------------------------------
+P1_textual_core_B1                     88.17                0.000003            
+P1_textual_core_B2                     77.77                0.000000            
+P2_plus_location_B1                    107.22               0.000005            
+P2_plus_location_B2                    102.41               0.000003            
+P3_minimal_fast_B1                     58.28                0.000003            
+P3_minimal_fast_B2                     118.81               0.000004            
+
+===============================================================================================
+GLOBAL STATISTICS
+===============================================================================================
+
+Average F1 Score:      0.892085
+Average Precision:     1.000000
+Average Recall:        0.805808
+Total Training Time:   552.66s (9.21 minutes)
+Configurations:        6
+Device:                GPU (AMD DirectML)
+TIER:                  Final (30 epochs, batch_size=32, lr=2e-5, DistilBERT)
+
+GPU ACCELERATION:
+  - PyTorch DirectML enabled for AMD Radeon RX 6700 XT
+  - DITTO modified to support DirectML device
+  - Expected speedup: 5-10x vs CPU
+
