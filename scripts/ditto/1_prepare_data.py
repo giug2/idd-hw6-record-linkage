@@ -15,11 +15,13 @@ from pathlib import Path
 from collections import defaultdict
 from typing import Dict, List, Tuple, Set, Optional
 
+
 # Percorsi (script in scripts/ditto/, quindi ../../ per risalire alla root)
 DATASET_DIR = Path(__file__).parent.parent.parent / "dataset"
 SPLITS_DIR = DATASET_DIR / "splits"
 DATA_OUTPUT_DIR = DATASET_DIR / "ditto_dataset"
 DATA_OUTPUT_DIR.mkdir(exist_ok=True)
+
 
 # Pipeline definitions (SENZA description - per rispettare limite 512 token)
 PIPELINES = {
@@ -71,7 +73,6 @@ def extract_pair_representation(row: pd.Series, source: str, fields: List[str]) 
 # ============================================================================
 # BLOCKING B1: brand + year (da scripts/blocking/blocking_B1.py)
 # ============================================================================
-
 def normalize_brand(brand) -> Optional[str]:
     """Normalizza il nome del brand per uniformità."""
     if pd.isna(brand) or brand is None:
@@ -144,7 +145,6 @@ def get_blocking_key_B1_us(row: pd.Series) -> Optional[str]:
 # ============================================================================
 # BLOCKING B2: brand + model_prefix (da scripts/blocking/blocking_B2.py)
 # ============================================================================
-
 def normalize_string(s) -> Optional[str]:
     """Normalizza una stringa per il blocking."""
     if pd.isna(s) or s is None:

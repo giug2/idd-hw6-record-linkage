@@ -14,16 +14,19 @@ from typing import Dict
 import warnings
 warnings.filterwarnings('ignore')
 
+
 # GPU Setup - Disabilita CUDA per usare DirectML
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 os.environ['TRANSFORMERS_OFFLINE'] = '1'
 os.environ['HF_HUB_OFFLINE'] = '1'
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 
+
 import torch
 import numpy as np
 import random
 from sklearn.metrics import precision_score, recall_score, f1_score
+
 
 # Prova a usare DirectML
 GPU_DEVICE = None
@@ -36,7 +39,7 @@ try:
     print("✓ DirectML GPU Acceleration ENABLED (AMD Radeon RX 6700 XT)")
 except ImportError:
     GPU_DEVICE = 'cpu'
-    print("⚠️ DirectML not available, using CPU")
+    print("DirectML not available, using CPU")
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -170,7 +173,7 @@ def compute_metrics(predictions: list, labels: list) -> Dict:
             'f1_score': float(f1)
         }
     except Exception as e:
-        print(f"   ⚠️ Metrics error: {e}")
+        print(f"   Metrics error: {e}")
         return {'precision': 0.0, 'recall': 0.0, 'f1_score': 0.0}
 
 
@@ -186,24 +189,24 @@ def train_config_final(task: str, epochs: int = 30, batch_size: int = 32, device
     try:
         config = get_task_config(task)
     except Exception as e:
-        print(f"❌ Config error: {e}")
+        print(f"Config error: {e}")
         return {
             'f1_score': 0.0, 'precision': 0.0, 'recall': 0.0,
             'training_time': 0.0, 'inference_time': 0.0
         }
     
     # Load datasets
-    print("📂 Loading datasets...")
+    print("Loading datasets...")
     try:
         train_dataset = DittoDataset(config['trainset'], lm='distilbert', max_len=256)
         valid_dataset = DittoDataset(config['validset'], lm='distilbert', max_len=256)
         test_dataset = DittoDataset(config['testset'], lm='distilbert', max_len=256)
         
-        print(f"   ✓ Train: {len(train_dataset)}")
-        print(f"   ✓ Valid: {len(valid_dataset)}")
-        print(f"   ✓ Test: {len(test_dataset)}")
+        print(f"   Train: {len(train_dataset)}")
+        print(f"   Valid: {len(valid_dataset)}")
+        print(f"   Test: {len(test_dataset)}")
     except Exception as e:
-        print(f"❌ Dataset error: {e}")
+        print(f"Dataset error: {e}")
         return {
             'f1_score': 0.0, 'precision': 0.0, 'recall': 0.0,
             'training_time': 0.0, 'inference_time': 0.0
@@ -239,24 +242,24 @@ def train_config_final(task: str, epochs: int = 30, batch_size: int = 32, device
     
     # Training
     device_str = "GPU (DirectML)" if GPU_AVAILABLE else "CPU"
-    print(f"🚀 Training ({epochs} epochs, batch_size={batch_size}, device={device_str})...")
+    print(f"Training ({epochs} epochs, batch_size={batch_size}, device={device_str})...")
     start_time = time.time()
     
     try:
         ditto_train(train_dataset, valid_dataset, test_dataset, task, hp)
         training_time = time.time() - start_time
-        print(f"✓ Training completed in {training_time:.2f}s")
+        print(f"Training completed in {training_time:.2f}s")
     except KeyboardInterrupt:
         training_time = time.time() - start_time
-        print(f"⚠️ Interrupted after {training_time:.2f}s")
+        print(f"Interrupted after {training_time:.2f}s")
     except Exception as e:
         training_time = time.time() - start_time
-        print(f"❌ Training error: {e}")
+        print(f"Training error: {e}")
         import traceback
         traceback.print_exc()
     
     # Inference metrics
-    print("⚙️ Computing inference metrics...")
+    print("Computing inference metrics...")
     inference_start = time.time()
     
     test_predictions = []
@@ -287,7 +290,7 @@ def train_config_final(task: str, epochs: int = 30, batch_size: int = 32, device
         inference_time = (time.time() - inference_start) / max(len(test_predictions), 1)
         
     except Exception as e:
-        print(f"   ⚠️ Inference error: {e}")
+        print(f"   Inference error: {e}")
         inference_time = 0.0
     
     # Metrics
@@ -302,7 +305,7 @@ def train_config_final(task: str, epochs: int = 30, batch_size: int = 32, device
         'test_samples': len(test_labels)
     }
     
-    print(f"📊 F1: {result['f1_score']:.6f} | P: {result['precision']:.6f} | R: {result['recall']:.6f}")
+    print(f"F1: {result['f1_score']:.6f} | P: {result['precision']:.6f} | R: {result['recall']:.6f}")
     
     return result
 
@@ -338,7 +341,7 @@ def main():
     collector = MetricsCollector()
     total_start = time.time()
     
-    print(f"\n🎯 Running 6 configurations with {device_str}...\n")
+    print(f"\nRunning 6 configurations with {device_str}...\n")
     
     for i, task in enumerate(tasks, 1):
         print(f"\n[{i}/6] {task}")
@@ -351,7 +354,7 @@ def main():
             )
             collector.add_result(task, metrics)
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"Error: {e}")
             collector.add_result(task, {
                 'f1_score': 0.0, 'precision': 0.0, 'recall': 0.0,
                 'training_time': 0.0, 'inference_time': 0.0
@@ -363,7 +366,7 @@ def main():
     collector.save(args.output_file)
     
     print(f"\n{'='*80}")
-    print(f"✓ TRAINING COMPLETE")
+    print(f"TRAINING COMPLETE")
     print(f"{'='*80}")
     print(f"Total time: {total_time/60:.2f} minutes ({total_time:.0f}s)")
     print(f"Results: {args.output_file}")
