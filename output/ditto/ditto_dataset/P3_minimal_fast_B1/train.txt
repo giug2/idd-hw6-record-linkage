@@ -1,0 +1,1425 @@
+buick verano 2015.0	buick verano 2015	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+toyota corolla 2019.0	toyota corolla 2019	1
+gmc terrain 2017.0	gmc terrain 2017	1
+ford f-350sd 2012.0	ford f-350 super duty 2012	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+honda civic 2019.0	honda civic 2019	1
+ford edge 2015.0	ford edge 2015	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+hyundai santa fe 2015.0	hyundai santa fe sport 2015	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+ford edge titanium awd, w/ leather, navigation 2017.0	ford edge 2017	1
+hyundai sonata se 2016.0	hyundai sonata 2016	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+honda pilot 2017.0	honda pilot 2017	1
+volkswagen jetta 2017.0	volkswagen jetta 2017	1
+hyundai accent se 2017.0	hyundai accent 2017	1
+toyota prius two 2011.0	toyota prius 2011	1
+bmw 335d 2011.0	bmw 3 series 2011	1
+chevrolet camaro 2dr cpe 1lt 2019.0	chevrolet camaro 2019	1
+toyota corolla lsedan 4a 2014.0	toyota corolla 2014	1
+kia forte lx 2016.0	kia forte 2016	1
+gmc yukon 2014.0	gmc yukon 2014	1
+bmw 3 series m340i sedan north 2021.0	bmw 3 series 2021	1
+ford edge titanium awd, w/ leather, navigation 2017.0	ford edge 2017	1
+kia forte lx 2018.0	kia forte 2018	1
+kia sorento 2016.0	kia sorento 2016	1
+chevrolet silverado 3500hd 2013.0	chevrolet silverado 3500hd 2013	1
+chevrolet silverado 2020.0	chevrolet silverado 1500 2020	1
+ford explorer 2014.0	ford explorer 2014	1
+honda accord 2015.0	honda accord coupe 2015	1
+honda cr-v ex-l 2013.0	honda cr-v 2013	1
+kia soul manual 2017.0	kia soul 2017	1
+nissan frontier 2009.0	nissan frontier 2009	1
+hyundai veloster n coupe 3d 2020.0	hyundai veloster n 2020	1
+ford f-150 platinum super crew 2018.0	ford f-150 2018	1
+ford escape titanium sport 2017.0	ford escape 2017	1
+cadillac xt6 2020.0	cadillac xt6 2020	1
+chevrolet tahoe lt 2020.0	chevrolet tahoe 2020	1
+ford transit-350 2016.0	ford transit chassis 2016	1
+ford explorer xlt xlt 4dr suv 2006.0	ford explorer 2006	1
+ford f-150 2018.0	ford f-150 2018	1
+chevrolet blazer lt 2020.0	chevrolet blazer 2020	1
+nissan pathfinder 2018.0	nissan pathfinder 2018	1
+hyundai elantra gt 2020.0	hyundai elantra gt 2020	1
+bmw x3 sdrive30i sport utility 2020.0	bmw x3 2020	1
+volkswagen r32 all wheel drive 2008.0	volkswagen r32 2008	1
+ford f-250sd 2017.0	ford f-250 super duty 2017	1
+volvo xc90 2.5t 2006.0	volvo xc90 2006	1
+chevrolet camaro ss 2dr 2011.0	chevrolet camaro 2011	1
+mercedes-benz glc glc 300 4matic awd 2019.0	mercedes-benz glc-class 2019	1
+dodge journey crossroad 2016.0	dodge journey 2016	1
+ford edge sel 2014.0	ford edge 2014	1
+chevrolet camaro 1994.0	chevrolet camaro 1994	1
+chevrolet equinox 2020.0	chevrolet equinox 2020	1
+ford edge sel awd awd 2020.0	ford edge 2020	1
+volvo s60 2020.0	volvo s60 2020	1
+toyota corolla lsedan 4a 2016.0	toyota corolla 2016	1
+toyota prius two 2018.0	toyota prius 2018	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+hyundai santa fe se awd, w/ lane keeping assist 2020.0	hyundai santa fe 2020	1
+toyota prius 2012.0	toyota prius 2012	1
+chevrolet silverado 1500 2019.0	chevrolet silverado 1500 2019	1
+dodge journey 2019.0	dodge journey 2019	1
+lexus rc 2017.0	lexus rc 350 2017	1
+saturn sc2 2001.0	saturn s-series 2001	1
+honda odyssey ex lmini van 2007.0	honda odyssey 2007	1
+chrysler 200 2014.0	chrysler 200 2014	1
+honda accord lxsedan cvt 2017.0	honda accord 2017	1
+ford ecosport se 2019.0	ford ecosport 2019	1
+ford super duty f-450 drw cab-chassis 2002.0	ford f-450 super duty 2002	1
+toyota sienna 2014.0	toyota sienna 2014	1
+chevrolet malibu lt sedan 4d 2018.0	chevrolet malibu 2018	1
+cadillac ct5 luxury sedan 4d 2020.0	cadillac ct5 2020	1
+buick lacrosse 2006.0	buick lacrosse 2006	1
+chevrolet silverado 1500 2018.0	chevrolet silverado 1500 2018	1
+ford focus 2014.0	ford focus 2014	1
+toyota prius v wgn two 2012.0	toyota prius v 2012	1
+jeep cherokee 2020.0	jeep cherokee 2020	1
+ford fusion 2015.0	ford fusion 2015	1
+nissan murano s 2020.0	nissan murano 2020	1
+saturn sc2 2001.0	saturn s-series 2001	1
+ford f150 supercrew cab xl 2019.0	ford f-150 2019	1
+mazda mazda3 2015.0	mazda mazda3 2015	1
+ford expedition 2016.0	ford expedition 2016	1
+ford explorer xlt 2018.0	ford explorer 2018	1
+chevrolet silverado 3500hd 2013.0	chevrolet silverado 3500hd 2013	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+nissan titan platinum 2017.0	nissan titan 2017	1
+ford e350 bucket van 2002.0	ford e-series 2002	1
+ford ranger supercrew lariat 2019.0	ford ranger 2019	1
+buick encore gx select sport 2020.0	buick encore gx 2020	1
+toyota prius five 2013.0	toyota prius 2013	1
+jeep renegade latitude 2019.0	jeep renegade 2019	1
+dodge challenger 2020.0	dodge challenger 2020	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+subaru outback 2017.0	subaru outback 2017	1
+lexus rx 400h 2008.0	lexus rx 400h 2008	1
+toyota 4-runner 2007.0	toyota 4runner 2007	1
+mercedes-benz ml-class 2013.0	mercedes-benz m-class 2013	1
+nissan versa 2018.0	nissan versa 2018	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+nissan pathfinder 2018.0	nissan pathfinder 2018	1
+toyota tacoma 2017.0	toyota tacoma 2017	1
+volkswagen arteon sel r-line 2020.0	volkswagen arteon 2020	1
+ford escape 2014.0	ford escape 2014	1
+dodge nitro 2011.0	dodge nitro 2011	1
+gmc envoy xl sle 2004.0	gmc envoy xl 2004	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+hyundai tucson 2021.0	hyundai tucson 2021	1
+lincoln continental sedan 4d 2020.0	lincoln continental 2020	1
+honda accord lxsedan cvt 2017.0	honda accord 2017	1
+chevrolet trax ls 2021.0	chevrolet trax 2021	1
+chevrolet traverse premier 2019.0	chevrolet traverse 2019	1
+mercury grand marquis 2008.0	mercury grand marquis 2008	1
+kia forte lx 2018.0	kia forte 2018	1
+chevrolet cruze 2017.0	chevrolet cruze 2017	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+toyota prius prime 2017.0	toyota prius prime 2017	1
+buick envision preferred sport 2020.0	buick envision 2020	1
+honda accord 2016.0	honda accord coupe 2016	1
+jaguar xjr s 2004.0	jaguar xj-series 2004	1
+chevrolet hhr ls 2007.0	chevrolet hhr 2007	1
+toyota prius three 2014.0	toyota prius 2014	1
+hyundai tucson 2018.0	hyundai tucson 2018	1
+honda civic sedan lx 2014.0	honda civic 2014	1
+nissan versa note 2015.0	nissan versa note 2015	1
+chevrolet bolt ev 2017.0	chevrolet bolt ev 2017	1
+jeep compass 2018.0	jeep compass 2018	1
+chevrolet silverado 3500hd 2013.0	chevrolet silverado 3500hd 2013	1
+kia sportage 2018.0	kia sportage 2018	1
+ford fiesta se 2019.0	ford fiesta 2019	1
+chevrolet silverado 3500hd 2013.0	chevrolet silverado 3500hd 2013	1
+nissan sentra s 2017.0	nissan sentra 2017	1
+chevrolet traverse premier 2019.0	chevrolet traverse 2019	1
+kia sedona 2016.0	kia sedona 2016	1
+jeep wrangler unlimited 2016.0	jeep wrangler unlimited 2016	1
+mazda mazda3 2017.0	mazda mazda3 2017	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+cadillac xt6 2020.0	cadillac xt6 2020	1
+ford f-150 xl 2dr standard cab 2004.0	ford f-150 2004	1
+mini hardtop 2 door john cooper 2017.0	mini cooper 2017	1
+nissan altima 2015.0	nissan altima 2015	1
+ford focus 2016.0	ford focus 2016	1
+ford ranger supercrew xlt pickup 2020.0	ford ranger 2020	1
+toyota tundra double cab sr5 2020.0	toyota tundra 2020	1
+bmw 328d 2017.0	bmw 3 series 2017	1
+toyota camry hybrid 2020.0	toyota camry hybrid 2020	1
+acura mdx sh-awd sport utility 2020.0	acura mdx 2020	1
+ford f150 supercrew cab xl 2019.0	ford f-150 2019	1
+chevrolet malibu 2018.0	chevrolet malibu 2018	1
+toyota tacoma 2013.0	toyota tacoma 2013	1
+toyota rav4 2019.0	toyota rav4 2019	1
+ram 1500 quad cab laramie pickup 2020.0	ram 1500 2020	1
+chevrolet cruze ls 2014.0	chevrolet cruze 2014	1
+honda odyssey ex 2002.0	honda odyssey 2002	1
+lexus es 350 2013.0	lexus es 350 2013	1
+ford fiesta se 2019.0	ford fiesta 2019	1
+jeep gladiator mojave 2020.0	jeep gladiator 2020	1
+mitsubishi eclipse cross le 2020.0	mitsubishi eclipse cross 2020	1
+chevrolet trailblazer ls 2021.0	chevrolet trailblazer 2021	1
+ford focus 2007.0	ford focus 2007	1
+cadillac ct5 premium luxury 2020.0	cadillac ct5 2020	1
+ford ranger supercrew xlt pickup 2020.0	ford ranger 2020	1
+cadillac xt5 2020.0	cadillac xt5 2020	1
+toyota prius prime 2018.0	toyota prius prime 2018	1
+nissan altima 2016.0	nissan altima 2016	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+hyundai elantra 2016.0	hyundai elantra 2016	1
+kia optima 2013.0	kia optima 2013	1
+nissan maxima 2014.0	nissan maxima 2014	1
+honda civic cpe ex 2012.0	honda civic coupe 2012	1
+gmc yukon xl 2015.0	gmc yukon xl 2015	1
+toyota corolla le 2012.0	toyota corolla 2012	1
+chevrolet silverado 2500hd 2015.0	chevrolet silverado 2500hd 2015	1
+toyota avalon xlesedan 2013.0	toyota avalon 2013	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+nissan sentra sv sedan 4d 2018.0	nissan sentra 2018	1
+nissan murano s 2007.0	nissan murano 2007	1
+mercedes-benz c-class 2013.0	mercedes-benz c-class 2013	1
+hyundai elantra limited pzev 2012.0	hyundai elantra 2012	1
+nissan sentra 2016.0	nissan sentra 2016	1
+honda pilot 2017.0	honda pilot 2017	1
+lexus ct200h 2017.0	lexus ct hybrid 2017	1
+fiat 124 spider 2017.0	fiat 124 spider 2017	1
+ford fusion 2014.0	ford fusion 2014	1
+lincoln continental reserve 2019.0	lincoln continental 2019	1
+bmw x5 2012.0	bmw x5 2012	1
+mitsubishi outlander phev sel 2018.0	mitsubishi outlander hybrid plug-in 2018	1
+honda accord lxsedan cvt 2017.0	honda accord 2017	1
+chevrolet trax ls 2021.0	chevrolet trax 2021	1
+hyundai elantra 2017.0	hyundai elantra 2017	1
+mitsubishi eclipse cross 2019.0	mitsubishi eclipse cross 2019	1
+toyota prius 2017.0	toyota prius 2017	1
+chevrolet silverado 1500 2020.0	chevrolet silverado 1500 2020	1
+mercury grand marquis 2008.0	mercury grand marquis 2008	1
+audi q7 2011.0	audi q7 2011	1
+infiniti m56 2011.0	infiniti m56 2011	1
+mercury grand marquis 2008.0	mercury grand marquis 2008	1
+chevrolet traverse ls sport 2020.0	chevrolet traverse 2020	1
+mercedes-benz c-class 300 2020.0	mercedes-benz c-class 2020	1
+mini cooper s convertible 2011.0	mini cooper 2011	1
+buick verano 2015.0	buick verano 2015	1
+chevrolet suburban 2015.0	chevrolet suburban 2015	1
+hyundai sonata 2016.0	hyundai sonata hybrid 2016	1
+ford c-max hybrid 2013.0	ford c-max hybrid 2013	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+volkswagen jetta 1.4t s 2020.0	volkswagen jetta 2020	1
+toyota corolla 2019.0	toyota corolla 2019	1
+chevrolet trax ls 2021.0	chevrolet trax 2021	1
+mercedes-benz m-class ml 500 2006.0	mercedes-benz m-class 2006	1
+chevrolet silverado 2016.0	chevrolet silverado 1500 2016	1
+ford explorer 2016.0	ford explorer 2016	1
+kia soul 2015.0	kia soul 2015	1
+nissan rogue sv sport utility 4d 2020.0	nissan rogue 2020	1
+mercedes-benz c-class 2018.0	mercedes-benz c-class 2018	1
+toyota prius v wgn two 2012.0	toyota prius v 2012	1
+hyundai sonata 2013.0	hyundai sonata 2013	1
+ford fiesta 2017.0	ford fiesta 2017	1
+chevrolet tahoe lt 2020.0	chevrolet tahoe 2020	1
+infiniti q60 3.0t premium coupe 2017.0	infiniti q60 2017	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+mitsubishi outlander sport es s 2015.0	mitsubishi outlander sport 2015	1
+bmw 428i 2015.0	bmw 4 series 2015	1
+ford e-series chassis e-450 sd 2011.0	ford f-350 super duty chassis 2011	1
+chevrolet camaro ss 2dr 2011.0	chevrolet camaro 2011	1
+audi a3 2.0t premium plus 2017.0	audi a3 2017	1
+bmw x5 2011.0	bmw x5 2011	1
+toyota prius two 2011.0	toyota prius 2011	1
+bmw x3 2017.0	bmw x3 2017	1
+chevrolet silverado 2019.0	chevrolet silverado 1500 2019	1
+honda accord ex coupe at 2011.0	honda accord coupe 2011	1
+lexus gx 470 2003.0	lexus gx 470 2003	1
+ford focus 2017.0	ford focus 2017	1
+dodge charger 2020.0	dodge charger 2020	1
+hyundai elantra coupe 2013.0	hyundai elantra coupe 2013	1
+chevrolet bolt ev lt hatchback 2020.0	chevrolet bolt ev 2020	1
+kia soul 2016.0	kia soul 2016	1
+ford fusion 2014.0	ford fusion 2014	1
+ram promaster city slt 2019.0	ram promaster city 2019	1
+toyota prius plug in 2015.0	toyota prius plug-in 2015	1
+volvo xc60 2017.0	volvo xc60 2017	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+bmw 6 series 1989.0	bmw 6 series 1989	1
+chevrolet tahoe lt 2020.0	chevrolet tahoe 2020	1
+ford super duty f-550 drw 2011.0	ford f-550 super duty 2011	1
+toyota camry 2017.0	toyota camry 2017	1
+toyota tundra double cab sr5 2020.0	toyota tundra 2020	1
+volkswagen arteon sel r-line 2020.0	volkswagen arteon 2020	1
+ford edge 2015.0	ford edge 2015	1
+ford fusion 2014.0	ford fusion 2014	1
+honda accord sedan 2020.0	honda accord 2020	1
+hyundai elantra 2015.0	hyundai elantra 2015	1
+bmw 5 series 2017.0	bmw 5 series 2017	1
+chevrolet malibu ltzsedan 2011.0	chevrolet malibu 2011	1
+ford explorer 2001.0	ford explorer 2001	1
+honda accord lxsedan cvt 2017.0	honda accord 2017	1
+hyundai sonata 2019.0	hyundai sonata 2019	1
+jeep wrangler 2012.0	jeep wrangler 2012	1
+ford escape 2020.0	ford escape 2020	1
+lexus rx 2020.0	lexus rx 2020	1
+mercedes-benz c 250 sport sedan 2012.0	mercedes-benz c-class 2012	1
+hyundai elantra 2015.0	hyundai elantra 2015	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+ram 3500 2018.0	ram 3500 2018	1
+subaru forester 2011.0	subaru forester 2011	1
+nissan sentra sv sedan 4d 2018.0	nissan sentra 2018	1
+chevrolet silverado 3500hd 2020.0	chevrolet silverado 3500hd 2020	1
+chevrolet trailblazer ls 2021.0	chevrolet trailblazer 2021	1
+acura rdx 2018.0	acura rdx 2018	1
+dodge charger 2020.0	dodge charger 2020	1
+bmw x3 xdrive30i 2009.0	bmw x3 2009	1
+gmc sierra 1500 double cab 2017.0	gmc sierra 1500 2017	1
+toyota prius 2011.0	toyota prius 2011	1
+hyundai santa fe se awd, w/ lane keeping assist 2020.0	hyundai santa fe 2020	1
+toyota tundra 2014.0	toyota tundra 2014	1
+ford transit connect cargo van 2020.0	ford transit connect 2020	1
+nissan pathfinder le 2003.0	nissan pathfinder 2003	1
+dodge dart 2016.0	dodge dart 2016	1
+chevrolet blazer ls 4dr ls 2000.0	chevrolet blazer 2000	1
+buick verano 2015.0	buick verano 2015	1
+toyota prius c fourhatchback 2013.0	toyota prius c 2013	1
+nissan murano 2012.0	nissan murano 2012	1
+mercedes-benz sl500 1998.0	mercedes-benz sl-class 1998	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+chevrolet silverado 1500 4x4 2014.0	chevrolet silverado 1500 2014	1
+chevrolet silverado 1500 rst 2020.0	chevrolet silverado 1500 2020	1
+ford escape 2014.0	ford escape 2014	1
+ram 1500 quad cab laramie pickup 2020.0	ram 1500 2020	1
+ford transit-350 2016.0	ford transit chassis 2016	1
+ford edge sel 2018.0	ford edge 2018	1
+toyota corolla 2011.0	toyota corolla 2011	1
+acura tlx 2016.0	acura tlx 2016	1
+toyota prius 2002.0	toyota prius 2002	1
+ford f-250sd 2017.0	ford f-250 super duty 2017	1
+chevrolet cobalt 2009.0	chevrolet cobalt 2009	1
+chevrolet malibu ltzsedan 2011.0	chevrolet malibu 2011	1
+ford edge 2015.0	ford edge 2015	1
+mercedes-benz m-class ml 500 2006.0	mercedes-benz m-class 2006	1
+chevrolet trax ls 2021.0	chevrolet trax 2021	1
+gmc sierra 2012.0	gmc sierra 2500hd 2012	1
+toyota prius three 2014.0	toyota prius 2014	1
+ford edge 2016.0	ford edge 2016	1
+ford fiesta 2017.0	ford fiesta 2017	1
+bmw 335d 2011.0	bmw 3 series 2011	1
+hyundai elantra limited 2013.0	hyundai elantra 2013	1
+bmw x5 2018.0	bmw x5 2018	1
+cadillac xt5 2020.0	cadillac xt5 2020	1
+honda hr-v lx 2020.0	honda hr-v 2020	1
+nissan altima 2016.0	nissan altima 2016	1
+hyundai accent se 2017.0	hyundai accent 2017	1
+toyota prius two 2016.0	toyota prius 2016	1
+subaru xv crosstrek 2013.0	subaru xv crosstrek 2013	1
+buick encore gx select sport 2020.0	buick encore gx 2020	1
+nissan altima 2016.0	nissan altima 2016	1
+ford f-250 superduty lariat crew 6.7 liter 2017.0	ford f-250 super duty 2017	1
+chevrolet 1500 extended cab 1995.0	chevrolet c/k 1500 1995	1
+chevrolet malibu rs 2020.0	chevrolet malibu 2020	1
+kia forte 2014.0	kia forte 2014	1
+ford f250 super duty crew cab 2016.0	ford f-250 super duty 2016	1
+honda odyssey touring elite 2011.0	honda odyssey 2011	1
+dodge grand caravan sxt 2014.0	dodge grand caravan 2014	1
+ford f-150 1992.0	ford f-150 1992	1
+nissan sentra sv 2019.0	nissan sentra 2019	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+fiat 124 spider 2017.0	fiat 124 spider 2017	1
+hyundai elantra 2017.0	hyundai elantra 2017	1
+ford explorer 2019.0	ford explorer 2019	1
+hyundai venue se sport utility 2020.0	hyundai venue 2020	1
+honda odyssey ex lmini van 2007.0	honda odyssey 2007	1
+honda accord sdn lx 2013.0	honda accord 2013	1
+toyota prius c fourhatchback 2013.0	toyota prius c 2013	1
+mazda 3 2016.0	mazda mazda3 2016	1
+nissan sentra 2017.0	nissan sentra 2017	1
+bmw x5 2011.0	bmw x5 2011	1
+ford f-350sd 2003.0	ford f-350 super duty 2003	1
+toyota prius two 2013.0	toyota prius 2013	1
+gmc sierra 2012.0	gmc sierra 2500hd 2012	1
+honda accord lx 2010.0	honda accord 2010	1
+nissan leaf sl 2012.0	nissan leaf 2012	1
+audi q3 premium plus sport 2016.0	audi q3 2016	1
+ford focus 2012.0	ford focus 2012	1
+subaru forester 2009.0	subaru forester 2009	1
+chevrolet trax ls 2020.0	chevrolet trax 2020	1
+nissan sentra 2017.0	nissan sentra 2017	1
+dodge nitro 2011.0	dodge nitro 2011	1
+chevrolet impala 2015.0	chevrolet impala 2015	1
+bmw x3 xdrive30i 2009.0	bmw x3 2009	1
+audi q7 2011.0	audi q7 2011	1
+jeep grand cherokee 2005.0	jeep grand cherokee 2005	1
+jeep cherokee 2016.0	jeep cherokee 2016	1
+ford expedition 2016.0	ford expedition 2016	1
+chevrolet impala 2013.0	chevrolet impala 2013	1
+nissan titan platinum 2017.0	nissan titan 2017	1
+toyota corolla le 2012.0	toyota corolla 2012	1
+chevrolet silverado 1500 4x4 2014.0	chevrolet silverado 1500 2014	1
+ford taurus se 2005.0	ford taurus 2005	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+subaru impreza 2014.0	subaru impreza 2014	1
+bmw x5 sdrive35i 2017.0	bmw x5 2017	1
+volkswagen atlas cross sport se 2020.0	volkswagen atlas cross sport 2020	1
+volvo xc60 t5 momentum sport 2019.0	volvo xc60 2019	1
+mercury mountaineer 2004.0	mercury mountaineer 2004	1
+lexus es 300h sedan 4d 2013.0	lexus es 300h 2013	1
+ford f-150 xl 2dr standard cab 2004.0	ford f-150 2004	1
+dodge charger 2019.0	dodge charger 2019	1
+chevrolet impala lt sedan 4d 2018.0	chevrolet impala 2018	1
+ford f-150 2010.0	ford f-150 2010	1
+honda accord ex-l 2.4 2010.0	honda accord 2010	1
+chevrolet trax ls 2020.0	chevrolet trax 2020	1
+fiat 500l lounge 2014.0	fiat 500l 2014	1
+nissan juke 2016.0	nissan juke 2016	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+ford ranger supercrew xlt pickup 2020.0	ford ranger 2020	1
+ford focus se 2016.0	ford focus 2016	1
+mercedes-benz cls550 2007.0	mercedes-benz cls-class 2007	1
+honda accord 2014.0	honda accord 2014	1
+acura tl type s 2007.0	acura tl 2007	1
+hyundai accent 2015.0	hyundai accent 2015	1
+ford f-150 2018.0	ford f-150 2018	1
+fiat 124 spider 2017.0	fiat 124 spider 2017	1
+ford edge 2017.0	ford edge 2017	1
+bmw x5 2017.0	bmw x5 2017	1
+toyota prius 2010.0	toyota prius 2010	1
+gmc sierra 1500 double cab 2017.0	gmc sierra 1500 2017	1
+ford focus 2016.0	ford focus 2016	1
+acura rdx sport utility 4d 2017.0	acura rdx 2017	1
+ford f-150 2018.0	ford f-150 2018	1
+mazda mazda3 2017.0	mazda mazda3 2017	1
+ram 1500 quad cab laramie pickup 2020.0	ram 1500 2020	1
+ford ranger supercrew xlt pickup 2020.0	ford ranger 2020	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+chevrolet colorado 2021.0	chevrolet colorado 2021	1
+ford f-250 superduty lariat crew 6.7 liter 2017.0	ford f-250 super duty 2017	1
+bmw 5 series 530e xdrive 2019.0	bmw 5 series 2019	1
+chevrolet trailblazer rs 2021.0	chevrolet trailblazer 2021	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+chevrolet impala lt fleetsedan 2012.0	chevrolet impala 2012	1
+ford ecosport se 2019.0	ford ecosport 2019	1
+kia optima 2016.0	kia optima 2016	1
+toyota camry hybrid 2020.0	toyota camry hybrid 2020	1
+mitsubishi outlander phev sel 2018.0	mitsubishi outlander hybrid plug-in 2018	1
+volkswagen jetta 2007.0	volkswagen jetta 2007	1
+fiat 124 spider 2017.0	fiat 124 spider 2017	1
+ford focus 2017.0	ford focus 2017	1
+hyundai elantra 2015.0	hyundai elantra 2015	1
+hyundai elantra touring 2010.0	hyundai elantra touring 2010	1
+bmw 1-series 128i 2012.0	bmw 1 series 2012	1
+dodge grand caravan passenger 2016.0	dodge grand caravan 2016	1
+lexus rx 2012.0	lexus rx 350 2012	1
+chevrolet trailblazer rs 2021.0	chevrolet trailblazer 2021	1
+ram 2500 2018.0	ram 2500 2018	1
+kia sorento 2014.0	kia sorento 2014	1
+kia soul ! 4dr crossover 2014.0	kia soul 2014	1
+ford focus 2016.0	ford focus 2016	1
+subaru outback 2019.0	subaru outback 2019	1
+infiniti q50 3.0t luxe sedan 4d 2019.0	infiniti q50 2019	1
+acura mdx sh-awd sport utility 2020.0	acura mdx 2020	1
+toyota sienna 2017.0	toyota sienna 2017	1
+chevrolet malibu 2018.0	chevrolet malibu 2018	1
+ford f150 supercrew cab xl 2019.0	ford f-150 2019	1
+mini hardtop 2 door cooper s 2019.0	mini cooper 2019	1
+bmw 2017.0	bmw 3 series 2017	1
+chevrolet blazer lt 2020.0	chevrolet blazer 2020	1
+chevrolet silverado 1500 crew 2020.0	chevrolet silverado 1500 2020	1
+chevrolet trax ls 2021.0	chevrolet trax 2021	1
+nissan versa 2018.0	nissan versa 2018	1
+chevrolet silverado 2500hd 2008.0	chevrolet silverado 2500hd 2008	1
+nissan rogue s 2015.0	nissan rogue 2015	1
+chevrolet equinox ls 2013.0	chevrolet equinox 2013	1
+hyundai elantra 2017.0	hyundai elantra 2017	1
+bmw 3 series 2017.0	bmw 3 series 2017	1
+chevrolet silverado 1500 2016.0	chevrolet silverado 1500 2016	1
+ford fusion 2013.0	ford fusion 2013	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+ford transit connect titanium 2020.0	ford transit connect 2020	1
+fiat 124 spider 2017.0	fiat 124 spider 2017	1
+dodge journey 2017.0	dodge journey 2017	1
+ford f-150 2016.0	ford f-150 2016	1
+buick verano 2012.0	buick verano 2012	1
+chevrolet silverado 2500hd 2018.0	chevrolet silverado 2500hd 2018	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+ram 2500 2018.0	ram 2500 2018	1
+hyundai sonata 2017.0	hyundai sonata 2017	1
+volkswagen passat 2017.0	volkswagen passat 2017	1
+chevrolet malibu rs 2020.0	chevrolet malibu 2020	1
+kia stinger gt-line sedan 4d 2020.0	kia stinger 2020	1
+lexus rx 330 2006.0	lexus rx 330 2006	1
+jeep wrangler unlimited sahara 2018.0	jeep wrangler unlimited 2018	1
+ford edge sport 2011.0	ford edge 2011	1
+buick lacrosse 2006.0	buick lacrosse 2006	1
+chevrolet trailblazer rs 2021.0	chevrolet trailblazer 2021	1
+lincoln navigator select 2016.0	lincoln navigator 2016	1
+bmw 3-series 2013.0	bmw 3 series 2013	1
+chevrolet malibu 2011.0	chevrolet malibu 2011	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+jeep grand cherokee laredo e 2019.0	jeep grand cherokee 2019	1
+lexus es 350 2013.0	lexus es 350 2013	1
+mercury grand marquis 2008.0	mercury grand marquis 2008	1
+jeep gladiator 2020.0	jeep gladiator 2020	1
+mini cooper s convertible 2011.0	mini cooper 2011	1
+hyundai santa fe 2019.0	hyundai santa fe 2019	1
+ford focus 2016.0	ford focus 2016	1
+jeep grand cherokee 4x4 2009.0	jeep grand cherokee 2009	1
+lincoln mkz 2013.0	lincoln mkz 2013	1
+chevrolet silverado 2500hd 2018.0	chevrolet silverado 2500hd 2018	1
+nissan altima 2.5 s 2017.0	nissan altima 2017	1
+ford fusion 2016.0	ford fusion 2016	1
+ford focus 2017.0	ford focus 2017	1
+jeep grand cherokee laredo sport 2019.0	jeep grand cherokee 2019	1
+honda cr-v 2020.0	honda cr-v 2020	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+ford super duty f-450 drw 2007.0	ford f-450 super duty 2007	1
+bmw 5 series 530e xdrive 2019.0	bmw 5 series 2019	1
+nissan altima 2019.0	nissan altima 2019	1
+honda civic cpe ex 2012.0	honda civic coupe 2012	1
+dodge durango 2019.0	dodge durango 2019	1
+chevrolet silverado 2017.0	chevrolet silverado 1500 2017	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+jeep wrangler 2013.0	jeep wrangler unlimited 2013	1
+hyundai elantra se sedan 4d 2017.0	hyundai elantra 2017	1
+chevrolet cruze 2018.0	chevrolet cruze 2018	1
+cadillac ct5 luxury sedan 4d 2020.0	cadillac ct5 2020	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+subaru legacy limited sedan 4d 2020.0	subaru legacy 2020	1
+ford freestar semini van 2006.0	ford freestar 2006	1
+kia stinger gt-line sedan 4d 2020.0	kia stinger 2020	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+mercedes-benz c-class 2013.0	mercedes-benz c-class 2013	1
+acura mdx 2020.0	acura mdx 2020	1
+mini cooper countryman 2011.0	mini countryman 2011	1
+hyundai accent 2013.0	hyundai accent 2013	1
+chevrolet malibu ls 2020.0	chevrolet malibu 2020	1
+chevrolet malibu ls 2020.0	chevrolet malibu 2020	1
+lincoln continental reserve 2019.0	lincoln continental 2019	1
+toyota 4runner 2005.0	toyota 4runner 2005	1
+toyota mirai 2017.0	toyota mirai 2017	1
+chrysler 200 limited 2015.0	chrysler 200 2015	1
+toyota prius three 2014.0	toyota prius 2014	1
+ford fusion se 2017.0	ford fusion 2017	1
+bmw 528i 2011.0	bmw 5 series 2011	1
+toyota prius v 2017.0	toyota prius v 2017	1
+ford f-350 2007.0	ford f-350 super duty 2007	1
+chevrolet silverado 1500 rst 2020.0	chevrolet silverado 1500 2020	1
+ram 1500 quad cab laramie pickup 2020.0	ram 1500 2020	1
+ford fusion se 2018.0	ford fusion 2018	1
+lincoln continental reserve 2019.0	lincoln continental 2019	1
+hyundai sonata 2013.0	hyundai sonata 2013	1
+ford f-150 lariat 2018.0	ford f-150 2018	1
+ford transit connect xlt 2020.0	ford transit connect 2020	1
+gmc yukon denali 2015.0	gmc yukon 2015	1
+jeep gladiator 2020.0	jeep gladiator 2020	1
+ford f150 supercrew cab xl 2019.0	ford f-150 2019	1
+dodge charger 2018.0	dodge charger 2018	1
+hyundai santa fe 2.4 limited 2020.0	hyundai santa fe 2020	1
+gmc savana cargo 2500 3dr 2012.0	gmc savana cargo 2012	1
+cadillac xt4 premium luxury 2020.0	cadillac xt4 2020	1
+mazda 2021.0	mazda mazda3 2021	1
+infiniti fx35 2009.0	infiniti fx35 2009	1
+subaru wrx limited sedan 4d 2020.0	subaru wrx 2020	1
+toyota camry hybrid le sedan 4d 2020.0	toyota camry hybrid 2020	1
+ford f550 super duty xl 6.7l 2018.0	ford f-550 super duty chassis 2018	1
+lincoln mkz sedan 4d 2020.0	lincoln mkz 2020	1
+acura mdx 2020.0	acura mdx 2020	1
+ford f-150 2018.0	ford f-150 2018	1
+chevrolet malibu ls 2020.0	chevrolet malibu 2020	1
+mitsubishi outlander phev sel 2018.0	mitsubishi outlander hybrid plug-in 2018	1
+dodge challenger sxt 2020.0	dodge challenger 2020	1
+hyundai santa fe sport 2.0 turbo 2017.0	hyundai santa fe sport 2017	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+infiniti qx60 2016.0	infiniti qx60 2016	1
+lexus es 2018.0	lexus es 350 2018	1
+chevrolet suburban premier 2020.0	chevrolet suburban 2020	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+chevrolet cruze 2019.0	chevrolet cruze 2019	1
+jeep gladiator rubicon 2020.0	jeep gladiator 2020	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+audi a5 2019.0	audi a5 sportback 2019	1
+gmc sierra 2012.0	gmc sierra 2500hd 2012	1
+subaru legacy limited sedan 4d 2020.0	subaru legacy 2020	1
+lincoln mkc reserve 2017.0	lincoln mkc 2017	1
+jeep wrangler unlimited sahara 2018.0	jeep wrangler unlimited 2018	1
+chevrolet malibu ltzsedan 2011.0	chevrolet malibu 2011	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+lexus is 300 2002.0	lexus is 2002	1
+kia soul + 2013.0	kia soul 2013	1
+toyota 4runner 2005.0	toyota 4runner 2005	1
+bmw 3 series 2015.0	bmw 3 series 2015	1
+ford fusion sel 2020.0	ford fusion 2020	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+buick regal 2015.0	buick regal 2015	1
+mercedes-benz gla 2018.0	mercedes-benz gla-class 2018	1
+ford edge 2013.0	ford edge 2013	1
+lincoln mkz awd 2014.0	lincoln mkz 2014	1
+honda cr-v 2013.0	honda cr-v 2013	1
+ford super duty f-450 drw cab-chassis 2002.0	ford f-450 super duty 2002	1
+jeep grand cherokee laredo 4wd 2013.0	jeep grand cherokee 2013	1
+chevrolet silverado 1500 extended cab 2008.0	chevrolet silverado 1500 2008	1
+chevrolet silverado 2016.0	chevrolet silverado 1500 2016	1
+nissan sentra sv sedan 4d 2018.0	nissan sentra 2018	1
+nissan sentra s 2005.0	nissan sentra 2005	1
+toyota yaris 2017.0	toyota yaris 2017	1
+chevrolet cruze limited 2016.0	chevrolet cruze limited 2016	1
+bmw x3 xdrive30i awdsuv 2010.0	bmw x3 2010	1
+toyota rav4 2011.0	toyota rav4 2011	1
+chevrolet malibu rs 2020.0	chevrolet malibu 2020	1
+ram 1500 quad cab laramie pickup 2020.0	ram 1500 2020	1
+nissan altima 2.5 sr 2016.0	nissan altima 2016	1
+hyundai sonata 2016.0	hyundai sonata 2016	1
+chevrolet trax ls 2020.0	chevrolet trax 2020	1
+ford ecosport titanium 2019.0	ford ecosport 2019	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+fiat 500x 2019.0	fiat 500x 2019	1
+toyota prius v 2013.0	toyota prius v 2013	1
+dodge grand caravan 2019.0	dodge grand caravan 2019	1
+acura mdx sh-awd sport utility 2020.0	acura mdx 2020	1
+honda accord sedan 2004.0	honda accord 2004	1
+nissan maxima s sedan 4d 2019.0	nissan maxima 2019	1
+ford focus 2013.0	ford focus electric 2013	1
+chevrolet suburban 2010.0	chevrolet suburban 2010	1
+toyota tacoma double cab 2018.0	toyota tacoma 2018	1
+honda accord 2018.0	honda accord 2018	1
+nissan rogue 2019.0	nissan rogue 2019	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+hyundai elantra gt 2017.0	hyundai elantra gt 2017	1
+ford mustang 2020.0	ford mustang 2020	1
+jeep renegade latitude 2019.0	jeep renegade 2019	1
+kia forte lx 2018.0	kia forte 2018	1
+cadillac xt5 sport suv 4d 2020.0	cadillac xt5 2020	1
+toyota corolla 2012.0	toyota corolla 2012	1
+toyota camry 2013.0	toyota camry hybrid 2013	1
+bmw 328 2007.0	bmw 3 series 2007	1
+nissan quest 3.5 svmini van 2012.0	nissan quest 2012	1
+toyota rav4 2016.0	toyota rav4 2016	1
+ford f-150 2013.0	ford f-150 2013	1
+audi a4 2.0 2017.0	audi a4 2017	1
+hyundai santa fe 2014.0	hyundai santa fe sport 2014	1
+ram 1500 2013.0	ram 1500 2013	1
+bmw 320i 2017.0	bmw 3 series 2017	1
+toyota highlander xle 2016.0	toyota highlander 2016	1
+gmc envoy xl 2004.0	gmc envoy xl 2004	1
+toyota camry 2007.0	toyota camry 2007	1
+mazda cx-5 2017.0	mazda cx-5 2017	1
+dodge grand caravan passenger 2016.0	dodge grand caravan 2016	1
+honda civic ex-l sedan 5-speed at 2012.0	honda civic 2012	1
+kia forte 2016.0	kia forte5 2016	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+nissan versa 2018.0	nissan versa 2018	1
+honda accord sdn lx 2013.0	honda accord 2013	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+cadillac xt5 luxury 2019.0	cadillac xt5 2019	1
+cadillac xt6 2020.0	cadillac xt6 2020	1
+dodge dart 2015.0	dodge dart 2015	1
+bmw x5 2014.0	bmw x5 2014	1
+hyundai elantra 2019.0	hyundai elantra 2019	1
+audi s6 4.0t quattro 2014.0	audi s6 2014	1
+ford f-150 2018.0	ford f-150 2018	1
+jeep wrangler unlimited sahara 2018.0	jeep wrangler unlimited 2018	1
+hyundai sonata 2011.0	hyundai sonata 2011	1
+nissan rogue sv 2014.0	nissan rogue 2014	1
+toyota camry hybrid le sedan 4d 2020.0	toyota camry hybrid 2020	1
+chevrolet silverado 2016.0	chevrolet silverado 1500 2016	1
+mazda mazda5 touring 2012.0	mazda mazda5 2012	1
+gmc vandura 1989.0	gmc vandura 1989	1
+ford explorer 2013.0	ford explorer 2013	1
+chevrolet silverado 2016.0	chevrolet silverado 1500 2016	1
+toyota prius 2002.0	toyota prius 2002	1
+subaru outback limited 2002.0	subaru outback 2002	1
+kia optima 2016.0	kia optima 2016	1
+nissan sentra 2017.0	nissan sentra 2017	1
+ford fusion 2015.0	ford fusion 2015	1
+ford escape sel 2020.0	ford escape 2020	1
+toyota corolla 2015.0	toyota corolla 2015	1
+mercury grand marquis 2008.0	mercury grand marquis 2008	1
+lexus nx 200t fwd 4dr 2015.0	lexus nx 200t 2015	1
+bmw 5 series 2017.0	bmw 5 series 2017	1
+bmw 6 series 1989.0	bmw 6 series 1989	1
+nissan sentra 2018.0	nissan sentra 2018	1
+chevrolet silverado 1500 2018.0	chevrolet silverado 1500 2018	1
+hyundai santa fe sport 2.0 turbo 2017.0	hyundai santa fe sport 2017	1
+kia forte lx 2016.0	kia forte 2016	1
+chevrolet cruze 2016.0	chevrolet cruze 2016	1
+bmw 3 series 2017.0	bmw 3 series 2017	1
+ford escape s sport utility 4d 2020.0	ford escape 2020	1
+toyota prius three 2014.0	toyota prius 2014	1
+ford focus 2013.0	ford focus electric 2013	1
+chevrolet sonic 2015.0	chevrolet sonic 2015	1
+nissan quest 3.5 svmini van 2012.0	nissan quest 2012	1
+mini hardtop 2 door john cooper 2017.0	mini cooper 2017	1
+chevrolet malibu lt 2017.0	chevrolet malibu 2017	1
+toyota sienna 2006.0	toyota sienna 2006	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+ford f350 2012.0	ford f-350 super duty chassis 2012	1
+volkswagen e-golf 2016.0	volkswagen e-golf 2016	1
+lincoln corsair reserve sport 2020.0	lincoln corsair 2020	1
+ford e350 bucket van 2002.0	ford e-series 2002	1
+honda accord ex-l*leather*cam! 2018.0	honda accord 2018	1
+ford ranger supercrew lariat 2019.0	ford ranger 2019	1
+toyota yaris 2017.0	toyota yaris 2017	1
+mercedes-benz c-class 2013.0	mercedes-benz c-class 2013	1
+acura ilx 2020.0	acura ilx 2020	1
+mazda mazda3 i grand touring 2013.0	mazda mazda3 2013	1
+hyundai accent 2013.0	hyundai accent 2013	1
+ford escape sel 2020.0	ford escape 2020	1
+chevrolet silverado 2016.0	chevrolet silverado 1500 2016	1
+mazda 3 2016.0	mazda mazda3 2016	1
+ram 1500 sport crew cab lwb 4wd 2014.0	ram 1500 2014	1
+toyota corolla 2020.0	toyota corolla 2020	1
+ford explorer 2016.0	ford explorer 2016	1
+honda cr-v ex-l 2013.0	honda cr-v 2013	1
+ram 2018.0	ram 1500 2018	1
+toyota tundra double cab sr5 2020.0	toyota tundra 2020	1
+hyundai sonata se sedan 4d 2016.0	hyundai sonata 2016	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+infiniti q60 3.0t premium coupe 2017.0	infiniti q60 2017	1
+dodge dart sxt 2013.0	dodge dart 2013	1
+honda odyssey ex 2002.0	honda odyssey 2002	1
+toyota corolla 2020.0	toyota corolla 2020	1
+buick verano 2016.0	buick verano 2016	1
+dodge journey crossroad 2016.0	dodge journey 2016	1
+ford fiesta 2011.0	ford fiesta 2011	1
+nissan sentra 2017.0	nissan sentra 2017	1
+bmw 3-series 2011.0	bmw 3 series 2011	1
+toyota prius two 2018.0	toyota prius 2018	1
+toyota highlander 2019.0	toyota highlander 2019	1
+toyota prius plug-in 2014.0	toyota prius plug-in 2014	1
+ford f-150 2008.0	ford f-150 2008	1
+nissan versa 2017.0	nissan versa 2017	1
+jeep wrangler 2011.0	jeep wrangler unlimited 2011	1
+nissan leaf sv hatchback 4d 2020.0	nissan leaf 2020	1
+hyundai sonata 2015.0	hyundai sonata hybrid 2015	1
+toyota prius prime 2017.0	toyota prius prime 2017	1
+chevrolet trax ls 2020.0	chevrolet trax 2020	1
+dodge challenger 2012.0	dodge challenger 2012	1
+cadillac xt5 sport suv 4d 2020.0	cadillac xt5 2020	1
+chevrolet cruze limited 2016.0	chevrolet cruze limited 2016	1
+toyota 4runner sr5 sport utility 2019.0	toyota 4runner 2019	1
+jeep cherokee 2016.0	jeep cherokee 2016	1
+honda cr-v lx 2010.0	honda cr-v 2010	1
+ford 2017.0	ford f-150 2017	1
+saturn sc2 2001.0	saturn s-series 2001	1
+honda accord ex-l v6 2012.0	honda accord 2012	1
+gmc yukon 2016.0	gmc yukon 2016	1
+toyota 4runner 2004.0	toyota 4runner 2004	1
+kia optima 2011.0	kia optima 2011	1
+ford f-250 superduty lariat crew 6.7 liter 2017.0	ford f-250 super duty 2017	1
+ford f-350 2007.0	ford f-350 super duty 2007	1
+mitsubishi mirage 2017.0	mitsubishi mirage 2017	1
+toyota rav4 xle 2018.0	toyota rav4 2018	1
+ford taurus 2001.0	ford taurus 2001	1
+ford e350 bucket van 2002.0	ford e-series 2002	1
+chevrolet malibu 2011.0	chevrolet malibu 2011	1
+chevrolet silverado 1500 2018.0	chevrolet silverado 1500 2018	1
+mazda cx-9 2019.0	mazda cx-9 2019	1
+chevrolet trax ls 2021.0	chevrolet trax 2021	1
+jeep renegade 2016.0	jeep renegade 2016	1
+ford edge 2017.0	ford edge 2017	1
+kia forte lx 2016.0	kia forte 2016	1
+hyundai genesis 3.8l 2015.0	hyundai genesis 2015	1
+toyota prius three 2014.0	toyota prius 2014	1
+kia soul manual 2017.0	kia soul 2017	1
+toyota prius three 2012.0	toyota prius 2012	1
+ford escape 2020.0	ford escape 2020	1
+hyundai elantra sesedan 6a 2017.0	hyundai elantra 2017	1
+mazda cx-3 2017.0	mazda cx-3 2017	1
+nissan quest 3.5 svmini van 2012.0	nissan quest 2012	1
+ford fusion hybrid 2014.0	ford fusion hybrid 2014	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+ford fusion 2019.0	ford fusion 2019	1
+chevrolet equinox 2013.0	chevrolet equinox 2013	1
+bmw 5 series 2017.0	bmw 5 series 2017	1
+chevrolet cruze 2017.0	chevrolet cruze 2017	1
+ford f-150 lariat 2018.0	ford f-150 2018	1
+toyota corolla im hatchback 4d 2017.0	toyota corolla im 2017	1
+toyota prius c 2016.0	toyota prius c 2016	1
+toyota sienna 2017.0	toyota sienna 2017	1
+kia soul 2016.0	kia soul 2016	1
+kia optima 2019.0	kia optima 2019	1
+nissan rogue sl automatic 2020.0	nissan rogue 2020	1
+buick encore gx 2020.0	buick encore gx 2020	1
+nissan leaf sv hatchback 4d 2020.0	nissan leaf 2020	1
+bmw 5-series 2015.0	bmw 5 series 2015	1
+nissan murano s sport utility 4d 2020.0	nissan murano 2020	1
+bmw 530i 2017.0	bmw 5 series 2017	1
+toyota prius prime 2018.0	toyota prius prime 2018	1
+dodge grand caravan sxt 2008.0	dodge grand caravan 2008	1
+chevrolet silverado 1500 high c 2014.0	chevrolet silverado 1500 2014	1
+ford edge 2017.0	ford edge 2017	1
+bmw 228i 2016.0	bmw 2 series 2016	1
+toyota prius hybrid touring 2008.0	toyota prius 2008	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+toyota corolla 2015.0	toyota corolla 2015	1
+toyota camry 2013.0	toyota camry hybrid 2013	1
+hyundai elantra sesedan 6a 2017.0	hyundai elantra 2017	1
+nissan sentra 2018.0	nissan sentra 2018	1
+kia sportage 2012.0	kia sportage 2012	1
+tesla model s 2015.0	tesla model s 2015	1
+subaru wrx base 2020.0	subaru wrx 2020	1
+ford mustang 2014.0	ford mustang 2014	1
+ram promaster city wagon 2016.0	ram promaster city 2016	1
+chevrolet trailblazer rs 2021.0	chevrolet trailblazer 2021	1
+chevrolet equinox 2016.0	chevrolet equinox 2016	1
+ford edge sel 2018.0	ford edge 2018	1
+mercedes-benz e-class e 400 2018.0	mercedes-benz e-class 2018	1
+chevrolet cruze 2018.0	chevrolet cruze 2018	1
+mercedes-benz e-class 2008.0	mercedes-benz e-class 2008	1
+ford thunderbird 2002.0	ford thunderbird 2002	1
+dodge charger 2020.0	dodge charger 2020	1
+lexus rx 400h 2008.0	lexus rx 400h 2008	1
+toyota sienna 2017.0	toyota sienna 2017	1
+ford e350 bucket van 2002.0	ford e-series 2002	1
+saturn outlook xr 2008.0	saturn outlook 2008	1
+honda odyssey ex-l wheelchair h 2016.0	honda odyssey 2016	1
+buick lacrosse 2006.0	buick lacrosse 2006	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+jaguar e-pace p250 se sport 2020.0	jaguar e-pace 2020	1
+ford mustang gt premium coupe 2d 2019.0	ford mustang 2019	1
+mitsubishi i-miev 2012.0	mitsubishi i-miev 2012	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+dodge nitro 2011.0	dodge nitro 2011	1
+bmw 5 series 2017.0	bmw 5 series 2017	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+ford ecosport se suv 2018.0	ford ecosport 2018	1
+dodge grand caravan 2017.0	dodge grand caravan 2017	1
+chevrolet volt 2013.0	chevrolet volt 2013	1
+volkswagen e-golf 2016.0	volkswagen e-golf 2016	1
+chevrolet cruze 2011.0	chevrolet cruze 2011	1
+volkswagen golf alltrack tsi se 2017.0	volkswagen golf alltrack 2017	1
+mercedes-benz r-class r 350 2006.0	mercedes-benz r-class 2006	1
+hyundai sonata se 2015.0	hyundai sonata 2015	1
+dodge dart 2013.0	dodge dart 2013	1
+ford f-150 2018.0	ford f-150 2018	1
+chevrolet silverado 1500 2017.0	chevrolet silverado 1500 2017	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+subaru forester 2016.0	subaru forester 2016	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+toyota corolla 2005.0	toyota corolla 2005	1
+mitsubishi lancer 2014.0	mitsubishi lancer 2014	1
+lincoln continental reserve 2019.0	lincoln continental 2019	1
+ram 2500 2018.0	ram 2500 2018	1
+volkswagen e-golf 2019.0	volkswagen e-golf 2019	1
+lincoln continental sedan 4d 2020.0	lincoln continental 2020	1
+ram 2500 2019.0	ram 2500 2019	1
+mercedes-benz c-class 2013.0	mercedes-benz c-class 2013	1
+nissan rogue 2019.0	nissan rogue 2019	1
+nissan altima 2015.0	nissan altima 2015	1
+kia soul manual 2017.0	kia soul 2017	1
+ford edge titanium awd, w/ leather, navigation 2017.0	ford edge 2017	1
+jeep wrangler 2011.0	jeep wrangler unlimited 2011	1
+honda accord crosstour exl 2010.0	honda accord crosstour 2010	1
+honda fit 2010.0	honda fit 2010	1
+fiat 500x 2019.0	fiat 500x 2019	1
+nissan sentra 2019.0	nissan sentra 2019	1
+dodge charger 2020.0	dodge charger 2020	1
+buick envision preferred sport 2020.0	buick envision 2020	1
+chevrolet tahoe 2011.0	chevrolet tahoe 2011	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+chrysler 300 2019.0	chrysler 300 2019	1
+volkswagen passat 2014.0	volkswagen passat 2014	1
+ford focus 2016.0	ford focus 2016	1
+lexus rx 350 2010.0	lexus rx 350 2010	1
+hyundai elantra 2019.0	hyundai elantra 2019	1
+tesla model 3 2019.0	tesla model 3 2019	1
+infiniti q60 3.0t premium coupe 2017.0	infiniti q60 2017	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+chevrolet cobalt ls 2008.0	chevrolet cobalt 2008	1
+hyundai santa fe sesuv 6a 2012.0	hyundai santa fe 2012	1
+dodge challenger 2018.0	dodge challenger 2018	1
+mazda mazda3 2015.0	mazda mazda3 2015	1
+hyundai accent se 2017.0	hyundai accent 2017	1
+toyota tacoma double cab 2018.0	toyota tacoma 2018	1
+chevrolet express passenger 2019.0	chevrolet express 2019	1
+honda civic 2011.0	honda civic 2011	1
+honda cr-v lx 2010.0	honda cr-v 2010	1
+chevrolet cruze ls 2014.0	chevrolet cruze 2014	1
+nissan altima 2.5 s 2014.0	nissan altima 2014	1
+ford f150 supercrew cab xl 2020.0	ford f-150 2020	1
+ram 1500 2019.0	ram 1500 2019	1
+hyundai elantra touring 2010.0	hyundai elantra touring 2010	1
+toyota sienna 2011.0	toyota sienna 2011	1
+ford fiesta 2011.0	ford fiesta 2011	1
+bmw 328i 2011.0	bmw 3 series 2011	1
+chevrolet camaro 2012.0	chevrolet camaro 2012	1
+chevrolet express cargo van 2014.0	chevrolet express cargo 2014	1
+hyundai elantra 2013.0	hyundai elantra 2013	1
+gmc sierra 1500 2020.0	gmc sierra 1500 2020	1
+chevrolet equinox lt 2020.0	chevrolet equinox 2020	1
+toyota prius three 2014.0	toyota prius 2014	1
+kia forte lx 2018.0	kia forte 2018	1
+chevrolet bolt ev lt hatchback 2020.0	chevrolet bolt ev 2020	1
+ford f-150 xl 2dr standard cab 2004.0	ford f-150 2004	1
+cadillac xt6 premium luxury 2020.0	cadillac xt6 2020	1
+dodge challenger sxt 2020.0	dodge challenger 2020	1
+ford fusion 2012.0	ford fusion 2012	1
+hyundai elantra sesedan 6a 2017.0	hyundai elantra 2017	1
+ford f-150 2018.0	ford f-150 2018	1
+chevrolet silverado 1500 double cab 2015.0	chevrolet silverado 1500 2015	1
+ford transit connect cargo van 2020.0	ford transit connect 2020	1
+jeep cherokee 2016.0	jeep cherokee 2016	1
+chrysler 300 2019.0	chrysler 300 2019	1
+hyundai santa fe sesuv 6a 2012.0	hyundai santa fe 2012	1
+ford f-250sd 2017.0	ford f-250 super duty 2017	1
+chevrolet blazer lt 2020.0	chevrolet blazer 2020	1
+honda cr-v 2020.0	honda cr-v 2020	1
+ford escape 2013.0	ford escape 2013	1
+chevrolet traverse 2017.0	chevrolet traverse 2017	1
+ford ranger supercrew xlt pickup 2020.0	ford ranger 2020	1
+subaru forester 2016.0	subaru forester 2016	1
+infiniti qx60 2017.0	infiniti qx60 2017	1
+toyota prius c fourhatchback 2013.0	toyota prius c 2013	1
+hyundai elantra 2017.0	hyundai elantra 2017	1
+gmc yukon 2007.0	gmc yukon 2007	1
+chrysler 300 limited* 2017.0	chrysler 300 2017	1
+mercury grand marquis 2008.0	mercury grand marquis 2008	1
+ford f-250 superduty lariat crew 6.7 liter 2017.0	ford f-250 super duty 2017	1
+ford f-250 superduty lariat crew 6.7 liter 2017.0	ford f-250 super duty 2017	1
+ford explorer 2016.0	ford explorer 2016	1
+jeep renegade 2019.0	jeep renegade 2019	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+cadillac srx 2016.0	cadillac srx 2016	1
+mini hardtop 2 door john cooper 2017.0	mini cooper 2017	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+kia optima 2016.0	kia optima 2016	1
+infiniti qx70 2017.0	infiniti qx70 2017	1
+toyota corolla 2016.0	toyota corolla 2016	1
+ford explorer xlt 2018.0	ford explorer 2018	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+acura rdx advance package 2018.0	acura rdx 2018	1
+mercedes-benz c-class 2018.0	mercedes-benz c-class 2018	1
+cadillac escalade 2015.0	cadillac escalade 2015	1
+mercedes-benz m-class ml 500 2006.0	mercedes-benz m-class 2006	1
+ford fusion 2017.0	ford fusion hybrid 2017	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+nissan sentra s 2005.0	nissan sentra 2005	1
+chevrolet traverse lt 2014.0	chevrolet traverse 2014	1
+ford thunderbird 2002.0	ford thunderbird 2002	1
+chrysler 200-series 2014.0	chrysler 200 2014	1
+dodge challenger sxt plus 2015.0	dodge challenger 2015	1
+acura mdx sh-awd sport utility 2020.0	acura mdx 2020	1
+ford ranger supercrew xlt pickup 2020.0	ford ranger 2020	1
+toyota sienna 2017.0	toyota sienna 2017	1
+cadillac escalade 2015.0	cadillac escalade 2015	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+jeep gladiator overland 2020.0	jeep gladiator 2020	1
+ford transit connect cargo xl 2016.0	ford transit connect 2016	1
+hyundai elantra sesedan 6a 2017.0	hyundai elantra 2017	1
+ram 2017.0	ram 1500 2017	1
+mercedes-benz c-class 2018.0	mercedes-benz c-class 2018	1
+ford edge sel awd 2020.0	ford edge 2020	1
+ford f-350 super duty 2014.0	ford f-350 super duty 2014	1
+ford f-150 2018.0	ford f-150 2018	1
+nissan quest 3.5 svmini van 2012.0	nissan quest 2012	1
+honda accord 2017.0	honda accord 2017	1
+ford flex 2018.0	ford flex 2018	1
+toyota tundra limited 2017.0	toyota tundra 2017	1
+subaru impreza sedan wrx 2013.0	subaru impreza wrx sti 2013	1
+ford mustang 2012.0	ford mustang 2012	1
+gmc savana cargo 2500 3dr 2012.0	gmc savana cargo 2012	1
+mercedes-benz r-class r 350 2006.0	mercedes-benz r-class 2006	1
+toyota corolla 2016.0	toyota corolla 2016	1
+cadillac xt6 premium luxury 2020.0	cadillac xt6 2020	1
+ford f-150 raptor 4wd supercrew 2018.0	ford f-150 2018	1
+bmw 3 series 2011.0	bmw 3 series 2011	1
+ford ranger 2004.0	ford ranger 2004	1
+toyota camry hybrid 2020.0	toyota camry hybrid 2020	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+nissan leaf sv hatchback 4d 2020.0	nissan leaf 2020	1
+ford f250 super duty crew cab 2016.0	ford f-250 super duty 2016	1
+chrysler 300m 2004.0	chrysler 300m 2004	1
+toyota 4runner sr5 sport utility 2019.0	toyota 4runner 2019	1
+volvo xc60 t5 momentum sport 2019.0	volvo xc60 2019	1
+dodge dart 2015.0	dodge dart 2015	1
+dodge challenger 2017.0	dodge challenger 2017	1
+ford ranger supercrew xlt pickup 2020.0	ford ranger 2020	1
+dodge durango 2020.0	dodge durango 2020	1
+ford transit-350 2016.0	ford transit chassis 2016	1
+toyota highlander hybrid 2020.0	toyota highlander hybrid 2020	1
+mercedes-benz r-class r 350 2006.0	mercedes-benz r-class 2006	1
+mitsubishi outlander phev sel 2018.0	mitsubishi outlander hybrid plug-in 2018	1
+ford f350 powerstroke xlt 4x4 2017.0	ford f-350 super duty 2017	1
+dodge journey 2019.0	dodge journey 2019	1
+gmc sierra 1500 double cab 2017.0	gmc sierra 1500 2017	1
+toyota camry 2019.0	toyota camry 2019	1
+honda accord ex-l 2.4 2010.0	honda accord 2010	1
+ford f-150 2019.0	ford f-150 2019	1
+chevrolet cruze 2017.0	chevrolet cruze 2017	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+volkswagen golf alltrack 2017.0	volkswagen golf alltrack 2017	1
+nissan leaf 2014.0	nissan leaf 2014	1
+nissan sentra sr turbo sedan 4d 2017.0	nissan sentra 2017	1
+jaguar vanden plas 2004.0	jaguar xj-series 2004	1
+dodge journey se value sport 2020.0	dodge journey 2020	1
+gmc savana passenger 2018.0	gmc savana 2018	1
+volkswagen tiguan 2011.0	volkswagen tiguan 2011	1
+chevrolet volt 2017.0	chevrolet volt 2017	1
+honda accord ex coupe at 2011.0	honda accord coupe 2011	1
+lincoln corsair reserve sport 2020.0	lincoln corsair 2020	1
+nissan titan 2017.0	nissan titan 2017	1
+honda cr-v 2020.0	honda cr-v 2020	1
+toyota corolla lsedan 4a 2014.0	toyota corolla 2014	1
+mercedes-benz c-class 2018.0	mercedes-benz c-class 2018	1
+nissan kicks sv 2020.0	nissan kicks 2020	1
+chevrolet tahoe lt 2020.0	chevrolet tahoe 2020	1
+chevrolet volt 2012.0	chevrolet volt 2012	1
+ford edge 2017.0	ford edge 2017	1
+mercedes-benz g-class 2017.0	mercedes-benz g-class 2017	1
+acura tlx 2017.0	acura tlx 2017	1
+chevrolet silverado 1500 2018.0	chevrolet silverado 1500 2018	1
+tesla model 3 2019.0	tesla model 3 2019	1
+nissan versa 2017.0	nissan versa 2017	1
+gmc sierra denali 2011.0	gmc sierra 1500 2011	1
+honda accord sedan 2004.0	honda accord 2004	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+chevrolet impala 2013.0	chevrolet impala 2013	1
+audi s3 tfsi premium plus sedan 2020.0	audi s3 2020	1
+jeep gladiator 2020.0	jeep gladiator 2020	1
+hyundai veloster 2015.0	hyundai veloster turbo 2015	1
+dodge grand caravan sxt 2008.0	dodge grand caravan 2008	1
+ford f-450 sd 2016.0	ford f-450 super duty 2016	1
+chevrolet equinox lt 2020.0	chevrolet equinox 2020	1
+jeep grand cherokee laredo 2012.0	jeep grand cherokee 2012	1
+ford excursion xlt 2wdsuv 2002.0	ford excursion 2002	1
+ford f-450 sd 2016.0	ford f-450 super duty 2016	1
+ford f-450 sd 2016.0	ford f-450 super duty 2016	1
+chevrolet silverado 3500hd 2015.0	chevrolet silverado 3500hd 2015	1
+cadillac xt5 luxury 2019.0	cadillac xt5 2019	1
+toyota camry hybrid 2020.0	toyota camry hybrid 2020	1
+lincoln mkz reserve fwd 2018.0	lincoln mkz 2018	1
+volkswagen jetta se 2012.0	volkswagen jetta 2012	1
+jeep compass latitude 2018.0	jeep compass 2018	1
+honda cr-v 2017.0	honda cr-v 2017	1
+jeep wrangler 2013.0	jeep wrangler unlimited 2013	1
+dodge journey 2018.0	dodge journey 2018	1
+buick regal 2015.0	buick regal 2015	1
+chevrolet impala lt fleetsedan 2012.0	chevrolet impala 2012	1
+jeep patriot 2014.0	jeep patriot 2014	1
+toyota tacoma 2013.0	toyota tacoma 2013	1
+mini cooper hardtop 2013.0	mini cooper 2013	1
+audi a4 45 premium sedan 4d 2020.0	audi a4 2020	1
+hyundai elantra touring 2010.0	hyundai elantra touring 2010	1
+mercedes-benz c-class 2013.0	mercedes-benz c-class 2013	1
+chrysler 300 csedan 2005.0	chrysler 300 2005	1
+lincoln mkz 2013.0	lincoln mkz 2013	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+chevrolet silverado 3500hd 2013.0	chevrolet silverado 3500hd 2013	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+lexus rx 400h 2008.0	lexus rx 400h 2008	1
+bmw x3 xdrive30i awdsuv 2010.0	bmw x3 2010	1
+toyota yaris 2017.0	toyota yaris 2017	1
+gmc sierra 2012.0	gmc sierra 2500hd 2012	1
+toyota prius three 2012.0	toyota prius 2012	1
+chevrolet trailblazer ls 2003.0	chevrolet trailblazer 2003	1
+lexus gs 350 sedan 4d 2015.0	lexus gs 350 2015	1
+ford flex 2019.0	ford flex 2019	1
+chevrolet malibu lt sedan 4d 2018.0	chevrolet malibu 2018	1
+chevrolet silverado 1500 rst 2020.0	chevrolet silverado 1500 2020	1
+ford crown victoria 1997.0	ford crown victoria 1997	1
+ford mustang gt premium coupe 2d 2020.0	ford mustang 2020	1
+honda civic si 2015.0	honda civic 2015	1
+nissan altima 2017.0	nissan altima 2017	1
+toyota highlander 2012.0	toyota highlander 2012	1
+lincoln continental reserve 2019.0	lincoln continental 2019	1
+lexus rc 2017.0	lexus rc 350 2017	1
+chevrolet spark 2014.0	chevrolet spark 2014	1
+gmc savana cargo 2500 3dr 2012.0	gmc savana cargo 2012	1
+honda civic 2009.0	honda civic coupe 2009	1
+mini hardtop 2 door john cooper 2017.0	mini cooper 2017	1
+gmc sierra 1500 2018.0	gmc sierra 1500 2018	1
+nissan maxima 2014.0	nissan maxima 2014	1
+mini hardtop 2015.0	mini cooper 2015	1
+honda accord 2014.0	honda accord 2014	1
+ram 1500 2020.0	ram 1500 2020	1
+ram 1500 quad cab laramie pickup 2020.0	ram 1500 2020	1
+dodge grand caravan sxt 2015.0	dodge grand caravan 2015	1
+toyota 4runner 2004.0	toyota 4runner 2004	1
+ford edge titanium sport utility 2018.0	ford edge 2018	1
+chevrolet cruze 2018.0	chevrolet cruze 2018	1
+nissan rogue sv sport utility 4d 2020.0	nissan rogue 2020	1
+chevrolet blazer 1lt sport 2019.0	chevrolet blazer 2019	1
+chevrolet sonic 2014.0	chevrolet sonic 2014	1
+mercury grand marquis 2008.0	mercury grand marquis 2008	1
+tesla model 3 2019.0	tesla model 3 2019	1
+chevrolet malibu ls 2020.0	chevrolet malibu 2020	1
+hyundai accent se 2017.0	hyundai accent 2017	1
+mazda 3 2016.0	mazda mazda3 2016	1
+bmw 5-series 2015.0	bmw 5 series 2015	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+honda odyssey 2013.0	honda odyssey 2013	1
+chevrolet equinox lt 2020.0	chevrolet equinox 2020	1
+chevrolet silverado 1500 rst 2020.0	chevrolet silverado 1500 2020	1
+jeep grand cherokee limited 2020.0	jeep grand cherokee 2020	1
+lincoln continental reserve 2019.0	lincoln continental 2019	1
+gmc sierra 1500 2018.0	gmc sierra 1500 2018	1
+ford escape 2013.0	ford escape 2013	1
+mini cooper hardtop 2013.0	mini cooper 2013	1
+honda civic lx sedan cvt 2015.0	honda civic 2015	1
+jeep gladiator 2020.0	jeep gladiator 2020	1
+nissan kicks sv sport utility 4d 2020.0	nissan kicks 2020	1
+bmw x5 2014.0	bmw x5 2014	1
+toyota tundra double cab sr5 2020.0	toyota tundra 2020	1
+chevrolet silverado 3500hd 2020.0	chevrolet silverado 3500hd 2020	1
+mitsubishi outlander phev sel 2018.0	mitsubishi outlander hybrid plug-in 2018	1
+toyota highlander 2019.0	toyota highlander 2019	1
+acura mdx sh-awd sport utility 2020.0	acura mdx 2020	1
+chevrolet suburban premier 2020.0	chevrolet suburban 2020	1
+mercedes-benz c-class 2014.0	mercedes-benz c-class 2014	1
+honda accord 2012.0	honda accord 2012	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+chevrolet malibu 2005.0	chevrolet malibu 2005	1
+mercedes-benz gla 250 4matic 2016.0	mercedes-benz gla-class 2016	1
+jeep renegade 2019.0	jeep renegade 2019	1
+subaru legacy limited sedan 4d 2020.0	subaru legacy 2020	1
+hyundai elantra touring 2010.0	hyundai elantra touring 2010	1
+nissan altima 2.5 s 2017.0	nissan altima 2017	1
+kia soul ev 2016.0	kia soul ev 2016	1
+bmw x3 xdrive30i awdsuv 2010.0	bmw x3 2010	1
+subaru forester 2017.0	subaru forester 2017	1
+ford f250 super duty lariat 4x4 2016.0	ford f-250 super duty 2016	1
+mazda 3 s grand touring 2011.0	mazda mazda3 2011	1
+toyota highlander 2013.0	toyota highlander 2013	1
+ford explorer 2016.0	ford explorer 2016	1
+honda pilot 2017.0	honda pilot 2017	1
+toyota highlander 2015.0	toyota highlander hybrid 2015	1
+toyota tundra limited 2017.0	toyota tundra 2017	1
+ram pickup 1500 2020.0	ram 1500 2020	1
+ford f-450sd 2012.0	ford f-450 super duty 2012	1
+nissan sentra 2018.0	nissan sentra 2018	1
+ford fusion s 2018.0	ford fusion 2018	1
+ford explorer 2020.0	ford explorer 2020	1
+kia soul wgn man base 2012.0	kia soul 2012	1
+gmc sierra 2019.0	gmc sierra 1500 2019	1
+bmw 5 series 2017.0	bmw 5 series 2017	1
+chevrolet malibu rs 2020.0	chevrolet malibu 2020	1
+toyota avalon hybrid 2020.0	toyota avalon hybrid 2020	1
+jeep gladiator rubicon 2020.0	jeep gladiator 2020	1
+ford expedition 2012.0	ford expedition 2012	1
+jeep grand cherokee laredo 4wd 2013.0	jeep grand cherokee 2013	1
+ram 2500 2019.0	ram 2500 2019	1
+ford mustang gt premium coupe 2d 2019.0	ford mustang 2019	1
+ford f-250sd 2017.0	ford f-250 super duty 2017	1
+ford f-250 superduty lariat crew 6.7 liter 2017.0	ford f-250 super duty 2017	1
+subaru impreza 2014.0	subaru impreza 2014	1
+nissan maxima s sedan 4d 2019.0	nissan maxima 2019	1
+chevrolet trailblazer ls 2021.0	chevrolet trailblazer 2021	1
+ford fusion se 2018.0	ford fusion 2018	1
+kia optima 2016.0	kia optima 2016	1
+mercedes-benz c-class 2012.0	mercedes-benz c-class 2012	1
+toyota highlander se 2012.0	toyota highlander 2012	1
+saturn l-series lw300 2003.0	saturn l-series 2003	1
+lincoln mkz sedan 4d 2020.0	lincoln mkz 2020	1
+bmw x5 2016.0	bmw x5 2016	1
+kia soul 2014.0	kia soul 2014	1
+chevrolet malibu 2012.0	chevrolet malibu 2012	1
+chevrolet traverse premier 2019.0	chevrolet traverse 2019	1
+ford f-250sd 2017.0	ford f-250 super duty 2017	1
+honda cr-v lx 2010.0	honda cr-v 2010	1
+cadillac escalade esv luxury 2019.0	cadillac escalade esv 2019	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+lexus ct 200h 2014.0	lexus ct hybrid 2014	1
+chevrolet camaro 2015.0	chevrolet camaro 2015	1
+ford freestar semini van 2006.0	ford freestar 2006	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+ford f-150 2019.0	ford f-150 2019	1
+mercedes-benz c-class 2017.0	mercedes-benz c-class 2017	1
+buick encore 2015.0	buick encore 2015	1
+porsche 718 cayman 2020.0	porsche 718 cayman 2020	1
+ford focus 2005.0	ford focus 2005	1
+honda accord 2012.0	honda accord 2012	1
+chevrolet trailblazer rs 2021.0	chevrolet trailblazer 2021	1
+hyundai sonata 2017.0	hyundai sonata 2017	1
+chevrolet trax ls 2021.0	chevrolet trax 2021	1
+chevrolet bolt ev lt hatchback 2020.0	chevrolet bolt ev 2020	1
+toyota prius prime 2018.0	toyota prius prime 2018	1
+chevrolet silverado 1500 high co 2018.0	chevrolet silverado 1500 2018	1
+bmw 5 series 2017.0	bmw 5 series 2017	1
+ford ecosport se 2019.0	ford ecosport 2019	1
+lincoln mkz sedan 4d 2020.0	lincoln mkz 2020	1
+toyota tacoma double cab 2015.0	toyota tacoma 2015	1
+toyota prius c 2016.0	toyota prius c 2016	1
+nissan murano sl 2010.0	nissan murano 2010	1
+mazda 3 2016.0	mazda mazda3 2016	1
+jeep wrangler 2013.0	jeep wrangler 2013	1
+nissan quest 2011.0	nissan quest 2011	1
+pontiac vibe 2010.0	pontiac vibe 2010	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+ford fusion s 2018.0	ford fusion 2018	1
+bmw x3 2014.0	bmw x3 2014	1
+buick encore gx preferred 2020.0	buick encore gx 2020	1
+chevrolet trax ls 2020.0	chevrolet trax 2020	1
+buick encore gx essence sport 2020.0	buick encore gx 2020	1
+ford f150 supercrew cab xl 2019.0	ford f-150 2019	1
+chevrolet trax ls 2021.0	chevrolet trax 2021	1
+ford edge 2018.0	ford edge 2018	1
+lexus ct 200h 2012.0	lexus ct hybrid 2012	1
+ford f350 2012.0	ford f-350 super duty chassis 2012	1
+honda civic lx sedan cvt 2015.0	honda civic 2015	1
+kia sportage 2019.0	kia sportage 2019	1
+dodge grand caravan passenger 2018.0	dodge grand caravan 2018	1
+kia stinger gt-line sedan 4d 2020.0	kia stinger 2020	1
+ford five hundred 2006.0	ford five hundred 2006	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+chevrolet malibu 2012.0	chevrolet malibu 2012	1
+hyundai tucson 2021.0	hyundai tucson 2021	1
+mazda mazda3 2013.0	mazda mazda3 2013	1
+ford explorer 2019.0	ford explorer 2019	1
+ford fusion 2014.0	ford fusion 2014	1
+ford escape sel 2020.0	ford escape 2020	1
+hyundai santa fe se awd, w/ lane keeping assist 2020.0	hyundai santa fe 2020	1
+dodge intrepid se 2002.0	dodge intrepid 2002	1
+jeep wrangler 2008.0	jeep wrangler 2008	1
+ford focus 2014.0	ford focus 2014	1
+kia soul 2014.0	kia soul 2014	1
+ford e-series chassis e-450 sd 2011.0	ford f-350 super duty chassis 2011	1
+toyota rav4 2010.0	toyota rav4 2010	1
+gmc yukon 2016.0	gmc yukon 2016	1
+ram pickup 2500 2020.0	ram 2500 2020	1
+lexus rx 2020.0	lexus rx 2020	1
+volkswagen beetle turbo 2018.0	volkswagen beetle 2018	1
+ford ranger supercrew xl pickup 2019.0	ford ranger 2019	1
+nissan versa sedan 2017.0	nissan versa 2017	1
+ford escape 2020.0	ford escape 2020	1
+chevrolet silverado 2016.0	chevrolet silverado 1500 2016	1
+volkswagen e-golf 2016.0	volkswagen e-golf 2016	1
+cadillac ct5 luxury sedan 4d 2020.0	cadillac ct5 2020	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+hyundai elantra gt 2017.0	hyundai elantra gt 2017	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+ford f-150 2016.0	ford f-150 2016	1
+ford f-550 2009.0	ford f-550 super duty chassis 2009	1
+ford freestar semini van 2006.0	ford freestar 2006	1
+honda odyssey touring elite 2011.0	honda odyssey 2011	1
+ford f150 supercrew cab xl 2019.0	ford f-150 2019	1
+dodge grand caravan sxt 2015.0	dodge grand caravan 2015	1
+kia rio lx 2015.0	kia rio 2015	1
+bmw x5 2012.0	bmw x5 2012	1
+toyota tacoma 2017.0	toyota tacoma 2017	1
+jeep wrangler 2011.0	jeep wrangler 2011	1
+hyundai sonata 2015.0	hyundai sonata 2015	1
+jeep grand cherokee laredo 2006.0	jeep grand cherokee 2006	1
+ford f150 supercrew cab 2015.0	ford f-150 2015	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+chevrolet bolt ev lt hatchback 2020.0	chevrolet bolt ev 2020	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+bmw 328d 2017.0	bmw 3 series 2017	1
+toyota prius three 2012.0	toyota prius 2012	1
+dodge grand caravan 2012.0	dodge grand caravan 2012	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+dodge grand caravan sxt 2008.0	dodge grand caravan 2008	1
+chevrolet silverado 3500hd 2020.0	chevrolet silverado 3500hd 2020	1
+bmw x5 2011.0	bmw x5 2011	1
+jeep renegade latitude 2019.0	jeep renegade 2019	1
+toyota tundra double cab sr5 2020.0	toyota tundra 2020	1
+ford ecosport titanium 2019.0	ford ecosport 2019	1
+toyota corolla 2016.0	toyota corolla 2016	1
+ford f-150 2017.0	ford f-150 2017	1
+jeep wrangler unlimited sahara 2018.0	jeep wrangler unlimited 2018	1
+lincoln navigator select 2016.0	lincoln navigator 2016	1
+toyota camry 2017.0	toyota camry 2017	1
+hyundai sante fe sport 2.0t 2014.0	hyundai santa fe sport 2014	1
+gmc savana cargo 2500 3dr 2012.0	gmc savana cargo 2012	1
+kia stinger gt-line sedan 4d 2020.0	kia stinger 2020	1
+chrysler 300 2012.0	chrysler 300 2012	1
+ford fusion 2010.0	ford fusion 2010	1
+ford escape sel 2020.0	ford escape 2020	1
+ford f150 supercrew cab xl 2019.0	ford f-150 2019	1
+toyota c-hr 2020.0	toyota c-hr 2020	1
+ram 2500 2018.0	ram 2500 2018	1
+gmc sierra 1500 double cab 2017.0	gmc sierra 1500 2017	1
+bmw 5 series 2017.0	bmw 5 series 2017	1
+toyota sienna 2017.0	toyota sienna 2017	1
+chevrolet camaro ss 2dr 2011.0	chevrolet camaro 2011	1
+chevrolet blazer 2lt sport 2020.0	chevrolet blazer 2020	1
+nissan altima 2018.0	nissan altima 2018	1
+toyota camry se 2018.0	toyota camry 2018	1
+honda cr-v 2014.0	honda cr-v 2014	1
+pontiac grand prix 2001.0	pontiac grand prix 2001	1
+chevrolet silverado 1500 rst 2020.0	chevrolet silverado 1500 2020	1
+nissan murano s sport utility 4d 2020.0	nissan murano 2020	1
+hyundai accent se 2017.0	hyundai accent 2017	1
+acura tl 2012.0	acura tl 2012	1
+hyundai sonata hybrid 2016.0	hyundai sonata hybrid 2016	1
+toyota camry 2013.0	toyota camry hybrid 2013	1
+chevrolet silverado 2020.0	chevrolet silverado 1500 2020	1
+kia forte lx 2018.0	kia forte 2018	1
+lexus rx 400h basesuv 2008.0	lexus rx 400h 2008	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+ford mustang 2009.0	ford mustang shelby gt500 2009	1
+chevrolet express cargo 2006.0	chevrolet express cargo 2006	1
+mitsubishi outlander phev sel 2018.0	mitsubishi outlander hybrid plug-in 2018	1
+hyundai accent se 2017.0	hyundai accent 2017	1
+toyota prius plug-in 2015.0	toyota prius plug-in 2015	1
+honda odyssey ex lmini van 2007.0	honda odyssey 2007	1
+toyota corolla lsedan 4a 2016.0	toyota corolla 2016	1
+lincoln continental sedan 4d 2020.0	lincoln continental 2020	1
+lexus is 300 sedan 4d 2019.0	lexus is 2019	1
+ford ecosport titanium 2019.0	ford ecosport 2019	1
+chevrolet silverado 1500 double cab 2015.0	chevrolet silverado 1500 2015	1
+ford mustang 2006.0	ford mustang 2006	1
+cadillac srx luxury collection 2016.0	cadillac srx 2016	1
+ford excursion xlt 2wdsuv 2002.0	ford excursion 2002	1
+mazda mazda3 2016.0	mazda mazda3 2016	1
+bmw i3 base w/range extender 2018.0	bmw i3 2018	1
+bmw x3 xdrive30i awdsuv 2010.0	bmw x3 2010	1
+chevrolet equinox 2013.0	chevrolet equinox 2013	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+chevrolet traverse premier 2019.0	chevrolet traverse 2019	1
+toyota corolla lsedan 4a 2016.0	toyota corolla 2016	1
+toyota camry 2019.0	toyota camry 2019	1
+toyota prius c fourhatchback 2013.0	toyota prius c 2013	1
+chevrolet suburban premier 2020.0	chevrolet suburban 2020	1
+honda fit 2013.0	honda fit 2013	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+buick verano 2016.0	buick verano 2016	1
+honda odyssey 2012.0	honda odyssey 2012	1
+nissan xterra 2004.0	nissan xterra 2004	1
+toyota yaris ia base 2018.0	toyota yaris ia 2018	1
+toyota prius 2007.0	toyota prius 2007	1
+ram 2500 2018.0	ram 2500 2018	1
+gmc sierra 2012.0	gmc sierra 2500hd 2012	1
+chevrolet camaro 1ss 2015.0	chevrolet camaro 2015	1
+cadillac xt6 2020.0	cadillac xt6 2020	1
+kia forte koup sx 2010.0	kia forte koup 2010	1
+honda civic 2015.0	honda civic 2015	1
+chevrolet cruze 2019.0	chevrolet cruze 2019	1
+bmw 530i 2017.0	bmw 5 series 2017	1
+dodge grand caravan 2019.0	dodge grand caravan 2019	1
+ford f-150 1995.0	ford f-150 1995	1
+toyota prius c 2012.0	toyota prius c 2012	1
+acura mdx sh-awd sport utility 2020.0	acura mdx 2020	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+nissan altima 2019.0	nissan altima 2019	1
+ford explorer 2016.0	ford explorer 2016	1
+kia soul 2019.0	kia soul 2019	1
+lincoln mkz reserve fwd 2018.0	lincoln mkz 2018	1
+hyundai accent 2014.0	hyundai accent 2014	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+buick verano 2014.0	buick verano 2014	1
+ford flex 2011.0	ford flex 2011	1
+gmc yukon 2007.0	gmc yukon 2007	1
+hyundai santa fe sesuv 6a 2012.0	hyundai santa fe 2012	1
+nissan titan platinum 2017.0	nissan titan 2017	1
+kia forte 2017.0	kia forte 2017	1
+toyota tacoma double cab 2018.0	toyota tacoma 2018	1
+ford excursion xlt 2wdsuv 2002.0	ford excursion 2002	1
+ford fusion se 2018.0	ford fusion 2018	1
+mercedes-benz glc 300 2020.0	mercedes-benz glc-class 2020	1
+ford transit connect cargo xl 2016.0	ford transit connect 2016	1
+chevrolet volt 2012.0	chevrolet volt 2012	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+ford edge sel 2018.0	ford edge 2018	1
+ram 2500 2019.0	ram 2500 2019	1
+dodge dart 2015.0	dodge dart 2015	1
+cadillac srx awd 4dr luxury collection 2016.0	cadillac srx 2016	1
+ford escape 2020.0	ford escape 2020	1
+honda civic lx 2014.0	honda civic coupe 2014	1
+chevrolet colorado 2019.0	chevrolet colorado 2019	1
+honda odyssey ex lmini van 2007.0	honda odyssey 2007	1
+chevrolet trax lt 2020.0	chevrolet trax 2020	1
+chevrolet malibu ls 2020.0	chevrolet malibu 2020	1
+hyundai elantra nav 2011.0	hyundai elantra 2011	1
+mercedes-benz c-class 2018.0	mercedes-benz c-class 2018	1
+chevrolet silverado 1500 lt 2013.0	chevrolet silverado 1500 2013	1
+dodge charger 2018.0	dodge charger 2018	1
+acura rdx fwd w/a-spec pkg sport 2019.0	acura rdx 2019	1
+chevrolet silverado 2017.0	chevrolet silverado 1500 2017	1
+toyota tundra double cab sr5 2020.0	toyota tundra 2020	1
+lincoln continental reserve 2019.0	lincoln continental 2019	1
+lexus ct 200h 2014.0	lexus ct hybrid 2014	1
+kia soul 2016.0	kia soul 2016	1
+toyota prius two 2016.0	toyota prius 2016	1
+toyota highlander se 2012.0	toyota highlander 2012	1
+toyota camry 2011.0	toyota camry 2011	1
+infiniti i35 2003.0	infiniti i35 2003	1
+infiniti q60 3.0t premium coupe 2017.0	infiniti q60 2017	1
+ford f-150 2018.0	ford f-150 2018	1
+cadillac xt5 luxury 2019.0	cadillac xt5 2019	1
+ram 1500 sport crew cab lwb 4wd 2014.0	ram 1500 2014	1
+ford fusion hybrid 2018.0	ford fusion hybrid 2018	1
+bmw x5 2012.0	bmw x5 2012	1
+infiniti q60 3.0t premium coupe 2017.0	infiniti q60 2017	1
+audi q5 2014.0	audi q5 2014	1
+hyundai sonata 2015.0	hyundai sonata 2015	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+ford f-150 platinum 2016.0	ford f-150 2016	1
+bmw 3 series 2011.0	bmw 3 series 2011	1
+toyota rav4 2020.0	toyota rav4 2020	1
+ford ranger supercrew lariat 2019.0	ford ranger 2019	1
+dodge journey gt 2019.0	dodge journey 2019	1
+chevrolet express passenger 2019.0	chevrolet express 2019	1
+cadillac xt5 sport suv 4d 2020.0	cadillac xt5 2020	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+chevrolet silverado 1500 4wd dou 2020.0	chevrolet silverado 1500 2020	1
+subaru legacy limited sedan 4d 2020.0	subaru legacy 2020	1
+ford mustang 2010.0	ford mustang 2010	1
+toyota camry 2016.0	toyota camry 2016	1
+toyota tacoma double cab 2014.0	toyota tacoma 2014	1
+toyota rav4 xle 2018.0	toyota rav4 2018	1
+buick lacrosse 2006.0	buick lacrosse 2006	1
+toyota highlander 2013.0	toyota highlander 2013	1
+volvo xc60 t5 inscription sport 2018.0	volvo xc60 2018	1
+honda fit 2013.0	honda fit 2013	1
+toyota 4runner 2004.0	toyota 4runner 2004	1
+saturn sc2 2001.0	saturn s-series 2001	1
+bmw x3 2017.0	bmw x3 2017	1
+hyundai santa fe se awd, w/ lane keeping assist 2020.0	hyundai santa fe 2020	1
+toyota avalon limited sedan 4d 2017.0	toyota avalon 2017	1
+hyundai sonata gl 2006.0	hyundai sonata 2006	1
+ram 2500 2016.0	ram 2500 2016	1
+kia soul 2019.0	kia soul 2019	1
+kia soul 2016.0	kia soul 2016	1
+chevrolet volt 2012.0	chevrolet volt 2012	1
+chevrolet trax ls 2021.0	chevrolet trax 2021	1
+jeep wrangler 2010.0	jeep wrangler 2010	1
+nissan quest 3.5 svmini van 2012.0	nissan quest 2012	1
+ford mustang 2019.0	ford mustang 2019	1
+toyota sienna xle 7-passenger 2017.0	toyota sienna 2017	1
+ford fusion 2016.0	ford fusion 2016	1
+ford f-150 2017.0	ford f-150 2017	1
+gmc savana cargo 2500 3dr 2012.0	gmc savana cargo 2012	1
+toyota prius 2009.0	toyota prius 2009	1
+chevrolet silverado 1500 high c 2014.0	chevrolet silverado 1500 2014	1
+honda accord 2017.0	honda accord 2017	1
+bmw x5 2014.0	bmw x5 2014	1
+kia sedona lx minivan 4d 2012.0	kia sedona 2012	1
+ford f-150 2018.0	ford f-150 2018	1
+chrysler 200 2015.0	chrysler 200 2015	1
+nissan sentra 2017.0	nissan sentra 2017	1
+toyota prius 2017.0	toyota prius 2017	1
+fiat 124 spider 2017.0	fiat 124 spider 2017	1
+nissan altima 2.5 s 2017.0	nissan altima 2017	1
+chevrolet malibu 2015.0	chevrolet malibu 2015	1
+toyota 4runner 2008.0	toyota 4runner 2008	1
+kia sorento lx 2020.0	kia sorento 2020	1
+toyota corolla lsedan 4a 2016.0	toyota corolla 2016	1
+chevrolet cruze 2018.0	chevrolet cruze 2018	1
+honda civic si 2015.0	honda civic 2015	1
+toyota corolla lsedan 4a 2016.0	toyota corolla 2016	1
+hyundai elantra 2013.0	hyundai elantra 2013	1
+mercedes-benz mercedes-amg 2017.0	mercedes-benz c-class 2017	1
+chevrolet suburban premier 2020.0	chevrolet suburban 2020	1
+chevrolet cruze 2018.0	chevrolet cruze 2018	1
+acura rdx 2018.0	acura rdx 2018	1
+ford f-150 2018.0	ford f-150 2018	1
+ram chassis 3500 2019.0	ram 3500 chassis 2019	1
+ram 1500 classic regular cab 2019.0	ram 1500 2019	1
+volkswagen tiguan 2017.0	volkswagen tiguan 2017	1
+lincoln continental reserve 2019.0	lincoln continental 2019	1
+ford escape se 2020.0	ford escape 2020	1
+fiat 500 2015.0	fiat 500 2015	1
+cadillac xt5 luxury 2019.0	cadillac xt5 2019	1
+infiniti qx70 2017.0	infiniti qx70 2017	1
+chevrolet silverado 1500 2014.0	chevrolet silverado 1500 2014	1
+chevrolet camaro 1ss 2015.0	chevrolet camaro 2015	1
+honda cr-v 2020.0	honda cr-v 2020	1
+jeep grand cherokee 2020.0	jeep grand cherokee 2020	1
+ford focus 2007.0	ford focus 2007	1
+chevrolet volt premium 2014.0	chevrolet volt 2014	1
+honda civic ex sedan 2012.0	honda civic 2012	1
+chevrolet equinox ls 2013.0	chevrolet equinox 2013	1

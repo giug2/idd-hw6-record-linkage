@@ -46,9 +46,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 from ditto_light.dataset import DittoDataset
 from ditto_light.ditto import train as ditto_train
 
-# Percorso dataset DITTO (nella cartella dataset/ditto_dataset/)
+# Percorso dataset DITTO (nella cartella output/ditto/ditto_dataset/)
 # Script in scripts/ditto/, quindi parent.parent.parent per arrivare alla root
-DITTO_DATA_DIR = Path(__file__).parent.parent.parent / "dataset" / "ditto_dataset"
+DITTO_DATA_DIR = Path(__file__).parent.parent.parent / "output" / "ditto" / "ditto_dataset"
 
 
 def get_task_config(task_name: str) -> Dict:

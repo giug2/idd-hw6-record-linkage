@@ -1,0 +1,298 @@
+audi a4 sedan 11895 99597.0	audi a4 sedan 12875.0 99597.0	1
+buick encore gx essence sport other 28990 21.0	buick encore gx suv 31165.0 2.0	1
+subaru forester suv 10995 126269.0	subaru forester suv 10390.0 126269.0	1
+chevrolet silverado 1500 pickup 15495 137647.0	chevrolet silverado 1500 pickup 14995.0 137647.0	1
+chevrolet silverado 3500hd pickup 0 25417.0	chevrolet silverado 3500hd pickup 59968.0 24524.0	1
+honda accord sedan 10999 127634.0	honda accord sedan 10999.0 127634.0	1
+mazda mazda3 sedan 0 93063.0	mazda mazda3 sedan 9995.0 93063.0	1
+hyundai ioniq hybrid hatchback 17600 10085.0	hyundai ioniq hybrid hatchback 19069.0 10104.0	1
+nissan sentra s sedan 5500 76010.0	nissan sentra sedan 5500.0 76010.0	1
+gmc terrain denali 4dr suv other 16995 95966.0	gmc terrain suv 14498.0 95905.0	1
+hyundai elantra sedan 0 79518.0	hyundai elantra sedan 10795.0 79518.0	1
+ford edge titanium awd, w/ leather, navigation suv 22599 65362.0	ford edge suv 20994.0 64475.0	1
+cadillac ct5 premium luxury sedan 41590 1011.0	cadillac ct5 sedan 47951.0 881.0	1
+hyundai santa fe sesuv 6a suv 9500 84815.0	hyundai santa fe suv 9995.0 84815.0	1
+lexus es sedan 6814 110061.0	lexus es 330 sedan 9995.0 110021.0	1
+ford thunderbird convertible 14777 104000.0	ford thunderbird convertible 14777.0 104000.0	1
+nissan altima other 16995 50158.0	nissan altima sedan 17800.0 50158.0	1
+ford f-150 pickup 35395 49425.0	ford f-150 pickup 29488.0 48236.0	1
+chevrolet malibu sedan 10995 121406.0	chevrolet malibu sedan 12396.0 121331.0	1
+ram 1500 classic truck 0 20811.0	ram 1500 pickup 27155.0 6391.0	1
+honda odyssey touring elite van 13970 113110.0	honda odyssey minivan 15470.0 112752.0	1
+ferrari 488 spider convertible 229500 7910.0	ferrari 488 convertible 229500.0 7846.0	1
+chevrolet impala sedan 9623 94200.0	chevrolet impala sedan 9623.0 94200.0	1
+ford fiesta sedan 9823 74836.0	ford fiesta sedan 9823.0 74836.0	1
+toyota tacoma double cab pickup 22889 119539.0	toyota tacoma pickup 24989.0 119539.0	1
+volvo s60 sedan 46990 2.0	volvo s60 sedan 46990.0 38.0	1
+buick encore gx essence sport other 28990 21.0	buick encore gx suv 31165.0 2.0	1
+ford fusion se sedan 0 15818.0	ford fusion sedan 21495.0 15818.0	1
+chevrolet impala lt fleetsedan other 5595 128534.0	chevrolet impala sedan 5995.0 128534.0	1
+chevrolet cruze sedan 7999 89219.0	chevrolet cruze sedan 8995.0 81513.0	1
+ford ranger pickup 8494 156969.0	ford ranger pickup 9995.0 156969.0	1
+chevrolet bolt ev lt hatchback hatchback 24990 5670.0	chevrolet bolt ev wagon 26703.0 3.0	1
+jeep wrangler suv 0 50083.0	jeep wrangler unlimited suv 35995.0 50083.0	1
+nissan leaf sedan 0 74640.0	nissan leaf hatchback 7995.0 74640.0	1
+chevrolet silverado 3500hd pickup 26990 57538.0	chevrolet silverado 3500hd pickup 26990.0 57538.0	1
+ford escape suv 19999 31262.0	ford escape suv 19491.0 31097.0	1
+chevrolet silverado pickup 0 85455.0	chevrolet silverado 1500 pickup 29000.0 85352.0	1
+mercedes-benz cla-class sedan 18995 73800.0	mercedes-benz cla-class sedan 19342.0 73668.0	1
+lexus ct200h hatchback 0 35121.0	lexus ct hybrid wagon 23995.0 35121.0	1
+mitsubishi mirage le hatchback hatchback 15990 10161.0	mitsubishi mirage hatchback 19955.0 3.0	1
+ford f550 pickup 48999 116591.0	ford f-550 super duty chassis pickup 43999.0 116591.0	1
+chevrolet trailblazer ls other 22839 5363.0	chevrolet trailblazer suv 23039.0	1
+dodge dart sxt sedan 6995 111837.0	dodge dart sedan 7999.0 111837.0	1
+ram 1500 sport crew cab lwb 4wd pickup 27995 86325.0	ram 1500 pickup 26785.0 85876.0	1
+hyundai sonata other 12823 118641.0	hyundai sonata sedan 9823.0 118641.0	1
+mini cooper hardtop coupe 7995 82000.0	mini cooper coupe 7995.0 82000.0	1
+hyundai sonata se sedan 4d sedan 17590 9570.0	hyundai sonata sedan 16000.0 9487.0	1
+nissan altima sedan 23995 655.0	nissan altima sedan 25435.0 5.0	1
+toyota corolla sedan 8995 156225.0	toyota corolla sedan 6995.0 156225.0	1
+ford f150 supercrew cab king pickup 50990 27345.0	ford f-150 pickup 49995.0 25440.0	1
+porsche cayenne s 6-speed automatic suv 9950 141000.0	porsche cayenne suv 10900.0 135000.0	1
+bmw 5 series sedan 31985 28330.0	bmw 5 series sedan 34985.0 28330.0	1
+gmc sierra pickup 37995 129847.0	gmc sierra 2500hd pickup 36995.0 129847.0	1
+mercury grand marquis sedan 101 29300.0	mercury grand marquis sedan 12995.0 29300.0	1
+kia soul + wagon 4d hatchback 7999 133000.0	kia soul wagon 7999.0 132569.0	1
+ford transit connect cargo xl van 16999 0.0	ford transit connect van 13995.0 120495.0	1
+mini cooper hardtop coupe 7995 89000.0	mini cooper coupe 7995.0 89000.0	1
+lexus es350 sedan 8997 144368.0	lexus es 350 sedan 7998.0 144368.0	1
+bmw 3 series 328i sedan 14999 93839.0	bmw 3 series sedan 15999.0 93839.0	1
+gmc savana cargo 2500 3dr van 10995 183864.0	gmc savana cargo van 11995.0 183864.0	1
+toyota prius three other 7995 161541.0	toyota prius hatchback 7995.0 161541.0	1
+cadillac xt5 sport suv 4d other 49990 4322.0	cadillac xt5 suv 51922.0 3437.0	1
+ford focus sedan 3495 164195.0	ford focus sedan 3495.0 164195.0	1
+chevrolet hhr lt hatchback 7999 127000.0	chevrolet hhr wagon 7999.0 127121.0	1
+ram 1500 classic regular cab pickup 25990 12302.0	ram 1500 pickup 22899.0 8062.0	1
+ford f-150 pickup 35990 57838.0	ford f-150 pickup 38990.0 57838.0	1
+honda accord sedan sedan 4425 192275.0	honda accord sedan 4995.0 192275.0	1
+honda accord sdn ex-l sedan 10800 117905.0	honda accord sedan 10800.0 117905.0	1
+nissan versa sedan 0 55750.0	nissan versa sedan 11995.0 55750.0	1
+jeep renegade suv 0 10.0	jeep renegade suv 19591.0 5.0	1
+honda cr-v ex-l suv 0 100515.0	honda cr-v suv 13975.0 100445.0	1
+chevrolet blazer 2lt sport other 30590 15231.0	chevrolet blazer suv 29490.0 15231.0	1
+chevrolet sonic lt hb hatchback 7990 95410.0	chevrolet sonic hatchback 6995.0 95386.0	1
+mitsubishi eclipse cross le hatchback 22990 11215.0	mitsubishi eclipse cross suv 23592.0 10.0	1
+chevrolet silverado pickup 0 85455.0	chevrolet silverado 1500 pickup 29000.0 85352.0	1
+toyota prius c fourhatchback other 7995 166991.0	toyota prius c hatchback 9995.0 166991.0	1
+chevrolet malibu ls sedan 22384 1268.0	chevrolet malibu sedan 22384.0	1
+ford escape sel other 0 6074.0	ford escape suv 28999.0 6074.0	1
+chevrolet traverse other 16000 81104.0	chevrolet traverse suv 17563.0 78696.0	1
+ford f-150 pickup 34995 28074.0	ford f-150 pickup 38595.0 28074.0	1
+jeep grand cherokee laredo e other 31590 12656.0	jeep grand cherokee suv 30899.0 10922.0	1
+honda civic sedan ex-t sedan 17995 21924.0	honda civic sedan 17995.0 21817.0	1
+honda civic coupe 0 8182.0	honda civic coupe 24555.0	1
+chevrolet malibu lt sedan 4d sedan 0 86997.0	chevrolet malibu sedan 12991.0 86000.0	1
+hyundai elantra touring wagon 4100 130206.0	hyundai elantra touring hatchback 4300.0 130206.0	1
+nissan altima sedan 12995 93000.0	nissan altima sedan 9995.0 93000.0	1
+nissan maxima sedan 9499 116610.0	nissan maxima sedan 7599.0 116610.0	1
+ford excursion xlt 2wdsuv suv 6995 175812.0	ford excursion suv 7995.0 175812.0	1
+jeep gladiator pickup 46999 3465.0	jeep gladiator pickup 47997.0 3465.0	1
+bmw x3 xdrive30i awdsuv suv 9995 105213.0	bmw x3 suv 10995.0 105213.0	1
+chevrolet equinox lt other 28734 10.0	chevrolet equinox suv 28734.0	1
+hyundai sonata sedan 14999 62895.0	hyundai sonata sedan 14364.0 55000.0	1
+toyota prius c hatchback 12995 85630.0	toyota prius c hatchback 12999.0 85630.0	1
+dodge journey se value sport other 22990 1844.0	dodge journey suv 22300.0 1.0	1
+ford freestar semini van van 3995 159334.0	ford freestar minivan 4995.0 159334.0	1
+mini cooper clubman coupe 7995 93000.0	mini cooper clubman wagon 7995.0 93000.0	1
+mazda cx-9 suv 24900 44265.0	mazda cx-9 suv 27777.0 44265.0	1
+ford mustang gt premium coupe 2d coupe 38990 7653.0	ford mustang coupe 38500.0 7504.0	1
+toyota prius hatchback 11999 117650.0	toyota prius hatchback 12999.0 117650.0	1
+chevrolet traverse premier other 38499 37675.0	chevrolet traverse suv 45209.0 10721.0	1
+volkswagen gti driver's hatchback 13970 48551.0	volkswagen gti hatchback 15470.0 48551.0	1
+ford f-150 pickup 14995 120421.0	ford f-150 pickup 14995.0 120421.0	1
+jeep wrangler suv 24577 135413.0	jeep wrangler suv 26777.0 135413.0	1
+honda civic sedan 8999 158208.0	honda civic sedan 7999.0 158208.0	1
+chevrolet silverado 1500 truck 406 86596.0	chevrolet silverado 1500 pickup 32806.0 85930.0	1
+nissan rogue sv sport utility 4d hatchback 24990 3269.0	nissan rogue suv 26010.0	1
+kia optima sedan 12995 66000.0	kia optima hybrid sedan 12995.0 66000.0	1
+nissan rogue suv 0 21927.0	nissan rogue suv 22995.0 21927.0	1
+ford explorer xlt 4dr xlt suv 2988 128071.0	ford explorer suv 2988.0 128071.0	1
+chevrolet cruze limited sedan 0 94127.0	chevrolet cruze limited sedan 8500.0 94127.0	1
+chevrolet silverado 1500 truck 406 86596.0	chevrolet silverado 1500 pickup 32806.0 85930.0	1
+kia rio s sedan 4d sedan 18590 6874.0	kia rio sedan 14297.0 4.0	1
+chevrolet trax ls other 21080 10.0	chevrolet trax suv 21080.0	1
+nissan sentra sedan 11999 37720.0	nissan sentra sedan 15499.0 37720.0	1
+dodge challenger sxt coupe 23988 31042.0	dodge challenger coupe 22755.0 31042.0	1
+honda civic sedan 0 48853.0	honda civic sedan 15999.0 48853.0	1
+chevrolet bolt ev hatchback 19900 29580.0	chevrolet bolt ev hatchback 19977.0 29580.0	1
+toyota avalon limited sedan 4d sedan 28590 27904.0	toyota avalon sedan 32988.0 25940.0	1
+kia soul + wagon 8995 105873.0	kia soul wagon 9995.0 105237.0	1
+jeep gladiator pickup 46999 3465.0	jeep gladiator pickup 47997.0 3465.0	1
+chevrolet aveo sedan 6995 51594.0	chevrolet aveo sedan 5695.0 51594.0	1
+chevrolet impala sedan 3650 149186.0	chevrolet impala sedan 3995.0 149186.0	1
+chevrolet suburban premier other 67060 14863.0	chevrolet suburban suv 67060.0	1
+chevrolet malibu ls sedan 22384 1268.0	chevrolet malibu sedan 22384.0	1
+ram 2500 other 44995 68516.0	ram 2500 pickup 42995.0 68516.0	1
+chevrolet bolt ev lt hatchback hatchback 24990 5670.0	chevrolet bolt ev wagon 26703.0 3.0	1
+audi a5 premium coupe 2d coupe 28590 43994.0	audi a5 coupe 29997.0 31000.0	1
+kia forte lx sedan 8999 89000.0	kia forte sedan 9999.0 89000.0	1
+hyundai elantra sedan 12995 26953.0	hyundai elantra sedan 12995.0 26953.0	1
+honda accord lxsedan cvt sedan 17500 71627.0	honda accord sedan 18995.0 71627.0	1
+mercedes-benz e-class sedan 29985 45062.0	mercedes-benz e-class sedan 28985.0 45062.0	1
+nissan frontier king cab pickup 0 14923.0	nissan frontier pickup 23000.0 14923.0	1
+ram 1500 classic regular cab pickup 25990 12302.0	ram 1500 pickup 22899.0 8062.0	1
+cadillac xt5 other 31000 25639.0	cadillac xt5 suv 28573.0 12779.0	1
+chevrolet trailblazer rs suv 28709 26000.0	chevrolet trailblazer suv 28909.0	1
+gmc savana 1500 van 0 28977.0	gmc savana cargo van 34995.0 28977.0	1
+nissan rogue wagon 8500 110970.0	nissan rogue suv 8000.0 110970.0	1
+cadillac xt6 premium luxury other 48590 7701.0	cadillac xt6 suv 51422.0 7593.0	1
+ford expedition limited suv 51400 16736.0	ford expedition suv 53108.0 10306.0	1
+chevrolet trax lt other 23248 5105.0	chevrolet trax suv 23996.0	1
+chevrolet tahoe lt other 56424 5184.0	chevrolet tahoe suv 56424.0	1
+dodge grand caravan van 0 58777.0	dodge grand caravan minivan 17999.0 58777.0	1
+chevrolet express cargo other 15990 84995.0	chevrolet express cargo van 13990.0 84995.0	1
+chevrolet bolt ev hatchback 17999 37313.0	chevrolet bolt ev hatchback 20999.0 37313.0	1
+chevrolet trax ls other 21029 10.0	chevrolet trax suv 23529.0	1
+mercedes-benz m-class ml 500 suv 9500 126680.0	mercedes-benz m-class suv 8995.0 126680.0	1
+chevrolet cruze sedan 15676 32770.0	chevrolet cruze sedan 15998.0 22529.0	1
+lincoln mkz sedan 4d sedan 31990 622.0	lincoln mkz sedan 36760.0 6.0	1
+jeep wrangler suv 28999 150710.0	jeep wrangler unlimited suv 28777.0 150710.0	1
+chevrolet silverado 2500hd other 42995 55167.0	chevrolet silverado 2500hd pickup 40995.0 55167.0	1
+toyota prius sedan 8995 58000.0	toyota prius hatchback 9995.0 58000.0	1
+ford fusion sedan 6599 113720.0	ford fusion sedan 6699.0 113720.0	1
+hyundai elantra gt sedan 8950 88870.0	hyundai elantra gt hatchback 9950.0 88870.0	1
+honda accord sdn lx sedan 13949 100171.0	honda accord sedan 12678.0 100171.0	1
+acura rdx fwd w/a-spec pkg sport other 37590 19336.0	acura rdx suv 38988.0 13601.0	1
+chevrolet trax lt other 22284 2999.0	chevrolet trax suv 22284.0 2999.0	1
+chevrolet silverado pickup 0 85455.0	chevrolet silverado 1500 pickup 29000.0 85352.0	1
+toyota corolla sedan 0 27876.0	toyota corolla sedan 17800.0 27876.0	1
+ford fusion sedan 7798 136831.0	ford fusion sedan 8498.0 136831.0	1
+jeep cherokee suv 17995 106245.0	jeep cherokee suv 19999.0 105356.0	1
+acura mdx sh-awd sport utility other 39990 1237.0	acura mdx suv 47525.0 1.0	1
+honda accord ex coupe at coupe 9900 167346.0	honda accord coupe coupe 8900.0	1
+chevrolet express cargo other 15990 84995.0	chevrolet express cargo van 13990.0 84995.0	1
+kia sorento other 12694 106264.0	kia sorento suv 14000.0 104823.0	1
+nissan sentra sv sedan 4d sedan 12671 89020.0	nissan sentra sedan 12755.0 81927.0	1
+toyota corolla im hatchback 4d hatchback 219	toyota corolla im hatchback 17995.0 34468.0	1
+ram 1500 pickup 29900 87773.0	ram 1500 pickup 23931.0 78342.0	1
+honda accord sedan 10499 129542.0	honda accord sedan 11995.0 129542.0	1
+lexus rx 350 suv 12963 162748.0	lexus rx 350 suv 13694.0 162688.0	1
+lexus rx suv 49950 4106.0	lexus rx suv 54570.0 11.0	1
+volkswagen tiguan s 4motion suv 7800 112135.0	volkswagen tiguan suv 7936.0 111976.0	1
+toyota prius hybrid hatchback 4999 142154.0	toyota prius hatchback 6900.0 127543.0	1
+ford f-150 xl 2dr standard cab truck 6995 166332.0	ford f-150 pickup 7995.0 166332.0	1
+chevrolet traverse premier other 38499 37675.0	chevrolet traverse suv 45209.0 10721.0	1
+bmw x3 suv 14990 76000.0	bmw x3 suv 14990.0 69000.0	1
+bmw 5 series 540i sedan sedan 33995 18032.0	bmw 5 series sedan 41995.0 18032.0	1
+subaru outback wagon 18550 76394.0	subaru outback wagon 21500.0 76394.0	1
+lincoln continental sedan 4d sedan 38990 1772.0	lincoln continental sedan 49350.0 3.0	1
+toyota camry hybrid other 0 10.0	toyota camry hybrid sedan 37020.0 2.0	1
+volvo s60 sedan 44490 2.0	volvo s60 sedan 44490.0 10.0	1
+chevrolet cruze limited sedan 0 94127.0	chevrolet cruze limited sedan 8500.0 94127.0	1
+acura mdx sh-awd sport utility other 39990 1237.0	acura mdx suv 47525.0 1.0	1
+kia forte lx sedan 8970 73083.0	kia forte sedan 10970.0 72546.0	1
+jeep cherokee suv 17995 106245.0	jeep cherokee suv 19999.0 105356.0	1
+buick lacrosse sedan 4400 124201.0	buick lacrosse sedan 4400.0 124201.0	1
+lexus rx 400h basesuv other 10995 79488.0	lexus rx 400h suv 13995.0 79488.0	1
+bmw 5 series sedan 29985 40528.0	bmw 5 series sedan 33985.0 40528.0	1
+hyundai sonata sedan 14988 36142.0	hyundai sonata sedan 15977.0 36105.0	1
+jeep renegade latitude suv 0 1.0	jeep renegade suv 20506.0 5.0	1
+infiniti fx35 suv 11999 98360.0	infiniti fx35 suv 12999.0 98360.0	1
+buick envision suv 34990 3079.0	buick envision suv 38390.0	1
+chevrolet trax lt other 22284 35029.0	chevrolet trax suv 22284.0 2126.0	1
+ram 1500 sport crew cab lwb 4wd pickup 27995 86325.0	ram 1500 pickup 26785.0 85876.0	1
+kia soul wagon 11998 71325.0	kia soul wagon 10598.0 71325.0	1
+dodge grand caravan sxt van 7995 108844.0	dodge grand caravan minivan 7995.0 108844.0	1
+jeep wrangler unlimited sport manual suv 32991 49797.0	jeep wrangler unlimited suv 33900.0 47749.0	1
+mercedes-benz glb 250 suv 626 5453.0	mercedes-benz glb-class suv 44720.0 2.0	1
+chevrolet silverado 1500 high c other 406 86596.0	chevrolet silverado 1500 pickup 32806.0 85930.0	1
+hyundai sonata sedan 14994 87125.0	hyundai sonata sedan 14995.0 87125.0	1
+toyota corolla sedan 0 5916.0	toyota corolla sedan 18595.0 5916.0	1
+chevrolet malibu ls sedan 4d sedan 22990 4808.0	chevrolet malibu sedan 24195.0 1.0	1
+subaru outback sedan 7999 115309.0	subaru outback wagon 6999.0 115309.0	1
+nissan altima 2.5 s sedan 0 8686.0	nissan altima sedan 25180.0 10.0	1
+mercedes-benz e-class e 400 coupe 39988 50783.0	mercedes-benz e-class coupe 43499.0 39018.0	1
+nissan rogue select suv 11995 73000.0	nissan rogue select suv 11995.0 73000.0	1
+ford focus sedan 8995 92000.0	ford focus sedan 7995.0 92000.0	1
+ford freestar semini van van 3995 159334.0	ford freestar minivan 4995.0 159334.0	1
+ford taurus sedan 8999 126370.0	ford taurus sedan 9999.0 126370.0	1
+chevrolet cruze sedan 5950 101416.0	chevrolet cruze sedan 6960.0 100400.0	1
+ford fusion s sedan 16995 8764.0	ford fusion sedan 22495.0 6164.0	1
+lexus rx 400h basesuv other 10995 79488.0	lexus rx 400h suv 13995.0 79488.0	1
+hyundai santa fe sport suv 10999 129170.0	hyundai santa fe sport suv 9992.0 129098.0	1
+hyundai elantra sedan 11450 75526.0	hyundai elantra sedan 12450.0 75526.0	1
+dodge journey suv 0 6869.0	dodge journey suv 19946.0 3.0	1
+chevrolet volt premier hatchback 12963 94911.0	chevrolet volt hatchback 15422.0 94911.0	1
+toyota tundra pickup 43982 39054.0	toyota tundra pickup 41982.0 39054.0	1
+ram 1500 classic regular cab pickup 25990 12302.0	ram 1500 pickup 22899.0 8062.0	1
+jeep cherokee trailhawk sport suv 17995 106245.0	jeep cherokee suv 19999.0 105356.0	1
+jeep wrangler unlimited sahara convertible 451 36920.0	jeep wrangler unlimited suv 44995.0 36920.0	1
+subaru wrx limited sedan 4d sedan 32590 2194.0	subaru wrx sedan 35905.0 13.0	1
+chevrolet malibu rs sedan 23529 5047.0	chevrolet malibu sedan 23529.0	1
+ford flex sedan 13995 107000.0	ford flex suv 11995.0 107000.0	1
+chevrolet malibu sedan 14500 58592.0	chevrolet malibu sedan 15999.0 58592.0	1
+chevrolet camaro convertible 26999 8247.0	chevrolet camaro convertible 26999.0 8247.0	1
+lexus es 350 sedan 16970 76373.0	lexus es 350 sedan 18970.0 76373.0	1
+lexus is sedan 36988 3666.0	lexus is sedan 45401.0 5.0	1
+chevrolet blazer lt other 35782 11960.0	chevrolet blazer suv 35782.0	1
+mercedes-benz c-class sedan 13995 89555.0	mercedes-benz c-class sedan 12995.0 89555.0	1
+jeep wrangler sahara suv 29999 56881.0	jeep wrangler unlimited suv 35999.0 56881.0	1
+ford mustang gt premium coupe 2d coupe 38590 15266.0	ford mustang coupe 38190.0 14154.0	1
+subaru impreza wagon 11998 99598.0	subaru impreza hatchback 12998.0 99598.0	1
+ford ecosport se suv 18991 4795.0	ford ecosport suv 22900.0 4710.0	1
+jeep grand cherokee overland suv 20999 108904.0	jeep grand cherokee suv 22999.0 108904.0	1
+honda accord lxsedan cvt sedan 17500 71627.0	honda accord sedan 18995.0 71627.0	1
+nissan frontier king cab pickup 0 14923.0	nissan frontier pickup 23000.0 14923.0	1
+volkswagen cc 2.0t sedan 0 42965.0	volkswagen cc sedan 17795.0 42965.0	1
+subaru impreza hatchback 25979 21928.0	subaru impreza hatchback 19697.0 21928.0	1
+kia sorento suv 11999 95356.0	kia sorento suv 12999.0 95356.0	1
+buick envision preferred sport suv 29990 38.0	buick envision suv 33915.0 3.0	1
+hyundai elantra limited sedan 4d sedan 18590 30169.0	hyundai elantra sedan 14967.0 30079.0	1
+mercedes-benz r-class r 350 wagon 10500 79544.0	mercedes-benz r-class wagon 10995.0 79544.0	1
+nissan leaf sv hatchback 4d hatchback 23990 5873.0	nissan leaf hatchback 32905.0 6.0	1
+kia stinger gt-line sedan 4d sedan 31590 5353.0	kia stinger sedan 32350.0 9.0	1
+gmc terrain sle sport utility 4d other 21990 24858.0	gmc terrain suv 19143.0 24633.0	1
+ram 3500 other 83995 21854.0	ram 3500 pickup 76995.0 15876.0	1
+bmw x5 suv 23985 65812.0	bmw x5 suv 24985.0 65812.0	1
+gmc yukon xl suv 34494 104479.0	gmc yukon xl suv 28999.0 100542.0	1
+ram 1500 classic regular cab pickup 25990 12302.0	ram 1500 pickup 22899.0 8062.0	1
+nissan maxima sedan 9499 116610.0	nissan maxima sedan 7599.0 116610.0	1
+chevrolet silverado 1500 truck 406 86596.0	chevrolet silverado 1500 pickup 32806.0 85930.0	1
+toyota prius prime sedan 19995 45358.0	toyota prius prime hatchback 19988.0 22555.0	1
+chevrolet equinox lt other 28734 10.0	chevrolet equinox suv 28734.0	1
+cadillac ct4 other 26888 4410.0	cadillac ct4 sedan 33990.0 2.0	1
+toyota tacoma pickup 12750 186060.0	toyota tacoma pickup 12750.0 186060.0	1
+bmw 5 series sedan 31985 24974.0	bmw 5 series sedan 34985.0 24974.0	1
+chevrolet malibu ltzsedan sedan 8995 109688.0	chevrolet malibu sedan 8995.0 109688.0	1
+gmc sierra pickup 54750 65416.0	gmc sierra 3500hd pickup 49975.0 64251.0	1
+kia sportage suv 0 18782.0	kia sportage suv 20000.0 18782.0	1
+nissan pathfinder suv 0 16578.0	nissan pathfinder suv 23995.0 26160.0	1
+toyota prius sedan 3995 223768.0	toyota prius hatchback 4390.0 223768.0	1
+jeep cherokee suv 17995 106245.0	jeep cherokee suv 19999.0 105356.0	1
+mercedes-benz s-class sedan 0 124680.0	mercedes-benz s-class sedan 19987.0 124680.0	1
+toyota tacoma double cab truck 26500 92170.0	toyota tacoma pickup 26900.0 92170.0	1
+toyota prius v other 0 107007.0	toyota prius v wagon 18999.0 106943.0	1
+hyundai accent se sedan 9995 51930.0	hyundai accent sedan 9995.0 51930.0	1
+ford fusion 4dr sdn se fwd sedan 9995 111576.0	ford fusion sedan 8999.0 103356.0	1
+audi q5 premium 2.0t quattro tip suv 22991 48700.0	audi q5 suv 24990.0 48700.0	1
+toyota camry sedan 0 125000.0	toyota camry hybrid sedan 14999.0 105680.0	1
+ford escape titanium suv 14500 83117.0	ford escape suv 14999.0 83107.0	1
+audi q5 suv 0 68961.0	audi q5 suv 13995.0 68961.0	1
+chevrolet traverse premier other 38499 37675.0	chevrolet traverse suv 45209.0 10721.0	1
+mercedes-benz glc suv 39999 58407.0	mercedes-benz glc-class suv 42710.0 56515.0	1
+ford fusion se sedan 16595 8227.0	ford fusion sedan 19900.0 8225.0	1
+fiat 500x suv 500 100000.0	fiat 500x suv 21987.0 5000.0	1
+mercedes-benz m-class ml 500 suv 9500 126680.0	mercedes-benz m-class suv 8995.0 126680.0	1
+jeep wrangler rubicon suv 46000 13121.0	jeep wrangler suv 41538.0 11540.0	1
+ford focus hatchback 3985 153520.0	ford focus hatchback 3985.0 153520.0	1
+kia rio sedan 7995 125502.0	kia rio5 hatchback 6390.0 125502.0	1
+dodge journey crossroad hatchback 14988 54822.0	dodge journey suv 15299.0 54326.0	1
+lexus ct 200h sedan 11597 125270.0	lexus ct hybrid wagon 13497.0 122634.0	1
+chevrolet express cargo other 15990 84995.0	chevrolet express cargo van 13990.0 84995.0	1
+ford crown victoria sedan 3950 210965.0	ford crown victoria sedan 3950.0 210965.0	1
+jeep patriot suv 16995 18000.0	jeep patriot suv 13995.0 18000.0	1
+gmc sierra 1500 pickup 61900 21260.0	gmc sierra 1500 pickup 57988.0 16904.0	1
+chevrolet bolt ev hatchback 19900 29580.0	chevrolet bolt ev hatchback 19977.0 29580.0	1
+honda civic sedan 8997 123712.0	honda civic sedan 10698.0 123712.0	1
+toyota venza other 10778 136983.0	toyota venza suv 11888.0 136983.0	1
+jeep grand cherokee limited suv 0 174655.0	jeep grand cherokee suv 4988.0 174655.0	1
+chevrolet equinox lt other 28734 10.0	chevrolet equinox suv 28734.0	1
+ford transit-350 other 42995 42141.0	ford transit chassis van 42995.0 42141.0	1
+ford f150 truck 16995 108000.0	ford f-150 pickup 16995.0 108000.0	1
+ram 1500 pickup 31999 90123.0	ram 1500 pickup 31425.0 89719.0	1
+hyundai tucson suv 12977 125763.0	hyundai tucson suv 11977.0 125763.0	1
+lincoln continental sedan 4d sedan 38590 1772.0	lincoln continental sedan 49350.0 3.0	1
+kia forte lx sedan 9970 42407.0	kia forte sedan 10970.0 42407.0	1
+jeep renegade latitude suv 0 24.0	jeep renegade suv 20506.0 5.0	1
+hyundai sonata sedan 8995 113506.0	hyundai sonata sedan 9995.0 113506.0	1
+toyota corolla sedan 6895 159000.0	toyota corolla sedan 6995.0 159000.0	1

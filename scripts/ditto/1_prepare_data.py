@@ -17,10 +17,11 @@ from typing import Dict, List, Tuple, Set, Optional
 
 
 # Percorsi (script in scripts/ditto/, quindi ../../ per risalire alla root)
-DATASET_DIR = Path(__file__).parent.parent.parent / "dataset"
+ROOT_DIR = Path(__file__).parent.parent.parent
+DATASET_DIR = ROOT_DIR / "dataset"
 SPLITS_DIR = DATASET_DIR / "splits"
-DATA_OUTPUT_DIR = DATASET_DIR / "ditto_dataset"
-DATA_OUTPUT_DIR.mkdir(exist_ok=True)
+DATA_OUTPUT_DIR = ROOT_DIR / "output" / "ditto" / "ditto_dataset"
+DATA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # Pipeline definitions (SENZA description - per rispettare limite 512 token)
