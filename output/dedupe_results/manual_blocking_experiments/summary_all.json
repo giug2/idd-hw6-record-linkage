@@ -1,0 +1,229 @@
+{
+  "runs": [
+    {
+      "name": "P1_textual_core_manual_B1",
+      "base_pipeline": "P1_textual_core",
+      "blocking_strategy": "B1",
+      "threshold": 0.5,
+      "timings": {
+        "prepare_training_sec": 840.903,
+        "train_sec": 157.195,
+        "inference_sec": 1.22
+      },
+      "metrics": {
+        "precision": 0.6143958868894601,
+        "recall": 0.7810457516339869,
+        "f1": 0.6877697841726619,
+        "tp": 239,
+        "fp": 150,
+        "fn": 67
+      },
+      "settings_file": "P1_textual_core_manual_B1_settings.json",
+      "training_stats": {
+        "match_pairs": 1425,
+        "distinct_pairs": 2850,
+        "test_candidates": 1124
+      }
+    },
+    {
+      "name": "P2_plus_location_manual_B1",
+      "base_pipeline": "P2_plus_location",
+      "blocking_strategy": "B1",
+      "threshold": 0.5,
+      "timings": {
+        "prepare_training_sec": 21711.222,
+        "train_sec": 134.581,
+        "inference_sec": 0.824
+      },
+      "metrics": {
+        "precision": 0.6175,
+        "recall": 0.8071895424836601,
+        "f1": 0.69971671388102,
+        "tp": 247,
+        "fp": 153,
+        "fn": 59
+      },
+      "settings_file": "P2_plus_location_manual_B1_settings.json",
+      "training_stats": {
+        "match_pairs": 1425,
+        "distinct_pairs": 2850,
+        "test_candidates": 1124
+      }
+    },
+    {
+      "name": "P3_minimal_fast_manual_B1",
+      "base_pipeline": "P3_minimal_fast",
+      "blocking_strategy": "B1",
+      "threshold": 0.5,
+      "timings": {
+        "prepare_training_sec": 38.655,
+        "train_sec": 59.484,
+        "inference_sec": 0.614
+      },
+      "metrics": {
+        "precision": 0.5905349794238683,
+        "recall": 0.9379084967320261,
+        "f1": 0.7247474747474747,
+        "tp": 287,
+        "fp": 199,
+        "fn": 19
+      },
+      "settings_file": "P3_minimal_fast_manual_B1_settings.json",
+      "training_stats": {
+        "match_pairs": 1425,
+        "distinct_pairs": 2850,
+        "test_candidates": 1124
+      }
+    },
+    {
+      "name": "P1_textual_core_manual_B2",
+      "base_pipeline": "P1_textual_core",
+      "blocking_strategy": "B2",
+      "threshold": 0.5,
+      "timings": {
+        "prepare_training_sec": 837.775,
+        "train_sec": 91.282,
+        "inference_sec": 1.243
+      },
+      "metrics": {
+        "precision": 0.6513157894736842,
+        "recall": 0.3235294117647059,
+        "f1": 0.4323144104803493,
+        "tp": 99,
+        "fp": 53,
+        "fn": 207
+      },
+      "settings_file": "P1_textual_core_manual_B2_settings.json",
+      "training_stats": {
+        "match_pairs": 1375,
+        "distinct_pairs": 2750,
+        "test_candidates": 1290
+      }
+    },
+    {
+      "name": "P2_plus_location_manual_B2",
+      "base_pipeline": "P2_plus_location",
+      "blocking_strategy": "B2",
+      "threshold": 0.5,
+      "timings": {
+        "prepare_training_sec": 21645.448,
+        "train_sec": 128.517,
+        "inference_sec": 3.02
+      },
+      "metrics": {
+        "precision": 0.5521235521235521,
+        "recall": 0.4673202614379085,
+        "f1": 0.5061946902654867,
+        "tp": 143,
+        "fp": 116,
+        "fn": 163
+      },
+      "settings_file": "P2_plus_location_manual_B2_settings.json",
+      "training_stats": {
+        "match_pairs": 1375,
+        "distinct_pairs": 2750,
+        "test_candidates": 1290
+      }
+    },
+    {
+      "name": "P3_minimal_fast_manual_B2",
+      "base_pipeline": "P3_minimal_fast",
+      "blocking_strategy": "B2",
+      "threshold": 0.5,
+      "timings": {
+        "prepare_training_sec": 37.63,
+        "train_sec": 57.221,
+        "inference_sec": 0.714
+      },
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 306
+      },
+      "settings_file": "P3_minimal_fast_manual_B2_settings.json",
+      "training_stats": {
+        "match_pairs": 1375,
+        "distinct_pairs": 2750,
+        "test_candidates": 1290
+      }
+    },
+    {
+      "name": "P1_textual_core_manual_Union",
+      "base_pipeline": "P1_textual_core",
+      "blocking_strategy": "Union",
+      "threshold": 0.5,
+      "timings": {
+        "prepare_training_sec": 841.506,
+        "train_sec": 165.999,
+        "inference_sec": 1.22
+      },
+      "metrics": {
+        "precision": 0.46035805626598464,
+        "recall": 0.5882352941176471,
+        "f1": 0.5164992826398852,
+        "tp": 180,
+        "fp": 211,
+        "fn": 126
+      },
+      "settings_file": "P1_textual_core_manual_Union_settings.json",
+      "training_stats": {
+        "match_pairs": 1425,
+        "distinct_pairs": 2850,
+        "test_candidates": 1893
+      }
+    },
+    {
+      "name": "P2_plus_location_manual_Union",
+      "base_pipeline": "P2_plus_location",
+      "blocking_strategy": "Union",
+      "threshold": 0.5,
+      "timings": {
+        "prepare_training_sec": 21241.338,
+        "train_sec": 133.285,
+        "inference_sec": 3.092
+      },
+      "metrics": {
+        "precision": 0.46835443037974683,
+        "recall": 0.6045751633986928,
+        "f1": 0.5278174037089871,
+        "tp": 185,
+        "fp": 210,
+        "fn": 121
+      },
+      "settings_file": "P2_plus_location_manual_Union_settings.json",
+      "training_stats": {
+        "match_pairs": 1425,
+        "distinct_pairs": 2850,
+        "test_candidates": 1893
+      }
+    },
+    {
+      "name": "P3_minimal_fast_manual_Union",
+      "base_pipeline": "P3_minimal_fast",
+      "blocking_strategy": "Union",
+      "threshold": 0.5,
+      "timings": {
+        "prepare_training_sec": 37.988,
+        "train_sec": 57.472,
+        "inference_sec": 0.743
+      },
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 306
+      },
+      "settings_file": "P3_minimal_fast_manual_Union_settings.json",
+      "training_stats": {
+        "match_pairs": 1425,
+        "distinct_pairs": 2850,
+        "test_candidates": 1893
+      }
+    }
+  ]
+}
