@@ -102,4 +102,3 @@ GPU ACCELERATION:
   - PyTorch DirectML enabled for AMD Radeon RX 6700 XT
   - DITTO modified to support DirectML device
   - Expected speedup: 5-10x vs CPU
-
