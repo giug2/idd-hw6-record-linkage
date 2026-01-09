@@ -36,7 +36,7 @@ try:
     import torch_directml
     GPU_DEVICE = torch_directml.device()
     GPU_AVAILABLE = True
-    print("✓ DirectML GPU Acceleration ENABLED (AMD Radeon RX 6700 XT)")
+    print("DirectML GPU Acceleration ENABLED (AMD Radeon RX 6700 XT)")
 except ImportError:
     GPU_DEVICE = 'cpu'
     print("DirectML not available, using CPU")

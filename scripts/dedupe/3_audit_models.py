@@ -51,10 +51,10 @@ def check_data_leakage(train: pd.DataFrame, test: pd.DataFrame):
         
         print(f"[{source.upper()}] Train IDs: {len(train_ids)}, Test IDs: {len(test_ids)}")
         if overlap:
-            print(f"⚠️  WARNING: Found {len(overlap)} overlapping records in {source} between Train and Test!")
+            print(f"  WARNING: Found {len(overlap)} overlapping records in {source} between Train and Test!")
             print("    This means the model has seen these specific entities during training.")
         else:
-            print(f"✅  Clean: No record overlap for {source}.")
+            print(f"  Clean: No record overlap for {source}.")
 
     # 2. Pair Leakage (Ground Truth Leakage)
     # Do the same MATCH PAIRS appear in both?
@@ -63,9 +63,9 @@ def check_data_leakage(train: pd.DataFrame, test: pd.DataFrame):
     
     pair_overlap = train_pairs.intersection(test_pairs)
     if pair_overlap:
-        print(f"⚠️  CRITICAL: Found {len(pair_overlap)} exact ground truth pairs in both Train and Test!")
+        print(f"  CRITICAL: Found {len(pair_overlap)} exact ground truth pairs in both Train and Test!")
     else:
-        print(f"✅  Clean: No ground truth pair leakage.")
+        print(f"  Clean: No ground truth pair leakage.")
 
 NUMERIC_FIELDS = {"price", "mileage", "year"}
 
@@ -178,9 +178,9 @@ def audit_model_performance(test_df: pd.DataFrame):
     print(f"F1 Score (Mean): {mean_f1:.4f}")
     print(f"95% Confidence Interval: [{lower:.4f}, {upper:.4f}]")
     if (upper - lower) > 0.1:
-        print("⚠️  Wide CI indicates high variance/instability in test performance.")
+        print("  Wide CI indicates high variance/instability in test performance.")
     else:
-        print("✅  Narrow CI indicates stable performance.")
+        print("  Narrow CI indicates stable performance.")
 
     # --- B. Subgroup Analysis (Bias Check) ---
     print("\n--- B. Subgroup Analysis (Bias Check) ---")
@@ -244,9 +244,9 @@ def audit_model_performance(test_df: pd.DataFrame):
     print(f"Year Mismatch Violations (>1 year diff): {violations} ({violations/total_preds*100:.2f}%)")
     
     if violations / total_preds > 0.05:
-        print("⚠️  High rate of year mismatches! Model might be ignoring Year.")
+        print("  High rate of year mismatches! Model might be ignoring Year.")
     else:
-        print("✅  Low rate of impossible matches.")
+        print("  Low rate of impossible matches.")
 
 if __name__ == "__main__":
     train_df, test_df = load_data()
