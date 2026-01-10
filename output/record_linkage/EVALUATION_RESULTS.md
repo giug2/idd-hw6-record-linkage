@@ -1,6 +1,6 @@
 # Risultati Valutazione Pipeline di Record Linkage
 
-**Data:** 2026-01-07 22:52:40
+**Data:** 2026-01-10 18:15:34
 
 ## Sommario
 
@@ -32,12 +32,12 @@ Ogni configurazione è testata con entrambe le strategie di blocking (6 pipeline
 
 | Pipeline | Training Time (s) | Inference Time (s) |
 |----------|-------------------|--------------------|
-| P1_textual_core_B1 | 194.10 | 6.43 |
-| P2_plus_location_B1 | 188.89 | 7.03 |
-| P3_minimal_fast_B1 | 0.14 | 0.02 |
-| P1_textual_core_B2 | 322.16 | 8.04 |
-| P2_plus_location_B2 | 245.75 | 7.87 |
-| P3_minimal_fast_B2 | 0.15 | 0.01 |
+| P1_textual_core_B1 | 184.50 | 5.63 |
+| P2_plus_location_B1 | 190.72 | 6.80 |
+| P3_minimal_fast_B1 | 0.12 | 0.02 |
+| P1_textual_core_B2 | 219.65 | 14.79 |
+| P2_plus_location_B2 | 278.83 | 7.84 |
+| P3_minimal_fast_B2 | 0.16 | 0.01 |
 
 ## Statistiche Blocking
 

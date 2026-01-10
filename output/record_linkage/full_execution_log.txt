@@ -1,0 +1,563 @@
+
+======================================================================
+   VALUTAZIONE PIPELINE DI RECORD LINKAGE
+   3 Configurazioni (P1, P2, P3) x 2 Blocking (B1, B2) = 6 Pipeline
+======================================================================
+   Data: 2026-01-10 18:00:24
+======================================================================
+
+============================================================
+CARICAMENTO DATI
+============================================================
+  Train set:      1,425 record
+  Validation set: 305 record
+  Test set:       306 record
+  Totale:         2,036 record
+
+  Training set combinato (train+val): 1,730 record
+
+======================================================================
+PIPELINE: P1_textual_core_B1
+======================================================================
+
+[1/5] Preparazione dati...
+
+[2/5] Blocking (Training)...
+
+  Statistiche Blocking P1_textual_core_B1 - Training:
+    Record Craigslist:     1,730
+    Record US Used Cars:   1,730
+    Coppie totali:         2,992,900
+    Coppie candidate:      30,104
+    Reduction Ratio:       0.9899 (98.99%)
+    Coppie vere totali:    1,730
+    Coppie vere in cand.:  1,730
+    Pairs Completeness:    1.0000 (100.00%)
+
+[3/5] Training classificatore...
+  Configurazione: P1_textual_core
+  Calcolo features di training...
+    Features shape: (30104, 6)
+    True matches nei candidati: 1,730 / 1,730
+    Feature means:
+      brand_sim: 1.0000
+      model_sim: 0.3510
+      body_type_sim: 0.2696
+      description_sim: 0.7750
+      price_sim: 0.3871
+      mileage_sim: 0.4103
+  Addestramento Logistic Regression...
+  Training completato in 184.50s
+
+[4/5] Blocking (Test)...
+
+  Statistiche Blocking P1_textual_core_B1 - Test:
+    Record Craigslist:     306
+    Record US Used Cars:   306
+    Coppie totali:         93,636
+    Coppie candidate:      1,124
+    Reduction Ratio:       0.9880 (98.80%)
+    Coppie vere totali:    306
+    Coppie vere in cand.:  306
+    Pairs Completeness:    1.0000 (100.00%)
+
+[5/5] Inference e valutazione...
+  Calcolo features di test...
+    Features shape: (1124, 6)
+  Predizione...
+    Probabilità: min=0.0008, max=0.4821, mean=0.0983
+    Predizioni con soglia 0.5: 0
+    Predizioni con soglia 0.3: 165
+  Inference completato in 5.63s
+
+  Calcolo metriche...
+
+==================================================
+RISULTATI - P1_textual_core_B1
+==================================================
+  Metriche di Valutazione:
+    Precision:        0.8121 (81.21%)
+    Recall:           0.4379 (43.79%)
+    F1-measure:       0.5690 (56.90%)
+
+  Dettagli Predizioni:
+    True Positives:   134
+    False Positives:  31
+    False Negatives:  172
+    Totale Predetti:  165
+
+  Tempi di Esecuzione:
+    Training time:    184.50s
+    Inference time:   5.63s
+    Blocking (train): 0.06s
+    Blocking (test):  0.01s
+    Totale:           190.21s
+
+======================================================================
+PIPELINE: P2_plus_location_B1
+======================================================================
+
+[1/5] Preparazione dati...
+
+[2/5] Blocking (Training)...
+
+  Statistiche Blocking P2_plus_location_B1 - Training:
+    Record Craigslist:     1,730
+    Record US Used Cars:   1,730
+    Coppie totali:         2,992,900
+    Coppie candidate:      30,104
+    Reduction Ratio:       0.9899 (98.99%)
+    Coppie vere totali:    1,730
+    Coppie vere in cand.:  1,730
+    Pairs Completeness:    1.0000 (100.00%)
+
+[3/5] Training classificatore...
+  Configurazione: P2_plus_location
+  Calcolo features di training...
+    Features shape: (30104, 12)
+    True matches nei candidati: 1,730 / 1,730
+    Feature means:
+      brand_sim: 1.0000
+      model_sim: 0.3510
+      body_type_sim: 0.2696
+      description_sim: 0.7750
+      price_sim: 0.3871
+      mileage_sim: 0.4103
+      transmission_exact: 0.7350
+      fuel_type_exact: 0.7224
+      drive_exact: 0.3386
+      city_region_sim: 0.2026
+      state_exact: 0.5302
+      year_exact: 1.0000
+  Addestramento Logistic Regression...
+  Training completato in 190.72s
+
+[4/5] Blocking (Test)...
+
+  Statistiche Blocking P2_plus_location_B1 - Test:
+    Record Craigslist:     306
+    Record US Used Cars:   306
+    Coppie totali:         93,636
+    Coppie candidate:      1,124
+    Reduction Ratio:       0.9880 (98.80%)
+    Coppie vere totali:    306
+    Coppie vere in cand.:  306
+    Pairs Completeness:    1.0000 (100.00%)
+
+[5/5] Inference e valutazione...
+  Calcolo features di test...
+    Features shape: (1124, 12)
+  Predizione...
+    Probabilità: min=0.0004, max=0.6274, mean=0.1068
+    Predizioni con soglia 0.5: 54
+  Inference completato in 6.80s
+
+  Calcolo metriche...
+
+==================================================
+RISULTATI - P2_plus_location_B1
+==================================================
+  Metriche di Valutazione:
+    Precision:        0.8333 (83.33%)
+    Recall:           0.1471 (14.71%)
+    F1-measure:       0.2500 (25.00%)
+
+  Dettagli Predizioni:
+    True Positives:   45
+    False Positives:  9
+    False Negatives:  261
+    Totale Predetti:  54
+
+  Tempi di Esecuzione:
+    Training time:    190.72s
+    Inference time:   6.80s
+    Blocking (train): 0.04s
+    Blocking (test):  0.01s
+    Totale:           197.57s
+
+======================================================================
+PIPELINE: P3_minimal_fast_B1
+======================================================================
+
+[1/5] Preparazione dati...
+
+[2/5] Blocking (Training)...
+
+  Statistiche Blocking P3_minimal_fast_B1 - Training:
+    Record Craigslist:     1,730
+    Record US Used Cars:   1,730
+    Coppie totali:         2,992,900
+    Coppie candidate:      30,104
+    Reduction Ratio:       0.9899 (98.99%)
+    Coppie vere totali:    1,730
+    Coppie vere in cand.:  1,730
+    Pairs Completeness:    1.0000 (100.00%)
+
+[3/5] Training classificatore...
+  Configurazione: P3_minimal_fast
+  Calcolo features di training...
+    Features shape: (30104, 5)
+    True matches nei candidati: 1,730 / 1,730
+    Feature means:
+      brand_sim: 1.0000
+      model_sim: 0.3510
+      year_exact: 1.0000
+      price_sim: 0.3871
+      mileage_sim: 0.4103
+  Addestramento Logistic Regression...
+  Training completato in 0.12s
+
+[4/5] Blocking (Test)...
+
+  Statistiche Blocking P3_minimal_fast_B1 - Test:
+    Record Craigslist:     306
+    Record US Used Cars:   306
+    Coppie totali:         93,636
+    Coppie candidate:      1,124
+    Reduction Ratio:       0.9880 (98.80%)
+    Coppie vere totali:    306
+    Coppie vere in cand.:  306
+    Pairs Completeness:    1.0000 (100.00%)
+
+[5/5] Inference e valutazione...
+  Calcolo features di test...
+    Features shape: (1124, 5)
+  Predizione...
+    Probabilità: min=0.0010, max=0.3167, mean=0.0896
+    Predizioni con soglia 0.5: 0
+    Predizioni con soglia 0.3: 137
+  Inference completato in 0.02s
+
+  Calcolo metriche...
+
+==================================================
+RISULTATI - P3_minimal_fast_B1
+==================================================
+  Metriche di Valutazione:
+    Precision:        0.8978 (89.78%)
+    Recall:           0.4020 (40.20%)
+    F1-measure:       0.5553 (55.53%)
+
+  Dettagli Predizioni:
+    True Positives:   123
+    False Positives:  14
+    False Negatives:  183
+    Totale Predetti:  137
+
+  Tempi di Esecuzione:
+    Training time:    0.12s
+    Inference time:   0.02s
+    Blocking (train): 0.05s
+    Blocking (test):  0.01s
+    Totale:           0.19s
+
+======================================================================
+PIPELINE: P1_textual_core_B2
+======================================================================
+
+[1/5] Preparazione dati...
+
+[2/5] Blocking (Training)...
+
+  Statistiche Blocking P1_textual_core_B2 - Training:
+    Record Craigslist:     1,730
+    Record US Used Cars:   1,730
+    Coppie totali:         2,992,900
+    Coppie candidate:      37,123
+    Reduction Ratio:       0.9876 (98.76%)
+    Coppie vere totali:    1,730
+    Coppie vere in cand.:  1,670
+    Pairs Completeness:    0.9653 (96.53%)
+
+[3/5] Training classificatore...
+  Configurazione: P1_textual_core
+  Calcolo features di training...
+    Features shape: (37123, 6)
+    True matches nei candidati: 1,670 / 1,730
+    Feature means:
+      brand_sim: 1.0000
+      model_sim: 0.9036
+      body_type_sim: 0.5337
+      description_sim: 0.7387
+      price_sim: 0.4002
+      mileage_sim: 0.2844
+  Addestramento Logistic Regression...
+  Training completato in 219.65s
+
+[4/5] Blocking (Test)...
+
+  Statistiche Blocking P1_textual_core_B2 - Test:
+    Record Craigslist:     306
+    Record US Used Cars:   306
+    Coppie totali:         93,636
+    Coppie candidate:      1,290
+    Reduction Ratio:       0.9862 (98.62%)
+    Coppie vere totali:    306
+    Coppie vere in cand.:  298
+    Pairs Completeness:    0.9739 (97.39%)
+
+[5/5] Inference e valutazione...
+  Calcolo features di test...
+    Features shape: (1290, 6)
+  Predizione...
+    Probabilità: min=0.0007, max=0.3681, mean=0.0729
+    Predizioni con soglia 0.5: 0
+    Predizioni con soglia 0.3: 57
+  Inference completato in 14.79s
+
+  Calcolo metriche...
+
+==================================================
+RISULTATI - P1_textual_core_B2
+==================================================
+  Metriche di Valutazione:
+    Precision:        0.7193 (71.93%)
+    Recall:           0.1340 (13.40%)
+    F1-measure:       0.2259 (22.59%)
+
+  Dettagli Predizioni:
+    True Positives:   41
+    False Positives:  16
+    False Negatives:  265
+    Totale Predetti:  57
+
+  Tempi di Esecuzione:
+    Training time:    219.65s
+    Inference time:   14.79s
+    Blocking (train): 0.05s
+    Blocking (test):  0.04s
+    Totale:           234.52s
+
+======================================================================
+PIPELINE: P2_plus_location_B2
+======================================================================
+
+[1/5] Preparazione dati...
+
+[2/5] Blocking (Training)...
+
+  Statistiche Blocking P2_plus_location_B2 - Training:
+    Record Craigslist:     1,730
+    Record US Used Cars:   1,730
+    Coppie totali:         2,992,900
+    Coppie candidate:      37,123
+    Reduction Ratio:       0.9876 (98.76%)
+    Coppie vere totali:    1,730
+    Coppie vere in cand.:  1,670
+    Pairs Completeness:    0.9653 (96.53%)
+
+[3/5] Training classificatore...
+  Configurazione: P2_plus_location
+  Calcolo features di training...
+    Features shape: (37123, 12)
+    True matches nei candidati: 1,670 / 1,730
+    Feature means:
+      brand_sim: 1.0000
+      model_sim: 0.9036
+      body_type_sim: 0.5337
+      description_sim: 0.7387
+      price_sim: 0.4002
+      mileage_sim: 0.2844
+      transmission_exact: 0.7552
+      fuel_type_exact: 0.7512
+      drive_exact: 0.4855
+      city_region_sim: 0.1319
+      state_exact: 0.4917
+      year_exact: 0.2872
+  Addestramento Logistic Regression...
+  Training completato in 278.83s
+
+[4/5] Blocking (Test)...
+
+  Statistiche Blocking P2_plus_location_B2 - Test:
+    Record Craigslist:     306
+    Record US Used Cars:   306
+    Coppie totali:         93,636
+    Coppie candidate:      1,290
+    Reduction Ratio:       0.9862 (98.62%)
+    Coppie vere totali:    306
+    Coppie vere in cand.:  298
+    Pairs Completeness:    0.9739 (97.39%)
+
+[5/5] Inference e valutazione...
+  Calcolo features di test...
+    Features shape: (1290, 12)
+  Predizione...
+    Probabilità: min=0.0000, max=0.6022, mean=0.0907
+    Predizioni con soglia 0.5: 25
+  Inference completato in 7.84s
+
+  Calcolo metriche...
+
+==================================================
+RISULTATI - P2_plus_location_B2
+==================================================
+  Metriche di Valutazione:
+    Precision:        0.9200 (92.00%)
+    Recall:           0.0752 (7.52%)
+    F1-measure:       0.1390 (13.90%)
+
+  Dettagli Predizioni:
+    True Positives:   23
+    False Positives:  2
+    False Negatives:  283
+    Totale Predetti:  25
+
+  Tempi di Esecuzione:
+    Training time:    278.83s
+    Inference time:   7.84s
+    Blocking (train): 0.11s
+    Blocking (test):  0.01s
+    Totale:           286.79s
+
+======================================================================
+PIPELINE: P3_minimal_fast_B2
+======================================================================
+
+[1/5] Preparazione dati...
+
+[2/5] Blocking (Training)...
+
+  Statistiche Blocking P3_minimal_fast_B2 - Training:
+    Record Craigslist:     1,730
+    Record US Used Cars:   1,730
+    Coppie totali:         2,992,900
+    Coppie candidate:      37,123
+    Reduction Ratio:       0.9876 (98.76%)
+    Coppie vere totali:    1,730
+    Coppie vere in cand.:  1,670
+    Pairs Completeness:    0.9653 (96.53%)
+
+[3/5] Training classificatore...
+  Configurazione: P3_minimal_fast
+  Calcolo features di training...
+    Features shape: (37123, 5)
+    True matches nei candidati: 1,670 / 1,730
+    Feature means:
+      brand_sim: 1.0000
+      model_sim: 0.9036
+      year_exact: 0.2872
+      price_sim: 0.4002
+      mileage_sim: 0.2844
+  Addestramento Logistic Regression...
+  Training completato in 0.16s
+
+[4/5] Blocking (Test)...
+
+  Statistiche Blocking P3_minimal_fast_B2 - Test:
+    Record Craigslist:     306
+    Record US Used Cars:   306
+    Coppie totali:         93,636
+    Coppie candidate:      1,290
+    Reduction Ratio:       0.9862 (98.62%)
+    Coppie vere totali:    306
+    Coppie vere in cand.:  298
+    Pairs Completeness:    0.9739 (97.39%)
+
+[5/5] Inference e valutazione...
+  Calcolo features di test...
+    Features shape: (1290, 5)
+  Predizione...
+    Probabilità: min=0.0000, max=0.3015, mean=0.0768
+    Predizioni con soglia 0.5: 0
+    Predizioni con soglia 0.3: 62
+  Inference completato in 0.01s
+
+  Calcolo metriche...
+
+==================================================
+RISULTATI - P3_minimal_fast_B2
+==================================================
+  Metriche di Valutazione:
+    Precision:        0.9355 (93.55%)
+    Recall:           0.1895 (18.95%)
+    F1-measure:       0.3152 (31.52%)
+
+  Dettagli Predizioni:
+    True Positives:   58
+    False Positives:  4
+    False Negatives:  248
+    Totale Predetti:  62
+
+  Tempi di Esecuzione:
+    Training time:    0.16s
+    Inference time:   0.01s
+    Blocking (train): 0.04s
+    Blocking (test):  0.01s
+    Totale:           0.23s
+
+================================================================================
+   RIEPILOGO FINALE - CONFRONTO PIPELINE
+================================================================================
+
+  Metriche Principali:
+--------------------------------------------------------------------------------
+
+  P1_textual_core_B1:
+    Precision:      0.8121
+    Recall:         0.4379
+    F1-measure:     0.5690
+    Training Time:  184.50s
+    Inference Time: 5.63s
+    Candidate Pairs (test): 1,124
+    Predictions:    165
+
+  P2_plus_location_B1:
+    Precision:      0.8333
+    Recall:         0.1471
+    F1-measure:     0.2500
+    Training Time:  190.72s
+    Inference Time: 6.80s
+    Candidate Pairs (test): 1,124
+    Predictions:    54
+
+  P3_minimal_fast_B1:
+    Precision:      0.8978
+    Recall:         0.4020
+    F1-measure:     0.5553
+    Training Time:  0.12s
+    Inference Time: 0.02s
+    Candidate Pairs (test): 1,124
+    Predictions:    137
+
+  P1_textual_core_B2:
+    Precision:      0.7193
+    Recall:         0.1340
+    F1-measure:     0.2259
+    Training Time:  219.65s
+    Inference Time: 14.79s
+    Candidate Pairs (test): 1,290
+    Predictions:    57
+
+  P2_plus_location_B2:
+    Precision:      0.9200
+    Recall:         0.0752
+    F1-measure:     0.1390
+    Training Time:  278.83s
+    Inference Time: 7.84s
+    Candidate Pairs (test): 1,290
+    Predictions:    25
+
+  P3_minimal_fast_B2:
+    Precision:      0.9355
+    Recall:         0.1895
+    F1-measure:     0.3152
+    Training Time:  0.16s
+    Inference Time: 0.01s
+    Candidate Pairs (test): 1,290
+    Predictions:    62
+
+--------------------------------------------------------------------------------
+  Tabella Comparativa:
+--------------------------------------------------------------------------------
+           pipeline  precision   recall       f1  training_time  inference_time
+ P1_textual_core_B1   0.812121 0.437908 0.569002     184.501759        5.632312
+P2_plus_location_B1   0.833333 0.147059 0.250000     190.719304        6.798653
+ P3_minimal_fast_B1   0.897810 0.401961 0.555305       0.118736        0.015971
+ P1_textual_core_B2   0.719298 0.133987 0.225895     219.647728       14.789001
+P2_plus_location_B2   0.920000 0.075163 0.138973     278.828440        7.842232
+ P3_minimal_fast_B2   0.935484 0.189542 0.315217       0.161233        0.012966
+
+  Risultati salvati in: c:\Users\bluph\Documents\GitHub\idd-hw6-record-linkage\output\pipeline_evaluation_results.csv
+  Report Markdown salvato in: c:\Users\bluph\Documents\GitHub\idd-hw6-record-linkage\output\EVALUATION_RESULTS.md
+  Log completo salvato in: c:\Users\bluph\Documents\GitHub\idd-hw6-record-linkage\output\full_execution_log.txt

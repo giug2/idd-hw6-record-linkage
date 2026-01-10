@@ -21,34 +21,33 @@ Metriche calcolate:
 - Statistiche di blocking (reduction ratio, coppie candidate)
 """
 
-import pandas as pd
-import numpy as np
-import recordlinkage
-from recordlinkage.index import Block
-import time
 import os
-import sys
 import re
+import sys
+import time
 import warnings
 from datetime import datetime
+
+import numpy as np
+import pandas as pd
+import recordlinkage
+
 warnings.filterwarnings('ignore')
 
-# Aggiungi il path per importare i moduli di blocking
+# Path per importare i moduli di blocking
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'blocking'))
-from blocking_B1 import blocking_B1 as blocking_B1_external, normalize_brand
-from blocking_B2 import blocking_B2 as blocking_B2_external
+from blocking_B1 import normalize_brand
+
 
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
 
-# Lo script è in scripts/record_linkage/, quindi risaliamo di 2 livelli
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA_DIR = os.path.join(BASE_DIR, 'dataset')
 SPLITS_DIR = os.path.join(DATA_DIR, 'splits')
 OUTPUT_DIR = os.path.join(BASE_DIR, 'output')
 
-# Crea directory output se non esiste
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
@@ -72,20 +71,6 @@ def load_data():
     print(f"  Totale:         {len(train_df) + len(val_df) + len(test_df):,} record")
     
     return train_df, val_df, test_df
-
-
-def get_vin_prefix(vin, length=8):
-    """Estrae il prefisso VIN (8 caratteri = WMI + VDS parziale)."""
-    if pd.isna(vin) or vin is None:
-        return None
-    
-    vin = str(vin).upper().strip()
-    vin = re.sub(r'[^A-Z0-9]', '', vin)
-    
-    if len(vin) < length:
-        return None
-    
-    return vin[:length]
 
 
 def prepare_dataframes_for_linkage(df):
@@ -185,18 +170,11 @@ def calculate_metrics(predicted_pairs, true_links):
 # ============================================================================
 
 def blocking_B1(craig_df, us_df):
-    """
-    Strategia B1: Blocking su (brand normalizzato, year).
-    Usa la funzione esterna da scripts/blocking/blocking_B1.py
-    """
+    """Strategia B1: Blocking su (brand normalizzato, year)."""
     c_df = craig_df.copy()
     u_df = us_df.copy()
     
-    # Usa la funzione esterna per creare i blocchi
-    blocks_craig = blocking_B1_external(c_df, brand_col='brand', year_col='year')
-    blocks_us = blocking_B1_external(u_df, brand_col='brand', year_col='year')
-    
-    # Aggiungi block_key ai dataframe per recordlinkage
+    # Aggiungi block_key ai dataframe
     c_df['block_key'] = c_df.apply(
         lambda r: f"{normalize_brand(r['brand'])}_{int(r['year']) if pd.notna(r['year']) else 'unknown'}", 
         axis=1
@@ -215,16 +193,9 @@ def blocking_B1(craig_df, us_df):
 
 
 def blocking_B2(craig_df, us_df):
-    """
-    Strategia B2: Blocking su Brand + Model Prefix (2 caratteri).
-    Usa la funzione esterna da scripts/blocking/blocking_B2.py
-    """
+    """Strategia B2: Blocking su Brand + Model Prefix (2 caratteri)."""
     c_df = craig_df.copy()
     u_df = us_df.copy()
-    
-    # Usa la funzione esterna per creare i blocchi
-    blocks_craig = blocking_B2_external(c_df, brand_col='brand', model_col='model')
-    blocks_us = blocking_B2_external(u_df, brand_col='brand', model_col='model')
     
     def create_block_key(brand, model):
         """Crea chiave: brand_norm + model[:2]"""
@@ -590,11 +561,12 @@ def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, comparison_
 
 
 # ============================================================================
-# MAIN
+# LOGGER
 # ============================================================================
 
-class Logger(object):
+class Logger:
     """Classe per duplicare l'output su terminale e file."""
+    
     def __init__(self, filename):
         self.terminal = sys.stdout
         self.log = open(filename, "w", encoding='utf-8')
@@ -602,16 +574,19 @@ class Logger(object):
     def write(self, message):
         self.terminal.write(message)
         self.log.write(message)
-        self.log.flush()  # Assicura scrittura immediata
+        self.log.flush()
 
     def flush(self):
         self.terminal.flush()
         self.log.flush()
 
+
+# ============================================================================
+# MAIN
+# ============================================================================
+
 def main():
     """Funzione principale per la valutazione delle pipeline."""
-    
-    # Setup logging su file
     log_file = os.path.join(OUTPUT_DIR, 'full_execution_log.txt')
     sys.stdout = Logger(log_file)
     
