@@ -1,0 +1,16 @@
+{
+  "name": "P3_extended_manual_Union",
+  "metrics": {
+    "precision": 0.47671840354767187,
+    "recall": 0.7026143790849673,
+    "f1": 0.5680317040951123,
+    "tp": 215,
+    "fp": 236,
+    "fn": 91
+  },
+  "timings": {
+    "prepare_training_sec": 141.50088238716125,
+    "train_sec": 56.0780987739563,
+    "inference_sec": 0.8241829872131348
+  }
+}

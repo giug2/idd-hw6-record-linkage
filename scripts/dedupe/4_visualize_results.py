@@ -111,19 +111,55 @@ def load_all_results():
     ]
     results.extend(blocking_only)
     
-    # 4. P3 Extended experiment (P3 + price/mileage con manual blocking)
-    # Esperimento per verificare se features aggiuntive migliorano P3 su manual blocking
-    p3_extended = [
-        {'name': 'P3_extended_B1', 'display_name': 'P3 Extended + B1',
-         'category': 'Manual-Blocking', 'pipeline': 'P3ext', 'blocking': 'B1',
-         'precision': 0.645, 'recall': 0.928, 'f1': 0.761, 'tp': 284, 'fp': 156, 'fn': 22,
-         'timings': {}, 'total_time': 15.0},
-        {'name': 'P3_extended_B2', 'display_name': 'P3 Extended + B2',
-         'category': 'Manual-Blocking', 'pipeline': 'P3ext', 'blocking': 'B2',
-         'precision': 0.541, 'recall': 0.585, 'f1': 0.562, 'tp': 179, 'fp': 152, 'fn': 127,
-         'timings': {}, 'total_time': 12.0},
-    ]
-    results.extend(p3_extended)
+    # 4. P3 Extended Experiments (Caricamento dai file generati da experiment_p3_extended_full.py)
+    # Cerca file P3_extended in entrambi i folder
+    
+    # Auto Blocking
+    p3_auto_file = 'output/dedupe_results/experiments/P3_extended_results.json'
+    if os.path.exists(p3_auto_file):
+        with open(p3_auto_file) as f:
+            r = json.load(f)
+            results.append({
+                'name': r['name'],
+                'display_name': 'P3 Ext Auto',
+                'category': 'Auto-Blocking',
+                'pipeline': 'P3ext',
+                'blocking': 'auto',
+                'precision': r['metrics']['precision'],
+                'recall': r['metrics']['recall'],
+                'f1': r['metrics']['f1'],
+                'tp': r['metrics']['tp'],
+                'fp': r['metrics']['fp'],
+                'fn': r['metrics']['fn'],
+                'timings': r.get('timings', {}),
+                'total_time': sum(r.get('timings', {}).values())
+            })
+
+    # Manual Blocking
+    manual_dir = 'output/dedupe_results/manual_blocking_experiments'
+    if os.path.exists(manual_dir):
+        for fname in os.listdir(manual_dir):
+            if fname.startswith("P3_extended_manual_") and fname.endswith("_results.json"):
+                parts = fname.replace("P3_extended_manual_", "").replace("_results.json", "")
+                blocking_strat = parts # B1, B2, Union
+                
+                with open(os.path.join(manual_dir, fname)) as f:
+                    r = json.load(f)
+                    results.append({
+                        'name': r['name'],
+                        'display_name': f"P3 Ext + {blocking_strat}",
+                        'category': 'Manual-Blocking',
+                        'pipeline': 'P3ext',
+                        'blocking': blocking_strat,
+                        'precision': r['metrics']['precision'],
+                        'recall': r['metrics']['recall'],
+                        'f1': r['metrics']['f1'],
+                        'tp': r['metrics']['tp'],
+                        'fp': r['metrics']['fp'],
+                        'fn': r['metrics']['fn'],
+                        'timings': r.get('timings', {}),
+                        'total_time': sum(r.get('timings', {}).values())
+                    })
     
     return results
 
