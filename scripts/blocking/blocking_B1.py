@@ -8,10 +8,15 @@ Questa strategia è efficace perché:
 - Entrambi gli attributi hanno bassa percentuale di valori nulli
 """
 
-import pandas as pd
-import numpy as np
-from collections import defaultdict
 import os
+import sys
+from collections import defaultdict
+
+import numpy as np
+import pandas as pd
+
+# Percorso base del progetto
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 def normalize_brand(brand):
@@ -151,10 +156,7 @@ def generate_candidate_pairs(blocks_source1, blocks_source2):
 
 def main():
     """Funzione principale per la strategia B1."""
-    
-    # Percorsi - lo script è in scripts/blocking/, risaliamo di 2 livelli
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    train_path = os.path.join(base_dir, "dataset", "splits", "train.csv")
+    train_path = os.path.join(BASE_DIR, "dataset", "splits", "train.csv")
     
     print("="*60)
     print("STRATEGIA B1: Blocking su (brand, year)")
@@ -187,37 +189,30 @@ def main():
     return blocks_craig, blocks_us, candidate_pairs
 
 
+class Logger:
+    """Classe per duplicare l'output su terminale e file."""
+    
+    def __init__(self, filename):
+        self.terminal = sys.stdout
+        self.log = open(filename, "w", encoding='utf-8')
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+        self.log.flush()
+
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+
+
 if __name__ == "__main__":
-    
-    # -------------------------------------------------------------------------
-    # LOGGER SETUP
-    # -------------------------------------------------------------------------
-    import sys
-    
-    class Logger(object):
-        """Classe per duplicare l'output su terminale e file."""
-        def __init__(self, filename):
-            self.terminal = sys.stdout
-            self.log = open(filename, "w", encoding='utf-8')
-
-        def write(self, message):
-            self.terminal.write(message)
-            self.log.write(message)
-            self.log.flush()
-
-        def flush(self):
-            self.terminal.flush()
-            self.log.flush()
-
-    # Percorsi per il log
-    base_dir_log = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    output_dir = os.path.join(base_dir_log, 'output')
+    # Setup logging
+    output_dir = os.path.join(BASE_DIR, 'output')
     os.makedirs(output_dir, exist_ok=True)
     
-    # Redireziona stdout
     log_file = os.path.join(output_dir, 'blocking_B1_test_log.txt')
     sys.stdout = Logger(log_file)
-    
     print(f"Log salvato in: {log_file}")
     
     # Esegui main

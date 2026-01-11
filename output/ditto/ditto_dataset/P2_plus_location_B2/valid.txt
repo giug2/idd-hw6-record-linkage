@@ -1,0 +1,295 @@
+bmw 5 series sedan 29985 40528.0 automatic gas rwd sacramento ca 2017.0	bmw 5 series sedan 33985.0 40528.0 automatic gas rwd carmichael ca 2017	1
+ford ranger pickup 8494 156969.0 other gas 4wd pueblo co 2004.0	ford ranger pickup 9995.0 156969.0 manual gas 4wd pueblo co 2004	1
+volkswagen tiguan 2.0t s suv 19995 10501.0 automatic gas fwd sf bay area ca 2020.0	volkswagen tiguan suv 23877.0 7.0 automatic gas fwd oakland ca 2020	1
+honda cr-v other 30488 3515.0 automatic gas fwd monterey bay ca 2020.0	honda cr-v suv 31170.0 22.0 cvt gas fwd seaside ca 2020	1
+dodge grand caravan sxt van 7995 108844.0 automatic gas other fresno / madera ca 2008.0	dodge grand caravan minivan 7995.0 108844.0 automatic gas fwd modesto ca 2008	1
+ford mustang gt coupe 2d coupe 39590 1988.0 other gas rwd huntsville / decatur al 2020.0	ford mustang coupe 35250.0 1.0 manual gas rwd conyers ga 2020	1
+kia forte lx sedan 8999 89000.0 automatic gas other palm springs ca 2018.0	kia forte sedan 9999.0 89000.0 automatic gas fwd palm desert ca 2018	1
+chevrolet trax ls other 22029 6463.0 automatic gas other flagstaff / sedona az 2021.0	chevrolet trax suv 23529.0 automatic gas fwd flagstaff az 2021	1
+chevrolet cruze sedan 0 18100.0 automatic gas other inland empire ca 2019.0	chevrolet cruze sedan 13750.0 16292.0 automatic gas fwd santa ana ca 2019	1
+ford f-250 superduty lariat crew 6.7 liter pickup 64995 67340.0 automatic other 4wd prescott az 2017.0	ford f-250 super duty pickup 58380.0 65716.0 automatic other 4wd commerce tx 2017	1
+ford taurus sedan 2850 161662.0 automatic gas fwd birmingham al 2001.0	ford taurus sedan 2250.0 161662.0 automatic gas fwd bessemer al 2001	1
+toyota highlander hybrid xle suv 0 4992.0 automatic hybrid fwd sacramento ca 2020.0	toyota highlander hybrid suv 42186.0 1.0 cvt hybrid fwd placerville ca 2020	1
+chevrolet express cargo other 15990 86408.0 automatic gas rwd san luis obispo ca 2006.0	chevrolet express cargo van 13990.0 86408.0 automatic gas rwd kingsburg ca 2006	1
+toyota prius sedan 8995 69000.0 automatic hybrid fwd tucson az 2007.0	toyota prius hatchback 8995.0 69000.0 automatic hybrid fwd tucson az 2007	1
+chrysler 300m sedan 0 129666.0 automatic gas fwd bakersfield ca 2004.0	chrysler 300m sedan 4995.0 129666.0 automatic gas fwd escondido ca 2004	1
+audi a4 2.0t quattro premium plus awd sedan 34999 18055.0 automatic gas 4wd phoenix az 2019.0	audi a4 sedan 36370.0 17838.0 automatic gas 4wd phoenix az 2019	1
+honda cr-v other 30488 3515.0 automatic gas fwd monterey bay ca 2020.0	honda cr-v suv 31170.0 22.0 cvt gas fwd seaside ca 2020	1
+mercedes-benz m-class ml 500 suv 9500 126680.0 automatic gas 4wd fresno / madera ca 2006.0	mercedes-benz m-class suv 8995.0 126680.0 automatic gas 4wd modesto ca 2006	1
+cadillac xts sedan 28777 0.0 automatic gas fwd fresno / madera ca 2018.0	cadillac xts sedan 26777.0 35000.0 automatic gas fwd fresno ca 2018	1
+chevrolet silverado 1500 4wd cre other 51995 18632.0 other other other phoenix az 2019.0	chevrolet silverado 1500 pickup 42894.0 16002.0 automatic gas 4wd austin tx 2019	1
+ford fusion sedan 15995 36000.0 automatic gas fwd tucson az 2016.0	ford fusion sedan 13995.0 36000.0 automatic gas fwd tucson az 2016	1
+chevrolet silverado 2500hd other 40995 64030.0 automatic gas rwd inland empire ca 2018.0	chevrolet silverado 2500hd pickup 37995.0 64030.0 automatic other other fontana ca 2018	1
+volvo s40 sedan 4990 72000.0 automatic gas fwd san diego ca 2005.0	volvo s40 sedan 6000.0 63000.0 automatic gas fwd escondido ca 2005	1
+kia rio sedan 5823 110859.0 automatic gas other reno / tahoe ca 2010.0	kia rio sedan 5823.0 110859.0 automatic gas fwd carson city nv 2010	1
+hyundai sonata other 10823 83067.0 automatic gas other reno / tahoe ca 2011.0	hyundai sonata sedan 10823.0 83067.0 automatic gas fwd carson city nv 2011	1
+toyota prius sedan 8995 111000.0 automatic hybrid fwd tucson az 2012.0	toyota prius hatchback 8995.0 111000.0 automatic hybrid fwd tucson az 2012	1
+mercedes-benz r-class r 350 wagon 10500 79544.0 automatic gas 4wd modesto ca 2006.0	mercedes-benz r-class wagon 10995.0 79544.0 automatic gas 4wd modesto ca 2006	1
+jeep wrangler unlimited sahara convertible 451 36920.0 automatic gas 4wd sf bay area ca 2018.0	jeep wrangler unlimited suv 44995.0 36920.0 automatic gas 4wd hayward ca 2018	1
+chevrolet cruze ls sedan 9970 57143.0 automatic gas other palm springs ca 2014.0	chevrolet cruze sedan 8970.0 57143.0 automatic gas fwd palm desert ca 2014	1
+ford f-150 pickup 4995 236481.0 automatic gas 4wd phoenix az 1998.0	ford f-150 pickup 7995.0 236481.0 automatic gas other mesa az 1998	1
+lexus rx 400h basesuv other 10995 79488.0 other hybrid other modesto ca 2008.0	lexus rx 400h suv 13995.0 79488.0 cvt hybrid fwd modesto ca 2008	1
+bmw m6 other 20995 73133.0 automatic gas rwd san diego ca 2008.0	bmw m6 coupe 22895.0 73133.0 automatic gas rwd bellflower ca 2008	1
+jeep gladiator rubicon truck 919 60.0 automatic gas 4wd yuba-sutter ca 2020.0	jeep gladiator pickup 59320.0 17.0 automatic gas 4wd yuba city ca 2020	1
+chevrolet silverado 1500 4x4 truck 32995 89268.0 automatic gas 4wd bakersfield ca 2014.0	chevrolet silverado 1500 pickup 34995.0 89268.0 automatic other 4wd atascadero ca 2014	1
+acura mdx sh-awd sport utility other 39990 1237.0 other gas other tuscaloosa al 2020.0	acura mdx suv 47525.0 1.0 automatic gas 4wd lawrenceville nj 2020	1
+volkswagen r32 all wheel drive hatchback 18995 82154.0 automatic gas 4wd modesto ca 2008.0	volkswagen r32 hatchback 16999.0 82007.0 automatic gas 4wd san jose ca 2008	1
+chevrolet cruze limited sedan 0 94127.0 automatic gas fwd visalia-tulare ca 2016.0	chevrolet cruze limited sedan 8500.0 94127.0 automatic gas fwd reedley ca 2016	1
+ram 1500 classic regular cab pickup 25990 12302.0 other gas other santa maria ca 2019.0	ram 1500 pickup 22899.0 8062.0 automatic gas other orlando fl 2019	1
+chevrolet silverado 1500 rst pickup 52595 212.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet silverado 1500 pickup 48264.0 automatic gas 4wd flagstaff az 2020	1
+volkswagen passat sedan 9995 70890.0 automatic diesel fwd tucson az 2013.0	volkswagen passat sedan 9995.0 70890.0 automatic diesel fwd tucson az 2013	1
+chevrolet blazer lt other 35782 11960.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet blazer suv 35782.0 automatic gas 4wd flagstaff az 2020	1
+volkswagen jetta 1.4t s sedan 20597 7555.0 automatic other fwd fort collins / north co co 2020.0	volkswagen jetta sedan 19843.0 69.0 automatic gas fwd greeley co 2020	1
+chevrolet silverado pickup 0 85455.0 automatic gas rwd orange county ca 2016.0	chevrolet silverado 1500 pickup 29000.0 85352.0 automatic gas other glendora ca 2016	1
+toyota 4-runner wagon 10988 139644.0 automatic gas fwd reno / tahoe ca 2004.0	toyota 4runner suv 12988.0 139644.0 automatic gas rwd alameda ca 2004	1
+kia stinger gt-line sedan 4d sedan 31590 5353.0 other gas other los angeles ca 2020.0	kia stinger sedan 32350.0 9.0 automatic gas other saint petersburg fl 2020	1
+ford mustang gt premium coupe 2d coupe 39590 1419.0 other gas rwd jonesboro ar 2020.0	ford mustang coupe 39995.0 1333.0 other gas rwd draper ut 2020	1
+nissan sentra sedan 0 18530.0 automatic gas other inland empire ca 2019.0	nissan sentra sedan 14650.0 15529.0 cvt other fwd santa ana ca 2019	1
+infiniti qx70 suv 26988 40056.0 automatic gas other stockton ca 2017.0	infiniti qx70 suv 27988.0 40056.0 automatic gas rwd san rafael ca 2017	1
+ram 1500 classic regular cab pickup 25990 12302.0 other gas other sierra vista az 2019.0	ram 1500 pickup 22899.0 8062.0 automatic gas other orlando fl 2019	1
+mitsubishi outlander suv 0 26482.0 automatic gas fwd inland empire ca 2019.0	mitsubishi outlander suv 17981.0 26465.0 cvt gas fwd santa ana ca 2019	1
+mercedes-benz c-class sedan 24985 21637.0 automatic gas rwd fresno / madera ca 2018.0	mercedes-benz c-class sedan 28985.0 21637.0 automatic gas rwd carmichael ca 2018	1
+nissan maxima sedan 11995 100943.0 other gas fwd fort collins / north co co 2014.0	nissan maxima sedan 11995.0 100943.0 cvt gas fwd longmont co 2014	1
+jeep gladiator pickup 46999 3465.0 automatic gas 4wd stockton ca 2020.0	jeep gladiator pickup 47997.0 3465.0 automatic gas 4wd sacramento ca 2020	1
+ford f-250 superduty lariat crew 6.7 liter pickup 64995 67340.0 automatic other 4wd tucson az 2017.0	ford f-250 super duty pickup 58380.0 65716.0 automatic other 4wd commerce tx 2017	1
+nissan sentra s sedan 16488 42002.0 other gas other sf bay area ca 2017.0	nissan sentra sedan 14998.0 37711.0 automatic gas fwd santa rosa ca 2017	1
+subaru wrx limited sedan 4d sedan 32590 2194.0 other other other los angeles ca 2020.0	subaru wrx sedan 35905.0 13.0 manual gas 4wd santa rosa ca 2020	1
+jeep gladiator truck 45995 8246.0 automatic gas 4wd anchorage / mat-su ak 2020.0	jeep gladiator pickup 48995.0 7866.0 automatic gas 4wd pullman wa 2020	1
+hyundai elantra sedan 0 101287.0 automatic gas fwd orange county ca 2015.0	hyundai elantra sedan 7495.0 99452.0 automatic gas fwd anaheim ca 2015	1
+ford f250 super duty lariat 4x4 truck 54999 72843.0 automatic diesel 4wd reno / tahoe ca 2016.0	ford f-250 super duty pickup 59999.0 72843.0 automatic other 4wd fair oaks ca 2016	1
+nissan rogue sport hatchback 19899 10588.0 automatic gas fwd huntsville / decatur al 2020.0	nissan rogue sport suv 20960.0 1.0 cvt gas fwd gallatin tn 2020	1
+gmc savana passenger other 23990 44473.0 automatic gas rwd fresno / madera ca 2018.0	gmc savana van 23990.0 44473.0 automatic other rwd kingsburg ca 2018	1
+ford f-450 sd pickup 59999 81250.0 automatic gas 4wd colorado springs co 2016.0	ford f-450 super duty pickup 59999.0 69532.0 automatic other other pueblo co 2016	1
+bmw 5 series other 11995 96316.0 automatic gas other sacramento ca 2013.0	bmw 5 series sedan 12995.0 96316.0 automatic gas 4wd rancho cordova ca 2013	1
+jeep renegade latitude suv 0 13.0 automatic gas fwd monterey bay ca 2019.0	jeep renegade suv 19591.0 5.0 automatic gas fwd tracy ca 2019	1
+honda accord ex-l sedan 11999 147704.0 automatic gas other modesto ca 2013.0	honda accord sedan 11999.0 147704.0 automatic gas other modesto ca 2013	1
+honda ridgeline sport pickup 4d pickup 34990 5051.0 other gas other los angeles ca 2020.0	honda ridgeline pickup 37260.0 10.0 automatic gas 4wd north richland hills tx 2020	1
+chevrolet malibu rs sedan 23529 5047.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet malibu sedan 23529.0 cvt gas fwd flagstaff az 2020	1
+ford f-250 superduty lariat crew 6.7 liter pickup 64995 67340.0 automatic other 4wd imperial county ca 2017.0	ford f-250 super duty pickup 58380.0 65716.0 automatic other 4wd commerce tx 2017	1
+toyota corolla lsedan 4a sedan 7995 185739.0 automatic gas other modesto ca 2014.0	toyota corolla sedan 10995.0 185739.0 automatic gas fwd modesto ca 2014	1
+chevrolet trailblazer ls other 22839 5363.0 automatic gas other flagstaff / sedona az 2021.0	chevrolet trailblazer suv 23039.0 cvt gas fwd flagstaff az 2021	1
+lexus gs 350 sedan 4d sedan 23990 74770.0 other gas other sf bay area ca 2015.0	lexus gs 350 sedan 23716.0 74767.0 automatic gas other abington ma 2015	1
+chrysler town & country van 8995 94577.0 automatic gas fwd tucson az 2012.0	chrysler town & country minivan 9295.0 94577.0 automatic other fwd tucson az 2012	1
+audi q5 other 21988 79572.0 automatic gas other fort collins / north co co 2016.0	audi q5 suv 22999.0 74622.0 automatic gas 4wd colorado springs co 2016	1
+buick lacrosse other 12977 89108.0 automatic gas other pueblo co 2015.0	buick lacrosse sedan 13977.0 89108.0 automatic gas fwd pueblo co 2015	1
+mitsubishi i-miev sedan 6979 70050.0 automatic electric rwd stockton ca 2014.0	mitsubishi i-miev hatchback 6981.0 69477.0 automatic electric rwd fremont ca 2014	1
+ram 1500 classic truck 33933 47694.0 other gas 4wd anchorage / mat-su ak 2019.0	ram 1500 pickup 32889.0 47684.0 automatic gas 4wd reno nv 2019	1
+lexus gs 350 sedan 4d sedan 23990 74770.0 other gas other los angeles ca 2015.0	lexus gs 350 sedan 23716.0 74767.0 automatic gas other abington ma 2015	1
+honda cr-v other 30488 3515.0 automatic gas fwd monterey bay ca 2020.0	honda cr-v suv 31170.0 22.0 cvt gas fwd seaside ca 2020	1
+volkswagen tiguan suv 23995 8245.0 automatic gas fwd santa maria ca 2020.0	volkswagen tiguan suv 22888.0 7789.0 automatic gas fwd gilbert az 2020	1
+chevrolet tahoe other 0 30323.0 automatic gas rwd san diego ca 2017.0	chevrolet tahoe suv 42895.0 28000.0 automatic other other escondido ca 2017	1
+chevrolet blazer lt other 35782 11960.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet blazer suv 35782.0 automatic gas 4wd flagstaff az 2020	1
+chevrolet trax lt other 22944 5507.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet trax suv 23528.0 automatic gas 4wd flagstaff az 2020	1
+nissan rogue other 8999 99150.0 automatic gas 4wd tucson az 2011.0	nissan rogue suv 8999.0 99150.0 cvt gas 4wd tucson az 2011	1
+gmc sierra 1500 truck 0 125865.0 automatic gas 4wd fort smith ar 2018.0	gmc sierra 1500 pickup 36900.0 125203.0 automatic gas 4wd fort worth tx 2018	1
+kia sportage suv 0 56463.0 automatic gas other inland empire ca 2017.0	kia sportage suv 13350.0 55303.0 automatic gas fwd santa ana ca 2017	1
+nissan leaf sedan 0 74640.0 automatic electric fwd bakersfield ca 2012.0	nissan leaf hatchback 7995.0 74640.0 automatic electric fwd escondido ca 2012	1
+ford freestar semini van van 3995 159334.0 automatic gas other fresno / madera ca 2006.0	ford freestar minivan 4995.0 159334.0 automatic gas fwd modesto ca 2006	1
+nissan altima sedan 16995 53000.0 automatic gas fwd tucson az 2017.0	nissan altima sedan 14995.0 53000.0 automatic gas fwd tucson az 2017	1
+ford fusion s sedan 16995 8764.0 automatic gas other ventura county ca 2018.0	ford fusion sedan 22495.0 6164.0 automatic gas fwd ventura ca 2018	1
+ford transit connect cargo xl van 16999 0.0 automatic gas other ventura county ca 2016.0	ford transit connect van 13995.0 120495.0 automatic gas fwd anaheim ca 2016	1
+toyota tacoma pickup 43982 44010.0 automatic other 4wd reno / tahoe ca 2018.0	toyota tacoma pickup 43982.0 44010.0 automatic gas 4wd reno nv 2018	1
+ford fusion sedan 0 82543.0 automatic gas fwd inland empire ca 2014.0	ford fusion sedan 10495.0 82543.0 automatic gas fwd anaheim ca 2014	1
+jeep wrangler sahara 4x4 suv 29999 56881.0 manual gas 4wd stockton ca 2015.0	jeep wrangler unlimited suv 35999.0 56881.0 manual gas 4wd fair oaks ca 2015	1
+lexus rx 400h basesuv other 10995 79488.0 automatic hybrid other fresno / madera ca 2008.0	lexus rx 400h suv 13995.0 79488.0 cvt hybrid fwd modesto ca 2008	1
+ram 1500 classic regular cab pickup 25990 12302.0 other gas other fort collins / north co co 2019.0	ram 1500 pickup 22899.0 8062.0 automatic gas other orlando fl 2019	1
+dodge journey crossroad hatchback 14988 54822.0 automatic other fwd fayetteville ar 2016.0	dodge journey suv 15299.0 54326.0 automatic gas fwd paris ar 2016	1
+lexus rx350 suv 17399 98339.0 automatic gas fwd san diego ca 2013.0	lexus rx 350 suv 17399.0 98339.0 automatic gas fwd escondido ca 2013	1
+ford f-150 pickup 35395 49425.0 automatic gas rwd santa maria ca 2018.0	ford f-150 pickup 29488.0 48236.0 automatic other other ventura ca 2018	1
+nissan sentra sedan 12995 64550.0 automatic gas fwd inland empire ca 2017.0	nissan sentra sedan 13995.0 63180.0 automatic gas fwd fontana ca 2017	1
+volkswagen r32 all wheel drive hatchback 18995 82154.0 automatic gas 4wd redding ca 2008.0	volkswagen r32 hatchback 16999.0 82007.0 automatic gas 4wd san jose ca 2008	1
+mitsubishi mirage le hatchback hatchback 15990 10161.0 other gas fwd phoenix az 2020.0	mitsubishi mirage hatchback 19955.0 3.0 cvt gas fwd la porte tx 2020	1
+chevrolet malibu ltzsedan sedan 8995 109688.0 automatic gas other modesto ca 2011.0	chevrolet malibu sedan 8995.0 109688.0 automatic gas fwd modesto ca 2011	1
+toyota corolla sedan 0 60430.0 automatic gas fwd inland empire ca 2016.0	toyota corolla sedan 12495.0 60430.0 automatic gas fwd anaheim ca 2016	1
+dodge charger sedan 31977 20386.0 automatic other other reno / tahoe ca 2018.0	dodge charger sedan 33514.0 20386.0 automatic gas 4wd reno nv 2018	1
+lexus is sedan 24995 73915.0 automatic gas fwd sf bay area ca 2014.0	lexus is 250 sedan 22888.0 73915.0 automatic gas rwd san jose ca 2014	1
+kia soul other 11823 60297.0 manual gas other reno / tahoe ca 2014.0	kia soul wagon 8987.0 59352.0 manual gas fwd sonora ca 2014	1
+tesla model s sedan 29995 70449.0 other electric rwd fort collins / north co co 2013.0	tesla model s sedan 33995.0 70402.0 automatic electric rwd thornton co 2013	1
+toyota corolla lsedan 4a sedan 12995 86168.0 automatic gas other modesto ca 2016.0	toyota corolla sedan 13995.0 86168.0 automatic gas fwd modesto ca 2016	1
+jeep cherokee suv 17995 106245.0 automatic gas 4wd fort collins / north co co 2016.0	jeep cherokee suv 19999.0 105356.0 automatic other 4wd casper wy 2016	1
+ford f-450sd other 0 26804.0 automatic diesel 4wd bakersfield ca 2012.0	ford f-450 super duty pickup 52995.0 26804.0 automatic diesel 4wd fontana ca 2012	1
+toyota prius sedan 8995 97000.0 automatic hybrid fwd tucson az 2010.0	toyota prius hatchback 9495.0 97000.0 automatic hybrid other tucson az 2010	1
+bmw 6 series sedan 25989 72038.0 automatic gas rwd huntsville / decatur al 2013.0	bmw 6 series sedan 25989.0 72038.0 automatic gas rwd nashville tn 2013	1
+dodge grand caravan sxt van 10970 98405.0 automatic gas other palm springs ca 2015.0	dodge grand caravan minivan 10970.0 98405.0 automatic other fwd palm desert ca 2015	1
+nissan frontier king cab s pickup 21990 16834.0 other gas fwd reno / tahoe ca 2019.0	nissan frontier pickup 22722.0 15126.0 automatic gas other monroe la 2019	1
+nissan altima sedan 8499 124000.0 automatic gas fwd reno / tahoe ca 2015.0	nissan altima sedan 10999.0 124000.0 cvt gas fwd sacramento ca 2015	1
+ford taurus sedan 12499 86415.0 automatic gas fwd modesto ca 2015.0	ford taurus sedan 12999.0 86415.0 automatic gas fwd sacramento ca 2015	1
+chevrolet hhr ls wagon 5495 121742.0 automatic gas fwd show low az 2007.0	chevrolet hhr wagon 4495.0 121742.0 automatic gas fwd tucson az 2007	1
+hyundai sonata sedan 12995 81000.0 automatic gas fwd tucson az 2015.0	hyundai sonata sedan 10995.0 81000.0 automatic gas fwd tucson az 2015	1
+subaru forester wagon 6995 160051.0 automatic gas 4wd redding ca 2009.0	subaru forester suv 6995.0 160051.0 automatic gas 4wd rancho cordova ca 2009	1
+ford fusion sedan 0 29147.0 automatic gas fwd sacramento ca 2018.0	ford fusion sedan 18500.0 29147.0 automatic gas fwd sacramento ca 2018	1
+ford escape other 27981 3637.0 automatic gas fwd monterey bay ca 2020.0	ford escape suv 28290.0 10.0 automatic gas fwd seaside ca 2020	1
+toyota matrix hatchback 6800 96412.0 automatic gas fwd sf bay area ca 2009.0	toyota matrix hatchback 7500.0 96412.0 automatic gas fwd santa clara ca 2009	1
+jeep renegade limited suv 19977 38913.0 automatic diesel rwd stockton ca 2017.0	jeep renegade suv 16988.0 38878.0 automatic other fwd stockton ca 2017	1
+kia soul wagon 10999 69037.0 automatic gas fwd tucson az 2016.0	kia soul wagon 10999.0 69037.0 automatic gas fwd tucson az 2016	1
+jeep wrangler unlimited sahara convertible 451 36920.0 automatic gas 4wd monterey bay ca 2018.0	jeep wrangler unlimited suv 44995.0 36920.0 automatic gas 4wd hayward ca 2018	1
+nissan sentra s sedan 16488 42002.0 other gas other stockton ca 2017.0	nissan sentra sedan 14998.0 37711.0 automatic gas fwd santa rosa ca 2017	1
+jaguar e-pace p250 se sport suv 41590 9344.0 other gas other flagstaff / sedona az 2020.0	jaguar e-pace suv 42900.0 9171.0 automatic gas 4wd oklahoma city ok 2020	1
+bmw 5-series sedan 0 59952.0 automatic other other los angeles ca 2015.0	bmw 5 series sedan 20150.0 59941.0 automatic gas 4wd santa ana ca 2015	1
+ram 1500 truck 34588 26979.0 automatic gas rwd prescott az 2019.0	ram 1500 pickup 32991.0 36553.0 automatic gas other cottonwood az 2019	1
+nissan sentra sv sedan 4d sedan 12671 89020.0 other gas other ventura county ca 2018.0	nissan sentra sedan 12755.0 81927.0 automatic other fwd nipomo ca 2018	1
+ram 1500 quad cab laramie pickup pickup 35990 21276.0 other gas other modesto ca 2020.0	ram 1500 pickup 41998.0 17311.0 automatic gas other henderson nv 2020	1
+chevrolet equinox lt other 28734 10.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet equinox suv 28734.0 automatic gas 4wd flagstaff az 2020	1
+toyota corolla lsedan 4a sedan 7995 185739.0 automatic gas other modesto ca 2014.0	toyota corolla sedan 10995.0 185739.0 automatic gas fwd modesto ca 2014	1
+ram 2500 other 62995 30478.0 automatic diesel 4wd orange county ca 2019.0	ram 2500 pickup 58995.0 29529.0 automatic diesel 4wd fontana ca 2019	1
+mercedes-benz glc suv 39999 58407.0 automatic gas 4wd boulder co 2018.0	mercedes-benz glc-class suv 42710.0 56515.0 automatic gas 4wd broomfield co 2018	1
+audi a3 other 10900 90894.0 automatic gas fwd colorado springs co 2011.0	audi a3 wagon 10900.0 90894.0 automatic gas fwd parker co 2011	1
+dodge grand caravan sxt van 4988 189658.0 automatic gas fwd denver co 2009.0	dodge grand caravan minivan 4988.0 189658.0 automatic other fwd denver co 2009	1
+kia sportage suv 13995 90101.0 automatic gas 4wd pueblo co 2014.0	kia sportage suv 12495.0 90101.0 automatic gas 4wd pueblo co 2014	1
+ford ranger supercrew lariat pickup 38990 6000.0 other gas 4wd ventura county ca 2019.0	ford ranger pickup 35990.0 2614.0 automatic gas 4wd marshfield mo 2019	1
+kia forte sedan 0 41074.0 automatic gas other sacramento ca 2017.0	kia forte sedan 11987.0 40692.0 automatic gas fwd temecula ca 2017	1
+toyota prius plug-in other 10995 113400.0 automatic hybrid other modesto ca 2013.0	toyota prius plug-in sedan 10995.0 113400.0 automatic gas other rancho cordova ca 2013	1
+mazda cx-5 sport suv 19500 17097.0 automatic gas other monterey bay ca 2017.0	mazda cx-5 suv 20500.0 17097.0 automatic gas fwd santa cruz ca 2017	1
+mercury grand marquis sedan 101 29300.0 automatic gas rwd yuba-sutter ca 2008.0	mercury grand marquis sedan 12995.0 29300.0 automatic other rwd stockton ca 2008	1
+mitsubishi eclipse cross suv 0 36016.0 automatic gas 4wd bakersfield ca 2019.0	mitsubishi eclipse cross suv 20995.0 36016.0 cvt gas 4wd escondido ca 2019	1
+toyota 4runner suv 46988 15560.0 automatic gas 4wd sf bay area ca 2019.0	toyota 4runner suv 45988.0 10370.0 automatic gas 4wd daly city ca 2019	1
+jaguar e-pace p250 se sport suv 41590 9344.0 other gas other yuba-sutter ca 2020.0	jaguar e-pace suv 42900.0 9171.0 automatic gas 4wd oklahoma city ok 2020	1
+ford f-150 pickup 20997 115836.0 automatic gas rwd san luis obispo ca 2013.0	ford f-150 pickup 20998.0 115581.0 automatic gas other bakersfield ca 2013	1
+infiniti qx60 suv 33995 31105.0 automatic gas 4wd humboldt county ca 2019.0	infiniti qx60 suv 29888.0 30941.0 other gas 4wd los angeles ca 2019	1
+dodge grand caravan sxt van 7995 108844.0 automatic gas other modesto ca 2008.0	dodge grand caravan minivan 7995.0 108844.0 automatic gas fwd modesto ca 2008	1
+honda civic ex-l sedan 5-speed at sedan 8700 113000.0 automatic gas fwd stockton ca 2012.0	honda civic sedan 9500.0 113000.0 automatic gas fwd sacramento ca 2012	1
+chevrolet trailblazer ls other 22839 5363.0 automatic gas other flagstaff / sedona az 2021.0	chevrolet trailblazer suv 23039.0 cvt gas fwd flagstaff az 2021	1
+audi a6 sedan 21499 72873.0 automatic gas 4wd denver co 2015.0	audi a6 sedan 17530.0 70479.0 automatic gas 4wd englewood co 2015	1
+bmw i3 base w/range extender hatchback 21590 19718.0 other other other san diego ca 2018.0	bmw i3 wagon 23900.0 19652.0 automatic gas rwd berkeley ca 2018	1
+mitsubishi outlander phev sel suv 22590 21574.0 other gas 4wd monterey bay ca 2018.0	mitsubishi outlander hybrid plug-in suv 25744.0 18111.0 automatic gas 4wd oxnard ca 2018	1
+bmw 5 series 530e xdrive sedan 35990 19260.0 other gas other birmingham al 2019.0	bmw 5 series sedan 41981.0 16941.0 automatic gas 4wd sugar land tx 2019	1
+volkswagen jetta gli s sedan 4d sedan 24990 12502.0 other gas fwd los angeles ca 2019.0	volkswagen jetta gli sedan 24605.0 12443.0 automatic gas fwd dover de 2019	1
+ford f-150 lariat crew 5.5ft bed other 0 10634.0 automatic other other phoenix az 2019.0	ford f-150 pickup 49623.0 10634.0 automatic gas 4wd phoenix az 2019	1
+volkswagen passat se sedan 14995 72536.0 automatic gas fwd humboldt county ca 2017.0	volkswagen passat sedan 13210.0 72221.0 automatic gas fwd tucson az 2017	1
+dodge grand caravan van 10499 114850.0 automatic gas fwd tucson az 2017.0	dodge grand caravan minivan 10000.0 114850.0 automatic other fwd tucson az 2017	1
+ford ranger supercrew lariat pickup 38990 6000.0 other gas 4wd reno / tahoe ca 2019.0	ford ranger pickup 35990.0 2614.0 automatic gas 4wd marshfield mo 2019	1
+ford f-150 xl 2dr standard cab truck 6995 166332.0 automatic gas other fresno / madera ca 2004.0	ford f-150 pickup 7995.0 166332.0 automatic gas other modesto ca 2004	1
+chevrolet trax lt other 22284 10.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet trax suv 22284.0 automatic gas fwd flagstaff az 2020	1
+chevrolet trax ls other 21029 10.0 automatic gas other flagstaff / sedona az 2021.0	chevrolet trax suv 23529.0 automatic gas fwd flagstaff az 2021	1
+chevrolet silverado 1500 other 32995 89268.0 automatic other 4wd san luis obispo ca 2014.0	chevrolet silverado 1500 pickup 34995.0 89268.0 automatic other 4wd atascadero ca 2014	1
+lexus is sedan 21998 75722.0 automatic gas fwd sacramento ca 2014.0	lexus is 250 sedan 24998.0 75722.0 automatic gas rwd rancho cordova ca 2014	1
+chevrolet silverado pickup 0 85455.0 automatic gas rwd ventura county ca 2016.0	chevrolet silverado 1500 pickup 29000.0 85352.0 automatic gas other glendora ca 2016	1
+honda accord sedan 26984 30844.0 automatic other fwd reno / tahoe ca 2018.0	honda accord sedan 26984.0 30844.0 cvt gas fwd reno nv 2018	1
+hyundai xg350 l sedan 2988 162570.0 automatic gas fwd denver co 2003.0	hyundai xg350 sedan 2988.0 162570.0 automatic gas fwd denver co 2003	1
+ferrari 575m maranello coupe 0 27128.0 automatic other rwd stockton ca 2005.0	ferrari 575m coupe 99995.0 27109.0 automatic gas rwd bonita springs fl 2005	1
+hyundai sonata plug-in hybrid sedan 19590 20283.0 other gas fwd tucson az 2017.0	hyundai sonata hybrid plug-in sedan 20491.0 19828.0 automatic gas fwd santa clara ca 2017	1
+honda civic si sedan 4d sedan 24590 40319.0 other gas fwd redding ca 2019.0	honda civic sedan 22995.0 40165.0 manual gas fwd lancaster oh 2019	1
+bmw 3 series sedan 21985 38871.0 automatic gas rwd stockton ca 2017.0	bmw 3 series sedan 23985.0 38871.0 automatic gas rwd carmichael ca 2017	1
+hyundai elantra sedan 0 29352.0 automatic gas other bakersfield ca 2019.0	hyundai elantra sedan 15500.0 29352.0 automatic gas fwd bakersfield ca 2019	1
+gmc sierra 1500 pickup 55680 5693.0 automatic gas rwd fresno / madera ca 2020.0	gmc sierra 1500 pickup 41205.0 5.0 automatic diesel other tustin ca 2020	1
+mercedes-benz glc glc 300 4matic awd suv 29995 41907.0 automatic gas 4wd tucson az 2019.0	mercedes-benz glc-class suv 29570.0 41600.0 automatic gas 4wd tucson az 2019	1
+toyota tacoma double cab truck 0 34068.0 automatic gas 4wd fresno / madera ca 2018.0	toyota tacoma pickup 39995.0 34068.0 automatic gas 4wd reedley ca 2018	1
+toyota prius hatchback 12995 97085.0 automatic hybrid fwd ventura county ca 2015.0	toyota prius hatchback 13995.0 97085.0 cvt hybrid fwd riverside ca 2015	1
+toyota camry sedan 8900 155192.0 automatic gas fwd phoenix az 2014.0	toyota camry sedan 10900.0 155192.0 automatic gas fwd scottsdale az 2014	1
+ford f350 other 29990 75755.0 automatic gas other stockton ca 2012.0	ford f-350 super duty chassis other 29990.0 75755.0 automatic other other oakley ca 2012	1
+mazda mazda3 hatchback hatchback 22988 4340.0 automatic gas other stockton ca 2020.0	mazda mazda3 hatchback 26345.0 5.0 automatic gas fwd san rafael ca 2020	1
+volkswagen jetta 1.4t s sedan 10970 32006.0 automatic gas other palm springs ca 2016.0	volkswagen jetta sedan 11970.0 32006.0 automatic gas fwd palm desert ca 2016	1
+nissan rogue sv (2017.5) sport hatchback 20590 30182.0 other other fwd sf bay area ca 2017.0	nissan rogue suv 20599.0 25859.0 automatic gas fwd new braunfels tx 2017	1
+kia sportage suv 0 1962.0 automatic gas other fort collins / north co co 2021.0	kia sportage suv 32621.0 13.0 automatic gas 4wd windsor co 2021	1
+cadillac cts other 18400 72780.0 automatic gas 4wd colorado springs co 2014.0	cadillac cts sedan 18990.0 67236.0 automatic gas 4wd spearfish sd 2014	1
+volkswagen passat sedan 11895 53790.0 automatic gas other san diego ca 2015.0	volkswagen passat sedan 11495.0 53790.0 automatic gas fwd san diego ca 2015	1
+nissan altima sedan 14788 72603.0 automatic gas fwd palm springs ca 2017.0	nissan altima sedan 15788.0 72603.0 cvt gas fwd fontana ca 2017	1
+kia sorento suv 28900 23381.0 automatic gas 4wd visalia-tulare ca 2018.0	kia sorento suv 30996.0 21417.0 automatic gas 4wd sacramento ca 2018	1
+ram 1500 classic regular cab pickup 25990 12302.0 other gas other merced ca 2019.0	ram 1500 pickup 22899.0 8062.0 automatic gas other orlando fl 2019	1
+toyota highlander le sport other 27590 44452.0 other gas other sf bay area ca 2017.0	toyota highlander suv 27690.0 44224.0 automatic gas fwd st louis mo 2017	1
+ford escape xlt suv 3988 179428.0 automatic gas 4wd denver co 2005.0	ford escape suv 3488.0 179428.0 automatic other 4wd denver co 2005	1
+honda odyssey van 25822 30467.0 automatic gas fwd fresno / madera ca 2017.0	honda odyssey minivan 30822.0 30467.0 automatic gas fwd fresno ca 2017	1
+toyota corolla sedan 0 14070.0 automatic gas other los angeles ca 2019.0	toyota corolla sedan 15950.0 11391.0 cvt gas fwd santa ana ca 2019	1
+hyundai santa fe se awd, w/ lane keeping assist suv 22999 38663.0 automatic gas 4wd redding ca 2020.0	hyundai santa fe suv 21497.0 19288.0 automatic gas 4wd sacramento ca 2020	1
+nissan sentra s sedan 5500 76010.0 automatic gas fwd yuba-sutter ca 2005.0	nissan sentra sedan 5500.0 76010.0 automatic gas fwd cameron park ca 2005	1
+chevrolet impala sedan 7999 130500.0 automatic gas fwd tucson az 2013.0	chevrolet impala sedan 6999.0 130500.0 automatic other fwd tucson az 2013	1
+chevrolet trax lt other 22284 35029.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet trax suv 22284.0 2126.0 automatic gas fwd flagstaff az 2020	1
+acura mdx suv 0 135835.0 automatic gas 4wd los angeles ca 2009.0	acura mdx suv 9995.0 135835.0 automatic gas 4wd upland ca 2009	1
+ford f-250sd other 71895 30500.0 automatic diesel 4wd bakersfield ca 2017.0	ford f-250 super duty pickup 72995.0 30500.0 automatic other 4wd fontana ca 2017	1
+mazda cx-3 suv 0 21122.0 manual gas fwd bakersfield ca 2017.0	mazda cx-3 suv 20995.0 20678.0 automatic gas fwd escondido ca 2017	1
+nissan rogue sv**2.5l*back up c wagon 22337 40245.0 automatic gas 4wd denver co 2019.0	nissan rogue suv 18988.0 35256.0 automatic gas other englewood co 2019	1
+ford f-150 xl truck 0 59339.0 automatic gas rwd sf bay area ca 2017.0	ford f-150 pickup 32500.0 54351.0 automatic gas other sunnyvale ca 2017	1
+ford fiesta se hatchback 14688 27565.0 automatic gas fwd yuba-sutter ca 2019.0	ford fiesta hatchback 12998.0 25032.0 automatic gas fwd sacramento ca 2019	1
+kia forte 4dr sdn lx sedan 11999 94000.0 automatic gas fwd phoenix az 2016.0	kia forte sedan 10499.0 93408.0 automatic gas fwd mesa az 2016	1
+honda accord lxsedan cvt sedan 17500 71627.0 other gas other fresno / madera ca 2017.0	honda accord sedan 18995.0 71627.0 cvt gas fwd modesto ca 2017	1
+ford f-150 lariat crew 5.5ft bed other 0 10634.0 automatic other other phoenix az 2019.0	ford f-150 pickup 49623.0 10634.0 automatic gas 4wd phoenix az 2019	1
+volvo xc90 suv 8999 129490.0 automatic gas fwd tucson az 2011.0	volvo xc90 suv 9499.0 129490.0 automatic gas fwd tucson az 2011	1
+chevrolet silverado 2500hd other 40995 64030.0 automatic gas rwd bakersfield ca 2018.0	chevrolet silverado 2500hd pickup 37995.0 64030.0 automatic other other fontana ca 2018	1
+jeep wrangler suv 17995 91393.0 automatic gas 4wd reno / tahoe ca 2010.0	jeep wrangler suv 17995.0 91393.0 automatic gas 4wd rocklin ca 2010	1
+infiniti qx60 pure suv 24255 41628.0 automatic gas fwd show low az 2019.0	infiniti qx60 suv 28995.0 41628.0 cvt gas fwd show low az 2019	1
+kia sorento suv 13900 80645.0 automatic gas fwd los angeles ca 2014.0	kia sorento suv 14777.0 80459.0 automatic gas fwd los angeles ca 2014	1
+subaru impreza wagon 11998 99598.0 automatic gas 4wd modesto ca 2014.0	subaru impreza hatchback 12998.0 99598.0 cvt gas 4wd sacramento ca 2014	1
+toyota prius prime sedan 19995 45358.0 automatic other fwd chico ca 2017.0	toyota prius prime hatchback 19988.0 22555.0 cvt gas fwd sacramento ca 2017	1
+kia soul sedan 10995 87000.0 automatic gas fwd tucson az 2015.0	kia soul wagon 10995.0 87000.0 automatic gas fwd tucson az 2015	1
+toyota prius two other 10995 87701.0 automatic electric fwd inland empire ca 2013.0	toyota prius hatchback 11995.0 87701.0 automatic hybrid fwd glendale ca 2013	1
+volkswagen e-golf hatchback 14991 37121.0 other electric other reno / tahoe ca 2016.0	volkswagen e-golf hatchback 13894.0 35165.0 automatic electric fwd los angeles ca 2016	1
+gmc yukon suv 12495 128050.0 automatic gas rwd stockton ca 2007.0	gmc yukon suv 12995.0 128050.0 automatic gas rwd sacramento ca 2007	1
+chevrolet cruze sedan 15999 45336.0 automatic gas fwd san luis obispo ca 2018.0	chevrolet cruze sedan 15995.0 41142.0 automatic gas fwd hayward ca 2018	1
+dodge grand caravan passenger other 0 87683.0 automatic gas fwd fresno / madera ca 2016.0	dodge grand caravan minivan 13999.0 87683.0 automatic other fwd dinuba ca 2016	1
+chevrolet silverado 2500hd other 47995 81295.0 automatic diesel 4wd bakersfield ca 2015.0	chevrolet silverado 2500hd pickup 48995.0 81295.0 automatic diesel 4wd fontana ca 2015	1
+ford f-250sd other 53895 77616.0 automatic diesel 4wd bakersfield ca 2016.0	ford f-250 super duty pickup 53995.0 75000.0 automatic other 4wd rancho cordova ca 2016	1
+chevrolet express cargo other 15990 86408.0 automatic gas rwd fresno / madera ca 2006.0	chevrolet express cargo van 13990.0 86408.0 automatic gas rwd kingsburg ca 2006	1
+ford edge sel suv 30900 29.0 automatic gas other ventura county ca 2018.0	ford edge suv 30900.0 automatic gas fwd ventura ca 2018	1
+lexus rx 350 suv 14999 117406.0 automatic gas 4wd fort collins / north co co 2010.0	lexus rx 350 suv 15999.0 117406.0 automatic gas 4wd longmont co 2010	1
+chevrolet express cargo other 15990 86408.0 automatic gas rwd bakersfield ca 2006.0	chevrolet express cargo van 13990.0 86408.0 automatic gas rwd kingsburg ca 2006	1
+buick enclave suv 14499 125590.0 automatic gas fwd tucson az 2014.0	buick enclave suv 13999.0 125590.0 automatic gas fwd tucson az 2014	1
+dodge grand caravan sxt van 10970 98405.0 automatic gas other palm springs ca 2015.0	dodge grand caravan minivan 10970.0 98405.0 automatic other fwd palm desert ca 2015	1
+ford mustang gt coupe 2d coupe 37990 337.0 other gas rwd florence / muscle shoals al 2019.0	ford mustang coupe 37694.0 131.0 automatic gas rwd mount juliet tn 2019	1
+bmw i3 base w/range extender hatchback 21590 19718.0 other other other phoenix az 2018.0	bmw i3 wagon 23900.0 19652.0 automatic gas rwd berkeley ca 2018	1
+lexus ct 200h sedan 11597 125270.0 automatic hybrid fwd santa maria ca 2014.0	lexus ct hybrid wagon 13497.0 122634.0 automatic hybrid fwd bakersfield ca 2014	1
+ford flex suv 0 41527.0 automatic gas 4wd stockton ca 2019.0	ford flex suv 25797.0 15055.0 automatic gas 4wd san diego ca 2019	1
+chevrolet trax lt other 22284 10.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet trax suv 22284.0 automatic gas fwd flagstaff az 2020	1
+nissan maxima sedan 10494 136209.0 other gas fwd pueblo co 2014.0	nissan maxima sedan 10444.0 136209.0 cvt gas fwd pueblo co 2014	1
+audi q5 suv 0 68961.0 automatic other other inland empire ca 2012.0	audi q5 suv 13995.0 68961.0 automatic gas 4wd south gate ca 2012	1
+kia soul sedan 8995 118923.0 manual gas fwd denver co 2015.0	kia soul wagon 9995.0 118923.0 automatic gas fwd denver co 2015	1
+ram 1500 classic regular cab pickup 25990 12302.0 other gas other santa barbara ca 2019.0	ram 1500 pickup 22899.0 8062.0 automatic gas other orlando fl 2019	1
+cadillac xt5 luxury other 49659 4000.0 automatic gas other flagstaff / sedona az 2019.0	cadillac xt5 suv 49659.0 automatic gas 4wd flagstaff az 2019	1
+toyota tacoma double cab truck 26500 92170.0 automatic gas other ventura county ca 2015.0	toyota tacoma pickup 26900.0 92170.0 automatic gas other harbor city ca 2015	1
+jeep patriot suv 12995 66000.0 automatic gas fwd tucson az 2016.0	jeep patriot suv 11995.0 66000.0 automatic gas fwd tucson az 2016	1
+ford ranger supercrew xlt pickup pickup 35590 5291.0 other gas other sacramento ca 2020.0	ford ranger pickup 31588.0 0.0 automatic gas other lancaster sc 2020	1
+tesla model s sedan 58989 23906.0 automatic electric other huntsville / decatur al 2015.0	tesla model s sedan 66989.0 23906.0 automatic electric 4wd nashville tn 2015	1
+chevrolet malibu ls sedan 22384 1268.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet malibu sedan 22384.0 cvt gas fwd flagstaff az 2020	1
+hyundai tucson suv 25952 12063.0 other gas 4wd anchorage / mat-su ak 2019.0	hyundai tucson suv 24995.0 12039.0 automatic gas 4wd billings mt 2019	1
+volkswagen jetta sedan 0 35818.0 automatic gas fwd bakersfield ca 2017.0	volkswagen jetta sedan 17995.0 35818.0 automatic gas fwd escondido ca 2017	1
+ford f-250 superduty lariat crew 6.7 liter pickup 64995 67340.0 automatic other 4wd prescott az 2017.0	ford f-250 super duty pickup 58380.0 65716.0 automatic other 4wd commerce tx 2017	1
+ford f-150 lariat crew 5.5ft bed other 0 10634.0 automatic other other phoenix az 2019.0	ford f-150 pickup 49623.0 10634.0 automatic gas 4wd phoenix az 2019	1
+gmc yukon suv 501 70153.0 automatic gas 4wd modesto ca 2016.0	gmc yukon suv 42178.0 69814.0 automatic gas 4wd kingsville tx 2016	1
+chevrolet silverado 1500 truck 406 86596.0 automatic gas 4wd modesto ca 2014.0	chevrolet silverado 1500 pickup 32806.0 85930.0 automatic other 4wd las vegas nv 2014	1
+bmw 6 series sedan 25989 72038.0 automatic gas rwd huntsville / decatur al 2013.0	bmw 6 series sedan 25989.0 72038.0 automatic gas rwd nashville tn 2013	1
+chevrolet cruze sedan 13995 35000.0 automatic gas fwd tucson az 2015.0	chevrolet cruze sedan 11995.0 35000.0 automatic gas fwd tucson az 2015	1
+subaru impreza sedan sedan 7995 112000.0 automatic gas 4wd tucson az 2010.0	subaru impreza sedan 6995.0 112000.0 automatic gas 4wd tucson az 2010	1
+gmc acadia suv 15745 114545.0 automatic gas fwd sacramento ca 2015.0	gmc acadia suv 16995.0 114545.0 automatic gas fwd roseville ca 2015	1
+ford f150 supercrew cab xl pickup 37590 8663.0 other gas other huntsville / decatur al 2019.0	ford f-150 pickup 36570.0 4328.0 automatic gas other pompano beach fl 2019	1
+honda civic lx coupe 11999 89111.0 automatic gas fwd fort collins / north co co 2014.0	honda civic coupe coupe 10600.0 89111.0 cvt gas fwd boulder co 2014	1
+ford mustang gt coupe 2d coupe 39590 2516.0 other other other jonesboro ar 2020.0	ford mustang coupe 41565.0 0.0 automatic gas rwd saint james ny 2020	1
+ford f-150 pickup 35990 57838.0 automatic gas 4wd huntsville / decatur al 2016.0	ford f-150 pickup 38990.0 57838.0 automatic gas 4wd gardendale al 2016	1
+bmw x3 sdrive30i sports activity hatchback 41945 6240.0 automatic gas rwd sf bay area ca 2021.0	bmw x3 suv 46945.0 10.0 automatic other other berkeley ca 2021	1
+toyota tundra 4wd pickup 48900 43492.0 automatic gas 4wd sacramento ca 2018.0	toyota tundra pickup 46994.0 43402.0 automatic other 4wd carson city nv 2018	1
+jeep liberty suv 10999 99671.0 automatic gas 4wd tucson az 2011.0	jeep liberty suv 10295.0 95900.0 automatic other other tucson az 2011	1
+honda fit other 6995 112022.0 automatic gas fwd san luis obispo ca 2013.0	honda fit hatchback 8487.0 112022.0 automatic gas fwd sonora ca 2013	1
+buick verano sedan 12995 64000.0 automatic gas fwd tucson az 2017.0	buick verano sedan 12995.0 64000.0 automatic gas fwd tucson az 2017	1
+ford mustang gt coupe 2d coupe 37990 337.0 other gas rwd little rock ar 2019.0	ford mustang coupe 37694.0 131.0 automatic gas rwd mount juliet tn 2019	1
+dodge challenger r/t coupe 31799 33145.0 automatic gas rwd phoenix az 2017.0	dodge challenger coupe 29955.0 33145.0 automatic gas rwd phoenix az 2017	1
+ford fusion sedan 10494 109669.0 other gas other pueblo co 2013.0	ford fusion sedan 10444.0 109669.0 automatic gas fwd pueblo co 2013	1
+chevrolet tahoe lt other 56424 5184.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet tahoe suv 56424.0 automatic gas 4wd flagstaff az 2020	1
+toyota corolla sedan 0 14070.0 automatic gas other orange county ca 2019.0	toyota corolla sedan 15950.0 11391.0 cvt gas fwd santa ana ca 2019	1
+ford fusion sedan 6599 113720.0 automatic gas other tucson az 2010.0	ford fusion sedan 6699.0 113720.0 automatic gas fwd tucson az 2010	1
+volkswagen jetta sedan 5990 116000.0 automatic gas fwd san diego ca 2012.0	volkswagen jetta sedan 6000.0 116000.0 automatic gas fwd escondido ca 2012	1
+chevrolet trailblazer ls ls 4dr suv 3988 185232.0 automatic gas 4wd denver co 2007.0	chevrolet trailblazer suv 3988.0 185232.0 automatic gas 4wd denver co 2007	1
+bmw 3 series sedan 21985 38871.0 automatic gas rwd fresno / madera ca 2017.0	bmw 3 series sedan 23985.0 38871.0 automatic gas rwd carmichael ca 2017	1
+ford escape se pre-owned suv 252 automatic gas 4wd san diego ca 2018.0	ford escape suv 18319.0 43309.0 automatic gas 4wd lodi ca 2018	1
+chevrolet express cargo other 15990 84995.0 automatic gas rwd fresno / madera ca 2006.0	chevrolet express cargo van 13990.0 84995.0 automatic gas rwd kingsburg ca 2006	1
+chevrolet silverado pickup 0 85455.0 automatic gas rwd bakersfield ca 2016.0	chevrolet silverado 1500 pickup 29000.0 85352.0 automatic gas other glendora ca 2016	1
+ford focus hatchback 3985 153520.0 automatic gas fwd yuba-sutter ca 2003.0	ford focus hatchback 3985.0 153520.0 manual gas fwd sacramento ca 2003	1
+chevrolet malibu sedan 14995 52850.0 automatic gas fwd tucson az 2018.0	chevrolet malibu sedan 15999.0 50470.0 automatic gas fwd tucson az 2018	1
+lexus ct 200h sedan 11597 125270.0 automatic hybrid fwd visalia-tulare ca 2014.0	lexus ct hybrid wagon 13497.0 122634.0 automatic hybrid fwd bakersfield ca 2014	1
+toyota highlander suv 5900 178875.0 automatic gas fwd sacramento ca 2005.0	toyota highlander suv 6798.0 178875.0 automatic gas fwd sacramento ca 2005	1
+toyota corolla lsedan 4a sedan 7995 185739.0 automatic gas other fresno / madera ca 2014.0	toyota corolla sedan 10995.0 185739.0 automatic gas fwd modesto ca 2014	1
+hyundai elantra sedan 8995 95000.0 automatic gas fwd tucson az 2013.0	hyundai elantra sedan 8495.0 95000.0 automatic gas fwd tucson az 2013	1
+nissan pathfinder suv 0 16578.0 automatic gas fwd fresno / madera ca 2018.0	nissan pathfinder suv 23995.0 26160.0 automatic gas fwd reedley ca 2018	1
+ford f-150 other 4477 180100.0 automatic gas other pueblo co 1995.0	ford f-150 pickup 4477.0 180100.0 automatic gas other castle rock co 1995	1
+chevrolet silverado 1500 crew pickup 38590 17881.0 other gas other little rock ar 2020.0	chevrolet silverado 1500 pickup 38450.0 16689.0 automatic gas other orlando fl 2020	1
+nissan rogue suv 0 21927.0 automatic gas fwd bakersfield ca 2015.0	nissan rogue suv 22995.0 21927.0 cvt gas fwd escondido ca 2015	1
+ford escape titanium suv 14500 83117.0 automatic gas 4wd colorado springs co 2015.0	ford escape suv 14999.0 83107.0 automatic gas 4wd phoenix az 2015	1
+chevrolet cruze sedan 0 31014.0 automatic gas fwd inland empire ca 2017.0	chevrolet cruze sedan 13650.0 30960.0 automatic gas fwd santa ana ca 2017	1
+kia sorento suv 12999 95356.0 automatic gas fwd tucson az 2014.0	kia sorento suv 12999.0 95356.0 automatic gas fwd tucson az 2014	1
+chevrolet cobalt sedan 4995 139602.0 automatic gas fwd colorado springs co 2009.0	chevrolet cobalt sedan 4995.0 139602.0 automatic gas fwd colorado springs co 2009	1
+lexus es 300h sedan 4d sedan 17590 80737.0 automatic hybrid fwd bakersfield ca 2013.0	lexus es 300h sedan 17495.0 77870.0 automatic hybrid fwd wickenburg az 2013	1
+chevrolet silverado 1500 truck 406 86596.0 automatic gas 4wd mendocino county ca 2014.0	chevrolet silverado 1500 pickup 32806.0 85930.0 automatic other 4wd las vegas nv 2014	1
+ford escape suv 14995 64082.0 automatic gas 4wd reno / tahoe ca 2013.0	ford escape suv 14995.0 64082.0 automatic gas 4wd reno nv 2013	1
+kia forte lx sedan 8970 73083.0 automatic gas other palm springs ca 2016.0	kia forte sedan 10970.0 72546.0 automatic gas fwd palm desert ca 2016	1
+chevrolet suburban premier other 67060 14863.0 automatic gas other flagstaff / sedona az 2020.0	chevrolet suburban suv 67060.0 automatic gas 4wd flagstaff az 2020	1
+jeep cherokee suv 17995 106245.0 automatic gas 4wd fort collins / north co co 2016.0	jeep cherokee suv 19999.0 105356.0 automatic other 4wd casper wy 2016	1
+volvo xc60 suv 11995 106000.0 automatic gas fwd tucson az 2012.0	volvo xc60 suv 10993.0 106228.0 automatic gas 4wd tucson az 2012	1
+ford f-150 platinum other 39998 74046.0 automatic gas other dothan al 2016.0	ford f-150 pickup 36894.0 74045.0 automatic gas 4wd mount juliet tn 2016	1
+jeep wrangler suv 24577 135413.0 automatic gas 4wd sacramento ca 2011.0	jeep wrangler suv 26777.0 135413.0 automatic gas 4wd sacramento ca 2011	1
