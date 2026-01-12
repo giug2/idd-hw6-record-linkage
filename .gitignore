@@ -1,6 +1,9 @@
 # Dataset (file troppo grandi)
 /dataset
 
+# PyTorch models (file troppo grandi ~400MB each)
+*.pt
+
 # Python
 __pycache__/
 *.py[cod]
