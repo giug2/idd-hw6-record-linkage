@@ -28,10 +28,10 @@ try:
     import torch_directml
     GPU_DEVICE = torch_directml.device()
     GPU_AVAILABLE = True
-    print("✓ DirectML GPU Acceleration ENABLED")
+    print(" DirectML GPU Acceleration ENABLED")
 except ImportError:
     GPU_DEVICE = torch.device('cpu')
-    print("⚠️ DirectML not available, using CPU")
+    print(" DirectML not available, using CPU")
 
 sys.path.insert(0, str(Path(__file__).parent))
 
