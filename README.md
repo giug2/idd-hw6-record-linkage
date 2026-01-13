@@ -13,7 +13,7 @@ L'obiettivo è identificare le stesse auto presenti in entrambi i dataset senza 
 - Data Cleaning: Pipeline avanzata per la rimozione di emoji, caratteri speciali e normalizzazione del testo.
 - Ground Truth Engineering: Creazione di un set di validazione manuale di 2.000 record tramite Label Studio.
 - Blind Training: Rimozione degli attributi VIN per testare la capacità dei modelli di riconoscere i match tramite caratteristiche tecniche e testuali.
-- Approccio Comparativo: Confronto tra Machine Learning probabilistico (Dedupe) e Deep Learning basato su Transformer (Ditto).
+- Approccio Comparativo: Confronto tra Machine Learning probabilistico (Dedupe), Deep Learning basato su Transformer (Ditto) e strumento con controllo deterministico totale (Record Linkage).
 
 ## 🛠️ Tecnologie
 Il progetto è sviluppato con:
@@ -25,17 +25,12 @@ Il progetto è sviluppato con:
 
 ## 🧺 Strategia di Blocking 
 Per gestire la scalabilità su 3 milioni di record, sono stati adottati le seguenti strategie di Blocking:
-- Blocco 1: 
-- Blocco 2: 
+- Blocco 1: brand + year
+- Blocco 2: brand + model[:3]  
 Questo riduce drasticamente il numero di confronti necessari.
 
-## 🖊️ Modelli di Matching
-Vengono testate diverse pipeline:
-- Baseline:
-- Full Tabular: 
-- Semantic:
-
 ## 🖥️ Output e Statistiche
+Nella cartella output/ sono raccorti tutti i risultati ottenuti nei diversi run eseguiti.
 
 ## 🖊️ Autori
 [Gaglione Giulia](https://github.com/giug2)  
