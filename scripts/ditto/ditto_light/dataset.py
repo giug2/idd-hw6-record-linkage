@@ -1,9 +1,8 @@
 import torch
-
 from torch.utils import data
 from transformers import AutoTokenizer
-
 from .augment import Augmenter
+
 
 # map lm name to huggingface's pre-trained model names
 lm_mp = {'roberta': 'roberta-base',
@@ -119,4 +118,3 @@ class DittoDataset(data.Dataset):
             x12 = [xi + [0]*(maxlen - len(xi)) for xi in x12]
             return torch.LongTensor(x12), \
                    torch.LongTensor(y)
-

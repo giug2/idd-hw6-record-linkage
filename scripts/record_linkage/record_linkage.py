@@ -27,10 +27,10 @@ import sys
 import time
 import warnings
 from datetime import datetime
-
 import numpy as np
 import pandas as pd
 import recordlinkage
+
 
 warnings.filterwarnings('ignore')
 
@@ -42,7 +42,6 @@ from blocking_B1 import normalize_brand
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA_DIR = os.path.join(BASE_DIR, 'dataset')
 SPLITS_DIR = os.path.join(DATA_DIR, 'splits')
@@ -54,7 +53,6 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 # ============================================================================
 # UTILITY FUNCTIONS
 # ============================================================================
-
 def load_data():
     """Carica i dataset train, validation e test."""
     print("\n" + "="*60)
@@ -90,7 +88,7 @@ def prepare_dataframes_for_linkage(df):
     def safe_get(col_name, default=None):
         return df[col_name].values if col_name in df.columns else default
     
-    # Colonne per Craigslist (suffisso _craig)
+    # Colonne per Craigslist
     craig_df = pd.DataFrame({
         'source_id': safe_get('source_id_craig'),
         'vin': safe_get('vin'),
@@ -110,7 +108,7 @@ def prepare_dataframes_for_linkage(df):
     })
     craig_df.index = pd.Index([f'craig_{i}' for i in range(len(craig_df))], name='id')
     
-    # Colonne per US Used Cars (senza suffisso o colonne specifiche)
+    # Colonne per US Used Cars 
     us_df = pd.DataFrame({
         'source_id': safe_get('source_id_us', safe_get('source_id')),
         'vin': safe_get('vin_us', safe_get('vin')),
@@ -130,7 +128,7 @@ def prepare_dataframes_for_linkage(df):
     })
     us_df.index = pd.Index([f'us_{i}' for i in range(len(us_df))], name='id')
     
-    # Ground truth: ogni riga i del dataset originale è un match (craig_i, us_i)
+    # Ogni riga i del dataset originale è un match
     true_pairs = [(f'craig_{i}', f'us_{i}') for i in range(len(df))]
     true_links = pd.MultiIndex.from_tuples(true_pairs, names=['id_1', 'id_2'])
     
@@ -168,7 +166,6 @@ def calculate_metrics(predicted_pairs, true_links):
 # ============================================================================
 # BLOCKING STRATEGIES (usando i moduli esterni)
 # ============================================================================
-
 def blocking_B1(craig_df, us_df):
     """Strategia B1: Blocking su (brand normalizzato, year)."""
     c_df = craig_df.copy()
@@ -239,7 +236,7 @@ def analyze_blocking(candidate_pairs, craig_df, us_df, true_links, name):
     # Reduction ratio
     reduction_ratio = 1 - (n_candidates / n_total_pairs) if n_total_pairs > 0 else 0
     
-    # Pairs completeness (quante coppie vere sono nei candidati)
+    # Pairs completeness: quante coppie vere sono nei candidati
     true_set = set(true_links)
     candidates_set = set(candidate_pairs)
     true_in_candidates = len(true_set.intersection(candidates_set))
@@ -267,7 +264,6 @@ def analyze_blocking(candidate_pairs, craig_df, us_df, true_links, name):
 # ============================================================================
 # COMPARISON RULES - 3 CONFIGURAZIONI
 # ============================================================================
-
 def create_comparison_P1_textual_core():
     """
     P1_textual_core: brand, model, body_type, description, price, mileage
@@ -285,7 +281,7 @@ def create_comparison_P1_textual_core():
     # Body type: similarità stringa
     compare.string('body_type', 'body_type', method='jarowinkler', threshold=0.8, label='body_type_sim')
     
-    # Description: usando Jaro (più veloce di Levenshtein per testi lunghi)
+    # Description: Jaro
     compare.string('description', 'description', method='jaro', threshold=0.6, label='description_sim')
     
     # Price: confronto numerico (scala gaussiana)
@@ -315,7 +311,7 @@ def create_comparison_P2_plus_location():
     # Body type: similarità stringa
     compare.string('body_type', 'body_type', method='jarowinkler', threshold=0.8, label='body_type_sim')
     
-    # Description: usando Jaro (più veloce)
+    # Description: usando Jaro
     compare.string('description', 'description', method='jaro', threshold=0.6, label='description_sim')
     
     # Price: confronto numerico
@@ -324,7 +320,6 @@ def create_comparison_P2_plus_location():
     # Mileage: confronto numerico
     compare.numeric('mileage', 'mileage', method='gauss', scale=10000, label='mileage_sim')
     
-    # === Campi aggiuntivi ===
     # Transmission: match esatto
     compare.exact('transmission', 'transmission', label='transmission_exact')
     
@@ -361,13 +356,13 @@ def create_comparison_P3_minimal_fast():
     # Model: similarità stringa
     compare.string('model', 'model', method='jarowinkler', threshold=0.75, label='model_sim')
     
-    # Year: match esatto (più discriminativo)
+    # Year: match esatto
     compare.exact('year', 'year', label='year_exact')
     
-    # Price: confronto numerico (necessario per discriminare)
+    # Price: confronto numerico 
     compare.numeric('price', 'price', method='gauss', scale=5000, label='price_sim')
     
-    # Mileage: confronto numerico (necessario per discriminare)
+    # Mileage: confronto numerico 
     compare.numeric('mileage', 'mileage', method='gauss', scale=10000, label='mileage_sim')
     
     return compare
@@ -384,7 +379,6 @@ COMPARISON_CONFIGS = {
 # ============================================================================
 # PIPELINE: RecordLinkage
 # ============================================================================
-
 def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, comparison_config, pipeline_name):
     """
     Esegue la pipeline di Record Linkage completa.
@@ -457,7 +451,7 @@ def run_recordlinkage_pipeline(train_df, test_df, blocking_strategy, comparison_
     features_train = compare.compute(train_pairs, c_train_blocked, u_train_blocked)
     print(f"    Features shape: {features_train.shape}")
     
-    # Match index per training (intersezione con true links)
+    # Match index per training 
     match_index_train = true_train.intersection(train_pairs)
     print(f"    True matches nei candidati: {len(match_index_train):,} / {len(true_train):,}")
     

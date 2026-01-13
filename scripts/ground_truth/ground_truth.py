@@ -14,14 +14,13 @@ def clean_vin_and_find_matches(path_craig, path_us):
     df_us = pd.read_csv(path_us, low_memory=False)
     print("Inizio pulizia VIN e generazione Ground-Truth...")
 
-
-    # Funzione per identificare VIN spazzatura
+    # Funzione per identificare VIN non validi
     def is_valid_vin(vin):
         vin = str(vin).upper().strip()
         # Un VIN valido deve essere di 17 caratteri alfanumerici
         if len(vin) != 17:
             return False
-        # Blacklist di VIN comuni inseriti come placeholder
+        # Blacklist di placeholder
         blacklist = ['00000000000000000', '123456789ABCDEFGH', 'XXXXXXXXXXXXXXXXX']
         if vin in blacklist or vin.isnumeric() or vin.isalpha():
             return False
@@ -65,6 +64,6 @@ def clean_vin_and_find_matches(path_craig, path_us):
     
     return label_studio_file
 
-# Esecuzione (usa i dataframe allineati dello step precedente)
+# Esecuzione 
 ground_truth_candidates = clean_vin_and_find_matches('dataset/craigslist_aligned.csv', 'dataset/us_cars_aligned.csv')
 ground_truth_candidates.to_csv('candidates_for_label_studio.csv', index=False)

@@ -23,7 +23,6 @@ Requirements
 - Data files produced by the previous pipeline (see README / docs)
 """
 from __future__ import annotations
-
 import argparse
 import json
 import os
@@ -33,8 +32,8 @@ import tempfile
 import time
 from pathlib import Path
 from typing import Dict, Iterable, List, Sequence, Tuple
-
 import pandas as pd
+
 
 try:
     import dedupe
@@ -227,7 +226,6 @@ def _evaluate_predictions(pred_pairs: set, truth_pairs: set) -> dict:
 # ----------------------------
 # Core pipeline
 # ----------------------------
-
 def run_pipeline(
     name: str,
     fields: list,
@@ -331,7 +329,6 @@ def run_pipeline(
 # ----------------------------
 # CLI
 # ----------------------------
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Train and evaluate Dedupe pipelines")
     parser.add_argument("--train", default="dataset/splits/train.csv", help="Path to train split")

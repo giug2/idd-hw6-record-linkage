@@ -18,7 +18,6 @@ python scripts/dedupe/2b_train_with_manual_blocking.py \
     --blocking B1  # or B2 or Union
 """
 from __future__ import annotations
-
 import argparse
 import json
 import os
@@ -28,8 +27,8 @@ import time
 from pathlib import Path
 from typing import Dict, List, Tuple
 import importlib.util
-
 import pandas as pd
+
 
 try:
     import dedupe
@@ -37,6 +36,7 @@ except ImportError as exc:
     raise SystemExit(
         "Missing dependency: dedupe. Install with `pip install dedupe[performance]`"
     ) from exc
+
 
 # ----------------------------
 # Configuration
@@ -272,7 +272,6 @@ def _ensure_columns(df: pd.DataFrame, required, split_name: str) -> None:
 # ----------------------------
 # Core pipeline
 # ----------------------------
-
 def run_pipeline_with_manual_blocking(
     name: str,
     fields: list,
@@ -408,7 +407,6 @@ def run_pipeline_with_manual_blocking(
 # ----------------------------
 # CLI
 # ----------------------------
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Train Dedupe pipelines with manual blocking strategies"

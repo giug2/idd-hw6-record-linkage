@@ -9,9 +9,9 @@ def clean_text(text):
     text = str(text)
     # Rimuove emoji e caratteri speciali non-ASCII
     text = text.encode('ascii', 'ignore').decode('ascii')
-    # Rimuove caratteri di controllo come \n, \r, \t (molto comuni su Craigslist)
+    # Rimuove caratteri di controllo come \n, \r, \t 
     text = re.sub(r'[\n\r\t]', ' ', text)
-    # Rimuove simboli speciali... elimina simboli come ★, ➔, ecc.
+    # Rimuove simboli speciali
     text = re.sub(r'[^\w\s\d\.,!\?\-]', '', text)
     # Normalizza gli spazi 
     text = re.sub(r'\s+', ' ', text).strip()
@@ -29,14 +29,12 @@ def prepare_for_training(path_craig, path_us, path_gt):
     # --- PULIZIA DESCRIZIONI ---
     print("Pulizia descrizioni (rimozione emoji e caratteri speciali)...")
     
-    # Puliamo le descrizioni in tutti i dataset dove sono presenti
     if 'description' in df_c.columns:
         df_c['description'] = df_c['description'].apply(clean_text)
     
     if 'description' in df_u.columns:
         df_u['description'] = df_u['description'].apply(clean_text)
     
-    # Nel ground-truth puliamo sia la descrizione craig che quella us
     for col in ['description_craig', 'description_us']:
         if col in df_gt.columns:
             df_gt[col] = df_gt[col].apply(clean_text)

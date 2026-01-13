@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def enrich_ground_truth(path_labeled_csv, path_craig_aligned, path_us_aligned):
     # Carica il file esportato da Label Studio
     df_gt_raw = pd.read_csv(path_labeled_csv)

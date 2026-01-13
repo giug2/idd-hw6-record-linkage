@@ -2,12 +2,11 @@ import numpy as np
 import csv
 import sys
 import os
-
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
 from nltk.corpus import stopwords
-
 from .dataset import get_tokenizer
+
 
 stopwords = set(stopwords.words('english'))
 

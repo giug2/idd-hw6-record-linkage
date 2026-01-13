@@ -18,7 +18,13 @@ Contiene gli script che eliminano il campo VIN dai dataset e dividono il dataset
 Contiene gli script che definiscono i blocking.
 
 ## Record Linkage
+Contiene gli script utili per il run con la librerie Py Record Linkage.
 
 ## Dedupe
+Contiene gli script utili per il run con il modello Dedupe.
 
 ## Ditto
+Contiene gli script utili per il run con il modello Ditto.
+
+## Unseen
+Contiene lo script che crea il dataset per il test su dati mai visti dai modelli.
