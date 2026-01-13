@@ -19,11 +19,13 @@ import re
 import warnings
 warnings.filterwarnings('ignore')
 
+
 # Disabilita CUDA per usare DirectML
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 os.environ['TRANSFORMERS_OFFLINE'] = '1'
 os.environ['HF_HUB_OFFLINE'] = '1'
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
+
 
 import torch
 import numpy as np
@@ -31,6 +33,7 @@ import pandas as pd
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
+
 
 # GPU Setup
 GPU_DEVICE = None
@@ -67,7 +70,6 @@ PIPELINES = {
 # ===========================================================================
 # BLOCKING FUNCTIONS
 # ===========================================================================
-
 def normalize_brand(brand) -> Optional[str]:
     """Normalizza il brand."""
     if pd.isna(brand) or brand is None:
@@ -153,7 +155,6 @@ def get_blocking_key_B2_us(row: pd.Series) -> Optional[str]:
 # ===========================================================================
 # DATASET PREPARATION
 # ===========================================================================
-
 def extract_representation(row: pd.Series, source: str, fields: List[str]) -> str:
     """Estrae la rappresentazione testuale di un record."""
     values = []
@@ -230,7 +231,6 @@ def generate_negative_pairs(df: pd.DataFrame, num_negatives_per_positive: int = 
     
     # Shuffle
     combined = combined.sample(frac=1, random_state=42).reset_index(drop=True)
-    
     return combined
 
 
@@ -258,7 +258,7 @@ def create_ditto_file(df: pd.DataFrame, pipeline: str, blocking: str, output_fil
             else:
                 craig_key = us_key = "any"
             
-            # Per le coppie POSITIVE, devono passare il blocking (stessa chiave)
+            # Per le coppie POSITIVE, devono passare il blocking 
             # Per le coppie NEGATIVE, le includiamo comunque per avere esempi negativi
             if label == 1:
                 # Se è un match positivo, la chiave di blocking deve corrispondere
@@ -347,7 +347,6 @@ def prepare_all_datasets():
 # ===========================================================================
 # TRAINING
 # ===========================================================================
-
 sys.path.insert(0, str(Path(__file__).parent))
 from ditto_light.dataset import DittoDataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification

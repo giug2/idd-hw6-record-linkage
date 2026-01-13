@@ -5,10 +5,12 @@ import re
 import csv
 import io
 
+
 # --- CONFIGURAZIONE DATASET ---
 INPUT_FILE = 'dataset/unsee_completo.csv'
 METRICS_REPORT_FILE = 'output/dedupe_results/inference_unseen_p3_extended_metrics.txt'
 OUTPUT_CSV_FILE = 'output/dedupe_results/inference_unseen_p3_extended.csv'
+
 
 # --- LISTA DEI MODELLI E SOGLIE DA VALUTARE ---
 # Ci concentriamo sul modello migliore (P3 Extended Auto)
@@ -18,6 +20,7 @@ MODELS = [
 
 # Soglia fissa
 THRESHOLDS = [0.5]
+
 
 def clean_price(val):
     if pd.isna(val) or val == '':
@@ -30,6 +33,7 @@ def clean_price(val):
     except:
         return None
 
+
 def clean_year(val):
     if pd.isna(val) or val == '':
         return None
@@ -39,6 +43,7 @@ def clean_year(val):
     except:
         return None
 
+
 def clean_mileage(val):
     if pd.isna(val) or val == '':
         return None
@@ -47,6 +52,7 @@ def clean_mileage(val):
         return val_float
     except:
         return None
+
 
 def load_data_and_truth(filename):
     """
@@ -128,6 +134,7 @@ def load_data_and_truth(filename):
     
     return data_craig, data_us, true_pairs
 
+
 def evaluate_model(model_name, settings_path, records_craig, records_us, valid_true_pairs, full_true_count, threshold=0.5, output_csv=None):
     print(f"\n--- Valutazione Modello: {model_name} (Threshold: {threshold}) ---")
     
@@ -190,6 +197,7 @@ def evaluate_model(model_name, settings_path, records_craig, records_us, valid_t
         'F1': f1,
         'Settings': settings_path
     }
+
 
 def main():
     if not os.path.exists(INPUT_FILE):

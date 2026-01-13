@@ -55,7 +55,7 @@ def normalize_year(year):
     
     try:
         year = int(float(year))
-        # Validazione: anni ragionevoli per auto usate
+        # Anni ragionevoli 
         if 1900 <= year <= 2030:
             return year
     except (ValueError, TypeError):

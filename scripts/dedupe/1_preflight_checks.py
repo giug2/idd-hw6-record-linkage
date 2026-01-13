@@ -12,12 +12,11 @@ python scripts/preflight_checks.py \
     --test dataset/splits/test.csv
 """
 from __future__ import annotations
-
 import argparse
 from pathlib import Path
 from typing import Iterable, Sequence
-
 import pandas as pd
+
 
 CRAIG_PREFIX = "_craig"
 US_PREFIX = ""

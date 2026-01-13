@@ -6,11 +6,13 @@ import json
 from typing import Set, Tuple, Dict, List
 from sklearn.utils import resample
 
+
 # Configuration
 DATA_DIR = 'dataset/splits'
 OUTPUT_DIR = 'output/dedupe_results/experiments'
 MODEL_NAME = 'P3_minimal_fast'  # Auditing the best model
 SETTINGS_FILE = os.path.join(OUTPUT_DIR, f'{MODEL_NAME}_settings.json')
+
 
 # Column Mappings (from train_dedupe_models.py)
 CRAIG_MAP = {
@@ -28,16 +30,19 @@ US_MAP = {
     "price": "price",
 }
 
+
 def load_data():
     print("Loading splits...")
     train = pd.read_csv(os.path.join(DATA_DIR, 'train.csv'), low_memory=False)
     test = pd.read_csv(os.path.join(DATA_DIR, 'test.csv'), low_memory=False)
     return train, test
 
+
 def get_ids(df: pd.DataFrame, source: str) -> Set[str]:
     """Extract set of IDs for a given source (craig or us)."""
     col = CRAIG_MAP["id"] if source == 'craig' else US_MAP["id"]
     return set(df[col].astype(str).unique())
+
 
 def check_data_leakage(train: pd.DataFrame, test: pd.DataFrame):
     print("\n=== 1. Data Leakage & Overlap Analysis ===")
@@ -67,7 +72,9 @@ def check_data_leakage(train: pd.DataFrame, test: pd.DataFrame):
     else:
         print(f"  Clean: No ground truth pair leakage.")
 
+
 NUMERIC_FIELDS = {"price", "mileage", "year"}
+
 
 def _to_records_dict(df: pd.DataFrame, mapping: Dict[str, str], prefix: str) -> Dict[str, dict]:
     """Convert DataFrame to Dedupe record dictionary."""
@@ -94,6 +101,7 @@ def _to_records_dict(df: pd.DataFrame, mapping: Dict[str, str], prefix: str) -> 
                 rec[key] = str(val) if val else ""
         records[record_id] = rec
     return records
+
 
 def audit_model_performance(test_df: pd.DataFrame):
     print(f"\n=== 2. Model Robustness Audit ({MODEL_NAME}) ===")

@@ -1,7 +1,5 @@
 # Risultati Valutazione Pipeline di Record Linkage
 
-**Data:** 2026-01-10 18:15:34
-
 ## Sommario
 
 Questo documento riporta i risultati della valutazione delle pipeline di Record Linkage:

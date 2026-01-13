@@ -87,7 +87,7 @@ def align_datasets(path_craig, path_us):
         'state': 'state'                                # CAP per estrarre lo stato se serve
     }
 
-    # Si selezionano solo le colonne desiderate e le rinominiamo
+    # Seleziono solo le colonne desiderate e le rinomino
     df_craig_aligned = df_craig[list(mapping_craig.keys())].rename(columns=mapping_craig)
     df_us_aligned = df_us[list(mapping_us.keys())].rename(columns=mapping_us)
     print(f"Eliminazione colonne superflue. 1/10")
@@ -97,7 +97,7 @@ def align_datasets(path_craig, path_us):
     def clean_cylinders(val):
         if pd.isna(val) or str(val).lower() == 'nan': 
             return 'other'
-        # Usiamo una regex per estrarre solo i numeri (es. "4 cilind" o "V6" -> "4" o "6")
+        # Regex per estrarre solo i numeri (es. "4 cilind" o "V6" -> "4" o "6")
         match = re.search(r'\d+', str(val))
         if match:
             return match.group()
@@ -236,7 +236,7 @@ def align_datasets(path_craig, path_us):
 
     df_us_aligned['condition'] = df_us_aligned.apply(derive_us_condition, axis=1)
 
-    # Normalizzazione Condition per CRAIGSLIST (Mappatura su scala standard)
+    # Normalizzazione Condition per CRAIGSLIST
     craig_cond_map = {
         'new': 'new', 'like new': 'excellent', 'excellent': 'excellent',
         'good': 'good', 'fair': 'fair', 'salvage': 'poor'
@@ -259,7 +259,7 @@ def align_datasets(path_craig, path_us):
         df_us_aligned[col] = df_us_aligned[col].astype(str).str.lower().str.strip()
     print(f"Fine allineamento campi di testo. 9/10")
     
-    # Pulizia specifica per il VIN
+    # Normalizzazione del VIN
     df_craig_aligned['vin'] = df_craig_aligned['vin'].astype(str).str.upper().str.replace(r'[^A-Z0-9]', '', regex=True).str.strip()
     df_us_aligned['vin'] = df_us_aligned['vin'].astype(str).str.upper().str.replace(r'[^A-Z0-9]', '', regex=True).str.strip()
     print(f"Fine allineamento VIN. 10/10")
@@ -270,7 +270,7 @@ def align_datasets(path_craig, path_us):
 
 # Esecuzione 
 df_craigslist_clean, df_us_cars_clean = align_datasets('dataset/vehicles.csv', 'dataset/used_cars_data.csv')
-# Per ora salviamoli come csv allineati
+
 df_craigslist_clean.to_csv('dataset/craigslist_aligned.csv', index=False)
 print(f"Salvato dataset craig allineato.")
 df_us_cars_clean.to_csv('dataset/us_cars_aligned.csv', index=False)

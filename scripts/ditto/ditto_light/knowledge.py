@@ -3,8 +3,8 @@ import csv
 import sys
 import os
 import spacy
-
 from collections import Counter
+
 
 class DKInjector:
     """Inject domain knowledge to the data entry pairs.

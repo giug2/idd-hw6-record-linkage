@@ -2,6 +2,7 @@ import json
 import random
 import numpy as np
 
+
 class Augmenter(object):
     """Data augmentation operator.
 

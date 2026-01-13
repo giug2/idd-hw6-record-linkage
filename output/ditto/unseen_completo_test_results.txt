@@ -35,10 +35,3 @@ TIMING:
 --------------------------------------------------------------------------------
   Inference time: 3.86s
   Throughput: 1713.2 pairs/second
-
-NOTE:
---------------------------------------------------------------------------------
-  Il dataset unsee_completo.csv contiene coppie con lo stesso VIN,
-  quindi tutte le coppie sono TRUE MATCHES.
-  La Recall indica quante coppie vere il modello identifica correttamente.
-  Un Recall < 1.0 indica False Negatives (match non riconosciuti).

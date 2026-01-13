@@ -15,6 +15,7 @@ from pathlib import Path
 from datetime import datetime
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score, confusion_matrix
 
+
 # GPU Setup
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 os.environ['TRANSFORMERS_OFFLINE'] = '1'
@@ -35,8 +36,10 @@ except ImportError:
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+
 from ditto_light.dataset import DittoDataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
 
 # Percorsi
 ROOT_DIR = Path(__file__).parent.parent.parent
@@ -296,7 +299,7 @@ def main():
     # Crea directory se necessario
     unseen_ditto.parent.mkdir(parents=True, exist_ok=True)
     
-    # Step 1: Prepara dataset unseen in formato DITTO
+    # Prepara dataset unseen in formato DITTO
     print("\n" + "-"*80)
     print("STEP 1: Preparazione dataset unseen_completo")
     print("-"*80)
@@ -306,20 +309,20 @@ def main():
         print("ERRORE: Nessun campione passa il blocking!")
         return
     
-    # Step 2: Carica modello
+    # Carica modello
     print("\n" + "-"*80)
     print("STEP 2: Caricamento modello (pre-trained, 15 epochs)")
     print("-"*80)
     device = GPU_DEVICE if GPU_AVAILABLE else torch.device('cpu')
     model, threshold = load_model(model_dir, device, MODEL_NAME)
     
-    # Step 3: Valuta
+    # Valuta
     print("\n" + "-"*80)
     print("STEP 3: Valutazione su unseen_completo")
     print("-"*80)
     results = evaluate_on_unseen(model, threshold, str(unseen_ditto), device)
     
-    # Step 4: Salva risultati
+    # Salva risultati
     print("\n" + "-"*80)
     print("STEP 4: Salvataggio risultati")
     print("-"*80)

@@ -17,11 +17,13 @@ import importlib.util
 from pathlib import Path
 from typing import Dict, List, Tuple, Set
 
+
 try:
     import dedupe
 except ImportError:
     print("Dedupe not installed.")
     sys.exit(1)
+
 
 # Configuration
 RANDOM_SEED = 42
@@ -122,7 +124,6 @@ def _evaluate_predictions(pred_pairs: set, truth_pairs: set) -> dict:
 # ---------------------------------------------------------
 # Part 1: Auto-Blocking Logic (from 2_train_dedupe_models.py)
 # ---------------------------------------------------------
-
 def _build_auto_training_pairs(craig_records, us_records):
     """Synthetic negatives + aligned positives (easy negatives)"""
     craig_ids = list(craig_records.keys())
@@ -224,10 +225,10 @@ def run_auto_blocking(train_df, test_df):
     print(f"Auto-Blocking Results: F1={metrics['f1']:.4f}")
     return result
 
+
 # ---------------------------------------------------------
 # Part 2: Manual-Blocking Logic (from 2b_train_with_manual_blocking.py)
 # ---------------------------------------------------------
-
 def _generate_manual_candidates(df, blocking_strategy):
     """Generate candidates (craig_idx, us_idx) using blocking modules"""
     candidates = set()
@@ -248,6 +249,7 @@ def _generate_manual_candidates(df, blocking_strategy):
         candidates.update(cand_b2)
         
     return candidates
+
 
 def _build_manual_training_pairs(df, craig_records, us_records, blocking_strategy):
     """Hard negatives from manual blocking"""
@@ -272,6 +274,7 @@ def _build_manual_training_pairs(df, craig_records, us_records, blocking_strateg
         distinct_pairs = rng.sample(distinct_pairs, target_distinct)
         
     return {"match": match_pairs, "distinct": distinct_pairs}
+
 
 def run_manual_blocking_exp(train_df, test_df, blocking_strategy):
     full_name = f"{P3_EXTENDED_PREFIX}_manual_{blocking_strategy}"
@@ -351,7 +354,6 @@ def run_manual_blocking_exp(train_df, test_df, blocking_strategy):
             
             # Let's verify what `scores` is. It is likely a numpy array.
             # If it has dtype names (like 'score'), extract.
-            
             score_values = scores
             if hasattr(scores, 'dtype') and scores.dtype.names and 'score' in scores.dtype.names:
                 score_values = scores['score']
@@ -388,10 +390,10 @@ def run_manual_blocking_exp(train_df, test_df, blocking_strategy):
     print(f"{blocking_strategy} Results: F1={metrics['f1']:.4f}")
     return result
 
+
 # ---------------------------------------------------------
 # Main
 # ---------------------------------------------------------
-
 def main():
     print("Loading data...")
     train_df = pd.read_csv(BASE_DIR / "dataset/splits/train.csv")

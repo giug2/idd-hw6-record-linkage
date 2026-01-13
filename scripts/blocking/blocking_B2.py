@@ -60,8 +60,8 @@ def get_model_prefix(model, length=2):
     """
     normalized = normalize_string(model)
     
+    # Se il modello è troppo corto, usa tutto il modello
     if normalized is None or len(normalized) < length:
-        # Se il modello è troppo corto, usa tutto il modello
         return normalized
     
     return normalized[:length]
@@ -221,7 +221,7 @@ def main():
     print(f"Chiavi in comune: {len(set(blocks_craig.keys()) & set(blocks_us.keys()))}")
     print(f"Coppie candidate generate: {len(candidate_pairs)}")
     
-    # Calcola pairs completeness (se abbiamo ground truth)
+    # Calcola pairs completeness
     # Ogni riga del dataset è un match vero (craig_i, us_i corrisponde a riga i)
     true_pairs = set(range(len(df)))
     found_pairs = set()

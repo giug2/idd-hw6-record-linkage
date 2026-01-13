@@ -7,16 +7,18 @@ etichettati e utilizzati per il Ground Truth (Train/Val/Test).
 import pandas as pd
 import os
 
+
 # --- CONFIGURAZIONE PERCORSI ---
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PATH_CANDIDATI = os.path.join(BASE_DIR, "dataset", "candidates_for_label_studio.csv")
 PATH_LABELED = os.path.join(BASE_DIR, "dataset", "ground_truth_ml.csv")
 PATH_OUTPUT = os.path.join(BASE_DIR, "dataset", "unseen_final.csv")
 
+
 def filter_records():
     print("=== Avvio procedura di filtraggio record etichettati ===")
 
-    # 1. Caricamento dei dataset
+    # Caricamento dei dataset
     if not os.path.exists(PATH_CANDIDATI) or not os.path.exists(PATH_LABELED):
         print(f"Errore: Assicurati che i file esistano in:\n - {PATH_CANDIDATI}\n - {PATH_LABELED}")
         return
@@ -28,13 +30,12 @@ def filter_records():
     print(f"Record candidati iniziali: {len(df_candidati)}")
     print(f"Record già etichettati: {len(df_labeled)}")
 
-    # 2. Creazione di una chiave univoca per la coppia
+    # Creazione di una chiave univoca per la coppia
     # Usiamo la combinazione degli ID delle due sorgenti per identificare il match in modo univoco
-    # Nota: Assicurati che i nomi delle colonne corrispondano a quelli del tuo schema
     id_craig = 'source_id_craig'
     id_us = 'source_id_us'
 
-    # Trasformiamo in stringa per evitare problemi di tipo (es. float vs int)
+    # Trasformiamo in stringa per evitare problemi di tipo 
     df_candidati['match_key'] = (
         df_candidati[id_craig].astype(str) + "_" + df_candidati[id_us].astype(str)
     )
@@ -42,13 +43,11 @@ def filter_records():
         df_labeled[id_craig].astype(str) + "_" + df_labeled[id_us].astype(str)
     )
 
-    # 3. Filtraggio
-    # Teniamo solo i record dei candidati la cui chiave NON è presente nel set etichettato
+    # Filtraggio
     labeled_keys = set(df_labeled['match_key'])
     
     df_unseen = df_candidati[~df_candidati['match_key'].isin(labeled_keys)].copy()
 
-    # 4. Pulizia e Salvataggio
     # Rimuoviamo la colonna di appoggio prima di salvare
     df_unseen.drop(columns=['match_key'], inplace=True)
     
@@ -65,3 +64,4 @@ def filter_records():
 
 if __name__ == "__main__":
     filter_records()
+    

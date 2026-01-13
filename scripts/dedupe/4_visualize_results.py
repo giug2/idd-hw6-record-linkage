@@ -16,6 +16,7 @@ import numpy as np
 import os
 from collections import defaultdict
 
+
 # Stile globale per presentazioni
 plt.rcParams.update({
     'font.size': 11,
