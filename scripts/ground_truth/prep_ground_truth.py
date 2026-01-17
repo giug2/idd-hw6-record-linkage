@@ -35,4 +35,4 @@ def enrich_ground_truth(path_labeled_csv, path_craig_aligned, path_us_aligned):
     print(f"Successo! Il file finale ha {df_gt.shape[1]} colonne e {len(df_gt)} righe.")
 
 # Esecuzione
-enrich_ground_truth('dataset/ground_truth_grezzo.csv', 'dataset/craigslist_aligned.csv', 'dataset/us_cars_aligned.csv')
+enrich_ground_truth('dataset/ground_truth_grezzo.csv', 'dataset/craigslist_aligned_no_dupes.csv', 'dataset/us_cars_aligned_no_dupes.csv')

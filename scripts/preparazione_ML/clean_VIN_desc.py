@@ -44,6 +44,7 @@ def prepare_for_training(path_craig, path_us, path_gt):
     df_c_no_vin = df_c.drop(columns=['vin'], errors='ignore')
     df_u_no_vin = df_u.drop(columns=['vin'], errors='ignore')
     df_gt_no_vin = df_gt.drop(columns=['vin'], errors='ignore')
+    df_gt_no_vin = df_gt.drop(columns=['vin_us'], errors='ignore')
 
     # Salvataggio dei file puliti
     df_c_no_vin.to_csv('craigslist_for_ml.csv', index=False)
@@ -53,4 +54,4 @@ def prepare_for_training(path_craig, path_us, path_gt):
     print("Processo completato! File pronti per l'addestramento.")
 
 # Esecuzione
-prepare_for_training('dataset/craigslist_aligned.csv', 'dataset/us_cars_aligned.csv', 'dataset/ground_truth_complete.csv')
+prepare_for_training('dataset/craigslist_aligned_no_dupes.csv', 'dataset/us_cars_aligned_no_dupes.csv', 'dataset/ground_truth_final_balanced.csv')

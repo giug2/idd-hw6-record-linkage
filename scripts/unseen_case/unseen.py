@@ -60,7 +60,7 @@ def filter_records():
 
     # Salvataggio
     df_unseen.to_csv(PATH_OUTPUT, index=False)
-    print(f"\n✓ Dataset filtrato salvato con successo in: {PATH_OUTPUT}")
+    print(f"\nDataset filtrato salvato con successo in: {PATH_OUTPUT}")
 
 if __name__ == "__main__":
     filter_records()
