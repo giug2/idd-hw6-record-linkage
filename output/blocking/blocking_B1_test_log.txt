@@ -1,0 +1,58 @@
+============================================================
+STRATEGIA B1: Blocking su (brand, year)
+============================================================
+
+Caricamento dataset di training...
+Record caricati: 2578
+
+Applicazione blocking B1...
+
+============================================================
+ANALISI BLOCKING B1: Craigslist (brand+year)
+============================================================
+Numero totale di blocchi: 518
+Record totali nei blocchi: 2578
+Dimensione media blocco: 4.89
+Dimensione mediana blocco: 2.00
+Dimensione min blocco: 1
+Dimensione max blocco: 77
+
+Distribuzione dimensioni blocchi:
+  Blocchi con 1 record:     195
+  Blocchi con 2-5 record:   185
+  Blocchi con 6-10 record:  82
+  Blocchi con 11-50 record: 55
+  Blocchi con 50+ record:   1
+
+Reduction Ratio: 0.9944
+Coppie candidate: 18,025
+Coppie totali possibili: 3,201,715
+
+============================================================
+ANALISI BLOCKING B1: US Used Cars (brand+year)
+============================================================
+Numero totale di blocchi: 395
+Record totali nei blocchi: 2578
+Dimensione media blocco: 6.53
+Dimensione mediana blocco: 3.00
+Dimensione min blocco: 1
+Dimensione max blocco: 130
+
+Distribuzione dimensioni blocchi:
+  Blocchi con 1 record:     135
+  Blocchi con 2-5 record:   142
+  Blocchi con 6-10 record:  58
+  Blocchi con 11-50 record: 57
+  Blocchi con 50+ record:   3
+
+Reduction Ratio: 0.9892
+Coppie candidate: 36,031
+Coppie totali possibili: 3,321,753
+
+============================================================
+RISULTATI B1
+============================================================
+Blocchi Craigslist: 518
+Blocchi US Used Cars: 395
+Chiavi in comune: 349
+Coppie candidate generate: 44489

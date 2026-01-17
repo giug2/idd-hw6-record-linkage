@@ -221,20 +221,6 @@ def main():
     print(f"Chiavi in comune: {len(set(blocks_craig.keys()) & set(blocks_us.keys()))}")
     print(f"Coppie candidate generate: {len(candidate_pairs)}")
     
-    # Calcola pairs completeness
-    # Ogni riga del dataset è un match vero (craig_i, us_i corrisponde a riga i)
-    true_pairs = set(range(len(df)))
-    found_pairs = set()
-    
-    for idx1, idx2 in candidate_pairs:
-        if idx1 == idx2:  # Stessa riga = match vero
-            found_pairs.add(idx1)
-    
-    pairs_completeness = len(found_pairs) / len(true_pairs) if true_pairs else 0
-    print(f"\nPairs Completeness: {pairs_completeness:.4f} ({pairs_completeness*100:.2f}%)")
-    print(f"  Match veri trovati: {len(found_pairs)}")
-    print(f"  Match veri totali: {len(true_pairs)}")
-    
     return blocks_craig, blocks_us, candidate_pairs
 
 
