@@ -12,15 +12,14 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "dataset")
 
-# File generati dallo script di allineamento
 FILES_TO_CLEAN = [
     "craigslist_aligned.csv",
     "us_cars_aligned.csv"
 ]
 
+
 # --- LOGICA DI DEDUPLICAZIONE ---
-# Questi sono i campi che LOGICAMENTE cambiano tra un re-post e l'altro
-# o che sono identificativi univoci che non definiscono la "natura" dell'auto.
+# Questi sono i campi che LOGICAMENTE cambiano tra un re-post e l'altro.
 COLONNE_DA_IGNORARE = [
     'vin',           # ID Universale (può essere lo stesso, ma non lo usiamo per la distinct)
     'source_id',     # ID specifico del dataset (cambia sempre nei re-post)
@@ -29,6 +28,7 @@ COLONNE_DA_IGNORARE = [
     'longitude',     # Può variare leggermente tra annunci
     'source'         # È costante per file, inutile nel subset
 ]
+
 
 def clean_semantic_duplicates():
     print("=== Avvio Deduplicazione Semantica (Basata su Schema Mediato) ===")
@@ -45,8 +45,7 @@ def clean_semantic_duplicates():
         initial_rows = len(df)
         
         # Definiamo il subset di colonne che identificano univocamente l'auto
-        # Prendiamo tutti i campi (brand, model, price, mileage, description, cylinders, etc.)
-        # ESCLUDENDO quelli nella lista COLONNE_DA_IGNORARE
+        # Prendiamo tutti i campi escludendo quelli nella lista COLONNE_DA_IGNORARE
         identity_subset = [col for col in df.columns if col not in COLONNE_DA_IGNORARE]
         
         print(f" - Identità del veicolo definita da {len(identity_subset)} attributi tecnici.")
@@ -69,6 +68,7 @@ def clean_semantic_duplicates():
         print(f" - File salvato: {output_name}")
 
     print("\nProcedura completata. I dataset sono pronti per il Record Linkage.")
+
 
 if __name__ == "__main__":
     clean_semantic_duplicates()

@@ -5,10 +5,10 @@ Questa cartella raccoglie tutti i file Python utilizzati per l'elaborazione dei 
 Contiene lo script che, per ciascuna sorgente, analizza la percentuale di valori nulli e di valori unici di ciascun attributo.
 
 ## Allineamento_dataset
-Contiene lo script che definisce il dataset mediato e allinea gli attributi.
+Contiene lo script che definisce il dataset mediato e allinea gli attributi, per poi eliminare i duplicati all'interno dei due dataset.
 
 ## Ground Truth
-Contiene gli script che preparano i candidati per la fase di Label Studio.
+Contiene gli script che preparano i candidati per la fase di Label Studio e il Ground Truth finale.  
 La cartella Label Studio contiene il template di visualizzazione su Label Studio.
 
 ## Preparazione al ML

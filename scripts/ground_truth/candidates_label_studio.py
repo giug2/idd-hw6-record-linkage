@@ -30,19 +30,19 @@ def clean_vin_and_find_matches(path_craig, path_us):
             
         vin = vin.upper().strip()
         
-        # 1. Lunghezza standard obbligatoria
+        # Lunghezza standard obbligatoria
         if len(vin) != 17:
             return False
             
-        # 2. Caratteri proibiti (I, O, Q non sono mai usati per evitare confusione con 1 e 0)
+        # Caratteri proibiti (I, O, Q non sono mai usati per evitare confusione con 1 e 0)
         if any(c in vin for c in "IOQ"):
             return False
             
-        # 3. Solo alfanumerici
+        # Solo alfanumerici
         if not re.match(r"^[A-Z0-9]+$", vin):
             return False
             
-        # 4. Blacklist placeholder
+        # Blacklist placeholder
         blacklist = [
             '00000000000000000', '123456789ABCDEFGH', 'XXXXXXXXXXXXXXXXX',
             '11111111111111111', '99999999999999999', 'AAAAAAAAAAAAAAAAA'
@@ -50,7 +50,7 @@ def clean_vin_and_find_matches(path_craig, path_us):
         if vin in blacklist or vin.isnumeric() or vin.isalpha():
             return False
 
-        # 5. Algoritmo Check Digit (Nona posizione del VIN)
+        # Algoritmo Check Digit (Nona posizione del VIN)
         # Valori assegnati alle lettere
         vin_values = {
             'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8,
@@ -76,7 +76,7 @@ def clean_vin_and_find_matches(path_craig, path_us):
                 
             # Calcolo del resto (Modulo 11)
             check_digit_calc = total_sum % 11
-            actual_check_digit = vin[8] # La nona cifra (indice 8)
+            actual_check_digit = vin[8] # La nona cifra 
             
             # Se il resto è 10, il check digit deve essere 'X'
             expected_check_digit = 'X' if check_digit_calc == 10 else str(check_digit_calc)
@@ -84,7 +84,6 @@ def clean_vin_and_find_matches(path_craig, path_us):
             return actual_check_digit == expected_check_digit
             
         except KeyError:
-            # In caso di caratteri non previsti (anche se filtrati sopra)
             return False
 
     # Applichiamo il filtro su copie dei dataset
@@ -102,7 +101,6 @@ def clean_vin_and_find_matches(path_craig, path_us):
 
     # Verifica di Coerenza 
     # Teniamo solo i match dove marca e anno sono compatibili
-    # Nota: su Craigslist il brand potrebbe essere leggermente diverso, ma l'anno deve essere identico.
     final_matches = ground_truth_matches[
         (ground_truth_matches['brand_craig'] == ground_truth_matches['brand_us']) &
         (ground_truth_matches['year_craig'] == ground_truth_matches['year_us'])

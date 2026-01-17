@@ -1,2 +1,0 @@
-pipeline,dataset,precision,recall,f1,test_candidates,pairs_completeness,timestamp
-P1_textual_core_B1,unseen_final,0.7899836601307189,0.4201741592356688,0.5485380116959064,417091,1.0,2026-01-11 22:55:12
