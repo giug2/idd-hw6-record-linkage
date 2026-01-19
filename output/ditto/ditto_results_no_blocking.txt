@@ -1,0 +1,76 @@
+===============================================================================================
+DITTO TRAINING RESULTS - NO BLOCKING (Solo Pipeline)
+Training con predizioni REALI del modello DITTO (senza strategie di blocking)
+Device: GPU (AMD DirectML)
+Entity Resolution for Automotive Data (Craigslist vs US Cars)
+===============================================================================================
+
+Configuration: P1_textual_core_NO_BLOCKING
+-----------------------------------------------------------------------------------------------
+  accuracy: 0.991830
+  f1_score: 0.991843
+  inference_time: 0.689079
+  precision: 0.990228
+  recall: 0.993464
+  test_samples: 612
+  threshold: 0.500000
+  training_time: 403.491892
+
+Configuration: P2_plus_location_NO_BLOCKING
+-----------------------------------------------------------------------------------------------
+  accuracy: 0.996732
+  f1_score: 0.996732
+  inference_time: 0.892651
+  precision: 0.996732
+  recall: 0.996732
+  test_samples: 612
+  threshold: 0.300000
+  training_time: 445.574692
+
+Configuration: P3_minimal_fast_NO_BLOCKING
+-----------------------------------------------------------------------------------------------
+  accuracy: 0.995098
+  f1_score: 0.995074
+  inference_time: 0.352505
+  precision: 1.000000
+  recall: 0.990196
+  test_samples: 612
+  threshold: 0.450000
+  training_time: 345.090818
+
+
+===============================================================================================
+PERFORMANCE RANKING (Sorted by F1 Score)
+===============================================================================================
+
+Rank   Configuration                          F1           Precision    Recall      
+-----------------------------------------------------------------------------------------------
+1      P2_plus_location_NO_BLOCKING           0.996732     0.996732     0.996732    
+2      P3_minimal_fast_NO_BLOCKING            0.995074     1.000000     0.990196    
+3      P1_textual_core_NO_BLOCKING            0.991843     0.990228     0.993464    
+
+===============================================================================================
+TIMING ANALYSIS
+===============================================================================================
+
+Configuration                          Training (s)         Inference (s)       
+-----------------------------------------------------------------------------------------------
+P1_textual_core_NO_BLOCKING            403.49               0.689079            
+P2_plus_location_NO_BLOCKING           445.57               0.892651            
+P3_minimal_fast_NO_BLOCKING            345.09               0.352505            
+
+===============================================================================================
+GLOBAL STATISTICS
+===============================================================================================
+
+Average F1 Score:      0.994550
+Average Precision:     0.995653
+Average Recall:        0.993464
+Total Training Time:   1194.16s (19.90 minutes)
+Configurations:        3
+Device:                GPU (AMD DirectML)
+Blocking:              NONE (solo pipeline)
+
+GPU ACCELERATION:
+  - PyTorch DirectML enabled for AMD Radeon RX 6700 XT
+  - DITTO modified to support DirectML device
