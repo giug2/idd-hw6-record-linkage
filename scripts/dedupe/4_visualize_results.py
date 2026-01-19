@@ -401,7 +401,6 @@ def plot_error_analysis(results, output_dir):
     
     # Linea ground truth
     ax.axhline(y=553, color='gray', linestyle=':', alpha=0.7, linewidth=1.5)
-    ax.text(len(top_results)-0.5, 550, 'Ground Truth: 553 match', fontsize=9, color='gray')
     
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, '5_error_analysis.png'), dpi=150, bbox_inches='tight')
