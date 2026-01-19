@@ -8,14 +8,13 @@ import io
 
 # --- CONFIGURAZIONE DATASET ---
 INPUT_FILE = 'dataset/unsee_completo.csv'
-METRICS_REPORT_FILE = 'output/dedupe_results/inference_unseen_p3_extended_metrics.txt'
-OUTPUT_CSV_FILE = 'output/dedupe_results/inference_unseen_p3_extended.csv'
+METRICS_REPORT_FILE = 'output/dedupe_results/inference_unseen_p3_extended_manual_b1_metrics.txt'
+OUTPUT_CSV_FILE = 'output/dedupe_results/inference_unseen_p3_extended_manual_b1.csv'
 
 
 # --- LISTA DEI MODELLI E SOGLIE DA VALUTARE ---
-# Ci concentriamo sul modello migliore (P3 Extended Auto)
 MODELS = [
-    ("P3_Extended_Auto", "output/dedupe_results/experiments/P3_extended_settings.json"),
+    ("P3_Extended_Manual_B1", "output/dedupe_results/manual_blocking_experiments/P3_extended_manual_B1_settings.json"),
 ]
 
 # Soglia fissa

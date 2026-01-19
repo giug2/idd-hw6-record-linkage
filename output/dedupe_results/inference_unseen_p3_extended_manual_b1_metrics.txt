@@ -1,0 +1,4 @@
+=== REPORT BENCHMARK DEDUPE SU UNSEEN DATA (THRESHOLD ANALYSIS) ===
+
+                Model  Threshold   TP  FP   FN  Precision  Recall      F1                                                                              Settings
+P3_Extended_Manual_B1        0.5 5095 987 1792   0.837718  0.7398 0.78572 output/dedupe_results/manual_blocking_experiments/P3_extended_manual_B1_settings.json
