@@ -1,0 +1,37 @@
+================================================================================
+DITTO UNSEEN COMPLETO TEST RESULTS
+Model: P3_minimal_fast_B2
+Device: GPU (AMD DirectML)
+================================================================================
+
+DATASET INFO:
+--------------------------------------------------------------------------------
+  Source: dataset/unsee_completo.csv
+  Total samples (after blocking): 6611
+
+MODEL INFO:
+--------------------------------------------------------------------------------
+  Model: P3_minimal_fast_B2
+  Pipeline: P3_minimal_fast (brand, model, year)
+  Blocking: B2 (brand + model_prefix)
+  Threshold: 0.65
+  Training: 15 epochs (pre-trained model)
+
+PERFORMANCE METRICS:
+--------------------------------------------------------------------------------
+  Accuracy:   0.999244
+  Precision:  1.000000
+  Recall:     0.999244
+  F1 Score:   0.999622
+
+PREDICTION SUMMARY:
+--------------------------------------------------------------------------------
+  Total pairs evaluated: 6611
+  Actual matches (ground truth): 6611
+  Predicted as match: 6606
+  Correctly identified: 6606 / 6611
+
+TIMING:
+--------------------------------------------------------------------------------
+  Inference time: 3.86s
+  Throughput: 1713.2 pairs/second

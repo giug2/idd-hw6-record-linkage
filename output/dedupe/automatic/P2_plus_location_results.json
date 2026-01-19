@@ -1,0 +1,19 @@
+{
+  "name": "P2_plus_location",
+  "threshold": 0.5,
+  "timings": {
+    "prepare_training_sec": 20830.214,
+    "train_sec": 142.18,
+    "threshold_sec": 0.0,
+    "inference_sec": 9.585
+  },
+  "metrics": {
+    "precision": 0.8333333333333334,
+    "recall": 0.8167934640522876,
+    "f1": 0.8249825082508251,
+    "tp": 450,
+    "fp": 90,
+    "fn": 101
+  },
+  "settings_file": "experiments/P2_plus_location_settings.json"
+}
