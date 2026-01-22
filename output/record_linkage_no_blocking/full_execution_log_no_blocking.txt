@@ -1,0 +1,169 @@
+======================================================================
+   VALUTAZIONE PIPELINE SENZA BLOCKING
+======================================================================
+
+============================================================
+CARICAMENTO DATI
+============================================================
+  Train set:      2,578 record
+  Validation set: 553 record
+  Test set:       553 record
+  Totale:         3,684 record
+
+======================================================================
+PIPELINE: P1_textual_core_NO_BLOCKING
+======================================================================
+
+[1/5] Preparazione dati...
+
+[2/5] Blocking (Training) - FULL INDEX...
+    Generazione Indice Completo...
+
+  Statistiche Blocking P1_textual_core_NO_BLOCKING - Training:
+    Record Craigslist:     3,129
+    Record US Used Cars:   3,129
+    Coppie totali:         9,790,641
+    Coppie candidate:      9,790,641
+    Reduction Ratio:       0.0000 (0.00%)
+    Coppie vere totali:    3,129
+    Coppie vere in cand.:  3,129
+    Pairs Completeness:    1.0000 (100.00%)
+
+[3/5] Training classificatore...
+  Configurazione: P1_textual_core
+  Ottimizzazione coppie di training...
+    Coppie totali disponibili: 9,790,641 (Pos: 3129, Neg: 9,787,512)
+  Calcolo features di training (set ottimizzato)...
+    Elaborazione in chunk...
+    Calcolo features completato!
+  Addestramento Logistic Regression...
+
+[4/5] Blocking (Test) - FULL INDEX...
+    Generazione Indice Completo...
+
+  Statistiche Blocking P1_textual_core_NO_BLOCKING - Test:
+    Record Craigslist:     553
+    Record US Used Cars:   553
+    Coppie totali:         305,809
+    Coppie candidate:      305,809
+    Reduction Ratio:       0.0000 (0.00%)
+    Coppie vere totali:    553
+    Coppie vere in cand.:  553
+    Pairs Completeness:    1.0000 (100.00%)
+
+[5/5] Inference e valutazione...
+  Calcolo features di test...
+    Elaborazione in chunk...
+    Calcolo features completato!
+  Predizione...
+    Predizioni con soglia 0.5: 1,461
+
+  Calcolo metriche...
+
+======================================================================
+PIPELINE: P2_plus_location_NO_BLOCKING
+======================================================================
+
+[1/5] Preparazione dati...
+
+[2/5] Blocking (Training) - FULL INDEX...
+    Generazione Indice Completo...
+
+  Statistiche Blocking P2_plus_location_NO_BLOCKING - Training:
+    Record Craigslist:     3,129
+    Record US Used Cars:   3,129
+    Coppie totali:         9,790,641
+    Coppie candidate:      9,790,641
+    Reduction Ratio:       0.0000 (0.00%)
+    Coppie vere totali:    3,129
+    Coppie vere in cand.:  3,129
+    Pairs Completeness:    1.0000 (100.00%)
+
+[3/5] Training classificatore...
+  Configurazione: P2_plus_location
+  Ottimizzazione coppie di training...
+    Coppie totali disponibili: 9,790,641 (Pos: 3129, Neg: 9,787,512)
+  Calcolo features di training (set ottimizzato)...
+    Elaborazione in chunk...
+    Calcolo features completato!
+  Addestramento Logistic Regression...
+
+[4/5] Blocking (Test) - FULL INDEX...
+    Generazione Indice Completo...
+
+  Statistiche Blocking P2_plus_location_NO_BLOCKING - Test:
+    Record Craigslist:     553
+    Record US Used Cars:   553
+    Coppie totali:         305,809
+    Coppie candidate:      305,809
+    Reduction Ratio:       0.0000 (0.00%)
+    Coppie vere totali:    553
+    Coppie vere in cand.:  553
+    Pairs Completeness:    1.0000 (100.00%)
+
+[5/5] Inference e valutazione...
+  Calcolo features di test...
+    Elaborazione in chunk...
+    Calcolo features completato!
+  Predizione...
+    Predizioni con soglia 0.5: 1,029
+
+  Calcolo metriche...
+
+======================================================================
+PIPELINE: P3_minimal_fast_NO_BLOCKING
+======================================================================
+
+[1/5] Preparazione dati...
+
+[2/5] Blocking (Training) - FULL INDEX...
+    Generazione Indice Completo...
+
+  Statistiche Blocking P3_minimal_fast_NO_BLOCKING - Training:
+    Record Craigslist:     3,129
+    Record US Used Cars:   3,129
+    Coppie totali:         9,790,641
+    Coppie candidate:      9,790,641
+    Reduction Ratio:       0.0000 (0.00%)
+    Coppie vere totali:    3,129
+    Coppie vere in cand.:  3,129
+    Pairs Completeness:    1.0000 (100.00%)
+
+[3/5] Training classificatore...
+  Configurazione: P3_minimal_fast
+  Ottimizzazione coppie di training...
+    Coppie totali disponibili: 9,790,641 (Pos: 3129, Neg: 9,787,512)
+  Calcolo features di training (set ottimizzato)...
+    Elaborazione in chunk...
+    Calcolo features completato!
+  Addestramento Logistic Regression...
+
+[4/5] Blocking (Test) - FULL INDEX...
+    Generazione Indice Completo...
+
+  Statistiche Blocking P3_minimal_fast_NO_BLOCKING - Test:
+    Record Craigslist:     553
+    Record US Used Cars:   553
+    Coppie totali:         305,809
+    Coppie candidate:      305,809
+    Reduction Ratio:       0.0000 (0.00%)
+    Coppie vere totali:    553
+    Coppie vere in cand.:  553
+    Pairs Completeness:    1.0000 (100.00%)
+
+[5/5] Inference e valutazione...
+  Calcolo features di test...
+    Elaborazione in chunk...
+    Calcolo features completato!
+  Predizione...
+    Predizioni con soglia 0.5: 1,123
+
+  Calcolo metriche...
+
+================================================================================
+   RIEPILOGO FINALE
+================================================================================
+                    pipeline  precision   recall       f1  training_time  inference_time
+ P1_textual_core_NO_BLOCKING   0.363300 0.964052 0.527728     119.277596      455.942653
+P2_plus_location_NO_BLOCKING   0.527972 0.986928 0.687927     124.207315      515.385099
+ P3_minimal_fast_NO_BLOCKING   0.488782 0.996732 0.655914       1.039675        0.280265
