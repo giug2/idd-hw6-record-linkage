@@ -17,6 +17,19 @@ def align_datasets(path_craig, path_us):
     print("Caricamento us in corso...")
     df_us = pd.read_csv(path_us, low_memory=False)
 
+    # --- FUNZIONE DI REPORTING ---
+    def print_report(step_name, old_series_craig, new_series_craig, old_series_us, new_series_us):
+        # Calcola i cambiamenti per Craigslist
+        # Usiamo fillna per evitare che il confronto tra NaN risulti sempre diverso
+        c_changes = (old_series_craig.fillna("NaN").astype(str) != new_series_craig.fillna("NaN").astype(str)).sum()
+        # Calcola i cambiamenti per US Cars
+        u_changes = (old_series_us.fillna("NaN").astype(str) != new_series_us.fillna("NaN").astype(str)).sum()
+        
+        print(f"\n[REPORT] {step_name}:")
+        print(f" -> Craigslist: sostituiti {c_changes} campi su {len(new_series_craig)}")
+        print(f" -> US Used Cars: sostituiti {u_changes} campi su {len(new_series_us)}")
+        print("-" * 50)
+
     # ===============================================
     # --- ARRICCHIMENTO GEOGRAFICO (US_USED_CARS) ---
     print("Recupero stati dai CAP (Zip Codes)...")
@@ -33,7 +46,6 @@ def align_datasets(path_craig, path_us):
 
     # Mappatura dello stato nel dataset originale
     df_us['state'] = df_us['dealer_zip'].map(zip_to_state)
-
     print("Fine recupero stati dai CAP (Zip Codes).")
 
     # Mapping per Craigslist 
@@ -103,8 +115,10 @@ def align_datasets(path_craig, path_us):
             return match.group()
         return 'other'
 
+    old_c, old_u = df_craig_aligned['cylinders'].copy(), df_us_aligned['cylinders'].copy()
     df_craig_aligned['cylinders'] = df_craig_aligned['cylinders'].apply(clean_cylinders)
     df_us_aligned['cylinders'] = df_us_aligned['cylinders'].apply(clean_cylinders)
+    print_report("Cilindrata", old_c, df_craig_aligned['cylinders'], old_u, df_us_aligned['cylinders'])
     print(f"Allineamento completato con cilindrate normalizzato. 2/10")
 
     # ===============================================
@@ -123,8 +137,10 @@ def align_datasets(path_craig, path_us):
         val = str(val).lower().strip()
         return fuel_std.get(val, 'other')
     
+    old_c, old_u = df_craig_aligned['fuel_type'].copy(), df_us_aligned['fuel_type'].copy()
     df_craig_aligned['fuel_type'] = df_craig_aligned['fuel_type'].apply(clean_fuel)
     df_us_aligned['fuel_type'] = df_us_aligned['fuel_type'].apply(clean_fuel)
+    print_report("Carburante", old_c, df_craig_aligned['fuel_type'], old_u, df_us_aligned['fuel_type'])
     print(f"Allineamento completato con carburante normalizzato. 3/10")
 
     # ===============================================
@@ -151,8 +167,10 @@ def align_datasets(path_craig, path_us):
         # Restituiamo il valore mappato se esiste, altrimenti il valore originale pulito
         return body_map.get(val, val)
 
+    old_c, old_u = df_craig_aligned['body_type'].copy(), df_us_aligned['body_type'].copy()
     df_craig_aligned['body_type'] = df_craig_aligned['body_type'].apply(clean_body)
     df_us_aligned['body_type'] = df_us_aligned['body_type'].apply(clean_body)
+    print_report("Tipo Auto", old_c, df_craig_aligned['body_type'], old_u, df_us_aligned['body_type'])
     print(f"Allineamento completato con tipo di auto normalizzato. 4/10")
 
     # ===============================================
@@ -174,11 +192,13 @@ def align_datasets(path_craig, path_us):
             if 'man' in val: return 'manual'
             return 'other'
 
+    old_c, old_u = df_craig_aligned['transmission'].copy(), df_us_aligned['transmission'].copy()
     df_us_aligned['transmission'] = df_us_aligned.apply(lambda r: clean_trans(r, 'us'), axis=1)
     df_craig_aligned['transmission'] = df_craig_aligned.apply(lambda r: clean_trans(r, 'craig'), axis=1)
     
     # Rimuoviamo la colonna di supporto trans_code
     df_us_aligned = df_us_aligned.drop(columns=['trans_code'])
+    print_report("Trasmissione", old_c, df_craig_aligned['transmission'], old_u, df_us_aligned['transmission'])
     print(f"Allineamento completato con trasmissione normalizzato. 5/10")
 
     # ===============================================
@@ -207,11 +227,13 @@ def align_datasets(path_craig, path_us):
             val = str(row['drive']).lower().strip()
             return drive_map.get(val, 'other')
 
+    old_c, old_u = df_craig_aligned['drive'].copy(), df_us_aligned['drive'].copy()
     df_us_aligned['drive'] = df_us_aligned.apply(lambda r: clean_drive(r, 'us'), axis=1)
     df_craig_aligned['drive'] = df_craig_aligned.apply(lambda r: clean_drive(r, 'craig'), axis=1)
     
     # Rimuoviamo le colonne di supporto
     df_us_aligned = df_us_aligned.drop(columns=['drive_code'])
+    print_report("Trazione", old_c, df_craig_aligned['drive'], old_u, df_us_aligned['drive'])
     print(f"Allineamento completato con trazione normalizzato. 6/10")
 
     # ===============================================

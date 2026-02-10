@@ -15,6 +15,10 @@ def clean_vin_and_find_matches(path_craig, path_us):
     df_us = pd.read_csv(path_us, low_memory=False)
     print("Inizio pulizia VIN e generazione Ground-Truth...")
 
+    # Numero iniziale di righe per il report
+    total_craig_initial = len(df_craig)
+    total_us_initial = len(df_us)
+
     # Funzione per identificare VIN non validi
     def is_valid_vin(vin):
         """
@@ -90,6 +94,10 @@ def clean_vin_and_find_matches(path_craig, path_us):
     df_c_valid = df_craig[df_craig['vin'].apply(is_valid_vin)].copy()
     df_u_valid = df_us[df_us['vin'].apply(is_valid_vin)].copy()
 
+    # --- CALCOLO VIN SCARTATI ---
+    discarded_craig = total_craig_initial - len(df_c_valid)
+    discarded_us = total_us_initial - len(df_u_valid)
+
     # Inner Join sui VIN per trovare i Match Potenziali
     # Uniamo i due dataset sulla colonna 'vin'
     ground_truth_matches = pd.merge(
@@ -108,6 +116,25 @@ def clean_vin_and_find_matches(path_craig, path_us):
 
     print(f"Trovati {len(final_matches)} match certi basati su VIN, marca e anno.")
     
+    # --- REPORT FINALE ---
+    print("\n" + "="*50)
+    print("REPORT PULIZIA VIN")
+    print("="*50)
+    print(f"CRAIGSLIST:")
+    print(f"  - Totali iniziali: {total_craig_initial}")
+    print(f"  - VIN Scartati:    {discarded_craig} ({(discarded_craig/total_craig_initial)*100:.2f}%)")
+    print(f"  - VIN Validi:      {len(df_c_valid)}")
+    print("-" * 30)
+    print(f"US USED CARS:")
+    print(f"  - Totali iniziali: {total_us_initial}")
+    print(f"  - VIN Scartati:    {discarded_us} ({(discarded_us/total_us_initial)*100:.2f}%)")
+    print(f"  - VIN Validi:      {len(df_u_valid)}")
+    print("-" * 30)
+    print(f"RISULTATO MATCHING:")
+    print(f"  - Match potenziali (solo VIN): {len(ground_truth_matches)}")
+    print(f"  - Match finali (VIN + Brand + Year): {len(final_matches)}")
+    print("="*50 + "\n")
+
     # Preparazione per Label Studio
     # Selezioniamo solo le colonne utili per il confronto manuale
     cols_to_compare = [
